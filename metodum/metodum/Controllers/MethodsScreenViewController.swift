@@ -18,7 +18,7 @@ class MethodsScreenViewController: UIViewController {
         super.viewDidLoad()
         let searchCV = UISearchController()
         searchCV.searchBar.delegate = self
-        navigationIten.searchController = searchCV
+        //navigationIten.searchController = searchCV
         // Do any additional setup after loading the view.
     }
 }
