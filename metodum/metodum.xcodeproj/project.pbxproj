@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		79CBC9592518FD2100AFB417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC9582518FD2100AFB417 /* AppDelegate.swift */; };
 		79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC95A2518FD2100AFB417 /* SceneDelegate.swift */; };
 		79CBC95D2518FD2100AFB417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC95C2518FD2100AFB417 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		23D94DB58C2516E80E66A28E /* Pods-metodum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.debug.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.debug.xcconfig"; sourceTree = "<group>"; };
 		38C3AF933584B1142A014861 /* Pods_metodum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_metodum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6861DAEFE4B8B0522286CC07 /* Pods-metodum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.release.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.release.xcconfig"; sourceTree = "<group>"; };
+		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		79CBC9552518FD2100AFB417 /* metodum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metodum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CBC9582518FD2100AFB417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CBC95A2518FD2100AFB417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				AEF5BD9725190470009652BE /* ClassesScreenViewController.swift */,
 				AEF5BD9925190497009652BE /* MethodsScreenViewController.swift */,
 				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
+				793AF633251B963B001F3A26 /* MethodCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				AEF5BD8E25190246009652BE /* Methodology.swift in Sources */,
 				AEF5BD96251903FD009652BE /* LoginViewController.swift in Sources */,
 				AEF5BD9C251904C0009652BE /* ClassesCollectionViewCell.swift in Sources */,
+				793AF634251B963B001F3A26 /* MethodCell.swift in Sources */,
 				AEF5BD91251902BB009652BE /* TeachersCloudRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
