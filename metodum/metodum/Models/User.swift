@@ -9,11 +9,13 @@
 import Foundation
 
 struct User {
-    var uuid : String
+    var uid : String
     var email : String
+    var name : String
     
-    init(uuid: String, email: String) {
-        self.uuid = uuid
+    init(uid: String, email: String, name: String) {
+        self.uid = uid
         self.email = email
+        self.name = name
     }
 }

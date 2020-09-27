@@ -1,4 +1,3 @@
-//
 //  ClassesScreenViewController.swift
 //  metodum
 //
@@ -15,7 +14,6 @@ class ClassesScreenViewController: UIViewController {
     @IBOutlet weak var classesCollection: UICollectionView!
     
     var classes : [SchoolClass] = []
-    let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
     var user : User?
     
     override func viewDidLoad() {
@@ -24,7 +22,7 @@ class ClassesScreenViewController: UIViewController {
         let parent = self.parent as! ViewController
         user = parent.user
         if let loggedUser = user {
-            TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uuid) { (error, repoClasses) in
+            TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uid) { (error, repoClasses) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
@@ -41,7 +39,19 @@ class ClassesScreenViewController: UIViewController {
         self.navigationIten.title = "Turmas"
         self.navigationIten.largeTitleDisplayMode = .always
         
-        self.navigationIten.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
+        self.navigationIten.rightBarButtonItems = [
+            UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut)),
+            UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(createClass))
+        ]
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Classes Screen to Create Class Screen" {
+            let user = sender as! User
+            let viewController = segue.destination as! NewSchoolClassViewController
+            viewController.user = user
+        }
     }
     
     @objc private func signOut() {
@@ -50,8 +60,11 @@ class ClassesScreenViewController: UIViewController {
                 self.alertError(message: errorMessage)
             }
         }
-        
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func createClass() {
+        performSegue(withIdentifier: "Classes Screen to Create Class Screen", sender: self.user)
     }
 }
 
@@ -78,14 +91,29 @@ extension ClassesScreenViewController : UICollectionViewDelegateFlowLayout {
         
         let fullHeight = collectionView.frame.height
         let fullWidth = collectionView.frame.width
+        var cellFixedHeight : CGFloat = 0
         
-        let itemHeight = (fullHeight / 4.2 ) - (edgeInsets.bottom * 2)
-        let itemWidth = fullWidth
+        if fullHeight > 900 {
+            cellFixedHeight = 220
+        } else {
+            cellFixedHeight = 120
+        }
+        
+        let numberdOfLinesOnScreen = fullHeight / cellFixedHeight
+        let itemHeight = (fullHeight / numberdOfLinesOnScreen ) - (5 * 2)
+        let itemWidth = fullWidth - (20 * 2)
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if let collection = classesCollection {
+            collection.collectionViewLayout.invalidateLayout()
+        }
+        super.viewWillTransition(to: size, with: coordinator)
     }
 }
