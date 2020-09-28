@@ -14,39 +14,40 @@ class CasesDetailViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var aboutText: UITextView!
     @IBOutlet weak var resultText: UITextView!
-    
-    @IBAction func shareButton(_ sender: UIBarButtonItem) {
-//        createPrintFormatter(index: self.id)
-//        openQlPreview()
-                let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
-                    createPrintFormatter(index: self.id)
-                    self.openQlPreview()
-                }
-        
-                let items = ["hue"]
-                let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
-        
-                self.present(activityViewController, animated: true, completion: nil)
-    }
-    
-    var id: Int = 0
-    
+    var selectedCase : Case?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.largeTitleDisplayMode = .never
         
-        let caseObjeto = Case.caseList[id]
-        self.title = caseObjeto.cases
-        self.aboutText.text = caseObjeto.aboutTheCases
-        self.resultText.text = caseObjeto.resultOfThecases
-        
-        picture.image = UIImage(named: caseObjeto.caseImage)
-        
+        if let caseObject = selectedCase {
+            self.title = caseObject.caseTitle
+            self.aboutText.text = caseObject.aboutCase
+            self.resultText.text = caseObject.caseResult
+            
+            picture.image = UIImage(named: caseObject.caseImage)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.largeTitleDisplayMode = .always
+    }
+    
+    @IBAction func shareButton(_ sender: UIBarButtonItem) {
+        // createPrintFormatter(index: self.id)
+        // openQlPreview()
+        let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
+            if let caseObject = self.selectedCase {
+                createPrintFormatter(selectedCase: caseObject)
+            }
+            self.openQlPreview()
+        }
+        
+        let items = ["hue"]
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
+
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func openQlPreview() {
@@ -56,7 +57,6 @@ class CasesDetailViewController: UIViewController {
         self.present(previoew, animated: true, completion: nil)
     }
 }
-
 
 extension UIViewController : QLPreviewControllerDelegate , QLPreviewControllerDataSource{
     
@@ -72,5 +72,4 @@ extension UIViewController : QLPreviewControllerDelegate , QLPreviewControllerDa
     public func previewController(_ controller: QLPreviewController, shouldOpen url: URL, for item: QLPreviewItem) -> Bool {
         return true
     }
-    
 }

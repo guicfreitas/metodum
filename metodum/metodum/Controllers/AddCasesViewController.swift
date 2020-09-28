@@ -10,8 +10,6 @@ import UIKit
 
 class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
     @IBOutlet weak var pickerPicture: UIImageView!
     @IBOutlet weak var TtitleCase: UITextField!
     @IBOutlet weak var instituteName: UITextField!
@@ -35,6 +33,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         present(globalImagePicker, animated: true, completion: nil)
     }
+    
     // Método obrigatório da UIImagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -54,7 +53,6 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     let globalImagePicker = UIImagePickerController()
     
-    
     override func viewDidLoad() {
         globalImagePicker.delegate = self
         super.viewDidLoad()
@@ -72,12 +70,12 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             textView.text = ""
             textView.textColor = .gray
             //Tema dark
-            //            if traitCollection.userInterfaceStyle == .dark{
-            //                textView.textColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
-            //            } else {
-            //                textView.textColor = .gray
-            //
-            //            }
+    //            if traitCollection.userInterfaceStyle == .dark{
+    //                textView.textColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
+    //            } else {
+    //                textView.textColor = .gray
+    //
+    //            }
         }
     }
     
@@ -87,5 +85,4 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             textView.textColor = .lightGray
         }
     }
-    
 }

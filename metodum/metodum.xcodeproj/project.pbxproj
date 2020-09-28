@@ -186,12 +186,12 @@
 				AEF5BD9725190470009652BE /* ClassesScreenViewController.swift */,
 				AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */,
 				AEF5BD9925190497009652BE /* MethodsScreenViewController.swift */,
-				793AF633251B963B001F3A26 /* MethodCell.swift */,
-				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
-				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
 				C33D511D251A3A8F00E9D7EC /* CasesCollectionViewController.swift */,
 				C3EEED27251DBA3E005A7EB0 /* CasesDetailViewController.swift */,
 				C3EF7EBF25200A950086EF9C /* AddCasesViewController.swift */,
+				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
+				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
+				793AF633251B963B001F3A26 /* MethodCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

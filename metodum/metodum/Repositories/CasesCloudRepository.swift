@@ -18,6 +18,7 @@ class CasesCloudRepository {
                 completion(errorMessage, nil)
             } else {
                 let cases = querySnapshot?.documents.map({ (document) -> Case in
+                    print(document.data())
                     return Case.fromJson(json: document.data())
                 })
                 completion(nil,cases)

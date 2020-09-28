@@ -43,7 +43,6 @@ class ClassesScreenViewController: UIViewController {
             UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut)),
             UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(createClass))
         ]
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

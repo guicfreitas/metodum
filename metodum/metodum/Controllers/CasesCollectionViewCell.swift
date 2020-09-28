@@ -19,5 +19,4 @@ class CasesCollectionViewCell: UICollectionViewCell {
     func setImage (named: String){
         caseImage.image = UIImage(named: named)
     }
-    
 }

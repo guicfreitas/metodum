@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
+    
     private static let auth = Auth.auth()
     
     static func verifyAuthentication(completion: @escaping (User?) -> ()){

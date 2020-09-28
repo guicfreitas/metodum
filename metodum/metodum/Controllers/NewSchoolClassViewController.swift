@@ -17,12 +17,10 @@ class NewSchoolClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
     @IBAction func registerSchoolClassButton(_ sender: Any) {
-        
         guard let name = nameTextField.text else {return}
         guard let school = schoolTextField.text else {return}
         guard let description = descriptionTextView.text else {return}

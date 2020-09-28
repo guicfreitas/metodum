@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Case {
+/*class Case {
     var id: Int
     var cases: String
     var caseSubtitle: String
@@ -73,4 +73,4 @@ extension Case {
              resultOfThecases:  "O NEI trabalha por meio de uma metodologia dinâmica, com a participação efetiva dos alunos no processo de construção do conhecimento. Os educadores inserem esses jovens adolescentes nos novos espaços, às novas rotinas globais, às novas regras sociais, expandido suas mentes para uma nova e moderna educação contribui para seu sucesso futuro."),
     ]
 }
-
+*/

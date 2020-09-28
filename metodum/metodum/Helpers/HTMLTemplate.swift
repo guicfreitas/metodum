@@ -9,9 +9,9 @@
 import Foundation
 
 
-public func HtmlTemplate(index: Int) -> String {
+func HtmlTemplate(selectedCase: Case) -> String {
     
-    let caseObject = Case.caseList[index]
+    let caseObject = selectedCase
     
     return """
 <!DOCTYPE html><html lang=\"pt-br\">
@@ -22,11 +22,11 @@ public func HtmlTemplate(index: Int) -> String {
         <title>Metodum</title>
     </head>
     <body>
-        <p><h1>\(caseObject.cases)</h1></p>
+        <p><h1>\(caseObject.caseTitle)</h1></p>
         <p><h2>Sobre</h2></p>
-        \(caseObject.aboutTheCases)
+        \(caseObject.aboutCase)
         <p><h2>Resultados</h2></p>
-        \(caseObject.resultOfThecases)
+        \(caseObject.caseResult)
     </body>
 </html>
 """

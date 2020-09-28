@@ -10,47 +10,62 @@ import UIKit
 import Foundation
 
 class CasesCollectionViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //        self.navigationItem.largeTitleDisplayMode = .always
-    }
     
     @IBOutlet weak var casesCollection: UICollectionView!
+    
+    var cases : [Case] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CasesCloudRepository.getAllCases { (error, cases) in
+            if let errorMessage = error {
+                self.alertError(message: errorMessage)
+            } else {
+                if let newCases = cases {
+                    self.cases = newCases
+                    self.casesCollection.reloadData()
+                }
+            }
+        }
+        //self.navigationItem.largeTitleDisplayMode = .always
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
-
-extension CasesCollectionViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Case.caseList.count
-    }
-    
-    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CasesCollectionViewCell
-        
-        let caseObjeto = Case.caseList[indexPath.row]
-        cell.caseTitle.text = caseObjeto.cases
-        cell.caseSubtitle.text = caseObjeto.caseSubtitle
-        cell.setImage(named: caseObjeto.caseImage)
-        cell.id = caseObjeto.id
-        cell.layer.cornerRadius = 12
-        return cell
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailsController = segue.destination as? CasesDetailViewController {
-            let cell = sender as! CasesCollectionViewCell
-            detailsController.id = cell.id
+        if segue.identifier == "CaseDetailsSegue" {
+            if let detailsController = segue.destination as? CasesDetailViewController {
+                let selectedCase = sender as! Case
+                detailsController.selectedCase = selectedCase
+            }
         }
     }
 }
 
-extension CasesCollectionViewController : UICollectionViewDelegateFlowLayout {
+extension CasesCollectionViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cases.count
+    }
     
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CasesCollectionViewCell
+        
+        let caseObjeto = cases[indexPath.item]
+        cell.caseTitle.text = caseObjeto.caseTitle
+        cell.caseSubtitle.text = caseObjeto.caseSubtitle
+        cell.setImage(named: caseObjeto.caseImage)
+        cell.layer.cornerRadius = 12
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CaseDetailsSegue", sender: cases[indexPath.item])
+    }
+}
+
+extension CasesCollectionViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let fullHeight = collectionView.frame.height

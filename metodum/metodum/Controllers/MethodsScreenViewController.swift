@@ -29,7 +29,6 @@ class MethodsScreenViewController: UIViewController {
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegate{
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }
@@ -47,7 +46,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
         cell.backgroundColor = UIColor.red
         print("foi2")
         return cell
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -55,13 +53,11 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
        
         headerView.emAltaImage.layer.cornerRadius = 20
         // Customize headerView here
-
         return headerView
     }
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let fullWidth = collectionView.frame.width

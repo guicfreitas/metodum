@@ -12,12 +12,11 @@ import UIKit
 let render = UIPrintPageRenderer()
 var pathPdf: URL?
 
-public func createPrintFormatter(index: Int){
+func createPrintFormatter(selectedCase: Case){
     
-    let html = HtmlTemplate(index: index)
+    let html = HtmlTemplate(selectedCase: selectedCase)
     let fmt = UIMarkupTextPrintFormatter(markupText: html)
     assignPrintFormatter(format: fmt)
-    
 }
 
 public func getPathOfPdf() -> URL {

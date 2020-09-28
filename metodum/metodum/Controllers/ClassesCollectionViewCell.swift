@@ -13,7 +13,6 @@ class ClassesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var subtitle: UILabel!
     
     func setCellData(schoolClass : SchoolClass) {
-        print("foi")
         title.text = schoolClass.name
         subtitle.text = schoolClass.schoolName
         self.layer.cornerRadius = 12
