@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		79CBC9592518FD2100AFB417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC9582518FD2100AFB417 /* AppDelegate.swift */; };
 		79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC95A2518FD2100AFB417 /* SceneDelegate.swift */; };
 		79CBC95D2518FD2100AFB417 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC95C2518FD2100AFB417 /* ViewController.swift */; };
@@ -14,6 +15,10 @@
 		79CBC9622518FD2200AFB417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC9612518FD2200AFB417 /* Assets.xcassets */; };
 		79CBC9652518FD2200AFB417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC9632518FD2200AFB417 /* LaunchScreen.storyboard */; };
 		81EE5623B5ED31E152D23CEE /* Pods_metodum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C3AF933584B1142A014861 /* Pods_metodum.framework */; };
+		AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */; };
+		AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A925201E6100796341 /* CasesCloudRepository.swift */; };
+		AEC882AD25201F0000796341 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882AC25201F0000796341 /* Case.swift */; };
+		AEC882B125203BAB00796341 /* NewSchoolClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */; };
 		AEF5BD8525190053009652BE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8425190053009652BE /* AuthService.swift */; };
 		AEF5BD8825190129009652BE /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8725190129009652BE /* Teacher.swift */; };
 		AEF5BD8A25190143009652BE /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8925190143009652BE /* SchoolClass.swift */; };
@@ -40,6 +45,7 @@
 		23D94DB58C2516E80E66A28E /* Pods-metodum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.debug.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.debug.xcconfig"; sourceTree = "<group>"; };
 		38C3AF933584B1142A014861 /* Pods_metodum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_metodum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6861DAEFE4B8B0522286CC07 /* Pods-metodum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.release.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.release.xcconfig"; sourceTree = "<group>"; };
+		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		79CBC9552518FD2100AFB417 /* metodum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metodum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CBC9582518FD2100AFB417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CBC95A2518FD2100AFB417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,10 @@
 		79CBC9612518FD2200AFB417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CBC9642518FD2200AFB417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79CBC9662518FD2200AFB417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsCloudRepository.swift; sourceTree = "<group>"; };
+		AEC882A925201E6100796341 /* CasesCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesCloudRepository.swift; sourceTree = "<group>"; };
+		AEC882AC25201F0000796341 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSchoolClassViewController.swift; sourceTree = "<group>"; };
 		AEF5BD8425190053009652BE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AEF5BD8725190129009652BE /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		AEF5BD8925190143009652BE /* SchoolClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
@@ -152,6 +162,7 @@
 				AEF5BD8925190143009652BE /* SchoolClass.swift */,
 				AEF5BD8B25190178009652BE /* User.swift */,
 				AEF5BD8D25190246009652BE /* Methodology.swift */,
+				AEC882AC25201F0000796341 /* Case.swift */,
 				C3EF7EBC251EF53F0086EF9C /* TheCase.swift */,
 			);
 			path = Models;
@@ -161,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				AEF5BD90251902BB009652BE /* TeachersCloudRepository.swift */,
+				AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */,
+				AEC882A925201E6100796341 /* CasesCloudRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -171,7 +184,9 @@
 				AEF5BD95251903FD009652BE /* LoginViewController.swift */,
 				79CBC95C2518FD2100AFB417 /* ViewController.swift */,
 				AEF5BD9725190470009652BE /* ClassesScreenViewController.swift */,
+				AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */,
 				AEF5BD9925190497009652BE /* MethodsScreenViewController.swift */,
+				793AF633251B963B001F3A26 /* MethodCell.swift */,
 				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
 				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
 				C33D511D251A3A8F00E9D7EC /* CasesCollectionViewController.swift */,
@@ -316,13 +331,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC882B125203BAB00796341 /* NewSchoolClassViewController.swift in Sources */,
 				C33D511E251A3A8F00E9D7EC /* CasesCollectionViewController.swift in Sources */,
 				79CBC95D2518FD2100AFB417 /* ViewController.swift in Sources */,
 				C33D5122251A3D1C00E9D7EC /* CasesCollectionViewCell.swift in Sources */,
 				AEF5BD9A25190497009652BE /* MethodsScreenViewController.swift in Sources */,
 				AEF5BD8825190129009652BE /* Teacher.swift in Sources */,
+				AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */,
 				C3EF7EBD251EF53F0086EF9C /* TheCase.swift in Sources */,
 				79CBC9592518FD2100AFB417 /* AppDelegate.swift in Sources */,
+				AEC882AD25201F0000796341 /* Case.swift in Sources */,
 				AEF5BD9825190470009652BE /* ClassesScreenViewController.swift in Sources */,
 				C3EF7EC025200A950086EF9C /* AddCasesViewController.swift in Sources */,
 				79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */,
@@ -333,8 +351,10 @@
 				AEF5BD8C25190178009652BE /* User.swift in Sources */,
 				C3EEED28251DBA3E005A7EB0 /* CasesDetailViewController.swift in Sources */,
 				AEF5BD8E25190246009652BE /* Methodology.swift in Sources */,
+				AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */,
 				AEF5BD96251903FD009652BE /* LoginViewController.swift in Sources */,
 				AEF5BD9C251904C0009652BE /* ClassesCollectionViewCell.swift in Sources */,
+				793AF634251B963B001F3A26 /* MethodCell.swift in Sources */,
 				C3EF7EC52520FF660086EF9C /* ExportPdf.swift in Sources */,
 				AEF5BD91251902BB009652BE /* TeachersCloudRepository.swift in Sources */,
 			);

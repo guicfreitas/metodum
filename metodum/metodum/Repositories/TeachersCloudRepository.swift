@@ -1,5 +1,4 @@
-//
-//  TeacherCloudRepository.swift
+//  TeachersCloudRepository.swift
 //  metodum
 //
 //  Created by Gonzalo Ivan Santos Portales on 21/09/20.
@@ -33,6 +32,10 @@ class TeachersCloudRepository {
                 completion(nil, classes)
             }
         }
+    }
+    
+    static func addClassForTeacher(teacherUid: String, schoolClass: SchoolClass) {
+        teachersCollection.document(teacherUid).collection(Collections.classes.rawValue).addDocument(data: schoolClass.toJson())
     }
     
     /*static func setTeacherCasesChangesListener(teacherId: String ,completion: @escaping (String?,[SchoolClass]?) -> ()) {

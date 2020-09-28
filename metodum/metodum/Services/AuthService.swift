@@ -1,4 +1,3 @@
-//
 //  AuthService.swift
 //  metodum
 //
@@ -10,15 +9,17 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
-    static let auth = Auth.auth()
+    private static let auth = Auth.auth()
     
     static func verifyAuthentication(completion: @escaping (User?) -> ()){
         auth.addStateDidChangeListener { (nAuth, user) in
             if let user = user {
-                print("logado")
-                print(Locale.current.languageCode)
-                let loggedUser = User(uuid: user.uid, email: user.email!)
+                //print("logado")
+                //print(Locale.current.languageCode)
+                //print(user.displayName)
+                let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName ?? "")
                 completion(loggedUser)
+                
             } else {
                 print("nao logado")
                 completion(nil)
@@ -26,22 +27,46 @@ class AuthService {
         }
     }
     
-    static func createUserWithEmailAndPassword(email: String,password: String,completion: @escaping (String?) -> ()){
+    static func getUser() -> User? {
+        if let user = auth.currentUser {
+            return User(uid: user.uid, email: user.email!, name: user.displayName!)
+        }
+        return nil
+    }
+    
+    static func createUserWithEmailAndPassword(email: String,password: String,name: String,completion: @escaping (String?,User?) -> ()) {
         auth.createUser(withEmail: email, password: password) { (result, error) in
+            print("no comppletion")
             if let error = error {
-                completion(error.localizedDescription)
-            } else {
-                completion(nil)
+                completion(error.localizedDescription,nil)
+            }
+            
+            if let user = result?.user {
+                let userProfileRequest = user.createProfileChangeRequest()
+                userProfileRequest.displayName = name
+                userProfileRequest.commitChanges { (error) in
+                    print("commit changes")
+                    if let error = error {
+                        completion(error.localizedDescription,nil)
+                    } else {
+                        let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)
+                        completion(nil,loggedUser)
+                    }
+                }
+                print("dps do commit, ainda no auth")
             }
         }
     }
     
-    static func signInWithEmailAndPassword(email: String, password: String, completion: @escaping (String?) -> ()) {
+    static func signInWithEmailAndPassword(email: String, password: String, completion: @escaping (String?, User?) -> ()) {
         auth.signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                completion(error.localizedDescription)
+                completion(error.localizedDescription,nil)
             } else {
-                completion(nil)
+                if let user = result?.user {
+                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)
+                    completion(nil, loggedUser)
+                }
             }
         }
     }

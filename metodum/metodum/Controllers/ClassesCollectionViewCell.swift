@@ -1,4 +1,3 @@
-//
 //  ClassesCollectionViewCell.swift
 //  metodum
 //
@@ -18,5 +17,11 @@ class ClassesCollectionViewCell: UICollectionViewCell {
         title.text = schoolClass.name
         subtitle.text = schoolClass.schoolName
         self.layer.cornerRadius = 12
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        title.text = ""
+        subtitle.text = ""
     }
 }

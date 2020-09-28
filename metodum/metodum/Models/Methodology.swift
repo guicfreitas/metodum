@@ -23,4 +23,11 @@ struct Methodology {
             description: json["description"] as! String
         )
     }
+    
+    func toJson() -> [String:Any] {
+        return [
+            "name": self.name,
+            "description": self.description
+        ]
+    }
 }
