@@ -64,6 +64,7 @@
                                                 <constraint firstItem="mXY-ep-njc" firstAttribute="top" secondItem="KfJ-2w-jDC" secondAttribute="bottom" constant="5" id="sSn-K2-qAa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="Blue"/>
                                         <size key="customSize" width="395" height="176"/>
                                         <connections>
                                             <outlet property="subtitle" destination="mXY-ep-njc" id="vrv-py-UV5"/>
@@ -191,6 +192,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <color key="barTintColor" name="BlackTabBar"/>
                         <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
@@ -250,7 +252,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.40665483470000002" green="0.43763130900000002" blue="0.74121361969999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" name="Blue"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="GhA-BV-jhW" secondAttribute="bottom" constant="2" id="BfW-yY-vLM"/>
                                                 <constraint firstAttribute="trailing" secondItem="uQ9-Ej-QVW" secondAttribute="trailing" id="E7C-I1-kPh"/>
@@ -424,7 +426,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -494,7 +496,6 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  RESULTADOS" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-I7-pDX">
                                 <rect key="frame" x="0.0" y="563" width="414" height="36"/>
-                                <color key="backgroundColor" red="0.94911187890000004" green="0.94876331089999999" blue="0.96863871810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.5177668929" green="0.51733869310000002" blue="0.54118454459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -616,12 +617,15 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4b-ZG-0Op">
                                 <rect key="frame" x="10" y="44" width="394" height="96"/>
+                                <color key="backgroundColor" name="BlackBody"/>
                                 <items>
                                     <navigationItem title="Explore" id="ubd-jG-IOX"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Pesquisar" translatesAutoresizingMaskIntoConstraints="NO" id="pyU-Qt-M9o">
-                                <rect key="frame" x="10" y="155" width="394" height="56"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Pesquisar" translatesAutoresizingMaskIntoConstraints="NO" id="pyU-Qt-M9o">
+                                <rect key="frame" x="10" y="140" width="394" height="56"/>
+                                <color key="backgroundColor" name="BlackBody"/>
+                                <color key="tintColor" name="GrayLabel"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -629,8 +633,8 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BZQ-M1-TMn">
-                                <rect key="frame" x="0.0" y="211" width="414" height="602"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <color key="backgroundColor" name="BlackBody"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2at-mE-gxS">
                                     <size key="itemSize" width="170" height="170"/>
                                     <size key="estimatedItemSize" width="178" height="178"/>
@@ -663,11 +667,12 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em Alta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-5f-qeK">
                                             <rect key="frame" x="28" y="28" width="358" height="26.5"/>
+                                            <color key="backgroundColor" name="BlackBody"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" name="GrayLabel"/>
+                                            <color key="highlightedColor" name="Black"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmAlta" translatesAutoresizingMaskIntoConstraints="NO" id="Lpb-nZ-Xzf">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cbl" translatesAutoresizingMaskIntoConstraints="NO" id="Lpb-nZ-Xzf">
                                             <rect key="frame" x="28" y="69.5" width="358" height="213"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Lpb-nZ-Xzf" secondAttribute="height" multiplier="358:213" id="pgB-Dw-Mqs"/>
@@ -675,11 +680,13 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais Sugestões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrV-Mu-FdU">
                                             <rect key="frame" x="28" y="332.5" width="358" height="26.5"/>
+                                            <color key="backgroundColor" name="BlackBody"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="GrayLabel"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" name="Black"/>
                                     <constraints>
                                         <constraint firstItem="GBY-5f-qeK" firstAttribute="top" secondItem="BCY-Wg-vkP" secondAttribute="topMargin" constant="20" id="4k5-Rg-skn"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="GBY-5f-qeK" secondAttribute="trailing" constant="20" id="9w1-jw-V19"/>
@@ -714,7 +721,7 @@
                             <constraint firstItem="pyU-Qt-M9o" firstAttribute="trailing" secondItem="Vwt-QW-mF9" secondAttribute="trailing" constant="-10" id="g7N-k4-3y2"/>
                             <constraint firstItem="BZQ-M1-TMn" firstAttribute="leading" secondItem="Vwt-QW-mF9" secondAttribute="leading" id="ht9-gy-QLo"/>
                             <constraint firstItem="o4b-ZG-0Op" firstAttribute="leading" secondItem="Vwt-QW-mF9" secondAttribute="leading" constant="10" id="iSz-am-HoH"/>
-                            <constraint firstItem="pyU-Qt-M9o" firstAttribute="top" secondItem="o4b-ZG-0Op" secondAttribute="bottom" constant="15" id="oY3-IP-aXf"/>
+                            <constraint firstItem="pyU-Qt-M9o" firstAttribute="top" secondItem="o4b-ZG-0Op" secondAttribute="bottom" id="oY3-IP-aXf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="07K-f6-qXv"/>
@@ -732,7 +739,7 @@
             <objects>
                 <viewController id="Hda-N8-gfi" customClass="NewSchoolClassViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQY-bs-NXL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-6r-DkY">
@@ -818,7 +825,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EmAlta" width="1024" height="644"/>
+        <image name="cbl" width="300" height="300"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="foto4" width="341" height="132"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
@@ -828,8 +835,20 @@
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="studentdesk" catalog="system" width="124" height="128"/>
+        <namedColor name="Black">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlackBody">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlackTabBar">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Blue">
             <color red="0.40000000596046448" green="0.43999999761581421" blue="0.72000002861022949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GrayLabel">
+            <color red="0.37999999523162842" green="0.37000000476837158" blue="0.37000000476837158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
