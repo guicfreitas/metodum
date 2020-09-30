@@ -51,6 +51,18 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
        
+        DispatchQueue.main.async {
+            MethodsImagesRepository.getMethod(image: "trend.jpg") { (error, imageData) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let data = imageData {
+                        headerView.emAltaImage.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+
         headerView.emAltaImage.layer.cornerRadius = 20
         // Customize headerView here
         return headerView

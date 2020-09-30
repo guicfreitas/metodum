@@ -15,6 +15,7 @@
 		79CBC9622518FD2200AFB417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC9612518FD2200AFB417 /* Assets.xcassets */; };
 		79CBC9652518FD2200AFB417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC9632518FD2200AFB417 /* LaunchScreen.storyboard */; };
 		81EE5623B5ED31E152D23CEE /* Pods_metodum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C3AF933584B1142A014861 /* Pods_metodum.framework */; };
+		AE78046025240B9500B108B3 /* MethodsImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78045F25240B9500B108B3 /* MethodsImagesRepository.swift */; };
 		AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */; };
 		AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A925201E6100796341 /* CasesCloudRepository.swift */; };
 		AEC882AD25201F0000796341 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882AC25201F0000796341 /* Case.swift */; };
@@ -54,6 +55,7 @@
 		79CBC9612518FD2200AFB417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CBC9642518FD2200AFB417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79CBC9662518FD2200AFB417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE78045F25240B9500B108B3 /* MethodsImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsImagesRepository.swift; sourceTree = "<group>"; };
 		AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsCloudRepository.swift; sourceTree = "<group>"; };
 		AEC882A925201E6100796341 /* CasesCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesCloudRepository.swift; sourceTree = "<group>"; };
 		AEC882AC25201F0000796341 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				AEF5BD90251902BB009652BE /* TeachersCloudRepository.swift */,
 				AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */,
 				AEC882A925201E6100796341 /* CasesCloudRepository.swift */,
+				AE78045F25240B9500B108B3 /* MethodsImagesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				AEF5BD8A25190143009652BE /* SchoolClass.swift in Sources */,
 				AEF5BD8525190053009652BE /* AuthService.swift in Sources */,
 				AEF5BD8C25190178009652BE /* User.swift in Sources */,
+				AE78046025240B9500B108B3 /* MethodsImagesRepository.swift in Sources */,
 				C3EEED28251DBA3E005A7EB0 /* CasesDetailViewController.swift in Sources */,
 				AEF5BD8E25190246009652BE /* Methodology.swift in Sources */,
 				AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */,
