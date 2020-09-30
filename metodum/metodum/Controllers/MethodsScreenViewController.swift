@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionHeader: UICollectionReusableView{
     
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emAltaImage: UIImageView!
     
 }
@@ -31,7 +32,22 @@ class MethodsScreenViewController: UIViewController {
 extension MethodsScreenViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//
+//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
+//                // Layout to get the right dimensions
+//                headerView.layoutIfNeeded()
+//
+//                // Automagically get the right height
+//                let height = headerView.contentView.systemLayoutSizeFitting(UIView.layoutFittingExpandedSize).height
+//
+//                // return the correct size
+//                return CGSize(width: collectionView.frame.width, height: height)
+//
+//    }
+    
 }
+    
 
 extension MethodsScreenViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,10 +63,12 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
         print("foi2")
         return cell
     }
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
-       
+        
+        
         DispatchQueue.main.async {
             MethodsImagesRepository.getMethod(image: "trend.jpg") { (error, imageData) in
                 if let errorMessage = error {
@@ -62,11 +80,19 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
                 }
             }
         }
-
+        
+        
+        
         headerView.emAltaImage.layer.cornerRadius = 20
-        // Customize headerView here
+        
+        
         return headerView
     }
+   
+
+    
+   
+    
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
@@ -74,7 +100,7 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
         
         let fullWidth = collectionView.frame.width
         
-        let itemWidth = (fullWidth / 2) - (edgeInsets.left + edgeInsets.right)
+        let itemWidth = (fullWidth / 2) - (edgeInsets.left + 10)
         let itemHeight = itemWidth
         print(itemHeight)
         
@@ -84,7 +110,11 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        
+
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height*0.59)
+      }
+    
 }
