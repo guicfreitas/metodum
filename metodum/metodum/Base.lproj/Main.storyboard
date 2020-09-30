@@ -426,7 +426,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -686,7 +686,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="Black"/>
+                                    <color key="backgroundColor" name="BlackBody"/>
                                     <constraints>
                                         <constraint firstItem="GBY-5f-qeK" firstAttribute="top" secondItem="BCY-Wg-vkP" secondAttribute="topMargin" constant="20" id="4k5-Rg-skn"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="GBY-5f-qeK" secondAttribute="trailing" constant="20" id="9w1-jw-V19"/>
@@ -710,7 +710,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vwt-QW-mF9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="Vwt-QW-mF9" firstAttribute="trailing" secondItem="BZQ-M1-TMn" secondAttribute="trailing" id="4Lb-oP-hd4"/>
                             <constraint firstItem="BZQ-M1-TMn" firstAttribute="top" secondItem="pyU-Qt-M9o" secondAttribute="bottom" id="CEi-au-xaz"/>
@@ -739,7 +739,7 @@
             <objects>
                 <viewController id="Hda-N8-gfi" customClass="NewSchoolClassViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQY-bs-NXL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-6r-DkY">
