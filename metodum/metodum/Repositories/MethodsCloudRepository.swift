@@ -4,7 +4,7 @@
 //  Created by Gonzalo Ivan Santos Portales on 23/09/20.
 //  Copyright © 2020 metodum. All rights reserved.
 //
-
+// o mais clicado vai estar no começo da fila, é só tirar o elemento do topo da fila pra colocar no em alta e o resto deixa pra collection embaixo
 import Foundation
 import FirebaseFirestore
 
@@ -49,5 +49,28 @@ class MethodsCloudRepository {
                 completion(nil,methodologies)
             }
         }
+    }
+    
+    static func getAllMethods2(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
+        methodsCollection.document(language).collection("methods").getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage,nil)
+            } else {
+                var methodologies = querySnapshot?.documents.map({ (document) -> Methodology in
+                    return Methodology.fromJson(json: document.data())
+                })
+                
+                methodologies?.sort(by: { (a, b) -> Bool in
+                    return a.clicksCount > b.clicksCount
+                })
+                
+                completion(nil,methodologies)
+            }
+        }
+    }
+    
+    static func incrementClicksCountFor(methodology: inout Methodology, language: String) {
+        methodology.clicksCount += 1
+        methodsCollection.document(language).collection("methods").document(methodology.uid).updateData(["clicksCount":methodology.clicksCount])
     }
 }

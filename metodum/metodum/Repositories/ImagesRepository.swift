@@ -1,5 +1,5 @@
 
-//  MethodsImagesRepository.swift
+// ImagesRepository
 //  metodum
 //
 //  Created by Gonzalo Ivan Santos Portales on 29/09/20.
@@ -16,7 +16,7 @@ enum ImagesFolders : String {
     case casesImages = "casesImages/"
 }
 
-class MethodsImagesRepository {
+class ImagesRepository {
     static let storageRoot = Storage.storage().reference()
     
     static func getMethod(image url : String, completion: @escaping (String?, Data?) -> ()) {
@@ -29,7 +29,6 @@ class MethodsImagesRepository {
             }
         }
     }
-    
     
     static func getCase(image url : String, completion: @escaping (String?, Data?) -> ()) {
         let folder = ImagesFolders.casesImages.rawValue

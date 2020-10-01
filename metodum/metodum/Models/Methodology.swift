@@ -1,4 +1,4 @@
-//
+
 //  Methodology.swift
 //  metodum
 //
@@ -11,23 +11,29 @@ import Foundation
 struct Methodology {
     var name : String
     var description : String
+    var clicksCount : Int
+    var uid : String
     
-    init(name: String, description: String) {
+    init(uid : String, name: String, description: String, clicksCount : Int = 0) {
+        self.uid = uid
         self.name = name
         self.description = description
+        self.clicksCount = clicksCount
     }
     
     static func fromJson(json: [String : Any]) -> Methodology {
         return Methodology(
+            uid: json["uid"] as! String,
             name: json["name"] as! String,
-            description: json["description"] as! String
+            description: json["description"] as! String,
+            clicksCount: json["clicksCount"] as? Int ?? 0
         )
     }
     
-    func toJson() -> [String:Any] {
+    /*func toJson() -> [String:Any] {
         return [
             "name": self.name,
             "description": self.description
         ]
-    }
+    }*/
 }

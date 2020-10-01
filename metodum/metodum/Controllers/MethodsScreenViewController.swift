@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionHeader: UICollectionReusableView{
+class CollectionHeader: UICollectionReusableView {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emAltaImage: UIImageView!
@@ -18,6 +18,8 @@ class CollectionHeader: UICollectionReusableView{
 class MethodsScreenViewController: UIViewController {
     
     let edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
+    var methods = [Methodology]()
+    var trendMethod : Methodology!
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
@@ -25,12 +27,30 @@ class MethodsScreenViewController: UIViewController {
         super.viewDidLoad()
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
+        
+        MethodsCloudRepository.getAllMethods2(language: "pt") { (error, methods) in
+            if let errorMessage = error {
+                self.alertError(message: errorMessage)
+            } else {
+                if let m = methods {
+                    self.methods = m
+                    self.trendMethod = self.methods.remove(at: 0)
+                    
+                    print(self.trendMethod!)
+                    print(self.methods)
+                    self.maisSugesCollection.reloadData()
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
 }
 
-extension MethodsScreenViewController: UICollectionViewDelegate{
+extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        print(methods[indexPath.item])
+        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //
@@ -47,9 +67,8 @@ extension MethodsScreenViewController: UICollectionViewDelegate{
 //    }
     
 }
-    
 
-extension MethodsScreenViewController: UICollectionViewDataSource{
+extension MethodsScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -68,9 +87,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
-        
         DispatchQueue.main.async {
-            MethodsImagesRepository.getMethod(image: "trend.jpg") { (error, imageData) in
+            ImagesRepository.getMethod(image: "trend.jpg") { (error, imageData) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
@@ -81,21 +99,13 @@ extension MethodsScreenViewController: UICollectionViewDataSource{
             }
         }
         
-        
-        
         headerView.emAltaImage.layer.cornerRadius = 20
-        
         
         return headerView
     }
-   
-
-    
-   
-    
 }
 
-extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
+extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let fullWidth = collectionView.frame.width
@@ -110,11 +120,9 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        
-
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height*0.59)
-      }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height*0.59)
+    }
 }
