@@ -11,6 +11,5 @@ import UIKit
 class MethodCell: UICollectionViewCell {
     
     //@IBOutlet weak var methodImage: UIImageView!
-    
-    
+   
 }

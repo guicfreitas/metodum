@@ -76,9 +76,13 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "methodCell", for: indexPath) as! MethodCell
-        //cell.methodImage.image = UIImage(named: "cbl")
+       
         cell.layer.cornerRadius = 20
         cell.backgroundColor = UIColor.red
+        let imageview:UIImageView = UIImageView(frame: CGRect(x:0, y:0,width: cell.frame.width, height: cell.frame.height))
+        
+        imageview.image=UIImage(named: "cbl")
+        cell.contentView.addSubview(imageview)
         print("foi2")
         return cell
     }
