@@ -28,7 +28,7 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
         
-        MethodsCloudRepository.getAllMethods2(language: "pt") { (error, methods) in
+        MethodsCloudRepository.getAllMethods(language: Locale.current.languageCode!) { (error, methods) in
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
@@ -48,9 +48,9 @@ class MethodsScreenViewController: UIViewController {
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-        print(methods[indexPath.item])
-        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
+        //print(indexPath.item)
+        //print(methods[indexPath.item])
+        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: Locale.current.languageCode!)
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //
@@ -65,7 +65,6 @@ extension MethodsScreenViewController: UICollectionViewDelegate {
 //                return CGSize(width: collectionView.frame.width, height: height)
 //
 //    }
-    
 }
 
 extension MethodsScreenViewController: UICollectionViewDataSource {
@@ -81,9 +80,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         cell.backgroundColor = UIColor.red
         let imageview:UIImageView = UIImageView(frame: CGRect(x:0, y:0,width: cell.frame.width, height: cell.frame.height))
         
-        imageview.image=UIImage(named: "cbl")
+        imageview.image = UIImage(named: "cbl")
         cell.contentView.addSubview(imageview)
-        
         
         //VOICE OVER
         cell.isAccessibilityElement = true
@@ -94,29 +92,27 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
         DispatchQueue.main.async {
-            ImagesRepository.getMethod(image: "trend.jpg") { (error, imageData) in
+            ImagesRepository.getMethod(image: "trend.jpg") { (error, acessibilityImage) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
-                    if let data = imageData {
-                        headerView.emAltaImage.image = UIImage(data: data)
+                    if let image = acessibilityImage {
+                        headerView.emAltaImage.image = UIImage(data: image.data)
+                        //VOICE OVER
+                        print(image)
+                        headerView.emAltaImage.isAccessibilityElement = true
+                        headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel //nome da figura
+                        headerView.emAltaImage.accessibilityHint = image.acessibilityHint  //dica para a figura
                     }
                 }
             }
         }
         
         headerView.emAltaImage.layer.cornerRadius = 20
-        
-        //VOICE OVER
-        headerView.emAltaImage.isAccessibilityElement = true
-        headerView.emAltaImage.accessibilityLabel = "" //nome da figura
-        headerView.emAltaImage.accessibilityHint = "" //dica para a figura
-        
         
         return headerView
     }

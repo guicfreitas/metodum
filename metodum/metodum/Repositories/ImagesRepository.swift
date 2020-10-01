@@ -16,16 +16,53 @@ enum ImagesFolders : String {
     case casesImages = "casesImages/"
 }
 
+enum ImagesAcessibilityAtributes : String {
+    case acessibilityLabel = "acessibilityLabel"
+    case acessibilityHint = "acessibilityHint"
+}
+
 class ImagesRepository {
     static let storageRoot = Storage.storage().reference()
     
-    static func getMethod(image url : String, completion: @escaping (String?, Data?) -> ()) {
+    static func getMethod(image url : String, completion: @escaping (String?, AcessibilityImage?) -> ()) {
         let folder = ImagesFolders.methodologiesImages.rawValue
-        storageRoot.child(folder+url).getData(maxSize: .max) { (imageData, error) in
+        let imageRef = storageRoot.child(folder+url)
+        
+        imageRef.getData(maxSize: .max) { (imageData, error) in
             if let errorMessage = error?.localizedDescription {
                 completion(errorMessage,nil)
             } else {
-                completion(nil,imageData)
+                imageRef.getMetadata { (metaData, error) in
+                    if let errorMessage = error?.localizedDescription {
+                        completion(errorMessage,nil)
+                    } else {
+                        if let customMetaData = metaData?.customMetadata {
+                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel.rawValue]!,
+                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint.rawValue]!)
+                            completion(nil,image)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    static func updateImageMetaData(image url : String) {
+        let folder = ImagesFolders.methodologiesImages.rawValue
+        let imageRef = storageRoot.child(folder+url)
+        
+        let metaData = StorageMetadata()
+        metaData.customMetadata = [
+            ImagesAcessibilityAtributes.acessibilityLabel.rawValue : "FLAMENGO PORRA",
+            ImagesAcessibilityAtributes.acessibilityHint.rawValue : "FLUMINENSE FREGUES"
+        ]
+        
+        imageRef.updateMetadata(metaData) { (data, error) in
+            if let errorMessage = error?.localizedDescription {
+                print(error)
+            }
+            else {
+                print(data)
             }
         }
     }
@@ -39,5 +76,9 @@ class ImagesRepository {
                 completion(nil,imageData)
             }
         }
+    }
+    
+    static func getMetadata() {
+        
     }
 }

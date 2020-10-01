@@ -38,7 +38,7 @@ class MethodsCloudRepository {
         }
     }
     
-    static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
+    /*static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
         methodsCollection.document(language).collection("methods").getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 completion(errorMessage,nil)
@@ -49,9 +49,9 @@ class MethodsCloudRepository {
                 completion(nil,methodologies)
             }
         }
-    }
+    }*/
     
-    static func getAllMethods2(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
+    static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
         methodsCollection.document(language).collection("methods").getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 completion(errorMessage,nil)

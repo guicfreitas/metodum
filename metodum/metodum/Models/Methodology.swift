@@ -9,10 +9,10 @@
 import Foundation
 
 struct Methodology {
+    var uid : String
     var name : String
     var description : String
     var clicksCount : Int
-    var uid : String
     
     init(uid : String, name: String, description: String, clicksCount : Int = 0) {
         self.uid = uid

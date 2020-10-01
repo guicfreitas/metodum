@@ -14,6 +14,8 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //ImagesRepository.updateImageMetaData(image: "trend.jpg")
         //self.navigationController?.navigationBar.isHidden = true
         //setNavigationBar()
         // Do any additional setup after loading the view.
