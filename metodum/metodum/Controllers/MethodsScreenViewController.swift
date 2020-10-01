@@ -83,6 +83,13 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         imageview.image=UIImage(named: "cbl")
         cell.contentView.addSubview(imageview)
+        
+        
+        //VOICE OVER
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = "" //nome da figura
+        cell.accessibilityHint = "" //dica para a figura
+        
         print("foi2")
         return cell
     }
@@ -104,6 +111,12 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         }
         
         headerView.emAltaImage.layer.cornerRadius = 20
+        
+        //VOICE OVER
+        headerView.emAltaImage.isAccessibilityElement = true
+        headerView.emAltaImage.accessibilityLabel = "" //nome da figura
+        headerView.emAltaImage.accessibilityHint = "" //dica para a figura
+        
         
         return headerView
     }
