@@ -19,7 +19,7 @@ class MethodsScreenViewController: UIViewController {
     
     let edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
     var methods = [Methodology]()
-    var trendMethod : Methodology!
+    var trendMethod : Methodology?
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
@@ -28,7 +28,7 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
         
-        MethodsCloudRepository.getAllMethods(language: Locale.current.languageCode!) { (error, methods) in
+        MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
@@ -48,9 +48,9 @@ class MethodsScreenViewController: UIViewController {
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(indexPath.item)
+        print(indexPath.item)
         //print(methods[indexPath.item])
-        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: Locale.current.languageCode!)
+        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //
@@ -69,7 +69,7 @@ extension MethodsScreenViewController: UICollectionViewDelegate {
 
 extension MethodsScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return methods.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,10 +83,23 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         imageview.image = UIImage(named: "cbl")
         cell.contentView.addSubview(imageview)
         
-        //VOICE OVER
-        cell.isAccessibilityElement = true
-        cell.accessibilityLabel = "" //nome da figura
-        cell.accessibilityHint = "" //dica para a figura
+        let method = methods[indexPath.item]
+        
+        DispatchQueue.main.async {
+            ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let image = acessibilityImage {
+                        imageview.image = UIImage(data: image.data)
+                        //VOICE OVER
+                        cell.isAccessibilityElement = true
+                        cell.accessibilityLabel = image.acessibilityLabel //nome da figura
+                        cell.accessibilityHint = image.acessibilityHint //dica para a figura
+                    }
+                }
+            }
+        }
         
         print("foi2")
         return cell
@@ -96,7 +109,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
         DispatchQueue.main.async {
-            ImagesRepository.getMethod(image: "trend.jpg") { (error, acessibilityImage) in
+            ImagesRepository.getMethod(image: self.trendMethod?.methodImage ?? "trend.jpg") { (error, acessibilityImage) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {

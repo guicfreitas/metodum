@@ -53,8 +53,8 @@ class ImagesRepository {
         
         let metaData = StorageMetadata()
         metaData.customMetadata = [
-            ImagesAcessibilityAtributes.acessibilityLabel.rawValue : "FLAMENGO PORRA",
-            ImagesAcessibilityAtributes.acessibilityHint.rawValue : "FLUMINENSE FREGUES"
+            ImagesAcessibilityAtributes.acessibilityLabel.rawValue : "Método Sala de Aula Invertida (Flipped Classroom)",
+            ImagesAcessibilityAtributes.acessibilityHint.rawValue : "A arte mostra uma sala de aula com parede verde, um quadro negro e carteiras. No entanto, tudo está de cabeça para baixo, representando método sala de aula invertida."
         ]
         
         imageRef.updateMetadata(metaData) { (data, error) in
