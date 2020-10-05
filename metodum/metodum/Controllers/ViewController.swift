@@ -40,5 +40,37 @@ class ViewController: UITabBarController {
     }*/
 }
 
+extension UIViewController {
+    func showErrorScreen(errorMessage: String) {
+        var image = ""
+        var title = ""
+        var details = ""
+        
+        if errorMessage.contains("Network error") {
+            image = "sad_error"
+            title = "Network Error"
+            details = errorMessage
+        } else if errorMessage.contains("Upload Failure") {
+            image = "sad_cloud"
+            title = "Upload Failure"
+            details = errorMessage
+        } else {
+            image = "sad_ice_cream"
+            title = "an uknown error ocurred"
+            details = "errorMessage"
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let errorScreenViewController = storyboard.instantiateViewController(withIdentifier: "errorScreen") as! ShowErrorViewController
+        
+        errorScreenViewController.isModalInPresentation = true
+        errorScreenViewController.errorImageName = image
+        errorScreenViewController.errorTitle.text = title
+        errorScreenViewController.errorDetails.text = details
+        
+        self.present(errorScreenViewController, animated: true, completion: nil)
+    }
+}
+
 
 

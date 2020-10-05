@@ -946,6 +946,82 @@
             </objects>
             <point key="canvasLocation" x="80" y="-1487"/>
         </scene>
+        <!--Show Error View Controller-->
+        <scene sceneID="pPF-J5-At5">
+            <objects>
+                <viewController storyboardIdentifier="errorScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SJC-u2-3xz" customClass="ShowErrorViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GUv-4o-irm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trX-cR-tD7" userLabel="Anchor View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad_cloud" translatesAutoresizingMaskIntoConstraints="NO" id="y5v-sn-Ksj">
+                                        <rect key="frame" x="87" y="295" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Hxa-zm-jY2"/>
+                                            <constraint firstAttribute="height" constant="128" id="h65-jL-cfZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="Blue"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="y5v-sn-Ksj" secondAttribute="bottom" constant="25" id="HiE-UB-BM8"/>
+                                    <constraint firstItem="y5v-sn-Ksj" firstAttribute="centerX" secondItem="trX-cR-tD7" secondAttribute="centerX" id="X8v-bt-sFM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7S-AT-oW1">
+                                <rect key="frame" x="180.5" y="502" width="53.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ3-wF-m98" userLabel="Error Details">
+                                <rect key="frame" x="184" y="552" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7X-Dy-1jc">
+                                <rect key="frame" x="142.5" y="618" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Tentar Novamente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgainButtonPressed:" destination="SJC-u2-3xz" eventType="touchUpInside" id="nRJ-Pz-DN0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aHb-Oe-vf3"/>
+                        <color key="backgroundColor" name="Blue"/>
+                        <color key="tintColor" name="Blue"/>
+                        <constraints>
+                            <constraint firstItem="BJ3-wF-m98" firstAttribute="centerX" secondItem="aHb-Oe-vf3" secondAttribute="centerX" id="6bJ-kC-H0W"/>
+                            <constraint firstItem="trX-cR-tD7" firstAttribute="leading" secondItem="aHb-Oe-vf3" secondAttribute="leading" id="L0r-n7-Kxe"/>
+                            <constraint firstItem="aHb-Oe-vf3" firstAttribute="trailing" secondItem="trX-cR-tD7" secondAttribute="trailing" id="M9m-83-DbK"/>
+                            <constraint firstItem="v7X-Dy-1jc" firstAttribute="centerX" secondItem="aHb-Oe-vf3" secondAttribute="centerX" id="U5Q-ff-uTh"/>
+                            <constraint firstItem="trX-cR-tD7" firstAttribute="top" secondItem="aHb-Oe-vf3" secondAttribute="top" id="Wb5-lB-HUg"/>
+                            <constraint firstItem="V7S-AT-oW1" firstAttribute="top" secondItem="trX-cR-tD7" secondAttribute="bottom" constant="10" id="awe-CF-Tay"/>
+                            <constraint firstItem="trX-cR-tD7" firstAttribute="height" secondItem="GUv-4o-irm" secondAttribute="height" multiplier="0.5" id="bsJ-6b-NbT"/>
+                            <constraint firstItem="v7X-Dy-1jc" firstAttribute="top" secondItem="BJ3-wF-m98" secondAttribute="bottom" constant="45" id="fvN-Xt-ZcT"/>
+                            <constraint firstItem="trX-cR-tD7" firstAttribute="width" secondItem="aHb-Oe-vf3" secondAttribute="width" id="kkd-Cg-TgB"/>
+                            <constraint firstItem="V7S-AT-oW1" firstAttribute="centerX" secondItem="aHb-Oe-vf3" secondAttribute="centerX" id="uw7-O6-jTB"/>
+                            <constraint firstItem="BJ3-wF-m98" firstAttribute="top" secondItem="V7S-AT-oW1" secondAttribute="bottom" constant="20" id="yH0-NU-d93"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorDetails" destination="BJ3-wF-m98" id="FNB-JK-jUC"/>
+                        <outlet property="errorImage" destination="y5v-sn-Ksj" id="b5q-zt-eDB"/>
+                        <outlet property="errorTitle" destination="V7S-AT-oW1" id="dKr-PY-lYD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8BZ-17-Dor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707.24637681159425" y="1099.5535714285713"/>
+        </scene>
     </scenes>
     <resources>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
@@ -954,6 +1030,7 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="sad_cloud" width="556" height="410"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="studentdesk" catalog="system" width="124" height="128"/>
@@ -986,6 +1063,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

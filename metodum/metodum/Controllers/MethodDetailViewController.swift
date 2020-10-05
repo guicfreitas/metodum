@@ -62,8 +62,11 @@ class MethodDetailViewController: UIViewController {
         clearNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
+    }
+    
     private func setupNavigationBar() {
-        
         let addFavoriteMethod = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(setFavoriteMethod))
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertMethodToPdf))

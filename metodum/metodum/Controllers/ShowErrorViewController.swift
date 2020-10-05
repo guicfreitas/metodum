@@ -10,13 +10,21 @@ import UIKit
 
 class ShowErrorViewController: UIViewController {
 
+    @IBOutlet weak var errorImage: UIImageView!
+    @IBOutlet weak var errorTitle: UILabel!
+    @IBOutlet weak var errorDetails: UILabel!
+    
+    var errorImageName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func tryAgainButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -26,5 +34,4 @@ class ShowErrorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

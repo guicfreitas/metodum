@@ -17,6 +17,7 @@
 		79CBC9652518FD2200AFB417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC9632518FD2200AFB417 /* LaunchScreen.storyboard */; };
 		81EE5623B5ED31E152D23CEE /* Pods_metodum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C3AF933584B1142A014861 /* Pods_metodum.framework */; };
 		AE29F30A2526211000853D9B /* AcessibilityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29F3092526211000853D9B /* AcessibilityImage.swift */; };
+		AE5EA3DE252B605400F73D48 /* ShowErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */; };
 		AE78046025240B9500B108B3 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78045F25240B9500B108B3 /* ImagesRepository.swift */; };
 		AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */; };
 		AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A925201E6100796341 /* CasesCloudRepository.swift */; };
@@ -60,6 +61,7 @@
 		79CBC9642518FD2200AFB417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79CBC9662518FD2200AFB417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE29F3092526211000853D9B /* AcessibilityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessibilityImage.swift; sourceTree = "<group>"; };
+		AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorViewController.swift; sourceTree = "<group>"; };
 		AE78045F25240B9500B108B3 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
 		AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsCloudRepository.swift; sourceTree = "<group>"; };
 		AEC882A925201E6100796341 /* CasesCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesCloudRepository.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
 				C3D02699252A518600C66531 /* MethodDetailViewController.swift */,
 				793AF633251B963B001F3A26 /* MethodCell.swift */,
+				AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				C3EF7EBD251EF53F0086EF9C /* TheCase.swift in Sources */,
 				79CBC9592518FD2100AFB417 /* AppDelegate.swift in Sources */,
 				AEC882AD25201F0000796341 /* Case.swift in Sources */,
+				AE5EA3DE252B605400F73D48 /* ShowErrorViewController.swift in Sources */,
 				AEF5BD9825190470009652BE /* ClassesScreenViewController.swift in Sources */,
 				C3EF7EC025200A950086EF9C /* AddCasesViewController.swift in Sources */,
 				79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */,
