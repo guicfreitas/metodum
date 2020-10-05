@@ -19,6 +19,13 @@ func createPrintFormatter(selectedCase: Case){
     assignPrintFormatter(format: fmt)
 }
 
+func createPrintMethodFormatter(selectedMethod: Methodology){
+    
+    let html = HtmlMethodTemplate(selectedMethod: selectedMethod)
+    let fmt = UIMarkupTextPrintFormatter(markupText: html)
+    assignPrintFormatter(format: fmt)
+}
+
 public func getPathOfPdf() -> URL {
     
     return pathPdf!

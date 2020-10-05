@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuickLook
 
 class MethodDetailViewController: UIViewController {
 
@@ -84,7 +85,17 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func convertMethodToPdf() {
-        // to com sono
+        let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
+            if let methodObject = self.selectedMethod {
+                createPrintMethodFormatter(selectedMethod: methodObject)
+            }
+            self.openQlPreview()
+        }
+        
+        let items = ["hue"]
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
+
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     private func clearNavigationBar() {
@@ -92,4 +103,12 @@ class MethodDetailViewController: UIViewController {
         navigationItem.setRightBarButtonItems([], animated: false)
         navigationItem.title = ""
     }
+    
+    func openQlPreview() {
+        let previoew = QLPreviewController.init()
+        previoew.dataSource = self
+        previoew.delegate = self
+        self.present(previoew, animated: true, completion: nil)
+    }
 }
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791F884B252B5BBF0079EAE5 /* HTMLMethodTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */; };
 		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		79CBC9592518FD2100AFB417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC9582518FD2100AFB417 /* AppDelegate.swift */; };
 		79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC95A2518FD2100AFB417 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		23D94DB58C2516E80E66A28E /* Pods-metodum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.debug.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.debug.xcconfig"; sourceTree = "<group>"; };
 		38C3AF933584B1142A014861 /* Pods_metodum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_metodum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6861DAEFE4B8B0522286CC07 /* Pods-metodum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.release.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.release.xcconfig"; sourceTree = "<group>"; };
+		791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLMethodTemplate.swift; sourceTree = "<group>"; };
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		79CBC9552518FD2100AFB417 /* metodum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = metodum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CBC9582518FD2100AFB417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				C3EF7EC42520FF660086EF9C /* ExportPdf.swift */,
 				C3EF7EC7252101400086EF9C /* HTMLTemplate.swift */,
 				C3EF7ECA2521141A0086EF9C /* template.html */,
+				791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				C3D0269A252A518600C66531 /* MethodDetailViewController.swift in Sources */,
 				AEF5BD8525190053009652BE /* AuthService.swift in Sources */,
 				AEF5BD8C25190178009652BE /* User.swift in Sources */,
+				791F884B252B5BBF0079EAE5 /* HTMLMethodTemplate.swift in Sources */,
 				AE29F30A2526211000853D9B /* AcessibilityImage.swift in Sources */,
 				AE78046025240B9500B108B3 /* ImagesRepository.swift in Sources */,
 				C3EEED28251DBA3E005A7EB0 /* CasesDetailViewController.swift in Sources */,
