@@ -26,6 +26,15 @@ class MethodDetailViewController: UIViewController {
             
             self.about.text = methodObject.description
             self.howToApply.text = methodObject.description
+            
+            //VOICE OVER
+            
+            
+            self.about.isAccessibilityElement = true
+            self.about.accessibilityLabel = methodObject.description
+            
+            self.howToApply.isAccessibilityElement = true
+            self.howToApply.accessibilityLabel = methodObject.description
 
             // vou arrumar um jeito de cachear as imagens, pq ficar baixando as mesmas imagens várias vezes é uma sacanagem com o plano de dados do usuário
             DispatchQueue.main.async {
@@ -36,6 +45,9 @@ class MethodDetailViewController: UIViewController {
                     } else {
                         if let image = acessibilityImage {
                             self.image.image = UIImage(data: image.data)
+                            self.image.isAccessibilityElement = true
+                            self.image.accessibilityLabel = image.acessibilityLabel
+                            self.image.accessibilityHint = image.acessibilityHint
                         }
                     }
                 }
