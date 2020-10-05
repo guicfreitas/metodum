@@ -27,21 +27,23 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
         
-        MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
-            if let errorMessage = error {
-                self.alertError(message: errorMessage)
-            } else {
-                if let m = methods {
-                    self.methods = m
-                    self.trendMethod = self.methods.remove(at: 0)
-                    
-                    print(self.trendMethod!)
-                    print(self.methods)
-                    self.maisSugesCollection.reloadData()
+        DispatchQueue.main.async {
+            
+            MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let m = methods {
+                        self.methods = m
+                        self.trendMethod = self.methods.remove(at: 0)
+                        //print("is main Thread ? \(Thread.isMainThread)")
+                        //print(self.trendMethod!)
+                        //print(self.methods)
+                        self.maisSugesCollection.reloadData()
+                    }
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,10 +58,7 @@ class MethodsScreenViewController: UIViewController {
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-        //print(methods[indexPath.item])
         MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
-        
         performSegue(withIdentifier: "MethodScreenViewSegue", sender: methods[indexPath.item])
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -90,7 +89,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         cell.backgroundColor = UIColor.red
         let imageview:UIImageView = UIImageView(frame: CGRect(x:0, y:0,width: cell.frame.width, height: cell.frame.height))
         
-        imageview.image = UIImage(named: "cbl")
         cell.contentView.addSubview(imageview)
         
         let method = methods[indexPath.item]
@@ -102,6 +100,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 } else {
                     if let image = acessibilityImage {
                         imageview.image = UIImage(data: image.data)
+                        //print("is main Thread ? \(Thread.isMainThread)")
                         //VOICE OVER
                         cell.isAccessibilityElement = true
                         cell.accessibilityLabel = image.acessibilityLabel //nome da figura
@@ -111,30 +110,31 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             }
         }
         
-        print("foi2")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
         DispatchQueue.main.async {
-            ImagesRepository.getMethod(image: self.trendMethod?.methodImage ?? "trend.jpg") { (error, acessibilityImage) in
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let image = acessibilityImage {
-                        headerView.emAltaImage.image = UIImage(data: image.data)
-                        //VOICE OVER
-                        print(image)
-                        headerView.emAltaImage.isAccessibilityElement = true
-                        headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel //nome da figura
-                        headerView.emAltaImage.accessibilityHint = image.acessibilityHint  //dica para a figura
+            if let method = self.trendMethod {
+                ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
+                    print("is main thread ? \(Thread.isMainThread)")
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        if let image = acessibilityImage {
+                            headerView.emAltaImage.image = UIImage(data: image.data)
+                            print(image)
+                            headerView.emAltaImage.isAccessibilityElement = true
+                            headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
+                            headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+                        }
                     }
                 }
             }
         }
-        
         headerView.emAltaImage.layer.cornerRadius = 20
         
         return headerView

@@ -199,8 +199,8 @@
 				C3EF7EBF25200A950086EF9C /* AddCasesViewController.swift */,
 				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
 				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
-				793AF633251B963B001F3A26 /* MethodCell.swift */,
 				C3D02699252A518600C66531 /* MethodDetailViewController.swift */,
+				793AF633251B963B001F3A26 /* MethodCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

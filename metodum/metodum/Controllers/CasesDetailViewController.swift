@@ -50,6 +50,12 @@ class CasesDetailViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
     
+    @IBAction func addFavoriteCase(_ sender: Any) {
+        let user = AuthService.getUser()
+        if let teacher = user, let theCase = selectedCase {
+            TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: theCase)
+        }
+    }
     func openQlPreview() {
         let previoew = QLPreviewController.init()
         previoew.dataSource = self

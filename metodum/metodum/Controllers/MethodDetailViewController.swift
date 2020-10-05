@@ -10,7 +10,6 @@ import UIKit
 
 class MethodDetailViewController: UIViewController {
 
-    
     @IBOutlet weak var howToApply: UITextView!
     @IBOutlet weak var about: UITextView!
     @IBOutlet weak var image: UIImageView!
@@ -19,18 +18,19 @@ class MethodDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
-        navigationItem.largeTitleDisplayMode = .never
-        
+    
+        setupNavigationBar()
         
         if let methodObject = selectedMethod {
             navigationItem.title = methodObject.name
             
             self.about.text = methodObject.description
             self.howToApply.text = methodObject.description
-//            self.image.image = UIImage(named: methodObject.methodImage)
+
+            // vou arrumar um jeito de cachear as imagens, pq ficar baixando as mesmas imagens várias vezes é uma sacanagem com o plano de dados do usuário
             DispatchQueue.main.async {
                 ImagesRepository.getMethod(image: methodObject.methodImage) { (error, acessibilityImage) in
+                    print("is main Thread ? \(Thread.isMainThread)")
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
@@ -43,20 +43,41 @@ class MethodDetailViewController: UIViewController {
         }
         
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = true
+        clearNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupNavigationBar() {
+        
+        let addFavoriteMethod = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(setFavoriteMethod))
+        
+        let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertMethodToPdf))
+        
+        addFavoriteMethod.tintColor = .systemOrange
+        pdfConversionButton.tintColor = .systemOrange
+        
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.setRightBarButtonItems([pdfConversionButton,addFavoriteMethod], animated: false)
+        
+        navigationController?.isNavigationBarHidden = false
     }
-    */
-
+    
+    @objc private func setFavoriteMethod() {
+        let user = AuthService.getUser()
+        if let teacher = user, let method = selectedMethod {
+            TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: method)
+        }
+    }
+    
+    @objc private func convertMethodToPdf() {
+        // to com sono
+    }
+    
+    private func clearNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationItem.setRightBarButtonItems([], animated: false)
+        navigationItem.title = ""
+    }
 }
