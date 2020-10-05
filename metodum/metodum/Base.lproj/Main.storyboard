@@ -669,28 +669,29 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" misplaced="YES" preservesSuperviewLayoutMargins="YES" reuseIdentifier="headerCollection" translatesAutoresizingMaskIntoConstraints="NO" id="BCY-Wg-vkP" customClass="CollectionHeader" customModule="metodum" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" reuseIdentifier="headerCollection" id="BCY-Wg-vkP" customClass="CollectionHeader" customModule="metodum" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="395"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-Kh-Aad">
-                                            <rect key="frame" x="0.0" y="0.0" width="191" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="395"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Em Alta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-5f-qeK">
-                                                    <rect key="frame" x="20" y="30" width="151" height="27"/>
+                                                    <rect key="frame" x="20" y="30" width="374" height="27"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção das metodologias em alta" label="Em Alta"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" name="GrayLabel"/>
                                                     <color key="highlightedColor" name="Black"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lpb-nZ-Xzf">
-                                                    <rect key="frame" x="20" y="72" width="151" height="87"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lpb-nZ-Xzf">
+                                                    <rect key="frame" x="20" y="72" width="374" height="215.5"/>
                                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Lpb-nZ-Xzf" secondAttribute="height" multiplier="370:213" id="O0u-tb-Xkl"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Mais Sugestões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrV-Mu-FdU">
-                                                    <rect key="frame" x="20" y="209" width="151" height="27"/>
+                                                    <rect key="frame" x="20" y="337.5" width="374" height="57.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de outras metodologias" label="Mais Sugestões"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" name="GrayLabel"/>
@@ -700,6 +701,7 @@
                                             <color key="backgroundColor" name="BlackBody"/>
                                             <constraints>
                                                 <constraint firstItem="qrV-Mu-FdU" firstAttribute="leading" secondItem="fU1-Kh-Aad" secondAttribute="leading" constant="20" id="45u-s3-kOk"/>
+                                                <constraint firstAttribute="bottom" secondItem="qrV-Mu-FdU" secondAttribute="bottom" id="4ec-26-HUb"/>
                                                 <constraint firstAttribute="trailing" secondItem="qrV-Mu-FdU" secondAttribute="trailing" constant="20" id="5pZ-FZ-3to"/>
                                                 <constraint firstItem="GBY-5f-qeK" firstAttribute="top" secondItem="fU1-Kh-Aad" secondAttribute="top" constant="30" id="6Is-f9-sFp"/>
                                                 <constraint firstItem="Lpb-nZ-Xzf" firstAttribute="top" secondItem="GBY-5f-qeK" secondAttribute="bottom" constant="15" id="M7z-1l-VNQ"/>
@@ -720,6 +722,8 @@
                                     <connections>
                                         <outlet property="contentView" destination="fU1-Kh-Aad" id="b3M-eE-KOJ"/>
                                         <outlet property="emAltaImage" destination="Lpb-nZ-Xzf" id="ecu-C1-fNt"/>
+                                        <outlet property="emAltaLabel" destination="GBY-5f-qeK" id="oHS-oo-f5N"/>
+                                        <outlet property="maisSugesLabel" destination="qrV-Mu-FdU" id="YBC-Ik-QLZ"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>

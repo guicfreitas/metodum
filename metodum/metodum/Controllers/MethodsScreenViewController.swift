@@ -11,6 +11,10 @@ class CollectionHeader: UICollectionReusableView {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emAltaImage: UIImageView!
+    @IBOutlet weak var emAltaLabel: UILabel!
+    @IBOutlet weak var maisSugesLabel: UILabel!
+    
+   
     
 }
 
@@ -19,6 +23,7 @@ class MethodsScreenViewController: UIViewController {
     let edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
     var methods = [Methodology]()
     var trendMethod : Methodology?
+    var headerHeight : CGFloat = 300
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
@@ -54,7 +59,17 @@ class MethodsScreenViewController: UIViewController {
             }
         }
     }
+    
 }
+
+func heigthForHeader(labelA : UILabel, labelB : UILabel, image : UIImageView) -> CGFloat{
+    let height = labelA.frame.height + labelB.frame.height + image.frame.height + 80
+
+    return height
+
+}
+
+
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -136,9 +151,14 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             }
         }
         headerView.emAltaImage.layer.cornerRadius = 20
+        headerHeight = heigthForHeader(labelA: headerView.emAltaLabel, labelB: headerView.maisSugesLabel, image: headerView.emAltaImage)
+        
+        
         
         return headerView
     }
+    
+    
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
@@ -158,7 +178,24 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-    
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height*0.59)
+        print(headerHeight)
+        return CGSize(width: maisSugesCollection.frame.width, height: headerHeight)
     }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+                print("Landscape")
+                headerHeight += 250
+                
+            } else {
+                print("Portrait")
+                headerHeight -= 140
+            }
+        
+       // headerHeight += 100
+    }
+    
+    
+    
+    
+    
 }
