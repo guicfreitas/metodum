@@ -1,4 +1,3 @@
-//
 //  MethodsScreenViewController.swift
 //  metodum
 //
@@ -44,6 +43,15 @@ class MethodsScreenViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MethodScreenViewSegue" {
+            if let details = segue.destination as? MethodDetailViewController {
+                let salectedMethod = sender as! Methodology
+                details.selectedMethod = salectedMethod
+            }
+        }
+    }
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
@@ -51,6 +59,8 @@ extension MethodsScreenViewController: UICollectionViewDelegate {
         print(indexPath.item)
         //print(methods[indexPath.item])
         MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
+        
+        performSegue(withIdentifier: "MethodScreenViewSegue", sender: methods[indexPath.item])
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //
