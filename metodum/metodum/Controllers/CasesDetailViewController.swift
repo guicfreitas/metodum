@@ -27,7 +27,23 @@ class CasesDetailViewController: UIViewController {
             self.resultText.text = caseObject.caseResult
             
             picture.image = UIImage(named: caseObject.caseImage)
+            
+            //VOICE OVER
+            
+            self.aboutText.isAccessibilityElement = true
+            self.aboutText.accessibilityLabel = caseObject.aboutCase
+            
+            self.resultText.isAccessibilityElement = true
+            self.resultText.accessibilityLabel = caseObject.aboutCase
+            
+            //necesarrio descrever imagem para o voice over
+            self.picture.isAccessibilityElement = true
+            self.picture.accessibilityLabel = caseObject.caseImage
+            self.picture.accessibilityHint = caseObject.caseImage
+            
         }
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

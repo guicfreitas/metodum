@@ -57,6 +57,18 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.caseSubtitle.text = caseObjeto.caseSubtitle
         cell.setImage(named: caseObjeto.caseImage)
         cell.layer.cornerRadius = 12
+        
+        //VOICE OVER
+        cell.caseTitle.isAccessibilityElement = true
+        cell.caseTitle.accessibilityLabel = caseObjeto.caseTitle
+        cell.caseTitle.accessibilityHint = "Título indicando o nome do caso de sucesso"
+        
+        cell.caseSubtitle.isAccessibilityElement = true
+        cell.caseSubtitle.accessibilityLabel = caseObjeto.caseSubtitle
+        cell.caseSubtitle.accessibilityHint = "Título indicando o local do caso de sucesso"
+        
+        
+        
         return cell
     }
     
