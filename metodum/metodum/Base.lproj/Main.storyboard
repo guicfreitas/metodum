@@ -318,7 +318,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-cI-CNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="466"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="486"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-8f-p5B">
                                                 <rect key="frame" x="20" y="36" width="374" height="150"/>
@@ -328,47 +328,47 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-Hd-YYt">
                                                 <rect key="frame" x="20" y="216" width="374" height="27"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="textColor" red="0.38032650950000002" green="0.3686313927" blue="0.36863082650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-TP-6cp">
-                                                <rect key="frame" x="20" y="382.5" width="374" height="73.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-TP-6cp">
+                                                <rect key="frame" x="15" y="394" width="384" height="82"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                                <color key="textColor" red="0.38032650950000002" green="0.3686313927" blue="0.36863082650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" name="GrayLabel"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
-                                                <rect key="frame" x="20" y="248" width="374" height="92.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
+                                                <rect key="frame" x="15" y="248" width="384" height="104"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis .</string>
-                                                <color key="textColor" red="0.38032650950000002" green="0.3686313927" blue="0.36863082650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" name="GrayLabel"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-a3-nGk">
-                                                <rect key="frame" x="20" y="350.5" width="374" height="27"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <color key="textColor" red="0.49803921568627452" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <rect key="frame" x="20" y="362" width="374" height="27"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="jVr-TP-6cp" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="1gj-xI-rsh"/>
+                                            <constraint firstItem="jVr-TP-6cp" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="15" id="1gj-xI-rsh"/>
                                             <constraint firstItem="fs6-Hd-YYt" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="8Ji-Is-dvI"/>
                                             <constraint firstItem="6Tp-8f-p5B" firstAttribute="top" secondItem="Cr9-cI-CNF" secondAttribute="top" constant="36" id="9AD-4b-I7Z"/>
                                             <constraint firstItem="WfA-GG-4N3" firstAttribute="top" secondItem="fs6-Hd-YYt" secondAttribute="bottom" constant="5" id="GFu-2l-o4E"/>
                                             <constraint firstItem="jVr-TP-6cp" firstAttribute="top" secondItem="kwT-a3-nGk" secondAttribute="bottom" constant="5" id="IZA-rT-NEs"/>
                                             <constraint firstAttribute="bottom" secondItem="jVr-TP-6cp" secondAttribute="bottom" constant="10" id="MQh-H4-RVn"/>
                                             <constraint firstAttribute="trailing" secondItem="fs6-Hd-YYt" secondAttribute="trailing" constant="20" id="cou-yb-Z02"/>
-                                            <constraint firstItem="WfA-GG-4N3" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="dWs-Ge-WSu"/>
+                                            <constraint firstItem="WfA-GG-4N3" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="15" id="dWs-Ge-WSu"/>
                                             <constraint firstItem="kwT-a3-nGk" firstAttribute="top" secondItem="WfA-GG-4N3" secondAttribute="bottom" constant="10" id="dwL-TC-HwV"/>
-                                            <constraint firstAttribute="trailing" secondItem="WfA-GG-4N3" secondAttribute="trailing" constant="20" id="eRK-mi-Brx"/>
+                                            <constraint firstAttribute="trailing" secondItem="WfA-GG-4N3" secondAttribute="trailing" constant="15" id="eRK-mi-Brx"/>
                                             <constraint firstItem="fs6-Hd-YYt" firstAttribute="top" secondItem="6Tp-8f-p5B" secondAttribute="bottom" constant="30" id="mQH-rH-KaW"/>
-                                            <constraint firstAttribute="trailing" secondItem="jVr-TP-6cp" secondAttribute="trailing" constant="20" id="ofy-qI-v4z"/>
+                                            <constraint firstAttribute="trailing" secondItem="jVr-TP-6cp" secondAttribute="trailing" constant="15" id="ofy-qI-v4z"/>
                                             <constraint firstItem="6Tp-8f-p5B" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" symbolic="YES" id="unV-y1-OP9"/>
                                             <constraint firstAttribute="trailing" secondItem="6Tp-8f-p5B" secondAttribute="trailing" constant="20" id="vda-ec-UaC"/>
                                         </constraints>
@@ -430,7 +430,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -766,28 +766,28 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-Qw-b3d">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="770.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-4v-yQH">
                                                 <rect key="frame" x="20" y="292" width="374" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFE-pX-14n">
-                                                <rect key="frame" x="20" y="323.5" width="374" height="226.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFE-pX-14n">
+                                                <rect key="frame" x="15" y="323.5" width="384" height="280"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" name="GrayLabel"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Qx-k5t">
-                                                <rect key="frame" x="20" y="591.5" width="374" height="169"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Qx-k5t">
+                                                <rect key="frame" x="15" y="645" width="384" height="192"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
                                                 <color key="textColor" name="GrayLabel"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-jv-x0G">
@@ -797,25 +797,25 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como aplicar" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq4-KV-s5t">
-                                                <rect key="frame" x="20" y="560" width="374" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <rect key="frame" x="20" y="613.5" width="374" height="26.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="hK3-Qx-k5t" secondAttribute="trailing" constant="20" id="061-Fk-fyD"/>
+                                            <constraint firstAttribute="trailing" secondItem="hK3-Qx-k5t" secondAttribute="trailing" constant="15" id="061-Fk-fyD"/>
                                             <constraint firstAttribute="trailing" secondItem="xq4-KV-s5t" secondAttribute="trailing" constant="20" id="3fQ-Z1-B6p"/>
                                             <constraint firstItem="hK3-Qx-k5t" firstAttribute="top" secondItem="xq4-KV-s5t" secondAttribute="bottom" constant="5" id="3yK-0U-R1t"/>
-                                            <constraint firstItem="sFE-pX-14n" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="CyI-bD-1Od"/>
+                                            <constraint firstItem="sFE-pX-14n" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="15" id="CyI-bD-1Od"/>
                                             <constraint firstAttribute="trailing" secondItem="nfP-4v-yQH" secondAttribute="trailing" constant="20" id="EcI-QE-eDm"/>
                                             <constraint firstItem="xq4-KV-s5t" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="MJC-3K-oNc"/>
                                             <constraint firstItem="nfP-4v-yQH" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="V90-A5-1W5"/>
                                             <constraint firstAttribute="trailing" secondItem="9hD-jv-x0G" secondAttribute="trailing" id="cvA-00-gqp"/>
                                             <constraint firstItem="sFE-pX-14n" firstAttribute="top" secondItem="nfP-4v-yQH" secondAttribute="bottom" constant="5" id="dQF-C5-7YU"/>
-                                            <constraint firstItem="hK3-Qx-k5t" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="eOK-8p-mD2"/>
-                                            <constraint firstAttribute="trailing" secondItem="sFE-pX-14n" secondAttribute="trailing" constant="20" id="eQW-eY-A1c"/>
+                                            <constraint firstItem="hK3-Qx-k5t" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="15" id="eOK-8p-mD2"/>
+                                            <constraint firstAttribute="trailing" secondItem="sFE-pX-14n" secondAttribute="trailing" constant="15" id="eQW-eY-A1c"/>
                                             <constraint firstAttribute="bottom" secondItem="hK3-Qx-k5t" secondAttribute="bottom" constant="10" id="gnw-FJ-qw9"/>
                                             <constraint firstItem="nfP-4v-yQH" firstAttribute="top" secondItem="9hD-jv-x0G" secondAttribute="bottom" constant="30" id="iWr-un-lgR"/>
                                             <constraint firstItem="9hD-jv-x0G" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" id="rig-3q-sC4"/>
@@ -860,7 +860,7 @@
             <objects>
                 <viewController id="Hda-N8-gfi" customClass="NewSchoolClassViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQY-bs-NXL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-6r-DkY">
