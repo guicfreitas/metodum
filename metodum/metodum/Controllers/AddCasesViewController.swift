@@ -23,6 +23,38 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     @IBAction func addCase(_ sender: UIBarButtonItem) {
+        if let image = pickerPicture.image, let title = TtitleCase.text, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
+            
+            var imgName = title.replacingOccurrences(of: " ", with: "_")
+            imgName.append(".png")
+            
+            let newCase = Case(
+                uid: "",
+                caseTitle: title,
+                caseSubtitle: institute,
+                caseImage: imgName,
+                aboutCase: description,
+                caseResult: result
+            )
+            
+            ImagesRepository.uploadCaseImage(data: image.pngData()!,imageName: newCase.caseImage) { (error) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    CasesCloudRepository.addCase(newCase: newCase) { (error) in
+                        if let errorMessage = error {
+                            self.alertError(message: errorMessage)
+                        } else {
+                            DispatchQueue.main.async {
+                                let alert = UIAlertController(title: "Sucesso!", message: "Seu caso foi enviado para análise, aguarde o email de confirmação", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     var placeholder: String = "Escreva aqui..."
@@ -62,20 +94,19 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         descriptionResultCase.text = placeholder
         descriptionResultCase.textColor = .lightGray
         descriptionResultCase.delegate = self
-        
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder{
             textView.text = ""
             textView.textColor = .gray
-//            Tema dark
-                if traitCollection.userInterfaceStyle == .dark{
-                    textView.textColor = .white
-                } else {
-                    textView.textColor = .black
-
-                }
+            //Tema dark
+    //            if traitCollection.userInterfaceStyle == .dark{
+    //                textView.textColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
+    //            } else {
+    //                textView.textColor = .gray
+    //
+    //            }
         }
     }
     

@@ -27,10 +27,7 @@ class MethodDetailViewController: UIViewController {
             
             self.about.text = methodObject.description
             self.howToApply.text = methodObject.description
-            
-            //VOICE OVER
-            
-            
+               
             self.about.isAccessibilityElement = true
             self.about.accessibilityLabel = methodObject.description
             

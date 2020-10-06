@@ -8,14 +8,10 @@
 import UIKit
 
 class CollectionHeader: UICollectionReusableView {
-    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emAltaImage: UIImageView!
     @IBOutlet weak var emAltaLabel: UILabel!
     @IBOutlet weak var maisSugesLabel: UILabel!
-    
-   
-    
 }
 
 class MethodsScreenViewController: UIViewController {
@@ -33,7 +29,6 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.dataSource = self
         
         DispatchQueue.main.async {
-            
             MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
@@ -51,6 +46,11 @@ class MethodsScreenViewController: UIViewController {
         }
     }
     
+    @IBAction func trendingMethodTapped(_ sender: Any) {
+        print("em alta clicado")
+        performSegue(withIdentifier: "MethodScreenViewSegue", sender: trendMethod)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MethodScreenViewSegue" {
             if let details = segue.destination as? MethodDetailViewController {
@@ -64,12 +64,8 @@ class MethodsScreenViewController: UIViewController {
 
 func heigthForHeader(labelA : UILabel, labelB : UILabel, image : UIImageView) -> CGFloat{
     let height = labelA.frame.height + labelB.frame.height + image.frame.height + 80
-
     return height
-
 }
-
-
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -155,8 +151,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         return headerView
     }
-    
-    
 }
 
 extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
@@ -188,12 +182,6 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
                 print("Portrait")
                 headerHeight -= 140
             }
-        
        // headerHeight += 100
     }
-    
-    
-    
-    
-    
 }

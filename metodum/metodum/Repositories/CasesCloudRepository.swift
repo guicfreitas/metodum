@@ -8,6 +8,11 @@
 import Foundation
 import FirebaseFirestore
 
+enum CasesSubCollections : String {
+    case aprovedCases
+    case casesInAnalyzes
+}
+
 class CasesCloudRepository {
     
     static let casesCollection = Firestore.firestore().collection("cases")
@@ -24,5 +29,16 @@ class CasesCloudRepository {
                 completion(nil,cases)
             }
         }
+    }
+    
+    static func addCase(newCase: Case, completion: @escaping (String?) -> ()) {
+        let docRef = Firestore.firestore().collection("casesInAnalyzes").addDocument(data: newCase.toJson()) { (error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage)
+            } else {
+                completion(nil)
+            }
+        }
+        docRef.updateData(["caseUid" : docRef.documentID])
     }
 }

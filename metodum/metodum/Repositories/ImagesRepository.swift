@@ -59,10 +59,7 @@ class ImagesRepository {
         
         imageRef.updateMetadata(metaData) { (data, error) in
             if let errorMessage = error?.localizedDescription {
-                print(error)
-            }
-            else {
-                print(data)
+                print(errorMessage)
             }
         }
     }
@@ -78,7 +75,34 @@ class ImagesRepository {
         }
     }
     
-    static func getMetadata() {
+    /*static func uploadImageFrom(url: URL, completion: @escaping (String?) -> () ) {
+        storageRoot.putFile(from: url, metadata: nil) { (metaData, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage)
+            } else {
+                completion(nil)
+            }
+        }
+    }*/
+    
+    static func uploadCaseImage(data: Data, imageName: String, completion: @escaping (String?) -> ()) {
+        let folder = ImagesFolders.casesImages.rawValue
+        let imgReference = storageRoot.child(folder+imageName)
         
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/png"
+        
+        let uploadProgressTask = imgReference.putData(data, metadata: metadata) { (_, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage)
+            } else {
+                completion(nil)
+            }
+        }
+        
+        uploadProgressTask.observe(.progress) { snapshot in
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+            print(percentComplete)
+        }
     }
 }

@@ -157,6 +157,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE26A2F0252C2F780035F4C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
+				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
+				793AF633251B963B001F3A26 /* MethodCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		AEF5BD8325190028009652BE /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,18 +203,16 @@
 		AEF5BD94251903E4009652BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AE26A2F0252C2F780035F4C4 /* Cells */,
 				AEF5BD95251903FD009652BE /* LoginViewController.swift */,
 				79CBC95C2518FD2100AFB417 /* ViewController.swift */,
 				AEF5BD9725190470009652BE /* ClassesScreenViewController.swift */,
 				AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */,
 				AEF5BD9925190497009652BE /* MethodsScreenViewController.swift */,
+				C3D02699252A518600C66531 /* MethodDetailViewController.swift */,
 				C33D511D251A3A8F00E9D7EC /* CasesCollectionViewController.swift */,
 				C3EEED27251DBA3E005A7EB0 /* CasesDetailViewController.swift */,
 				C3EF7EBF25200A950086EF9C /* AddCasesViewController.swift */,
-				AEF5BD9B251904C0009652BE /* ClassesCollectionViewCell.swift */,
-				C33D5121251A3D1C00E9D7EC /* CasesCollectionViewCell.swift */,
-				C3D02699252A518600C66531 /* MethodDetailViewController.swift */,
-				793AF633251B963B001F3A26 /* MethodCell.swift */,
 				AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */,
 			);
 			path = Controllers;
