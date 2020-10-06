@@ -19,16 +19,20 @@ class ClassesScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        self.showSpinner(onView: self.view)
         let parent = self.parent as! ViewController
         user = parent.user
         if let loggedUser = user {
-            TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uid) { (error, repoClasses) in
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let repoClasses = repoClasses {
-                        self.classes = repoClasses
-                        self.classesCollection.reloadData()
+            DispatchQueue.main.async {
+                TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uid) { (error, repoClasses) in
+                    self.removeSpinner()
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        if let repoClasses = repoClasses {
+                            self.classes = repoClasses
+                            self.classesCollection.reloadData()
+                        }
                     }
                 }
             }

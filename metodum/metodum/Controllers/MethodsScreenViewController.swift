@@ -27,9 +27,11 @@ class MethodsScreenViewController: UIViewController {
         super.viewDidLoad()
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
+        self.showSpinner(onView: self.view)
         
         DispatchQueue.main.async {
             MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
+                self.removeSpinner()
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {

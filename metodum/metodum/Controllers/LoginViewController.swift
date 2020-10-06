@@ -95,12 +95,4 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension UIViewController {
-    func alertError(message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: false)
-        }
-    }
-}
+

@@ -17,16 +17,22 @@ class CasesCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CasesCloudRepository.getAllCases { (error, cases) in
-            if let errorMessage = error {
-                self.alertError(message: errorMessage)
-            } else {
-                if let newCases = cases {
-                    self.cases = newCases
-                    self.casesCollection.reloadData()
+       
+        self.showSpinner(onView: self.view)
+        DispatchQueue.main.async {
+            CasesCloudRepository.getAllCases { (error, cases) in
+                self.removeSpinner()
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let newCases = cases {
+                        self.cases = newCases
+                        self.casesCollection.reloadData()
+                    }
                 }
             }
         }
+        
         //self.navigationItem.largeTitleDisplayMode = .always
     }
     
