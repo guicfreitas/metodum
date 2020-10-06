@@ -153,8 +153,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         headerView.emAltaImage.layer.cornerRadius = 20
         headerHeight = heigthForHeader(labelA: headerView.emAltaLabel, labelB: headerView.maisSugesLabel, image: headerView.emAltaImage)
         
-        
-        
         return headerView
     }
     

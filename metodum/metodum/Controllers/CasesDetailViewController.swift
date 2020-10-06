@@ -19,7 +19,7 @@ class CasesDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.largeTitleDisplayMode = .never
+//        setupNavigationBar()
         
         if let caseObject = selectedCase {
             self.title = caseObject.caseTitle
@@ -42,15 +42,40 @@ class CasesDetailViewController: UIViewController {
             self.picture.accessibilityHint = caseObject.caseImage
             
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clearNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
         
+        let addFavoriteCase = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(setFavoriteCase))
+        
+        let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertCaseToPdf))
+        
+        addFavoriteCase.tintColor = .systemOrange
+        pdfConversionButton.tintColor = .systemOrange
+        
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.setRightBarButtonItems([pdfConversionButton,addFavoriteCase], animated: false)
+        navigationController?.isNavigationBarHidden = false
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        self.navigationItem.largeTitleDisplayMode = .always
+    @objc private func setFavoriteCase() {
+            let user = AuthService.getUser()
+            if let teacher = user, let caseObj = selectedCase {
+                TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: caseObj)
+            }
     }
     
-    @IBAction func shareButton(_ sender: UIBarButtonItem) {
+  @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
         // createPrintFormatter(index: self.id)
         // openQlPreview()
         let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
@@ -62,16 +87,17 @@ class CasesDetailViewController: UIViewController {
         
         let items = ["hue"]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
-
-        self.present(activityViewController, animated: true, completion: nil)
+    
+    self.present(activityViewController, animated: true, completion: nil)
+    
     }
     
-    @IBAction func addFavoriteCase(_ sender: Any) {
-        let user = AuthService.getUser()
-        if let teacher = user, let theCase = selectedCase {
-            TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: theCase)
-        }
+    private func clearNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationItem.setRightBarButtonItems([], animated: false)
+        navigationItem.title = ""
     }
+    
     func openQlPreview() {
         let previoew = QLPreviewController.init()
         previoew.dataSource = self

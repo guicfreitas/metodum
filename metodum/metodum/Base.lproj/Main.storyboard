@@ -198,7 +198,7 @@
                     <connections>
                         <segue destination="OTY-Tf-yK9" kind="relationship" relationship="viewControllers" id="SyM-sd-Bj5"/>
                         <segue destination="BDN-N0-yua" kind="relationship" relationship="viewControllers" id="629-RJ-7fA"/>
-                        <segue destination="P5q-mz-ByM" kind="relationship" relationship="viewControllers" id="YBt-5o-taq"/>
+                        <segue destination="jK5-cq-1pa" kind="relationship" relationship="viewControllers" id="nuH-BC-aqA"/>
                         <segue destination="UHC-TI-MjJ" kind="relationship" relationship="viewControllers" id="xaY-Y6-Xn2"/>
                     </connections>
                 </tabBarController>
@@ -215,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x68-uG-ODQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pqZ-1I-8VE">
                                     <size key="itemSize" width="414" height="294"/>
@@ -277,23 +277,37 @@
                                     <outlet property="delegate" destination="jK5-cq-1pa" id="E5H-MX-WJM"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-g5-HMj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Cases" id="4I0-og-Li9">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2ED-r3-Pqd">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <connections>
+                                                <segue destination="NnS-eq-Yxw" kind="showDetail" id="f1G-Pc-Jlq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2rT-pS-8ka"/>
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
+                            <constraint firstItem="x68-uG-ODQ" firstAttribute="top" secondItem="1aJ-g5-HMj" secondAttribute="bottom" id="3wn-ct-u5r"/>
+                            <constraint firstItem="1aJ-g5-HMj" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" id="9w9-WQ-WhQ"/>
                             <constraint firstItem="x68-uG-ODQ" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" id="Gu6-Xw-gww"/>
-                            <constraint firstItem="x68-uG-ODQ" firstAttribute="top" secondItem="2rT-pS-8ka" secondAttribute="top" id="rch-2W-Lz7"/>
+                            <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="1aJ-g5-HMj" secondAttribute="trailing" id="V2x-vH-ngb"/>
+                            <constraint firstItem="1aJ-g5-HMj" firstAttribute="top" secondItem="2rT-pS-8ka" secondAttribute="top" id="ery-KJ-Eqc"/>
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="x68-uG-ODQ" secondAttribute="trailing" id="umc-MD-gSG"/>
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="bottom" secondItem="x68-uG-ODQ" secondAttribute="bottom" id="wUY-he-eaC"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Cases" image="doc.text" catalog="system" id="iZg-Ef-rVm"/>
                     <navigationItem key="navigationItem" title="Cases" largeTitleDisplayMode="always" id="OAt-8C-MgK">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qwy-Ry-Ruh"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="1gq-fh-hcN">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
-                            <connections>
-                                <segue destination="NnS-eq-Yxw" kind="showDetail" id="WlU-gd-ShO"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -303,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrx-55-I9s" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="64"/>
+            <point key="canvasLocation" x="79.710144927536234" y="58.928571428571423"/>
         </scene>
         <!--Cases Detail View Controller-->
         <scene sceneID="FVh-q5-4dY">
@@ -314,26 +328,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOR-Dw-O04">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-cI-CNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="486"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-8f-p5B">
-                                                <rect key="frame" x="20" y="36" width="374" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="eea-Jl-AMh"/>
+                                                    <constraint firstAttribute="height" constant="200" id="eea-Jl-AMh"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-Hd-YYt">
-                                                <rect key="frame" x="20" y="216" width="374" height="27"/>
+                                                <rect key="frame" x="20" y="230" width="374" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre o caso de sucesso" label="Sobre"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-TP-6cp">
-                                                <rect key="frame" x="15" y="394" width="384" height="82"/>
+                                                <rect key="frame" x="15" y="408" width="384" height="82"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -341,7 +355,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
-                                                <rect key="frame" x="15" y="248" width="384" height="104"/>
+                                                <rect key="frame" x="15" y="262" width="384" height="104"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis .</string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -349,7 +363,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-a3-nGk">
-                                                <rect key="frame" x="20" y="362" width="374" height="27"/>
+                                                <rect key="frame" x="20" y="376" width="374" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre os resultados do caso de sucesso" label="Resultados"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -360,7 +374,7 @@
                                         <constraints>
                                             <constraint firstItem="jVr-TP-6cp" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="15" id="1gj-xI-rsh"/>
                                             <constraint firstItem="fs6-Hd-YYt" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="8Ji-Is-dvI"/>
-                                            <constraint firstItem="6Tp-8f-p5B" firstAttribute="top" secondItem="Cr9-cI-CNF" secondAttribute="top" constant="36" id="9AD-4b-I7Z"/>
+                                            <constraint firstItem="6Tp-8f-p5B" firstAttribute="top" secondItem="Cr9-cI-CNF" secondAttribute="top" id="9AD-4b-I7Z"/>
                                             <constraint firstItem="WfA-GG-4N3" firstAttribute="top" secondItem="fs6-Hd-YYt" secondAttribute="bottom" constant="5" id="GFu-2l-o4E"/>
                                             <constraint firstItem="jVr-TP-6cp" firstAttribute="top" secondItem="kwT-a3-nGk" secondAttribute="bottom" constant="5" id="IZA-rT-NEs"/>
                                             <constraint firstAttribute="bottom" secondItem="jVr-TP-6cp" secondAttribute="bottom" constant="10" id="MQh-H4-RVn"/>
@@ -370,8 +384,8 @@
                                             <constraint firstAttribute="trailing" secondItem="WfA-GG-4N3" secondAttribute="trailing" constant="15" id="eRK-mi-Brx"/>
                                             <constraint firstItem="fs6-Hd-YYt" firstAttribute="top" secondItem="6Tp-8f-p5B" secondAttribute="bottom" constant="30" id="mQH-rH-KaW"/>
                                             <constraint firstAttribute="trailing" secondItem="jVr-TP-6cp" secondAttribute="trailing" constant="15" id="ofy-qI-v4z"/>
-                                            <constraint firstItem="6Tp-8f-p5B" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" symbolic="YES" id="unV-y1-OP9"/>
-                                            <constraint firstAttribute="trailing" secondItem="6Tp-8f-p5B" secondAttribute="trailing" constant="20" id="vda-ec-UaC"/>
+                                            <constraint firstItem="6Tp-8f-p5B" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" id="unV-y1-OP9"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Tp-8f-p5B" secondAttribute="trailing" id="vda-ec-UaC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -404,15 +418,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="square.and.arrow.up" catalog="system" id="icm-H9-De0">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <connections>
-                                    <action selector="shareButton:" destination="8Yl-KZ-Rjh" id="9PA-Vs-9mt"/>
-                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="star" catalog="system" id="b5C-ca-OIj">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <connections>
-                                    <action selector="addFavoriteCase:" destination="8Yl-KZ-Rjh" id="Q16-KD-nk9"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -424,14 +432,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKw-eZ-gJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="-575"/>
+            <point key="canvasLocation" x="1797" y="-417"/>
         </scene>
         <!--Add Cases View Controller-->
         <scene sceneID="0i7-E6-zR5">
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -586,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcm-Dn-ku6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="619"/>
+            <point key="canvasLocation" x="1796" y="505"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ley-mY-reK">
@@ -603,26 +611,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw1-Ua-FaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="80" y="-676"/>
-        </scene>
-        <!--Cases-->
-        <scene sceneID="YlI-L0-AO0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P5q-mz-ByM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cases" image="doc.plaintext" catalog="system" id="k2w-sN-6xh"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="feb-uO-Std">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="systemOrangeColor"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jK5-cq-1pa" kind="relationship" relationship="rootViewController" id="W8i-JK-SMU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UYK-4o-pcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="80" y="64"/>
         </scene>
         <!--Explore-->
         <scene sceneID="9aI-e3-5fK">
@@ -876,7 +864,7 @@
             <objects>
                 <viewController id="Hda-N8-gfi" customClass="NewSchoolClassViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eQY-bs-NXL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9Y-6r-DkY">
@@ -1038,7 +1026,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="foto4" width="341" height="132"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>

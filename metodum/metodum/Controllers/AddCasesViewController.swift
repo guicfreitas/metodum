@@ -69,13 +69,13 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if textView.text == placeholder{
             textView.text = ""
             textView.textColor = .gray
-            //Tema dark
-    //            if traitCollection.userInterfaceStyle == .dark{
-    //                textView.textColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
-    //            } else {
-    //                textView.textColor = .gray
-    //
-    //            }
+//            Tema dark
+                if traitCollection.userInterfaceStyle == .dark{
+                    textView.textColor = .white
+                } else {
+                    textView.textColor = .black
+
+                }
         }
     }
     
