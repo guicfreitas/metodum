@@ -7,10 +7,13 @@
 
 import Foundation
 import FirebaseAuth
+import CryptoKit
+import AuthenticationServices
 
 class AuthService {
     
     private static let auth = Auth.auth()
+    static var currentNonce : String?
     
     static func verifyAuthentication(completion: @escaping (User?) -> ()){
         auth.addStateDidChangeListener { (nAuth, user) in
@@ -63,6 +66,21 @@ class AuthService {
         auth.signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 completion(error.localizedDescription,nil)
+            } else {
+                if let user = result?.user {
+                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)
+                    completion(nil, loggedUser)
+                }
+            }
+        }
+    }
+    
+    static func signInWith(appleIDTokenString: String,completion: @escaping (String?, User?) -> ()) {
+        let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: appleIDTokenString, rawNonce: currentNonce)
+        
+        auth.signIn(with: credential) { (result, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage,nil)
             } else {
                 if let user = result?.user {
                     let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)

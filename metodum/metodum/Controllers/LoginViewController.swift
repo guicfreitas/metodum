@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CryptoKit
+import AuthenticationServices
 
 class LoginViewController: UIViewController {
 
@@ -51,6 +53,14 @@ class LoginViewController: UIViewController {
         }
     }
     
+    private func showAuthorizationController() {
+        guard let request = getAppleSignInRequest() else {return}
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
     @IBAction func signUp(_ sender: Any) {
         let alert = UIAlertController(title: "Register", message: "Register Account",preferredStyle: .alert)
         
@@ -93,6 +103,89 @@ class LoginViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    func getAppleSignInRequest() -> ASAuthorizationRequest? {
+        AuthService.currentNonce = randomNonceString()
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.email]
+        
+        if let nonce = AuthService.currentNonce {
+            request.nonce = sha256(nonce)
+            return request
+        }
+        
+        return nil
+    }
+    
+    func sha256(_ input: String) -> String {
+      let inputData = Data(input.utf8)
+      let hashedData = SHA256.hash(data: inputData)
+      let hashString = hashedData.compactMap {
+        return String(format: "%02x", $0)
+      }.joined()
+
+      return hashString
+    }
+    
+    func randomNonceString(length: Int = 32) -> String {
+      precondition(length > 0)
+      let charset: Array<Character> =
+          Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+      var result = ""
+      var remainingLength = length
+
+      while remainingLength > 0 {
+        let randoms: [UInt8] = (0 ..< 16).map { _ in
+            var random: UInt8 = 0
+            let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+            if errorCode != errSecSuccess {
+                fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+            }
+            return random
+        }
+
+        randoms.forEach { random in
+            if remainingLength == 0 {
+                return
+            }
+
+            if random < charset.count {
+                result.append(charset[Int(random)])
+                remainingLength -= 1
+            }
+        }
+      }
+
+      return result
+    }
 }
 
-
+extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let nonce = AuthService.currentNonce,
+            let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+            let appleIDToken = appleIDCredential.identityToken,
+            let appleIDTokenString = String(data: appleIDToken, encoding: .utf8) {
+         
+            AuthService.signInWith(appleIDTokenString: appleIDTokenString) { (error, user) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                    
+                } else {
+                    if let currentUser = user {
+                        self.performSegue(withIdentifier: "Login to Main Screen", sender: currentUser)
+                    }
+                }
+            }
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        self.alertError(message: error.localizedDescription)
+    }
+}

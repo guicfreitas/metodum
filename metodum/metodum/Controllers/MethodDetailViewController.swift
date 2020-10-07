@@ -21,7 +21,6 @@ class MethodDetailViewController: UIViewController {
         super.viewDidLoad()
     
         setupNavigationBar()
-        
         if let methodObject = selectedMethod {
             navigationItem.title = methodObject.name
             
