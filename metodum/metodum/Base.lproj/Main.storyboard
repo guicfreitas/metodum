@@ -139,7 +139,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h93-bW-7qf" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="408" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eO-gr-x1g" userLabel="Sign In">
                                 <rect key="frame" x="164" y="497" width="47" height="30"/>
@@ -439,7 +439,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -604,7 +604,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
+                            <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
                                 <rect key="frame" x="10" y="44" width="355" height="96"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
@@ -617,11 +617,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-kH-V99">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-kH-V99">
                                 <rect key="frame" x="20" y="231.33333333333337" width="355" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fKB-kH-V99" secondAttribute="height" multiplier="71:36" id="7Mt-Hv-6z8"/>
+                                    <constraint firstAttribute="height" constant="180" id="VHG-tv-V1a"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6sA-as-FJv">
                                     <size key="itemSize" width="128" height="128"/>
@@ -641,16 +641,16 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casos Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-jo-kgX">
-                                <rect key="frame" x="20" y="456.33333333333331" width="335" height="26.333333333333314"/>
+                                <rect key="frame" x="20" y="456.33333333333331" width="335" height="26"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Ga-asw">
-                                <rect key="frame" x="20" y="512.66666666666663" width="355" height="180"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Ga-asw">
+                                <rect key="frame" x="20" y="512.33333333333337" width="355" height="180"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="gIo-Ga-asw" secondAttribute="height" multiplier="71:36" id="jaH-5x-xkM"/>
+                                    <constraint firstAttribute="height" constant="180" id="61V-eF-KHL"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dph-pY-vFZ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -678,7 +678,6 @@
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="tTa-Sx-pKP" secondAttribute="trailing" constant="20" id="AZ6-jT-VrO"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="10" id="DnS-NM-jZL"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="fKB-kH-V99" secondAttribute="trailing" id="L1b-cN-hV5"/>
-                            <constraint firstItem="tTa-Sx-pKP" firstAttribute="top" secondItem="EW8-er-in4" secondAttribute="bottom" constant="35" id="MzW-jG-bv2"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="jA0-jo-kgX" secondAttribute="trailing" constant="20" id="NOl-Yk-Vr2"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="gIo-Ga-asw" secondAttribute="trailing" id="NXk-RH-Auv"/>
                             <constraint firstItem="fKB-kH-V99" firstAttribute="top" secondItem="tTa-Sx-pKP" secondAttribute="bottom" constant="30" id="Olo-FK-HK9"/>
@@ -688,10 +687,15 @@
                             <constraint firstItem="tTa-Sx-pKP" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="jxo-FX-FXY"/>
                             <constraint firstItem="fKB-kH-V99" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="lw1-wx-eQx"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="trailing" secondItem="dMa-VD-NaJ" secondAttribute="trailing" constant="-10" id="o4J-Pr-N1A"/>
+                            <constraint firstItem="tTa-Sx-pKP" firstAttribute="top" secondItem="EW8-er-in4" secondAttribute="bottom" constant="35" id="sg9-2p-ncn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" id="vB0-69-1oh"/>
                     <connections>
+                        <outlet property="favoriteCasesCollection" destination="gIo-Ga-asw" id="CDE-14-Ytj"/>
+                        <outlet property="favoriteCollection" destination="fKB-kH-V99" id="XbY-Zu-5zI"/>
+                        <outlet property="heightCaseCollection" destination="61V-eF-KHL" id="OVf-m9-cSQ"/>
+                        <outlet property="heightFavoriteCollection" destination="VHG-tv-V1a" id="Pyx-aO-buP"/>
                         <outlet property="navigationIten" destination="dnr-Sq-y11" id="cUr-qr-R8y"/>
                     </connections>
                 </viewController>

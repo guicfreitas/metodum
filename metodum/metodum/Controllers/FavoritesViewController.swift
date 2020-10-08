@@ -10,7 +10,12 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    @IBOutlet weak var heightFavoriteCollection: NSLayoutConstraint!
+    @IBOutlet weak var heightCaseCollection: NSLayoutConstraint!
     @IBOutlet weak var navigationIten: UINavigationItem!
+    @IBOutlet weak var favoriteCollection: UICollectionView!
+    @IBOutlet weak var favoriteCasesCollection: UICollectionView!
+    
     var methods = [Methodology]()
     var cases = [Case]()
     var user : User?
@@ -20,57 +25,64 @@ class FavoritesViewController: UIViewController {
         let parent = self.parent as! ViewController
         user = parent.user
         setNavigationBar()
-        TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: user!.uid) { (error, documentsUids) in
-            if let errorMessage = error {
-                self.alertError(message: errorMessage)
-            } else {
-                print("methods uids")
-                print(documentsUids as Any)
-                MethodsCloudRepository.query(methodsUids: documentsUids!, language: "pt") { (error, favoriteMethods) in
-                    if let errorMessage = error {
-                        self.alertError(message: errorMessage)
-                    } else {
-                        print("metodos preferidos")
-                        print(favoriteMethods as Any)
-                        DispatchQueue.main.async {
-                            if let m = favoriteMethods {
-                                self.methods = m
-                            } else {
-                                self.methods = []
-                            }
-                        }
-                    }
-                }
-            }
+        if(self.view.frame.height < 800) {
+            heightCaseCollection.constant = 138
+            heightFavoriteCollection.constant = 138
+        }else{
+            heightCaseCollection.constant = 200
+            heightFavoriteCollection.constant = 200
         }
-        
-        TeachersCloudRepository.getFavoriteCasesUidsForTeacher(teacherUid: user!.uid) { (error, documentsUids) in
-            if let errorMessage = error {
-                self.alertError(message: errorMessage)
-            } else {
-                print("cases uids")
-                print(documentsUids as Any)
-                CasesCloudRepository.query(casesUids: documentsUids!, language: "pt") { (error, favoriteCases) in
-                    if let errorMessage = error {
-                        self.alertError(message: errorMessage)
-                    } else {
-                        print("cases preferidos")
-                        print(favoriteCases as Any)
-                        DispatchQueue.main.async {
-                            if let c = favoriteCases {
-                                self.cases = c
-                            } else {
-                                self.cases = []
-                            }
-                        }
-                    }
-                }
-            }
-        }
+//        TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: user!.uid) { (error, documentsUids) in
+//            if let errorMessage = error {
+//                self.alertError(message: errorMessage)
+//            } else {
+//                print("methods uids")
+//                print(documentsUids as Any)
+//                MethodsCloudRepository.query(methodsUids: documentsUids!, language: "pt") { (error, favoriteMethods) in
+//                    if let errorMessage = error {
+//                        self.alertError(message: errorMessage)
+//                    } else {
+//                        print("metodos preferidos")
+//                        print(favoriteMethods as Any)
+//                        DispatchQueue.main.async {
+//                            if let m = favoriteMethods {
+//                                self.methods = m
+//                            } else {
+//                                self.methods = []
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//        TeachersCloudRepository.getFavoriteCasesUidsForTeacher(teacherUid: user!.uid) { (error, documentsUids) in
+//            if let errorMessage = error {
+//                self.alertError(message: errorMessage)
+//            } else {
+//                print("cases uids")
+//                print(documentsUids as Any)
+//                CasesCloudRepository.query(casesUids: documentsUids!, language: "pt") { (error, favoriteCases) in
+//                    if let errorMessage = error {
+//                        self.alertError(message: errorMessage)
+//                    } else {
+//                        print("cases preferidos")
+//                        print(favoriteCases as Any)
+//                        DispatchQueue.main.async {
+//                            if let c = favoriteCases {
+//                                self.cases = c
+//                            } else {
+//                                self.cases = []
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
     
     func setNavigationBar() {
-        self.navigationIten.title = "Turmas"
+        self.navigationIten.title = "Favoritos"
         self.navigationIten.largeTitleDisplayMode = .always
         
         self.navigationIten.rightBarButtonItems = [
@@ -87,3 +99,5 @@ class FavoritesViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+
