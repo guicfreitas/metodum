@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Case {
+struct Case {
     var caseUid : String
     var caseTitle: String
     var caseSubtitle: String

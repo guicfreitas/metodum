@@ -69,6 +69,23 @@ class MethodsCloudRepository {
         }
     }
     
+    static func query(methodsUids: [String], language: String,completion: @escaping (String?, [Methodology]?) -> ()) {
+        let query = methodsCollection.document(language).collection("methods").whereField("uid", in: methodsUids)
+        query.getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage,nil)
+            } else {
+                var methods = [Methodology]()
+                print(querySnapshot?.count)
+                for document in querySnapshot!.documents {
+                    let method = Methodology.fromJson(json: document.data())
+                    methods.append(method)
+                }
+                completion(nil, methods)
+            }
+        }
+    }
+    
     static func incrementClicksCountFor(methodology: inout Methodology, language: String) {
         methodology.clicksCount += 1
         methodsCollection.document(language).collection("methods").document(methodology.uid).updateData(["clicksCount":methodology.clicksCount])

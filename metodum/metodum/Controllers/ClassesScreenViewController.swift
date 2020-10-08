@@ -49,14 +49,6 @@ class ClassesScreenViewController: UIViewController {
         ]
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Classes Screen to Create Class Screen" {
-            let user = sender as! User
-            let viewController = segue.destination as! NewSchoolClassViewController
-            viewController.user = user
-        }
-    }
-    
     @objc private func signOut() {
         AuthService.signOut { (error) in
             if let errorMessage = error {
@@ -64,6 +56,14 @@ class ClassesScreenViewController: UIViewController {
             }
         }
         navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Classes Screen to Create Class Screen" {
+            let user = sender as! User
+            let viewController = segue.destination as! NewSchoolClassViewController
+            viewController.user = user
+        }
     }
     
     @objc private func createClass() {

@@ -26,7 +26,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-m5-ehg">
-                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bXb-Ie-gjD">
                                     <size key="itemSize" width="395" height="176"/>
@@ -196,7 +196,6 @@
                         <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OTY-Tf-yK9" kind="relationship" relationship="viewControllers" id="SyM-sd-Bj5"/>
                         <segue destination="BDN-N0-yua" kind="relationship" relationship="viewControllers" id="629-RJ-7fA"/>
                         <segue destination="jK5-cq-1pa" kind="relationship" relationship="viewControllers" id="nuH-BC-aqA"/>
                         <segue destination="UHC-TI-MjJ" kind="relationship" relationship="viewControllers" id="xaY-Y6-Xn2"/>
@@ -440,7 +439,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -607,6 +606,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
                                 <rect key="frame" x="10" y="44" width="355" height="96"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="Favoritos" id="dnr-Sq-y11"/>
                                 </items>
@@ -691,6 +691,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" id="vB0-69-1oh"/>
+                    <connections>
+                        <outlet property="navigationIten" destination="dnr-Sq-y11" id="cUr-qr-R8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw1-Ua-FaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

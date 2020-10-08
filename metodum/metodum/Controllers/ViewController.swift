@@ -21,6 +21,7 @@ class ViewController: UITabBarController {
         //self.navigationController?.navigationBar.isHidden = true
         //setNavigationBar()
         // Do any additional setup after loading the view.
+        
     }
     
     /*func setNavigationBar() {

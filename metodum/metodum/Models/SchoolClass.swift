@@ -25,7 +25,6 @@ struct SchoolClass {
             name: json["name"] as! String,
             schoolName: json["schoolName"] as! String,
             description: json["description"] as! String
-            // ajeitar aaqui pq ele n ta lendo o school name
         )
     }
     

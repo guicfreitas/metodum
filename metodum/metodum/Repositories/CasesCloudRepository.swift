@@ -41,4 +41,21 @@ class CasesCloudRepository {
         }
         docRef.updateData(["caseUid" : docRef.documentID])
     }
+    
+    static func query(casesUids: [String], language: String,completion: @escaping (String?, [Case]?) -> ()) {
+        let query = casesCollection.whereField("caseUid", in: casesUids)
+        query.getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage,nil)
+            } else {
+                var cases = [Case]()
+                print(querySnapshot?.count)
+                for document in querySnapshot!.documents {
+                    let favoriteCase = Case.fromJson(json: document.data())
+                    cases.append(favoriteCase)
+                }
+                completion(nil, cases)
+            }
+        }
+    }
 }

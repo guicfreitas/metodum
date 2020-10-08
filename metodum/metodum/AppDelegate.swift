@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization( options: authOptions, completionHandler: {_, _ in })
+        
+        Messaging.messaging().delegate = self
 
         application.registerForRemoteNotifications()
         
@@ -56,13 +58,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate : UNUserNotificationCenterDelegate {
-    
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("token")
+        print(fcmToken)
+    }
 }
 
-extension AppDelegate : MessagingDelegate {
-    // a funcao que pega o token unico desse usuario
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        //print(fcmToken)
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("recebeu")
+        
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("recebeu")
+    }
+}
+
+func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    Messaging.messaging().apnsToken = deviceToken as Data
 }
