@@ -439,7 +439,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
@@ -619,19 +619,19 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-kH-V99">
                                 <rect key="frame" x="20" y="231.33333333333337" width="355" height="180"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="VHG-tv-V1a"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6sA-as-FJv">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="6sA-as-FJv">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nLR-PK-4zp">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favMethod" id="nLR-PK-4zp" customClass="FavoriteMethodCell" customModule="metodum" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="26" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NkR-6O-HIh">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -639,6 +639,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="UHC-TI-MjJ" id="od7-gZ-zlA"/>
+                                    <outlet property="delegate" destination="UHC-TI-MjJ" id="sRm-ci-Lj7"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casos Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-jo-kgX">
                                 <rect key="frame" x="20" y="456.33333333333331" width="335" height="26"/>
@@ -648,19 +652,19 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Ga-asw">
                                 <rect key="frame" x="20" y="512.33333333333337" width="355" height="180"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="61V-eF-KHL"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dph-pY-vFZ">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dph-pY-vFZ">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ntd-b3-vaV">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favCase" id="Ntd-b3-vaV" customClass="FavoriteCasesCell" customModule="metodum" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="26" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OLt-KD-75R">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -668,6 +672,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="UHC-TI-MjJ" id="epN-tO-4j6"/>
+                                    <outlet property="delegate" destination="UHC-TI-MjJ" id="Npb-kl-GVD"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dMa-VD-NaJ"/>
@@ -692,10 +700,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" id="vB0-69-1oh"/>
                     <connections>
-                        <outlet property="favoriteCasesCollection" destination="gIo-Ga-asw" id="CDE-14-Ytj"/>
-                        <outlet property="favoriteCollection" destination="fKB-kH-V99" id="XbY-Zu-5zI"/>
-                        <outlet property="heightCaseCollection" destination="61V-eF-KHL" id="OVf-m9-cSQ"/>
-                        <outlet property="heightFavoriteCollection" destination="VHG-tv-V1a" id="Pyx-aO-buP"/>
+                        <outlet property="favoriteCasesCollection" destination="gIo-Ga-asw" id="fKk-MH-k1U"/>
+                        <outlet property="favoriteCollection" destination="fKB-kH-V99" id="Rc2-JX-9nj"/>
+                        <outlet property="heightCaseCollection" destination="61V-eF-KHL" id="Qe5-qe-cle"/>
+                        <outlet property="heightFavoriteCollection" destination="VHG-tv-V1a" id="vpG-la-cAM"/>
                         <outlet property="navigationIten" destination="dnr-Sq-y11" id="cUr-qr-R8y"/>
                     </connections>
                 </viewController>
