@@ -451,12 +451,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
-                                <rect key="frame" x="0.0" y="20" width="375" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-2F-cQf">
                                 <rect key="frame" x="0.0" y="36" width="375" height="56"/>
                                 <color key="barTintColor" name="BlackBody"/>
@@ -468,7 +462,7 @@
                                                 <action selector="cancelCase:" destination="NnS-eq-Yxw" id="0Mc-7w-bSU"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="ZQK-ck-mjb">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Concluir" id="ZQK-ck-mjb">
                                             <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
                                                 <action selector="addCase:" destination="NnS-eq-Yxw" id="OwB-1h-V16"/>
@@ -477,46 +471,55 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="photo" catalog="system" highlightedImage="photo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-9t-4wc">
-                                <rect key="frame" x="0.0" y="104.66666666666666" width="375" height="69"/>
-                                <color key="backgroundColor" red="0.94911187890000004" green="0.94876331089999999" blue="0.96863871810000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
+                                <rect key="frame" x="0.0" y="20" width="375" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cases_offwhite" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
+                                <rect key="frame" x="0.0" y="92" width="375" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GQL-7Y-x2Y" secondAttribute="height" multiplier="375:262" id="i38-q0-WtQ"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo do Caso" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mu6-4C-Qhg">
-                                <rect key="frame" x="0.0" y="175" width="375" height="34"/>
-                                <color key="backgroundColor" name="BlackBody"/>
-                                <accessibility key="accessibilityConfiguration" hint="Caixa de texto para o titulo do caso" label="Título do Caso"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Instituição de Ensino" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-9R-zfy">
-                                <rect key="frame" x="0.0" y="209" width="375" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Instituição de Ensino" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-9R-zfy">
+                                <rect key="frame" x="0.0" y="354" width="375" height="44"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para instituições de ensino" label="Intituições de Ensino"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wfa-9R-zfy" secondAttribute="height" multiplier="375:44" id="XKW-va-HQT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Local" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0P-sb-OJ4">
-                                <rect key="frame" x="0.0" y="243" width="375" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Local" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0P-sb-OJ4">
+                                <rect key="frame" x="0.0" y="398" width="375" height="44"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para o local " label="Local"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="H0P-sb-OJ4" secondAttribute="height" multiplier="375:44" id="c3Y-Za-eF8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  SOBRE" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Bl-gsx">
-                                <rect key="frame" x="0.0" y="277" width="375" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Bl-gsx">
+                                <rect key="frame" x="0.0" y="442" width="375" height="38"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção para dissertar sobre o seu caso de sucesso" label="Sobre"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C5l-Bl-gsx" secondAttribute="height" multiplier="375:38" id="Zzn-lP-BuY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.5177668929" green="0.51733869310000002" blue="0.54118454459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-3A-mDF">
-                                <rect key="frame" x="0.0" y="311" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="480" width="375" height="125"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o seu caso de sucesso" label="Caixa de Texto"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="XmM-Xu-hrY"/>
+                                    <constraint firstAttribute="width" secondItem="Vkp-3A-mDF" secondAttribute="height" multiplier="3:1" id="NHW-Ef-bO2"/>
                                 </constraints>
                                 <color key="textColor" red="0.50195443630000003" green="0.50195747609999997" blue="0.50196552279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -525,85 +528,84 @@
                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="c0Y-5t-KdY"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  RESULTADOS" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-I7-pDX">
-                                <rect key="frame" x="0.0" y="479" width="375" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTADOS" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-I7-pDX">
+                                <rect key="frame" x="0.0" y="605" width="375" height="38"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção para dissertar sobre o resultado do seu caso de sucesso" label="Resultado"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OCV-I7-pDX" secondAttribute="height" multiplier="375:38" id="Va4-Ag-LwS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.5177668929" green="0.51733869310000002" blue="0.54118454459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Escreva aqui..." textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-vU-Jf2">
-                                <rect key="frame" x="0.0" y="515" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="643" width="375" height="81"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o resultado do seu caso de sucesso" label="Caixa de Texto"/>
                                 <color key="textColor" red="0.49805355070000001" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-TE-oQJ">
-                                <rect key="frame" x="0.0" y="103" width="375" height="72"/>
-                                <accessibility key="accessibilityConfiguration" hint="Clique aqui para adicionar uma foto" label="Adicionar Fotos"/>
-                                <connections>
-                                    <action selector="buttonPicker:" destination="NnS-eq-Yxw" eventType="touchUpInside" id="MjA-Yk-XVE"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX7-jb-YrO">
+                                <rect key="frame" x="0.0" y="310" width="375" height="44"/>
+                                <color key="backgroundColor" name="BlackBody"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zX7-jb-YrO" secondAttribute="height" multiplier="375:44" id="eK3-u2-Tt7"/>
+                                </constraints>
+                                <state key="normal" title="Trocar Imagem">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aso-Rh-QhM"/>
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
-                            <constraint firstItem="HJs-2F-cQf" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="4Jr-YY-et7"/>
-                            <constraint firstItem="HJs-2F-cQf" firstAttribute="top" secondItem="eg1-wy-Tit" secondAttribute="bottom" id="53E-RR-czu"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="mu6-4C-Qhg" secondAttribute="trailing" id="7uG-vi-s4j"/>
-                            <constraint firstItem="mu6-4C-Qhg" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="8rG-IZ-OW0"/>
-                            <constraint firstItem="OCV-I7-pDX" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="CSb-vY-Ye6"/>
-                            <constraint firstItem="mu6-4C-Qhg" firstAttribute="top" secondItem="fuB-9t-4wc" secondAttribute="bottom" id="CTN-1m-r2e"/>
-                            <constraint firstItem="OCV-I7-pDX" firstAttribute="top" secondItem="Vkp-3A-mDF" secondAttribute="bottom" constant="8" symbolic="YES" id="FOn-Ly-jOV"/>
-                            <constraint firstItem="eg1-wy-Tit" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="HlX-sa-yNn"/>
-                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="top" secondItem="Vkp-3A-mDF" secondAttribute="bottom" constant="44" id="Iqr-Px-sXG"/>
-                            <constraint firstItem="gHr-TE-oQJ" firstAttribute="leading" secondItem="fuB-9t-4wc" secondAttribute="leading" id="Kt9-sR-bDA"/>
-                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="LOV-vQ-ECN"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="OCV-I7-pDX" secondAttribute="trailing" id="N89-po-VqU"/>
-                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="NEa-0D-eVW"/>
-                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="top" secondItem="OCV-I7-pDX" secondAttribute="bottom" id="OvG-yx-EXM"/>
-                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="Qjt-y2-mrM"/>
-                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="UqF-C2-FwN"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="HJs-2F-cQf" secondAttribute="trailing" id="WvO-i9-bRO"/>
-                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="YfM-1j-bhX"/>
-                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="top" secondItem="H0P-sb-OJ4" secondAttribute="bottom" id="aOZ-Xb-M2s"/>
-                            <constraint firstItem="gHr-TE-oQJ" firstAttribute="top" secondItem="fuB-9t-4wc" secondAttribute="top" id="bTP-A6-N1F"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="H0P-sb-OJ4" secondAttribute="trailing" id="bqq-gN-m4A"/>
-                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="top" secondItem="H0P-sb-OJ4" secondAttribute="bottom" constant="34" id="dIL-0M-4SR"/>
-                            <constraint firstItem="fuB-9t-4wc" firstAttribute="top" secondItem="HJs-2F-cQf" secondAttribute="bottom" constant="11" id="gS9-uo-JFZ"/>
-                            <constraint firstItem="fuB-9t-4wc" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="gW6-sx-Q26"/>
-                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="top" secondItem="mu6-4C-Qhg" secondAttribute="bottom" id="jld-dv-ZBB"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="eg1-wy-Tit" secondAttribute="trailing" id="kOP-tg-Fm5"/>
-                            <constraint firstItem="H0P-sb-OJ4" firstAttribute="top" secondItem="Wfa-9R-zfy" secondAttribute="bottom" id="kZB-6y-l4O"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="bottom" secondItem="OCV-I7-pDX" secondAttribute="bottom" constant="209" id="pJ8-Wi-soO"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="tQS-vU-Jf2" secondAttribute="trailing" id="pTj-DG-afW"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="bottom" secondItem="tQS-vU-Jf2" secondAttribute="bottom" constant="49" id="roP-ls-rfk"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="Vkp-3A-mDF" secondAttribute="trailing" id="rzb-M7-BYO"/>
-                            <constraint firstItem="H0P-sb-OJ4" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="u6U-oh-1mB"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="fuB-9t-4wc" secondAttribute="trailing" id="udl-XK-foE"/>
-                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="top" secondItem="C5l-Bl-gsx" secondAttribute="bottom" id="vbi-JI-x9Q"/>
-                            <constraint firstItem="aso-Rh-QhM" firstAttribute="trailing" secondItem="Wfa-9R-zfy" secondAttribute="trailing" id="xGj-oT-H4T"/>
-                            <constraint firstItem="gHr-TE-oQJ" firstAttribute="trailing" secondItem="fuB-9t-4wc" secondAttribute="trailing" id="xKl-aj-hGw"/>
-                            <constraint firstItem="mu6-4C-Qhg" firstAttribute="top" secondItem="gHr-TE-oQJ" secondAttribute="bottom" id="xzt-ZG-mPl"/>
-                            <constraint firstItem="eg1-wy-Tit" firstAttribute="top" secondItem="aso-Rh-QhM" secondAttribute="top" constant="20" id="zLw-NV-xyk"/>
+                            <constraint firstItem="zX7-jb-YrO" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="2c8-lH-Jzb"/>
+                            <constraint firstItem="zX7-jb-YrO" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="4Hv-0c-tMe"/>
+                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="7q4-nn-vr9"/>
+                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="9xO-z0-8su"/>
+                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="Czt-Fp-W8T"/>
+                            <constraint firstItem="GQL-7Y-x2Y" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="DJk-0H-7ir"/>
+                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="top" secondItem="H0P-sb-OJ4" secondAttribute="bottom" id="KYr-DH-3rp"/>
+                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="Kld-nn-M2v"/>
+                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="top" secondItem="OCV-I7-pDX" secondAttribute="bottom" id="PTX-jb-7r3"/>
+                            <constraint firstItem="H0P-sb-OJ4" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="STX-Dd-w1n"/>
+                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="UdG-vv-nX2"/>
+                            <constraint firstItem="GQL-7Y-x2Y" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="VWO-Zr-bkL"/>
+                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="X2X-vh-Snv"/>
+                            <constraint firstItem="OCV-I7-pDX" firstAttribute="top" secondItem="Vkp-3A-mDF" secondAttribute="bottom" id="bci-sw-nc4"/>
+                            <constraint firstItem="GQL-7Y-x2Y" firstAttribute="top" secondItem="HJs-2F-cQf" secondAttribute="bottom" id="cq0-DS-11G"/>
+                            <constraint firstItem="tQS-vU-Jf2" firstAttribute="bottom" secondItem="aso-Rh-QhM" secondAttribute="bottom" id="d1x-FX-A75"/>
+                            <constraint firstItem="eg1-wy-Tit" firstAttribute="top" secondItem="aso-Rh-QhM" secondAttribute="top" constant="20" id="fAd-Wt-4nT"/>
+                            <constraint firstItem="H0P-sb-OJ4" firstAttribute="top" secondItem="Wfa-9R-zfy" secondAttribute="bottom" id="fco-zz-LqQ"/>
+                            <constraint firstItem="HJs-2F-cQf" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="gEo-oi-3m4"/>
+                            <constraint firstItem="eg1-wy-Tit" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="h04-lL-V4O"/>
+                            <constraint firstItem="H0P-sb-OJ4" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="hOC-DE-bcW"/>
+                            <constraint firstItem="HJs-2F-cQf" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="jfm-ry-4Wn"/>
+                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="n0x-KX-2lF"/>
+                            <constraint firstItem="eg1-wy-Tit" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="nku-Ql-WEc"/>
+                            <constraint firstItem="OCV-I7-pDX" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="nrt-LJ-4rl"/>
+                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="top" secondItem="GQL-7Y-x2Y" secondAttribute="bottom" id="oH3-hK-OGR"/>
+                            <constraint firstItem="HJs-2F-cQf" firstAttribute="top" secondItem="eg1-wy-Tit" secondAttribute="bottom" id="php-K9-lcI"/>
+                            <constraint firstItem="Wfa-9R-zfy" firstAttribute="top" secondItem="zX7-jb-YrO" secondAttribute="bottom" id="qiR-C1-9Af"/>
+                            <constraint firstItem="Vkp-3A-mDF" firstAttribute="top" secondItem="C5l-Bl-gsx" secondAttribute="bottom" id="sHT-qj-BRd"/>
+                            <constraint firstItem="C5l-Bl-gsx" firstAttribute="leading" secondItem="aso-Rh-QhM" secondAttribute="leading" id="to4-ay-LUI"/>
+                            <constraint firstItem="OCV-I7-pDX" firstAttribute="trailing" secondItem="aso-Rh-QhM" secondAttribute="trailing" id="uiF-bm-kTb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="TtitleCase" destination="mu6-4C-Qhg" id="Trr-xp-htr"/>
-                        <outlet property="buttonPickerPicture" destination="gHr-TE-oQJ" id="TdZ-2m-1xc"/>
+                        <outlet property="aboutLabel" destination="C5l-Bl-gsx" id="rwm-XP-8cy"/>
                         <outlet property="descriptionAboutCase" destination="Vkp-3A-mDF" id="eVg-Sn-7nX"/>
                         <outlet property="descriptionResultCase" destination="tQS-vU-Jf2" id="3Sh-Uf-csx"/>
                         <outlet property="instituteName" destination="Wfa-9R-zfy" id="25s-Z5-Ohr"/>
                         <outlet property="locationName" destination="H0P-sb-OJ4" id="U27-fg-Itc"/>
-                        <outlet property="pickerPicture" destination="fuB-9t-4wc" id="yfz-8q-0Ce"/>
+                        <outlet property="pickerButton" destination="zX7-jb-YrO" id="3oz-1I-Djv"/>
+                        <outlet property="resultsLabel" destination="OCV-I7-pDX" id="weq-km-ugb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcm-Dn-ku6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="505"/>
+            <point key="canvasLocation" x="1796" y="504.67980295566502"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="ley-mY-reK">
@@ -1187,10 +1189,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cases_offwhite" width="4096" height="2862"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="foto4" width="341" height="132"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sad_cloud" width="556" height="410"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

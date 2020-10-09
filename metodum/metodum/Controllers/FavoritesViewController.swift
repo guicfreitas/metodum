@@ -38,7 +38,7 @@ class FavoritesViewController: UIViewController{
 //        favoriteCollection.register(FavoriteMethods.self, forCellWithReuseIdentifier: "FavoriteMethods")
 //        favoriteCasesCollection.register(FavoriteCases.self, forCellWithReuseIdentifier: "favoriteCases")
         
-        if(self.view.frame.height < 800) {
+        if(self.view.frame.height <= 700) {
             heightCaseCollection.constant = 138
             heightFavoriteCollection.constant = 138
         }else{
@@ -151,6 +151,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     print("ta na celula")
                     guard let img = acessibilityImage else {return}
                     cell.setImage(image: img)
+                    
                 }
             }
             cell.layer.cornerRadius = 20

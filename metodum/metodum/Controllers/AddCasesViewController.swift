@@ -8,13 +8,17 @@
 
 import UIKit
 
+
 class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var pickerButton: UIButton!
+    @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet var aboutLabel: UILabel!
     @IBOutlet weak var pickerPicture: UIImageView!
     @IBOutlet weak var TtitleCase: UITextField!
     @IBOutlet weak var instituteName: UITextField!
     @IBOutlet weak var locationName: UITextField!
-    @IBOutlet var descriptionAboutCase: UITextView!
+    @IBOutlet weak var descriptionAboutCase: UITextView!
     @IBOutlet weak var descriptionResultCase: UITextView!
     @IBOutlet weak var buttonPickerPicture: UIButton!
     
@@ -87,14 +91,38 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     let globalImagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.firstLineHeadIndent = 15
+        
         globalImagePicker.delegate = self
         super.viewDidLoad()
-        descriptionAboutCase.text = placeholder
-        descriptionAboutCase.textColor = .lightGray
+        
+        
         descriptionAboutCase.delegate = self
-        descriptionResultCase.text = placeholder
-        descriptionResultCase.textColor = .lightGray
+        
+        
         descriptionResultCase.delegate = self
+        
+        descriptionResultCase.attributedText = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        descriptionAboutCase.attributedText = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        descriptionResultCase.textColor = .lightGray
+        descriptionAboutCase.textColor = .lightGray
+        
+        instituteName.setLeftPaddingPoints(15.0)
+        locationName.setLeftPaddingPoints(15.0)
+        
+        
+        
+        
+        aboutLabel.attributedText = NSAttributedString(string: "SOBRE", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        aboutLabel.font = .preferredFont(forTextStyle: .body)
+        aboutLabel.adjustsFontForContentSizeCategory = true
+        
+        resultsLabel.attributedText = NSAttributedString(string: "RESULTADOS", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        resultsLabel.font = .preferredFont(forTextStyle: .body)
+        resultsLabel.adjustsFontForContentSizeCategory = true
+        
+        pickerButton.backgroundColor = UIColor(named: "BlackBody")?.withAlphaComponent(0.6)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -118,3 +146,16 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         }
     }
 }
+
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+}
+
+
+
+
+
