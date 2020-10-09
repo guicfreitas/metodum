@@ -36,7 +36,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
                 aboutCase: description,
                 caseResult: result
             )
-            
+            self.showSpinner(onView: self.view)
             ImagesRepository.uploadCaseImage(data: image.pngData()!,imageName: newCase.caseImage) { (error) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
@@ -45,6 +45,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
                         if let errorMessage = error {
                             self.alertError(message: errorMessage)
                         } else {
+                            self.removeSpinner()
                             DispatchQueue.main.async {
                                 let alert = UIAlertController(title: "Sucesso!", message: "Seu caso foi enviado para análise, aguarde o email de confirmação", preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))

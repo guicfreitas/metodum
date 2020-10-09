@@ -15,6 +15,7 @@ class ClassesScreenViewController: UIViewController {
     
     var classes : [SchoolClass] = []
     var user : User?
+    var teacher : Teacher?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +23,16 @@ class ClassesScreenViewController: UIViewController {
         self.showSpinner(onView: self.view)
         let parent = self.parent as! ViewController
         user = parent.user
+        teacher = parent.teacher
         if let loggedUser = user {
-            DispatchQueue.main.async {
-                TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uid) { (error, repoClasses) in
-                    self.removeSpinner()
-                    if let errorMessage = error {
-                        self.alertError(message: errorMessage)
-                    } else {
-                        if let repoClasses = repoClasses {
-                            self.classes = repoClasses
-                            self.classesCollection.reloadData()
-                        }
+            TeachersCloudRepository.setTeacherClassesChangesListener(teacherId: loggedUser.uid) { (error, repoClasses) in
+                self.removeSpinner()
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let repoClasses = repoClasses {
+                        self.classes = repoClasses
+                        self.classesCollection.reloadData()
                     }
                 }
             }

@@ -19,20 +19,17 @@ class CasesCollectionViewController: UIViewController {
         super.viewDidLoad()
        
         self.showSpinner(onView: self.view)
-        DispatchQueue.main.async {
-            CasesCloudRepository.getAllCases { (error, cases) in
-                self.removeSpinner()
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let newCases = cases {
-                        self.cases = newCases
-                        self.casesCollection.reloadData()
-                    }
+        CasesCloudRepository.getAllCases { (error, cases) in
+            self.removeSpinner()
+            if let errorMessage = error {
+                self.alertError(message: errorMessage)
+            } else {
+                if let newCases = cases {
+                    self.cases = newCases
+                    self.casesCollection.reloadData()
                 }
             }
         }
-        
         //self.navigationItem.largeTitleDisplayMode = .always
     }
     
@@ -73,8 +70,6 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.caseSubtitle.accessibilityLabel = caseObjeto.caseSubtitle
         cell.caseSubtitle.accessibilityHint = "Título indicando o local do caso de sucesso"
         
-        
-        
         return cell
     }
     
@@ -108,7 +103,9 @@ extension CasesCollectionViewController : UICollectionViewDelegateFlowLayout {
     }
     //funçao que calcula o tamanha celula (faz zerar o valor)
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        casesCollection.collectionViewLayout.invalidateLayout()
+        if let collection = casesCollection {
+            collection.collectionViewLayout.invalidateLayout()
+        }
         super.viewWillTransition(to: size, with: coordinator)
     }
 }

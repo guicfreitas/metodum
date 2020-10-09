@@ -20,13 +20,17 @@ class CasesCloudRepository {
     static func getAllCases(completion: @escaping (String?,[Case]?) -> ()) {
         casesCollection.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage, nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage, nil)
+                }
             } else {
                 let cases = querySnapshot?.documents.map({ (document) -> Case in
                     print(document.data())
                     return Case.fromJson(json: document.data())
                 })
-                completion(nil,cases)
+                DispatchQueue.main.async {
+                    completion(nil,cases)
+                }
             }
         }
     }
@@ -34,9 +38,13 @@ class CasesCloudRepository {
     static func addCase(newCase: Case, completion: @escaping (String?) -> ()) {
         let docRef = Firestore.firestore().collection("casesInAnalyzes").addDocument(data: newCase.toJson()) { (error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage)
+                DispatchQueue.main.async {
+                    completion(errorMessage)
+                }
             } else {
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
         }
         docRef.updateData(["caseUid" : docRef.documentID])
@@ -46,15 +54,18 @@ class CasesCloudRepository {
         let query = casesCollection.whereField("caseUid", in: casesUids)
         query.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 var cases = [Case]()
-                print(querySnapshot?.count)
                 for document in querySnapshot!.documents {
                     let favoriteCase = Case.fromJson(json: document.data())
                     cases.append(favoriteCase)
                 }
-                completion(nil, cases)
+                DispatchQueue.main.async {
+                    completion(nil, cases)
+                }
             }
         }
     }

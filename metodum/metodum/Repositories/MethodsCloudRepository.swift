@@ -30,10 +30,14 @@ class MethodsCloudRepository {
         let document = methodsCollection.document(language).collection("methods").document(uid)
         document.getDocument { (documentSnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 let methodology = Methodology.fromJson(json: (documentSnapshot?.data())!)
-                completion(nil, methodology)
+                DispatchQueue.main.async {
+                    completion(nil, methodology)
+                }
             }
         }
     }
@@ -54,7 +58,9 @@ class MethodsCloudRepository {
     static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
         methodsCollection.document(language).collection("methods").getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 var methodologies = querySnapshot?.documents.map({ (document) -> Methodology in
                     return Methodology.fromJson(json: document.data())
@@ -64,7 +70,9 @@ class MethodsCloudRepository {
                     return a.clicksCount > b.clicksCount
                 })
                 
-                completion(nil,methodologies)
+                DispatchQueue.main.async {
+                    completion(nil,methodologies)
+                }
             }
         }
     }
@@ -73,15 +81,18 @@ class MethodsCloudRepository {
         let query = methodsCollection.document(language).collection("methods").whereField("uid", in: methodsUids)
         query.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 var methods = [Methodology]()
-                print(querySnapshot?.count)
                 for document in querySnapshot!.documents {
                     let method = Methodology.fromJson(json: document.data())
                     methods.append(method)
                 }
-                completion(nil, methods)
+                DispatchQueue.main.async {
+                    completion(nil, methods)
+                }
             }
         }
     }

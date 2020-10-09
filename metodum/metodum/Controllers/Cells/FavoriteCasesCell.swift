@@ -10,4 +10,12 @@ import UIKit
 
 class FavoriteCasesCell: UICollectionViewCell {
     
+    @IBOutlet weak var caseImage: UIImageView!
+    
+    func setImage(image: AcessibilityImage) {
+        self.caseImage.image = UIImage(data: image.data)
+        self.caseImage.isAccessibilityElement = true
+        self.caseImage.accessibilityLabel = image.acessibilityLabel
+        self.caseImage.accessibilityHint = image.acessibilityHint
+    }
 }

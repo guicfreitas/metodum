@@ -17,11 +17,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+            view.addGestureRecognizer(tap)
+        
         if let user = AuthService.getUser() {
             print("tem user logado, performando segue")
             //print(user?.name)
-            self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
+            /*AuthService.signOut { (_) in
+                print("foi")
+            }*/
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
+            }
         }
     }
     
@@ -32,13 +38,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
     @IBAction func signIn(_ sender: Any) {
-        
         guard let email = emailField.text else {
             alertError(message: "Error reading Email Field")
             return
@@ -59,15 +59,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    private func showAuthorizationController() {
-        guard let request = getAppleSignInRequest() else {return}
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
-    }
-    
+
     @IBAction func signUp(_ sender: Any) {
         let alert = UIAlertController(title: "Register", message: "Register Account",preferredStyle: .alert)
         
@@ -96,7 +88,20 @@ class LoginViewController: UIViewController {
                         if let errorMessage = error {
                             self.alertError(message: errorMessage)
                         } else {
-                            self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
+                            if let currentUser = user {
+                                let teacher = Teacher(
+                                    uid: currentUser.uid,
+                                    name: currentUser.name,
+                                    email: currentUser.email,
+                                    imageName: ""
+                                )
+                                print("antes de inicializar")
+                                TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
+                                    DispatchQueue.main.async {
+                                        self.performSegue(withIdentifier: "Login to Main Screen", sender: currentUser)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -109,6 +114,23 @@ class LoginViewController: UIViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func appleSignInButton(_ sender: Any) {
+        showAuthorizationController()
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    private func showAuthorizationController() {
+        guard let request = getAppleSignInRequest() else {return}
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
     
     func getAppleSignInRequest() -> ASAuthorizationRequest? {
@@ -126,45 +148,42 @@ class LoginViewController: UIViewController {
     }
     
     func sha256(_ input: String) -> String {
-      let inputData = Data(input.utf8)
-      let hashedData = SHA256.hash(data: inputData)
-      let hashString = hashedData.compactMap {
+        let inputData = Data(input.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        let hashString = hashedData.compactMap {
         return String(format: "%02x", $0)
-      }.joined()
+        }.joined()
 
-      return hashString
+        return hashString
     }
     
     func randomNonceString(length: Int = 32) -> String {
-      precondition(length > 0)
-      let charset: Array<Character> =
-          Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
-      var result = ""
-      var remainingLength = length
+        precondition(length > 0)
+        let charset: Array<Character> = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remainingLength = length
 
-      while remainingLength > 0 {
-        let randoms: [UInt8] = (0 ..< 16).map { _ in
-            var random: UInt8 = 0
-            let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
-            if errorCode != errSecSuccess {
-                fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
-            }
-            return random
-        }
-
-        randoms.forEach { random in
-            if remainingLength == 0 {
-                return
+        while remainingLength > 0 {
+            let randoms: [UInt8] = (0 ..< 16).map { _ in
+                var random: UInt8 = 0
+                let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
+                if errorCode != errSecSuccess {
+                    fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+                }
+                return random
             }
 
-            if random < charset.count {
-                result.append(charset[Int(random)])
-                remainingLength -= 1
+            randoms.forEach { random in
+                if remainingLength == 0 {
+                    return
+                }
+                if random < charset.count {
+                    result.append(charset[Int(random)])
+                    remainingLength -= 1
+                }
             }
-        }
       }
-
-      return result
+        return result
     }
 }
 
@@ -174,8 +193,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let nonce = AuthService.currentNonce,
-            let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
             let appleIDToken = appleIDCredential.identityToken,
             let appleIDTokenString = String(data: appleIDToken, encoding: .utf8) {
          
@@ -184,8 +202,30 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
                     self.alertError(message: errorMessage)
                     
                 } else {
-                    if let currentUser = user {
-                        self.performSegue(withIdentifier: "Login to Main Screen", sender: currentUser)
+                    guard let currentUser = user else {return}
+                    
+                    if currentUser.name.isEmpty {
+                        print("user display name vazio") // se o display name vem vazio, esse usuário já foi logado pelo menos uma vez no app
+                        self.performSegue(withIdentifier: "Login to Main Screen", sender: user) 
+                    } else {
+                        print("user com display name") // no login apple, o displayName so vem uma vez, que e na primeira vez que o usuario loga com a conta no app
+                        let teacher = Teacher(
+                            uid: currentUser.uid,
+                            name: currentUser.name,
+                            email: currentUser.email,
+                            imageName: ""
+                        )
+                        print("antes de inicializar")
+                        // bota um loading aqui
+                        TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
+                            if let errorMessage = error {
+                                self.alertError(message: errorMessage)
+                            } else {
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "Login to Main Screen", sender: currentUser)
+                                }
+                            }
+                        }
                     }
                 }
             }

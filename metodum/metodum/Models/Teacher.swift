@@ -8,22 +8,34 @@
 
 import Foundation
 
-import Foundation
-
 struct Teacher {
-    var name : String
-    var classes : [SchoolClass]
+    var uid: String
+    var name: String
+    var email: String
+    var imageName: String
     
-    init(name: String, classes: [SchoolClass]) {
+    init(uid: String,name: String, email: String, imageName: String) {
+        self.uid = uid
         self.name = name
-        self.classes = classes
+        self.email = email
+        self.imageName = imageName
     }
     
-    /*static func fromJson(json: [String,Any]) {
+    static func fromJson(json: [String: Any]) -> Teacher{
         return Teacher(
-            name: json["name"],
-            classes: <#T##[SchoolClass]#>
+            uid: json["uid"] as! String,
+            name: json["name"] as! String,
+            email: json["email"] as! String,
+            imageName: json["imageName"] as! String
         )
-        
-    }*/
+    }
+    
+    func toJson() -> [String: Any] {
+        return [
+            "uid" : self.uid,
+            "name" : self.name,
+            "email": self.email,
+            "imageName": self.imageName
+        ]
+    }
 }

@@ -34,23 +34,20 @@ class MethodDetailViewController: UIViewController {
             self.howToApply.accessibilityLabel = methodObject.description
 
             // vou arrumar um jeito de cachear as imagens, pq ficar baixando as mesmas imagens várias vezes é uma sacanagem com o plano de dados do usuário
-            DispatchQueue.main.async {
-                ImagesRepository.getMethod(image: methodObject.methodImage) { (error, acessibilityImage) in
-                    print("is main Thread ? \(Thread.isMainThread)")
-                    if let errorMessage = error {
-                        self.alertError(message: errorMessage)
-                    } else {
-                        if let image = acessibilityImage {
-                            self.image.image = UIImage(data: image.data)
-                            self.image.isAccessibilityElement = true
-                            self.image.accessibilityLabel = image.acessibilityLabel
-                            self.image.accessibilityHint = image.acessibilityHint
-                        }
+            ImagesRepository.getMethod(image: methodObject.methodImage) { (error, acessibilityImage) in
+                print("is main Thread ? \(Thread.isMainThread)")
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let image = acessibilityImage {
+                        self.image.image = UIImage(data: image.data)
+                        self.image.isAccessibilityElement = true
+                        self.image.accessibilityLabel = image.acessibilityLabel
+                        self.image.accessibilityHint = image.acessibilityHint
                     }
                 }
             }
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

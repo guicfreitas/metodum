@@ -24,11 +24,11 @@
 		AE29F30A2526211000853D9B /* AcessibilityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29F3092526211000853D9B /* AcessibilityImage.swift */; };
 		AE5EA3DE252B605400F73D48 /* ShowErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */; };
 		AE78046025240B9500B108B3 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78045F25240B9500B108B3 /* ImagesRepository.swift */; };
-		AEB03433252E976600C5DA67 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEB03432252E976600C5DA67 /* GoogleService-Info.plist */; };
 		AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */; };
 		AEC882AA25201E6100796341 /* CasesCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A925201E6100796341 /* CasesCloudRepository.swift */; };
 		AEC882AD25201F0000796341 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882AC25201F0000796341 /* Case.swift */; };
 		AEC882B125203BAB00796341 /* NewSchoolClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */; };
+		AEE03C6D252FFEAD00088BAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEE03C6C252FFEAD00088BAA /* GoogleService-Info.plist */; };
 		AEF5BD8525190053009652BE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8425190053009652BE /* AuthService.swift */; };
 		AEF5BD8825190129009652BE /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8725190129009652BE /* Teacher.swift */; };
 		AEF5BD8A25190143009652BE /* SchoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BD8925190143009652BE /* SchoolClass.swift */; };
@@ -74,11 +74,11 @@
 		AE29F3092526211000853D9B /* AcessibilityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessibilityImage.swift; sourceTree = "<group>"; };
 		AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorViewController.swift; sourceTree = "<group>"; };
 		AE78045F25240B9500B108B3 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
-		AEB03432252E976600C5DA67 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsCloudRepository.swift; sourceTree = "<group>"; };
 		AEC882A925201E6100796341 /* CasesCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesCloudRepository.swift; sourceTree = "<group>"; };
 		AEC882AC25201F0000796341 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
 		AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSchoolClassViewController.swift; sourceTree = "<group>"; };
+		AEE03C6C252FFEAD00088BAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEF5BD8425190053009652BE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		AEF5BD8725190129009652BE /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		AEF5BD8925190143009652BE /* SchoolClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolClass.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				79CBC9612518FD2200AFB417 /* Assets.xcassets */,
 				79CBC9632518FD2200AFB417 /* LaunchScreen.storyboard */,
 				79CBC9662518FD2200AFB417 /* Info.plist */,
-				AEB03432252E976600C5DA67 /* GoogleService-Info.plist */,
+				AEE03C6C252FFEAD00088BAA /* GoogleService-Info.plist */,
 			);
 			path = metodum;
 			sourceTree = "<group>";
@@ -315,10 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CBC9652518FD2200AFB417 /* LaunchScreen.storyboard in Resources */,
+				AEE03C6D252FFEAD00088BAA /* GoogleService-Info.plist in Resources */,
 				79CBC9622518FD2200AFB417 /* Assets.xcassets in Resources */,
 				C3EF7ECB2521141A0086EF9C /* template.html in Resources */,
 				79CBC9602518FD2100AFB417 /* Main.storyboard in Resources */,
-				AEB03433252E976600C5DA67 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,14 +553,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,14 +574,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

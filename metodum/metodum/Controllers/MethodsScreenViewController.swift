@@ -29,20 +29,18 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.dataSource = self
         self.showSpinner(onView: self.view)
         
-        DispatchQueue.main.async {
-            MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
-                self.removeSpinner()
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let m = methods {
-                        self.methods = m
-                        self.trendMethod = self.methods.remove(at: 0)
-                        //print("is main Thread ? \(Thread.isMainThread)")
-                        //print(self.trendMethod!)
-                        //print(self.methods)
-                        self.maisSugesCollection.reloadData()
-                    }
+        MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
+            self.removeSpinner()
+            if let errorMessage = error {
+                self.alertError(message: errorMessage)
+            } else {
+                if let m = methods {
+                    self.methods = m
+                    self.trendMethod = self.methods.remove(at: 0)
+                    //print("is main Thread ? \(Thread.isMainThread)")
+                    //print(self.trendMethod!)
+                    //print(self.methods)
+                    self.maisSugesCollection.reloadData()
                 }
             }
         }
@@ -106,19 +104,17 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         let method = methods[indexPath.item]
         
-        DispatchQueue.main.async {
-            ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let image = acessibilityImage {
-                        imageview.image = UIImage(data: image.data)
-                        //print("is main Thread ? \(Thread.isMainThread)")
-                        //VOICE OVER
-                        cell.isAccessibilityElement = true
-                        cell.accessibilityLabel = image.acessibilityLabel //nome da figura
-                        cell.accessibilityHint = image.acessibilityHint //dica para a figura
-                    }
+        ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
+            if let errorMessage = error {
+                self.alertError(message: errorMessage)
+            } else {
+                if let image = acessibilityImage {
+                    imageview.image = UIImage(data: image.data)
+                    //print("is main Thread ? \(Thread.isMainThread)")
+                    //VOICE OVER
+                    cell.isAccessibilityElement = true
+                    cell.accessibilityLabel = image.acessibilityLabel //nome da figura
+                    cell.accessibilityHint = image.acessibilityHint //dica para a figura
                 }
             }
         }
@@ -130,20 +126,18 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
-        DispatchQueue.main.async {
-            if let method = self.trendMethod {
-                ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
-                    print("is main thread ? \(Thread.isMainThread)")
-                    if let errorMessage = error {
-                        self.alertError(message: errorMessage)
-                    } else {
-                        if let image = acessibilityImage {
-                            headerView.emAltaImage.image = UIImage(data: image.data)
-                            print(image)
-                            headerView.emAltaImage.isAccessibilityElement = true
-                            headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
-                            headerView.emAltaImage.accessibilityHint = image.acessibilityHint
-                        }
+        if let method = self.trendMethod {
+            ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
+                print("is main thread ? \(Thread.isMainThread)")
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let image = acessibilityImage {
+                        headerView.emAltaImage.image = UIImage(data: image.data)
+                        print(image)
+                        headerView.emAltaImage.isAccessibilityElement = true
+                        headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
+                        headerView.emAltaImage.accessibilityHint = image.acessibilityHint
                     }
                 }
             }

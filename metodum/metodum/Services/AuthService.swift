@@ -33,14 +33,13 @@ class AuthService {
     
     static func getUser() -> User? {
         if let user = auth.currentUser {
-            return User(uid: user.uid, email: user.email!, name: user.displayName!)
+            return User(uid: user.uid, email: user.email!, name: user.displayName ?? "")
         }
         return nil
     }
     
     static func createUserWithEmailAndPassword(email: String,password: String,name: String,completion: @escaping (String?,User?) -> ()) {
         auth.createUser(withEmail: email, password: password) { (result, error) in
-            print("no comppletion")
             if let error = error {
                 completion(error.localizedDescription,nil)
             }
@@ -49,7 +48,6 @@ class AuthService {
                 let userProfileRequest = user.createProfileChangeRequest()
                 userProfileRequest.displayName = name
                 userProfileRequest.commitChanges { (error) in
-                    print("commit changes")
                     if let error = error {
                         completion(error.localizedDescription,nil)
                     } else {
@@ -57,7 +55,6 @@ class AuthService {
                         completion(nil,loggedUser)
                     }
                 }
-                print("dps do commit, ainda no auth")
             }
         }
     }
@@ -68,7 +65,7 @@ class AuthService {
                 completion(error.localizedDescription,nil)
             } else {
                 if let user = result?.user {
-                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)
+                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName ?? "")
                     completion(nil, loggedUser)
                 }
             }
@@ -83,7 +80,7 @@ class AuthService {
                 completion(errorMessage,nil)
             } else {
                 if let user = result?.user {
-                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName!)
+                    let loggedUser = User(uid: user.uid, email: user.email!, name: user.displayName ?? "") 
                     completion(nil, loggedUser)
                 }
             }

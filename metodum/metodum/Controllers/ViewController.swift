@@ -13,34 +13,21 @@ var vSpinner : UIView?
 class ViewController: UITabBarController {
     
     var user : User?
+    var teacher : Teacher?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //ImagesRepository.updateImageMetaData(image: "Flipped_Classroom_Square.png")
-        //self.navigationController?.navigationBar.isHidden = true
-        //setNavigationBar()
-        // Do any additional setup after loading the view.
-        
-    }
-    
-    /*func setNavigationBar() {
-        self.navigationItem.title = "Turmas"
-        self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationItem.hidesBackButton = true
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
-    }
-    
-    @objc private func signOut() {
-        AuthService.signOut { (error) in
+        guard let currentUser = user else { return }
+        TeachersCloudRepository.get(teacherId: currentUser.uid) { (error, teacher) in
+            print("get Teacher Id is main thread ? \(Thread.current.isMainThread)")
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
+            } else {
+                self.teacher = teacher
             }
         }
-        
-        navigationController?.popViewController(animated: true)
-    }*/
+        //ImagesRepository.updateImageMetaData(image: "Flipped_Classroom_Square.png")
+    }
 }
 
 extension UIViewController {

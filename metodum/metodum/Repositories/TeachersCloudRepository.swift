@@ -23,13 +23,17 @@ class TeachersCloudRepository {
     static func setTeacherClassesChangesListener(teacherId: String ,completion: @escaping (String?,[SchoolClass]?) -> ()) {
         teachersCollection.document(teacherId).collection(Collections.classes.rawValue).addSnapshotListener(includeMetadataChanges: true) { (querySnapshot, error) in
             if let error = error {
-                completion(error.localizedDescription,[])
+                DispatchQueue.main.async {
+                    completion(error.localizedDescription,[])
+                }
             } else {
                 var classes : [SchoolClass]? = []
                 classes = querySnapshot?.documents.map({ (queryDocumentSnapshot) -> SchoolClass in
                     return SchoolClass.fromJson(json: queryDocumentSnapshot.data())
                 })
-                completion(nil, classes)
+                DispatchQueue.main.async {
+                    completion(nil, classes)
+                }
             }
         }
     }
@@ -49,14 +53,18 @@ class TeachersCloudRepository {
     static func getFavoriteMethodsUidsForTeacher(teacherUid: String, completion: @escaping (String?, [String]?) -> ()) {
         teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 var uids : [String] = []
                 for document in querySnapshot!.documents {
                     let uid = document.data()["uid"] as! String
                     uids.append(uid)
                 }
-                completion(nil,uids)
+                DispatchQueue.main.async {
+                    completion(nil,uids)
+                }
             }
         }
     }
@@ -64,14 +72,51 @@ class TeachersCloudRepository {
     static func getFavoriteCasesUidsForTeacher(teacherUid: String, completion: @escaping (String?, [String]?) -> ()) {
         teachersCollection.document(teacherUid).collection(Collections.cases.rawValue).getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 var uids : [String] = []
                 for document in querySnapshot!.documents {
                     let uid = document.data()["uid"] as! String
                     uids.append(uid)
                 }
-                completion(nil,uids)
+                DispatchQueue.main.async {
+                    completion(nil,uids)
+                }
+            }
+        }
+    }
+    
+    static func get(teacherId : String, completion: @escaping (String?,Teacher?) -> ()) {
+        teachersCollection.document(teacherId).getDocument { (docSnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage, nil)
+                }
+            } else {
+                if let data = docSnapshot?.data() {
+                    let teacher = Teacher.fromJson(json: data)
+                    DispatchQueue.main.async {
+                        completion(nil, teacher)
+                    }
+                }
+            }
+        }
+    }
+    
+    static func initialize(teacher: Teacher,completion: @escaping (String?, Teacher?) -> ()) {
+        teachersCollection.document(teacher.uid).setData(teacher.toJson()) { (error) in
+            print("foi irmao")
+            print(teacher)
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil, teacher)
+                }
             }
         }
     }

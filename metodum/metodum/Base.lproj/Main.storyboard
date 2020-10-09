@@ -155,13 +155,22 @@
                                     <action selector="signUp:" destination="s2Y-36-iek" eventType="touchUpInside" id="6LN-OI-luH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-W9-qOL">
+                                <rect key="frame" x="142" y="615" width="91" height="30"/>
+                                <state key="normal" title="Apple Sign In"/>
+                                <connections>
+                                    <action selector="appleSignInButton:" destination="s2Y-36-iek" eventType="touchUpInside" id="031-VT-u1a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vXd-8z-Af7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JEp-1z-Kr3" firstAttribute="top" secondItem="5eO-gr-x1g" secondAttribute="bottom" constant="27" id="3eX-Y0-03r"/>
                             <constraint firstItem="fcI-BR-SNB" firstAttribute="top" secondItem="vXd-8z-Af7" secondAttribute="top" constant="300" id="7nf-e8-UqL"/>
+                            <constraint firstItem="YH1-W9-qOL" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" id="A5d-v3-Avr"/>
                             <constraint firstItem="JEp-1z-Kr3" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" id="AOL-Ne-yJW"/>
+                            <constraint firstItem="YH1-W9-qOL" firstAttribute="top" secondItem="JEp-1z-Kr3" secondAttribute="bottom" constant="31" id="C5o-K6-bC5"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="fcI-BR-SNB" secondAttribute="trailing" constant="20" id="CHK-Gk-jwi"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="h93-bW-7qf" secondAttribute="trailing" constant="20" id="DQW-2v-3XF"/>
                             <constraint firstItem="h93-bW-7qf" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="HGw-Ym-eaD"/>
@@ -636,7 +645,24 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NkR-6O-HIh">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTL-qp-vgp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iTL-qp-vgp" firstAttribute="top" secondItem="NkR-6O-HIh" secondAttribute="top" id="5P6-OG-3Gm"/>
+                                                <constraint firstItem="iTL-qp-vgp" firstAttribute="width" secondItem="NkR-6O-HIh" secondAttribute="width" id="OhP-k6-UKj"/>
+                                                <constraint firstItem="iTL-qp-vgp" firstAttribute="height" secondItem="NkR-6O-HIh" secondAttribute="height" id="ZSF-rs-Hel"/>
+                                                <constraint firstAttribute="bottom" secondItem="iTL-qp-vgp" secondAttribute="bottom" id="hIc-0t-wKM"/>
+                                                <constraint firstAttribute="trailing" secondItem="iTL-qp-vgp" secondAttribute="trailing" id="hVt-3z-xhT"/>
+                                                <constraint firstItem="iTL-qp-vgp" firstAttribute="leading" secondItem="NkR-6O-HIh" secondAttribute="leading" id="lQI-78-Mjj"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="methodImage" destination="iTL-qp-vgp" id="5ix-vI-lch"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -669,7 +695,24 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OLt-KD-75R">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4XW-fg-dog">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4XW-fg-dog" firstAttribute="width" secondItem="OLt-KD-75R" secondAttribute="width" id="Pd9-7i-cHs"/>
+                                                <constraint firstItem="4XW-fg-dog" firstAttribute="top" secondItem="OLt-KD-75R" secondAttribute="top" id="Xcy-1D-izP"/>
+                                                <constraint firstItem="4XW-fg-dog" firstAttribute="height" secondItem="OLt-KD-75R" secondAttribute="height" id="hdC-As-cZr"/>
+                                                <constraint firstAttribute="bottom" secondItem="4XW-fg-dog" secondAttribute="bottom" id="jek-Io-uaS"/>
+                                                <constraint firstItem="4XW-fg-dog" firstAttribute="leading" secondItem="OLt-KD-75R" secondAttribute="leading" id="psF-mx-Z05"/>
+                                                <constraint firstAttribute="trailing" secondItem="4XW-fg-dog" secondAttribute="trailing" id="tV8-qp-Kby"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="caseImage" destination="4XW-fg-dog" id="4NY-Aw-Neu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

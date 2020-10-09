@@ -10,4 +10,12 @@ import UIKit
 
 class FavoriteMethodCell: UICollectionViewCell {
     
+    @IBOutlet weak var methodImage: UIImageView!
+    
+    func setImage(image: AcessibilityImage) {
+        self.methodImage.image = UIImage(data: image.data)
+        self.methodImage.isAccessibilityElement = true
+        self.methodImage.accessibilityLabel = image.acessibilityLabel
+        self.methodImage.accessibilityHint = image.acessibilityHint
+    }
 }

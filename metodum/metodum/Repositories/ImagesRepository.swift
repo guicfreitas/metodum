@@ -30,16 +30,51 @@ class ImagesRepository {
         
         imageRef.getData(maxSize: .max) { (imageData, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
                 imageRef.getMetadata { (metaData, error) in
                     if let errorMessage = error?.localizedDescription {
-                        completion(errorMessage,nil)
+                        DispatchQueue.main.async {
+                            completion(errorMessage,nil)
+                        }
                     } else {
                         if let customMetaData = metaData?.customMetadata {
                             let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel.rawValue]!,
                                 acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint.rawValue]!)
-                            completion(nil,image)
+                            DispatchQueue.main.async {
+                                completion(nil,image)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    static func getCase(image url : String, completion: @escaping (String?, AcessibilityImage?) -> ()) {
+        let folder = ImagesFolders.casesImages.rawValue
+        let imageRef = storageRoot.child(folder+url)
+        
+        imageRef.getData(maxSize: .max) { (imageData, error) in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
+            } else {
+                imageRef.getMetadata { (metaData, error) in
+                    if let errorMessage = error?.localizedDescription {
+                        DispatchQueue.main.async {
+                            completion(errorMessage,nil)
+                        }
+                    } else {
+                        if let customMetaData = metaData?.customMetadata {
+                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel.rawValue]!,
+                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint.rawValue]!)
+                            DispatchQueue.main.async {
+                                completion(nil,image)
+                            }
                         }
                     }
                 }
@@ -64,16 +99,20 @@ class ImagesRepository {
         }
     }
     
-    static func getCase(image url : String, completion: @escaping (String?, Data?) -> ()) {
+    /*static func getCase(image url : String, completion: @escaping (String?, Data?) -> ()) {
         let folder = ImagesFolders.casesImages.rawValue
         storageRoot.child(folder+url).getData(maxSize: .max) { (imageData, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage,nil)
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
             } else {
-                completion(nil,imageData)
+                DispatchQueue.main.async {
+                    completion(nil,imageData)
+                }
             }
         }
-    }
+    }*/
     
     /*static func uploadImageFrom(url: URL, completion: @escaping (String?) -> () ) {
         storageRoot.putFile(from: url, metadata: nil) { (metaData, error) in
@@ -94,9 +133,13 @@ class ImagesRepository {
         
         let uploadProgressTask = imgReference.putData(data, metadata: metadata) { (_, error) in
             if let errorMessage = error?.localizedDescription {
-                completion(errorMessage)
+                DispatchQueue.main.async {
+                    completion(errorMessage)
+                }
             } else {
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             }
         }
         

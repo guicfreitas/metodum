@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>120196903337-sfc5nhu1e5is6a9jbasttjt5ir16rub8.apps.googleusercontent.com</string>
+	<string>120196903337-otpc82eocorlqpmrq9m6ndfuj0n3akhl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.120196903337-sfc5nhu1e5is6a9jbasttjt5ir16rub8</string>
+	<string>com.googleusercontent.apps.120196903337-otpc82eocorlqpmrq9m6ndfuj0n3akhl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDzzjafh8Z9fYO-xsEbe49e5U-FDaU4Btw</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>emao.metodum</string>
+	<string>emao.metodumm</string>
 	<key>PROJECT_ID</key>
 	<string>metodumapp-7dc26</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:120196903337:ios:ce2ceb5587de3f3cb2d4b8</string>
+	<string>1:120196903337:ios:2441447ff26838b2b2d4b8</string>
 	<key>DATABASE_URL</key>
 	<string>https://metodumapp-7dc26.firebaseio.com</string>
 </dict>
