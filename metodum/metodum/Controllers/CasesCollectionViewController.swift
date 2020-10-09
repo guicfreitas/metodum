@@ -70,6 +70,7 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.caseSubtitle.accessibilityLabel = caseObjeto.caseSubtitle
         cell.caseSubtitle.accessibilityHint = "Título indicando o local do caso de sucesso"
         
+        
         return cell
     }
     

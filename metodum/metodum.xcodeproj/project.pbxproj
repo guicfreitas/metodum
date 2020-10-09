@@ -10,6 +10,7 @@
 		791F884B252B5BBF0079EAE5 /* HTMLMethodTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */; };
 		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		795F7C3E252DF6A6004A289B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */; };
+		796EA52C2530FAD800C91F02 /* MetodumLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */; };
 		79B82C4F252F585E0078DDAB /* FavoriteCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B82C4E252F585E0078DDAB /* FavoriteCases.swift */; };
 		79B82C54252F5CC10078DDAB /* FavoriteMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B82C53252F5CC10078DDAB /* FavoriteMethods.swift */; };
 		79B82C8B252F8F430078DDAB /* FavoriteMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B82C8A252F8F430078DDAB /* FavoriteMethodCell.swift */; };
@@ -59,6 +60,7 @@
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
+		796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodumLibraryViewController.swift; sourceTree = "<group>"; };
 		79B82C4E252F585E0078DDAB /* FavoriteCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCases.swift; sourceTree = "<group>"; };
 		79B82C53252F5CC10078DDAB /* FavoriteMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMethods.swift; sourceTree = "<group>"; };
 		79B82C8A252F8F430078DDAB /* FavoriteMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMethodCell.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				C3EF7EBF25200A950086EF9C /* AddCasesViewController.swift */,
 				AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */,
 				795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */,
+				796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				79B82C8E252F8F600078DDAB /* FavoriteCasesCell.swift in Sources */,
 				C3EF7ED0252121680086EF9C /* SharePDFActivity.swift in Sources */,
 				AEF5BD8A25190143009652BE /* SchoolClass.swift in Sources */,
+				796EA52C2530FAD800C91F02 /* MetodumLibraryViewController.swift in Sources */,
 				C3D0269A252A518600C66531 /* MethodDetailViewController.swift in Sources */,
 				AEF5BD8525190053009652BE /* AuthService.swift in Sources */,
 				AEF5BD8C25190178009652BE /* User.swift in Sources */,

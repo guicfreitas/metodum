@@ -26,6 +26,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         self.dismiss(animated: true)
     }
     
+    
     @IBAction func addCase(_ sender: UIBarButtonItem) {
         if let image = pickerPicture.image, let title = TtitleCase.text, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
             
@@ -64,12 +65,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     var placeholder: String = "Escreva aqui..."
     
-    @IBAction func buttonPicker(_ sender: UIButton) {
-        globalImagePicker.allowsEditing = false
-        globalImagePicker.sourceType = .photoLibrary
-        
-        present(globalImagePicker, animated: true, completion: nil)
-    }
+   
     
     // Método obrigatório da UIImagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -144,6 +140,32 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             textView.text = placeholder
             textView.textColor = .lightGray
         }
+    }
+    
+    
+    @IBAction func didPressActionSheet(_ sender: Any) {
+        let alerta = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alerta.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
+        
+        alerta.addAction(UIAlertAction(title: "Biblioteca Metodum", style: .default, handler: { (button) in
+            self.performSegue(withIdentifier: "LibraryMetodumViewController", sender: nil)
+        }))
+        
+        alerta.addAction(UIAlertAction(title: "Escolher Foto", style: .default, handler: { (button) in
+            self.globalImagePicker.allowsEditing = false
+            self.globalImagePicker.sourceType = .photoLibrary
+            
+            self.present(self.globalImagePicker, animated: true, completion: nil)
+        }))
+        
+//        alerta.addAction(UIAlertAction(title: "Tirar Foto", style: .default, handler: {(button) in
+//            self.globalImagePicker.sourceType = .camera
+//            self.present(self.globalImagePicker, animated: true, completion: nil)
+//        }))
+        
+        alerta.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        present(alerta, animated: true, completion: nil)
     }
 }
 

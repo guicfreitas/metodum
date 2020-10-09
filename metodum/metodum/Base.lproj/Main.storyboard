@@ -448,7 +448,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-2F-cQf">
@@ -459,7 +459,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="dH4-ll-qZ4">
                                             <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
-                                                <action selector="cancelCase:" destination="NnS-eq-Yxw" id="0Mc-7w-bSU"/>
+                                                <action selector="cancelCase:" destination="NnS-eq-Yxw" id="FzW-p5-5aC"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Concluir" id="ZQK-ck-mjb">
@@ -555,6 +555,9 @@
                                 <state key="normal" title="Trocar Imagem">
                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressActionSheet:" destination="NnS-eq-Yxw" eventType="touchUpInside" id="Xhe-cC-8ap"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aso-Rh-QhM"/>
@@ -601,11 +604,63 @@
                         <outlet property="locationName" destination="H0P-sb-OJ4" id="U27-fg-Itc"/>
                         <outlet property="pickerButton" destination="zX7-jb-YrO" id="3oz-1I-Djv"/>
                         <outlet property="resultsLabel" destination="OCV-I7-pDX" id="weq-km-ugb"/>
+                        <segue destination="NG8-Uy-Zrd" kind="presentation" identifier="LibraryMetodumViewController" id="t0J-8r-ehU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcm-Dn-ku6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1796" y="504.67980295566502"/>
+        </scene>
+        <!--Metodum Library View Controller-->
+        <scene sceneID="kVM-yZ-Neu">
+            <objects>
+                <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
+                                <rect key="frame" x="0.0" y="36" width="375" height="56"/>
+                                <color key="barTintColor" name="BlackBody"/>
+                                <items>
+                                    <navigationItem title="Novo Caso" id="S9k-Pe-Ecr">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="NZO-bb-NFv">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <connections>
+                                                <action selector="dismissLibrary:" destination="NG8-Uy-Zrd" id="eZs-dG-86O"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Concluir" id="NY6-yq-kXD">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <connections>
+                                                <action selector="addCase:" destination="NnS-eq-Yxw" id="f44-yc-q60"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbq-gI-9gR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LVe-ni-nV0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jK0-MM-cEz" firstAttribute="top" secondItem="Fbq-gI-9gR" secondAttribute="bottom" id="2OC-YW-Xpo"/>
+                            <constraint firstItem="jK0-MM-cEz" firstAttribute="trailing" secondItem="LVe-ni-nV0" secondAttribute="trailing" id="5Xc-7K-02V"/>
+                            <constraint firstItem="Fbq-gI-9gR" firstAttribute="top" secondItem="LVe-ni-nV0" secondAttribute="top" constant="20" id="8A4-7a-Rtn"/>
+                            <constraint firstItem="jK0-MM-cEz" firstAttribute="leading" secondItem="LVe-ni-nV0" secondAttribute="leading" id="ghf-Rh-ND9"/>
+                            <constraint firstItem="LVe-ni-nV0" firstAttribute="trailing" secondItem="Fbq-gI-9gR" secondAttribute="trailing" id="khy-Br-EmV"/>
+                            <constraint firstItem="Fbq-gI-9gR" firstAttribute="leading" secondItem="m9V-2Y-dLe" secondAttribute="leading" id="r2H-Vi-Vmq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6xT-6T-y95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="505"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="ley-mY-reK">
