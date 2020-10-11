@@ -12,14 +12,16 @@ struct Methodology {
     var uid : String
     var name : String
     var description : String
-    var methodImage : String
+    var methodFullImage : String
+    var methodSquareImage : String
     var clicksCount : Int
     
-    init(uid : String, name: String, description: String, methodImage: String,clicksCount : Int = 0) {
+    init(uid : String, name: String, description: String, methodFullImage: String,methodSquareImage: String,clicksCount : Int = 0) {
         self.uid = uid
         self.name = name
         self.description = description
-        self.methodImage = methodImage
+        self.methodFullImage = methodFullImage
+        self.methodSquareImage = methodSquareImage
         self.clicksCount = clicksCount
     }
     
@@ -28,7 +30,8 @@ struct Methodology {
             uid: json["uid"] as! String,
             name: json["name"] as! String,
             description: json["description"] as! String,
-            methodImage: json["methodImage"] as! String,
+            methodFullImage: json["methodFullImage"] as! String,
+            methodSquareImage: json["methodSquareImage"] as! String,
             clicksCount: json["clicksCount"] as? Int ?? 0
         )
     }

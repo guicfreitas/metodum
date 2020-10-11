@@ -14,9 +14,4 @@ class CasesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var caseSubtitle: UILabel!
     @IBOutlet weak var caseImage: UIImageView!
     
-    var id: Int = 0
-    
-    func setImage (named: String){
-        caseImage.image = UIImage(named: named)
-    }
 }

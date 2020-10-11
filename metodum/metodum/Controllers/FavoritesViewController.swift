@@ -19,6 +19,7 @@ class FavoritesViewController: UIViewController{
     var language = "pt"
     
     var methods = [Methodology]()
+    var persistedImagesNames = [String]()
     var cases = [Case]()
     var user : User?
     var teacher : Teacher?
@@ -55,17 +56,15 @@ class FavoritesViewController: UIViewController{
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                print("methods uids")
-                print(documentsUids as Any)
                 if let uids = documentsUids, !uids.isEmpty {
                     MethodsCloudRepository.query(methodsUids: documentsUids!, language: self.language) { (error, favoriteMethods) in
                         if let errorMessage = error {
                             self.alertError(message: errorMessage)
                         } else {
-                            print("metodos preferidos")
-                            print(favoriteMethods as Any)
                             if let m = favoriteMethods {
+                                print("pegou os methods preferidos")
                                 self.methods = m
+                                self.persistedImagesNames = DeviceDataPersistenceService.persistedImagesNames[.methodsImages]!
                                 self.favoriteCollection.reloadData()
                             }
                         }
@@ -78,15 +77,12 @@ class FavoritesViewController: UIViewController{
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                print("cases uids")
-                print(documentsUids as Any)
                 if let uids = documentsUids, !uids.isEmpty {
                     CasesCloudRepository.query(casesUids: documentsUids!, language: self.language) { (error, favoriteCases) in
                         if let errorMessage = error {
                             self.alertError(message: errorMessage)
                         } else {
-                            print("cases preferidos")
-                            print(favoriteCases as Any)
+                            print("pegou os cases preferidos")
                             if let c = favoriteCases {
                                 self.cases = c
                                 self.favoriteCasesCollection.reloadData()
@@ -123,7 +119,7 @@ extension FavoritesViewController: UICollectionViewDelegate{
 
 extension FavoritesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (collectionView == favoriteCollection) ? cases.count : methods.count
+        return (collectionView.tag == 1) ? cases.count : methods.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -133,29 +129,54 @@ extension FavoritesViewController: UICollectionViewDataSource{
 //        cell.backgroundColor = UIColor.red
         
         
-        if(collectionView == favoriteCasesCollection){
+        if (collectionView.tag == 1) {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "favCase", for: indexPath) as! FavoriteCasesCell
+            let actualCase = cases[indexPath.item]
+            
+            if persistedImagesNames.contains(actualCase.caseImage) {
+                if let image = DeviceDataPersistenceService.getImage(named: actualCase.caseImage, on: .casesImages) {
+                    print("persisted image nos favoritos ")
+                    cell2.setImage(image: image)
+                }
+            } else {
+                ImagesRepository.getCase(image: actualCase.caseImage) { (error, acessibilityImage) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        print("ta na celula")
+                        guard let img = acessibilityImage else {return}
+                        cell2.setImage(image: img)
+                    }
+                }
+            }
 
             cell2.layer.cornerRadius = 20
-            cell2.backgroundColor = UIColor.blue
 
             return cell2
-        }else{
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favMethod", for: indexPath) as! FavoriteMethodCell
             let method = methods[indexPath.item]
             // hj eu mudo essa merda pra cachear as imagens, eu juro
-            ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    print("ta na celula")
-                    guard let img = acessibilityImage else {return}
-                    cell.setImage(image: img)
-                    
+            
+            if persistedImagesNames.contains(method.methodFullImage) {
+                if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
+                    print("persisted image nos favoritos ")
+                    cell.setImage(image: image)
                 }
+            } else {
+                ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        print("ta na celula")
+                        guard let img = acessibilityImage else {return}
+                        cell.setImage(image: img)
+                        
+                    }
+                }
+                cell.layer.cornerRadius = 20
             }
-            cell.layer.cornerRadius = 20
-            cell.backgroundColor = UIColor.red
+            
             return cell
         }
         //return cell
@@ -179,10 +200,6 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if(collectionView == favoriteCollection){
-            return 20
-        }else{
-            return 20
-        }
+        return 20
     }
 }

@@ -32,6 +32,7 @@ class ClassesScreenViewController: UIViewController {
                 } else {
                     if let repoClasses = repoClasses {
                         self.classes = repoClasses
+                        
                         self.classesCollection.reloadData()
                     }
                 }

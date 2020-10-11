@@ -18,6 +18,19 @@ class ViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let currentUser = user else { return }
+        
+        if DeviceDataPersistenceService.directoryExists(named: .methodsImages) {
+            print("methods images existe")
+        } else {
+            DeviceDataPersistenceService.createDirectory(named: .methodsImages)
+        }
+        
+        if DeviceDataPersistenceService.directoryExists(named: .casesImages) {
+            print("cases images existe")
+        } else {
+            DeviceDataPersistenceService.createDirectory(named: .casesImages)
+        }
+        
         TeachersCloudRepository.get(teacherId: currentUser.uid) { (error, teacher) in
             print("get Teacher Id is main thread ? \(Thread.current.isMainThread)")
             if let errorMessage = error {

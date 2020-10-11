@@ -14,6 +14,7 @@ class CasesCollectionViewController: UIViewController {
     @IBOutlet weak var casesCollection: UICollectionView!
     
     var cases : [Case] = []
+    var persistedImagesNames = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class CasesCollectionViewController: UIViewController {
             } else {
                 if let newCases = cases {
                     self.cases = newCases
+                    self.persistedImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .casesImages)
                     self.casesCollection.reloadData()
                 }
             }
@@ -56,10 +58,27 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CasesCollectionViewCell
         
         let caseObjeto = cases[indexPath.item]
+        print("ta na celula")
         cell.caseTitle.text = caseObjeto.caseTitle
         cell.caseSubtitle.text = caseObjeto.caseSubtitle
-        cell.setImage(named: caseObjeto.caseImage)
         cell.layer.cornerRadius = 12
+        
+        if persistedImagesNames.contains(caseObjeto.caseImage) {
+            print("tá salvo no cache")
+            let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.caseImage, on: .casesImages)
+            cell.caseImage.image = UIImage(data: acessibilityImage!.data)
+        } else {
+            print("indo pegar do server")
+            ImagesRepository.getCase(image: caseObjeto.caseImage) { (error, acessibilityImage) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    print("pegando do servidor")
+                    DeviceDataPersistenceService.write(acessibilityImage: acessibilityImage!, named: caseObjeto.caseImage, on: .casesImages)
+                    cell.caseImage.image = UIImage(data: acessibilityImage!.data)
+                }
+            }
+        }
         
         //VOICE OVER
         cell.caseTitle.isAccessibilityElement = true
@@ -69,7 +88,6 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.caseSubtitle.isAccessibilityElement = true
         cell.caseSubtitle.accessibilityLabel = caseObjeto.caseSubtitle
         cell.caseSubtitle.accessibilityHint = "Título indicando o local do caso de sucesso"
-        
         
         return cell
     }

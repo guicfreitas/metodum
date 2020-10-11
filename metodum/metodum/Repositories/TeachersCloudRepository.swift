@@ -107,8 +107,8 @@ class TeachersCloudRepository {
     
     static func initialize(teacher: Teacher,completion: @escaping (String?, Teacher?) -> ()) {
         teachersCollection.document(teacher.uid).setData(teacher.toJson()) { (error) in
-            print("foi irmao")
-            print(teacher)
+            //print("foi irmao")
+            //print(teacher)
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
                     completion(errorMessage,nil)

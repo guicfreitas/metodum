@@ -17,8 +17,10 @@ enum ImagesFolders : String {
 }
 
 enum ImagesAcessibilityAtributes : String {
-    case acessibilityLabel = "acessibilityLabel"
-    case acessibilityHint = "acessibilityHint"
+    case acessibilityLabel_pt
+    case acessibilityHint_pt
+    case acessibilityLabel_en
+    case acessibilityHint_en
 }
 
 class ImagesRepository {
@@ -41,8 +43,8 @@ class ImagesRepository {
                         }
                     } else {
                         if let customMetaData = metaData?.customMetadata {
-                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel.rawValue]!,
-                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint.rawValue]!)
+                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel_pt.rawValue]!,
+                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint_pt.rawValue]!)
                             DispatchQueue.main.async {
                                 completion(nil,image)
                             }
@@ -63,33 +65,36 @@ class ImagesRepository {
                     completion(errorMessage,nil)
                 }
             } else {
-                imageRef.getMetadata { (metaData, error) in
+                DispatchQueue.main.async {
+                    let image = AcessibilityImage(data: imageData!, acessibilityLabel: " ", acessibilityHint: " ")
+                    completion(nil,image)
+                }
+                /*imageRef.getMetadata { (metaData, error) in
                     if let errorMessage = error?.localizedDescription {
                         DispatchQueue.main.async {
                             completion(errorMessage,nil)
                         }
                     } else {
                         if let customMetaData = metaData?.customMetadata {
-                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel.rawValue]!,
-                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint.rawValue]!)
+                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel_pt.rawValue]!,
+                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint_pt.rawValue]!)
                             DispatchQueue.main.async {
                                 completion(nil,image)
                             }
                         }
                     }
-                }
+                }*/
             }
         }
     }
     
-    static func updateImageMetaData(image url : String) {
-        let folder = ImagesFolders.methodologiesImages.rawValue
-        let imageRef = storageRoot.child(folder+url)
+    static func updateImageMetaData(image url : String, on folder: ImagesFolders) {
+        let imageRef = storageRoot.child(folder.rawValue+url)
         
         let metaData = StorageMetadata()
         metaData.customMetadata = [
-            ImagesAcessibilityAtributes.acessibilityLabel.rawValue : "Método Sala de Aula Invertida (Flipped Classroom)",
-            ImagesAcessibilityAtributes.acessibilityHint.rawValue : "A arte mostra uma sala de aula com parede verde, um quadro negro e carteiras. No entanto, tudo está de cabeça para baixo, representando método sala de aula invertida."
+            "acessibilityLabel_pt" : "Método da sala invertida",
+            "acessibilityHint_pt": "A arte mostra uma sala de aula com parede verde, um quadro negro e carteiras. No entanto, tudo está de cabeça para baixo, representando método sala de aula invertida."
         ]
         
         imageRef.updateMetadata(metaData) { (data, error) in

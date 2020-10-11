@@ -16,6 +16,7 @@ class MethodDetailViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     
     var selectedMethod: Methodology?
+    var persistedImagesNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +33,29 @@ class MethodDetailViewController: UIViewController {
             
             self.howToApply.isAccessibilityElement = true
             self.howToApply.accessibilityLabel = methodObject.description
-
-            // vou arrumar um jeito de cachear as imagens, pq ficar baixando as mesmas imagens várias vezes é uma sacanagem com o plano de dados do usuário
-            ImagesRepository.getMethod(image: methodObject.methodImage) { (error, acessibilityImage) in
-                print("is main Thread ? \(Thread.isMainThread)")
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let image = acessibilityImage {
-                        self.image.image = UIImage(data: image.data)
-                        self.image.isAccessibilityElement = true
-                        self.image.accessibilityLabel = image.acessibilityLabel
-                        self.image.accessibilityHint = image.acessibilityHint
+            
+            self.persistedImagesNames = DeviceDataPersistenceService.persistedImagesNames[.methodsImages]!
+            
+            if self.persistedImagesNames.contains(methodObject.methodFullImage) {
+                if let image = DeviceDataPersistenceService.getImage(named: methodObject.methodFullImage, on: .methodsImages) {
+                    self.image.image = UIImage(data: image.data)
+                    self.image.isAccessibilityElement = true
+                    self.image.accessibilityLabel = image.acessibilityLabel
+                    self.image.accessibilityHint = image.acessibilityHint
+                }
+            } else {
+                ImagesRepository.getMethod(image: methodObject.methodFullImage) { (error, acessibilityImage) in
+                    print("is main Thread ? \(Thread.isMainThread)")
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        if let image = acessibilityImage {
+                            self.image.image = UIImage(data: image.data)
+                            self.image.isAccessibilityElement = true
+                            self.image.accessibilityLabel = image.acessibilityLabel
+                            self.image.accessibilityHint = image.acessibilityHint
+                            DeviceDataPersistenceService.write(acessibilityImage: image, named: methodObject.methodFullImage, on: .methodsImages)
+                        }
                     }
                 }
             }

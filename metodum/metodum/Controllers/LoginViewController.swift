@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signInButtonView: UIView!
+    @IBOutlet weak var appleSignInButtonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,41 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
             }
         }
+        signInButtonView.layer.cornerRadius = 10
+        appleSignInButtonView.layer.cornerRadius = 10
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+        
+        if #available(iOS 13.0, *) {
+            let app = UIApplication.shared
+            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+            
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = UIColor(named: "Blue")
+            view.addSubview(statusbarView)
+          
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: view.centerXAnchor).isActive = true
+          
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = UIColor(named: "Blue")
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clearNavigationBar()
+        //UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,7 +98,10 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUp(_ sender: Any) {
-        let alert = UIAlertController(title: "Register", message: "Register Account",preferredStyle: .alert)
+        
+        performSegue(withIdentifier: "Login to Register Screen", sender: nil)
+        
+        /*let alert = UIAlertController(title: "Register", message: "Register Account",preferredStyle: .alert)
         
         alert.addTextField { textEmail in
           textEmail.placeholder = "Enter your email"
@@ -113,7 +153,7 @@ class LoginViewController: UIViewController {
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)*/
     }
     
     @IBAction func appleSignInButton(_ sender: Any) {
@@ -125,6 +165,19 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
+    private func setupNavigationBar() {
+        navigationItem.title = "Entrar"
+        navigationController?.navigationBar.backgroundColor = UIColor(named:"Blue")
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func clearNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.backgroundColor = UIColor(named:"BlackBody")
+        navigationItem.setRightBarButtonItems([], animated: false)
+        navigationItem.title = ""
+    }
+    
     private func showAuthorizationController() {
         guard let request = getAppleSignInRequest() else {return}
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
@@ -133,7 +186,7 @@ class LoginViewController: UIViewController {
         authorizationController.performRequests()
     }
     
-    func getAppleSignInRequest() -> ASAuthorizationRequest? {
+    private func getAppleSignInRequest() -> ASAuthorizationRequest? {
         AuthService.currentNonce = randomNonceString()
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
@@ -147,7 +200,7 @@ class LoginViewController: UIViewController {
         return nil
     }
     
-    func sha256(_ input: String) -> String {
+    private func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)
         let hashedData = SHA256.hash(data: inputData)
         let hashString = hashedData.compactMap {
@@ -157,7 +210,7 @@ class LoginViewController: UIViewController {
         return hashString
     }
     
-    func randomNonceString(length: Int = 32) -> String {
+    private func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: Array<Character> = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
         var result = ""
@@ -206,7 +259,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
                     
                     if currentUser.name.isEmpty {
                         print("user display name vazio") // se o display name vem vazio, esse usuário já foi logado pelo menos uma vez no app
-                        self.performSegue(withIdentifier: "Login to Main Screen", sender: user) 
+                        self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
                     } else {
                         print("user com display name") // no login apple, o displayName so vem uma vez, que e na primeira vez que o usuario loga com a conta no app
                         let teacher = Teacher(
@@ -236,3 +289,37 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         self.alertError(message: error.localizedDescription)
     }
 }
+
+/*class BackgroundView : UIView {
+    override func draw(_ rect: CGRect) {
+        print("chamou")
+        
+        // This code was generated by Trial version of PaintCode, therefore cannot be used for commercial purposes.
+        // http://www.paintcodeapp.com
+
+        // This code was generated by Trial version of PaintCode, therefore cannot be used for commercial purposes.
+        // http://www.paintcodeapp.com
+
+        //// Color Declarations
+        let fillColor = UIColor(named: "Blue")
+
+        //// layer101
+        //// Bezier Drawing
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 0, y: 123.04))
+        bezierPath.addCurve(to: CGPoint(x: 2.16, y: -41), controlPoint1: CGPoint(x: 0, y: -32.69), controlPoint2: CGPoint(x: 0.12, y: -41))
+        bezierPath.addCurve(to: CGPoint(x: 449.64, y: -20.82), controlPoint1: CGPoint(x: 8.64, y: -40.93), controlPoint2: CGPoint(x: 449.16, y: -21.04))
+        bezierPath.addCurve(to: CGPoint(x: 449.88, y: 101.67), controlPoint1: CGPoint(x: 449.88, y: -20.6), controlPoint2: CGPoint(x: 450, y: 34.53))
+        bezierPath.addLine(to: CGPoint(x: 449.52, y: 223.79))
+        bezierPath.addLine(to: CGPoint(x: 437.51, y: 218.89))
+        bezierPath.addCurve(to: CGPoint(x: 381.22, y: 201.98), controlPoint1: CGPoint(x: 422.15, y: 212.66), controlPoint2: CGPoint(x: 397.9, y: 205.32))
+        bezierPath.addCurve(to: CGPoint(x: 203.81, y: 209.62), controlPoint1: CGPoint(x: 321.44, y: 189.96), controlPoint2: CGPoint(x: 258.79, y: 192.63))
+        bezierPath.addCurve(to: CGPoint(x: 111.03, y: 245.3), controlPoint1: CGPoint(x: 193.25, y: 212.96), controlPoint2: CGPoint(x: 162.04, y: 224.9))
+        bezierPath.addCurve(to: CGPoint(x: 17.16, y: 281.58), controlPoint1: CGPoint(x: 63.86, y: 264.22), controlPoint2: CGPoint(x: 27.61, y: 278.17))
+        bezierPath.addLine(to: CGPoint(x: 0, y: 287))
+        bezierPath.addLine(to: CGPoint(x: 0, y: 123.04))
+        bezierPath.close()
+        fillColor!.setFill()
+        bezierPath.fill()
+    }
+}*/

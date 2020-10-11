@@ -17,6 +17,7 @@ class CollectionHeader: UICollectionReusableView {
 class MethodsScreenViewController: UIViewController {
     
     let edgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
+    var persistedImagesNames : [String] = []
     var methods = [Methodology]()
     var trendMethod : Methodology?
     var headerHeight : CGFloat = 300
@@ -34,12 +35,13 @@ class MethodsScreenViewController: UIViewController {
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                if let m = methods {
+                if let m = methods, !m.isEmpty {
                     self.methods = m
                     self.trendMethod = self.methods.remove(at: 0)
                     //print("is main Thread ? \(Thread.isMainThread)")
-                    //print(self.trendMethod!)
-                    //print(self.methods)
+                    self.persistedImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
+                    print("persisted images names")
+                    print(self.persistedImagesNames)
                     self.maisSugesCollection.reloadData()
                 }
             }
@@ -104,17 +106,31 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         let method = methods[indexPath.item]
         
-        ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
-            if let errorMessage = error {
-                self.alertError(message: errorMessage)
-            } else {
-                if let image = acessibilityImage {
-                    imageview.image = UIImage(data: image.data)
-                    //print("is main Thread ? \(Thread.isMainThread)")
-                    //VOICE OVER
-                    cell.isAccessibilityElement = true
-                    cell.accessibilityLabel = image.acessibilityLabel //nome da figura
-                    cell.accessibilityHint = image.acessibilityHint //dica para a figura
+        if persistedImagesNames.contains(method.methodSquareImage) {
+            if let image = DeviceDataPersistenceService.getImage(named: method.methodSquareImage, on: .methodsImages) {
+                print("persisted image")
+                print(image)
+                imageview.image = UIImage(data: image.data)
+                //print("is main Thread ? \(Thread.isMainThread)")
+                //VOICE OVER
+                cell.isAccessibilityElement = true
+                cell.accessibilityLabel = image.acessibilityLabel //nome da figura
+                cell.accessibilityHint = image.acessibilityHint
+            }
+        } else {
+            ImagesRepository.getMethod(image: method.methodSquareImage) { (error, acessibilityImage) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let image = acessibilityImage {
+                        DeviceDataPersistenceService.write(acessibilityImage: image, named: method.methodSquareImage, on: .methodsImages)
+                        imageview.image = UIImage(data: image.data)
+                        //print("is main Thread ? \(Thread.isMainThread)")
+                        //VOICE OVER
+                        cell.isAccessibilityElement = true
+                        cell.accessibilityLabel = image.acessibilityLabel //nome da figura
+                        cell.accessibilityHint = image.acessibilityHint //dica para a figura
+                    }
                 }
             }
         }
@@ -127,17 +143,30 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
         if let method = self.trendMethod {
-            ImagesRepository.getMethod(image: method.methodImage) { (error, acessibilityImage) in
-                print("is main thread ? \(Thread.isMainThread)")
-                if let errorMessage = error {
-                    self.alertError(message: errorMessage)
-                } else {
-                    if let image = acessibilityImage {
-                        headerView.emAltaImage.image = UIImage(data: image.data)
-                        print(image)
-                        headerView.emAltaImage.isAccessibilityElement = true
-                        headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
-                        headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+            if persistedImagesNames.contains(method.methodFullImage) {
+                if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
+                    print("persisted trending image")
+                    print(image)
+                    headerView.emAltaImage.image = UIImage(data: image.data)
+                    //print(image)
+                    headerView.emAltaImage.isAccessibilityElement = true
+                    headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
+                    headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+                }
+            } else {
+                ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
+                    print("entrou no repo de imagens")
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        if let image = acessibilityImage {
+                            DeviceDataPersistenceService.write(acessibilityImage: image, named: method.methodFullImage, on: .methodsImages)
+                            headerView.emAltaImage.image = UIImage(data: image.data)
+                            //print(image)
+                            headerView.emAltaImage.isAccessibilityElement = true
+                            headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
+                            headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+                        }
                     }
                 }
             }
@@ -156,7 +185,7 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
         
         let itemWidth = (fullWidth / 2) - (edgeInsets.left + 10)
         let itemHeight = itemWidth
-        print(itemHeight)
+        //print(itemHeight)
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
@@ -166,7 +195,7 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        print(headerHeight)
+        //print(headerHeight)
         return CGSize(width: maisSugesCollection.frame.width, height: headerHeight)
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
