@@ -24,10 +24,6 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     var placeholder: String = "Escreva aqui..."
     
-    public func textViewShouldReturn(_ textView: UITextView) -> Bool {
-        textView.resignFirstResponder()
-        return true;
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +101,11 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
     @objc func keyboardWillHide() {

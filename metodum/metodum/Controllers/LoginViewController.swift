@@ -38,6 +38,9 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         if #available(iOS 13.0, *) {
             let app = UIApplication.shared
@@ -65,7 +68,22 @@ class LoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         clearNavigationBar()
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
         //UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+                self.view.frame.origin.y = -50
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -236,6 +254,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     
 
 }
+
+
 
 
 /*class BackgroundView : UIView {
