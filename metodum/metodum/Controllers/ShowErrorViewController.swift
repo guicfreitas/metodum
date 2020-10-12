@@ -20,7 +20,6 @@ class ShowErrorViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func tryAgainButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

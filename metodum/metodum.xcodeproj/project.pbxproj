@@ -237,9 +237,9 @@
 				C33D511D251A3A8F00E9D7EC /* CasesCollectionViewController.swift */,
 				C3EEED27251DBA3E005A7EB0 /* CasesDetailViewController.swift */,
 				C3EF7EBF25200A950086EF9C /* AddCasesViewController.swift */,
+				796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */,
 				AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */,
 				795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */,
-				796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -565,14 +565,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,14 +586,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

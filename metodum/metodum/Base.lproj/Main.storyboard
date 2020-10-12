@@ -698,6 +698,7 @@
                         <outlet property="instituteName" destination="Wfa-9R-zfy" id="25s-Z5-Ohr"/>
                         <outlet property="locationName" destination="H0P-sb-OJ4" id="U27-fg-Itc"/>
                         <outlet property="pickerButton" destination="zX7-jb-YrO" id="3oz-1I-Djv"/>
+                        <outlet property="pickerPicture" destination="GQL-7Y-x2Y" id="za5-it-eZa"/>
                         <outlet property="resultsLabel" destination="OCV-I7-pDX" id="weq-km-ugb"/>
                         <segue destination="NG8-Uy-Zrd" kind="presentation" identifier="LibraryMetodumViewController" id="t0J-8r-ehU"/>
                     </connections>
@@ -728,7 +729,7 @@
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="OK" id="NY6-yq-kXD">
                                             <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
-                                                <action selector="addCase:" destination="NnS-eq-Yxw" id="f44-yc-q60"/>
+                                                <action selector="okButtonPressed:" destination="NG8-Uy-Zrd" id="P9S-PH-f6F"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -787,7 +788,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xT-6T-y95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2678" y="505"/>
+            <point key="canvasLocation" x="2863" y="505"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="ley-mY-reK">
@@ -932,6 +933,8 @@
                         <outlet property="heightCaseCollection" destination="61V-eF-KHL" id="Qe5-qe-cle"/>
                         <outlet property="heightFavoriteCollection" destination="VHG-tv-V1a" id="vpG-la-cAM"/>
                         <outlet property="navigationIten" destination="dnr-Sq-y11" id="cUr-qr-R8y"/>
+                        <segue destination="8Yl-KZ-Rjh" kind="show" identifier="CaseDetailsSegue" id="4dD-YY-L4u"/>
+                        <segue destination="yHc-VH-Zqu" kind="show" identifier="MethodScreenViewSegue" id="zHE-v5-uMu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw1-Ua-FaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -988,7 +991,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="signIn:" destination="s2Y-36-iek" eventType="touchUpInside" id="ho8-Hc-vR7"/>
                                             <action selector="signUpButtonPressed:" destination="84Z-MK-aq8" eventType="touchUpInside" id="aBu-vN-Rjh"/>
                                         </connections>
                                     </button>
@@ -1092,7 +1094,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="1XK-re-dQU"/>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="yvU-xO-wHR" id="bRY-Jf-2Hn"/>
+                        <outlet property="emailTextField" destination="6P8-pY-Lg0" id="Pvp-hF-bUl"/>
+                        <outlet property="nameTextField" destination="0S6-gd-Zn8" id="gje-hl-xyZ"/>
+                        <outlet property="passwordTextField" destination="IVb-T4-2y1" id="1Dy-rZ-noZ"/>
                         <outlet property="signUpButtonBackgroundView" destination="ycH-Yy-hNI" id="2L3-Yc-KaS"/>
+                        <segue destination="Gs0-Ip-eZ6" kind="show" identifier="Register to Main Screen" id="sWk-e2-O3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7m8-XI-h1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1531,6 +1538,11 @@
             <point key="canvasLocation" x="351" y="984"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zHE-v5-uMu"/>
+        <segue reference="4dD-YY-L4u"/>
+        <segue reference="sWk-e2-O3Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cases_grey" width="1242" height="849"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>

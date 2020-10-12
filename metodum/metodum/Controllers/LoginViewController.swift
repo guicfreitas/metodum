@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-            view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
         
         if let user = AuthService.getUser() {
             print("tem user logado, performando segue")
@@ -98,62 +98,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signUp(_ sender: Any) {
-        
         performSegue(withIdentifier: "Login to Register Screen", sender: nil)
-        
-        /*let alert = UIAlertController(title: "Register", message: "Register Account",preferredStyle: .alert)
-        
-        alert.addTextField { textEmail in
-          textEmail.placeholder = "Enter your email"
-        }
-        
-        alert.addTextField { textPassword in
-          textPassword.isSecureTextEntry = true
-          textPassword.placeholder = "Enter your password"
-        }
-        
-        alert.addTextField { (textName) in
-            textName.placeholder = "Enter your full name"
-        }
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            let emailField = alert.textFields![0]
-            let passwordField = alert.textFields![1]
-            let nameField = alert.textFields![2]
-            
-            if let email = emailField.text, let password = passwordField.text, let name = nameField.text {
-                if !email.isEmpty && !password.isEmpty && !name.isEmpty{
-                    AuthService.createUserWithEmailAndPassword(email: email, password: password, name: name) { (error,user) in
-                        print("closure createUser with email")
-                        if let errorMessage = error {
-                            self.alertError(message: errorMessage)
-                        } else {
-                            if let currentUser = user {
-                                let teacher = Teacher(
-                                    uid: currentUser.uid,
-                                    name: currentUser.name,
-                                    email: currentUser.email,
-                                    imageName: ""
-                                )
-                                print("antes de inicializar")
-                                TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
-                                    DispatchQueue.main.async {
-                                        self.performSegue(withIdentifier: "Login to Main Screen", sender: currentUser)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)*/
     }
     
     @IBAction func appleSignInButton(_ sender: Any) {

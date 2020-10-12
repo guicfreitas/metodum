@@ -52,6 +52,7 @@ class FavoritesViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showSpinner(onView: self.view)
+        self.removeSpinner()
         guard let curretnUser = user else {return}
         
         self.persistedMethodsImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
@@ -91,6 +92,7 @@ class FavoritesViewController: UIViewController{
                 self.alertError(message: errorMessage)
             } else {
                 if let uids = documentsUids {
+                    self.removeSpinner()
                     if uids.isEmpty {
                         DispatchQueue.main.async {
                             self.cases = []
@@ -98,7 +100,6 @@ class FavoritesViewController: UIViewController{
                         }
                     } else {
                         CasesCloudRepository.query(casesUids: uids, language: self.language) { (error, favoriteCases) in
-                            self.removeSpinner()
                             if let errorMessage = error {
                                 self.alertError(message: errorMessage)
                             } else {
@@ -115,7 +116,23 @@ class FavoritesViewController: UIViewController{
         }
     }
     
-    func setNavigationBar() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CaseDetailsSegue" {
+            if let detailsController = segue.destination as? CasesDetailViewController {
+                let selectedCase = sender as! Case
+                detailsController.selectedCase = selectedCase
+                detailsController.user = user
+            }
+        } else if segue.identifier == "MethodScreenViewSegue" {
+            if let details = segue.destination as? MethodDetailViewController {
+                let salectedMethod = sender as! Methodology
+                details.selectedMethod = salectedMethod
+                details.user = user
+            }
+        }
+    }
+    
+    private func setNavigationBar() {
         self.navigationIten.title = "Favoritos"
         self.navigationIten.largeTitleDisplayMode = .always
         
@@ -141,6 +158,14 @@ extension FavoritesViewController: UICollectionViewDelegate{
 extension FavoritesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (collectionView.tag == 1) ? cases.count : methods.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 1 {
+            performSegue(withIdentifier: "CaseDetailsSegue", sender: cases[indexPath.item])
+        } else {
+            performSegue(withIdentifier: "MethodScreenViewSegue", sender: methods[indexPath.item])
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

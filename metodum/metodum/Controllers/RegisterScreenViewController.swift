@@ -11,6 +11,10 @@ import UIKit
 class RegisterScreenViewController: UIViewController {
 
     @IBOutlet weak var signUpButtonBackgroundView: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,35 @@ class RegisterScreenViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        
+        if let name = nameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text, !email.isEmpty, !password.isEmpty, !name.isEmpty, !confirmPassword.isEmpty {
+            
+            if password == confirmPassword {
+                AuthService.createUserWithEmailAndPassword(email: email, password: password, name: name) { (error,user) in
+                    print("closure createUser with email")
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        if let currentUser = user {
+                            let teacher = Teacher(
+                                uid: currentUser.uid,
+                                name: currentUser.name,
+                                email: currentUser.email,
+                                imageName: ""
+                            )
+                            print("antes de inicializar")
+                            TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "Register to Main Screen", sender: currentUser)
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                self.alertError(message: "A senha foi confirmada errada")
+            }
+        }
     }
     
     private func setupNavigationBar() {

@@ -10,33 +10,28 @@ import UIKit
 
 class MetodumLibraryViewController: UIViewController {
     
-    let imageArray = ["cases_blue","cases_orange","cases_purple","cases_yellow","cases_white","cases_grey"]
-    
-    let selected = false
-
     @IBOutlet weak var okButton: UIBarButtonItem!
     @IBOutlet weak var libraryCollection: UICollectionView!
+    
+    let imageArray = ["cases_blue","cases_orange","cases_purple","cases_yellow","cases_white","cases_grey"]
+    var selectedImageName = ""
+    var selected = false
+    var selectedSymbolView : UIImageView?
+    var callBack : ((String) -> ())?
+    
     @IBAction func dismissLibrary(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func okButtonPressed(_ sender: Any) {
+        callBack?(selectedImageName)
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
 }
 
 extension MetodumLibraryViewController: UICollectionViewDelegate{
@@ -48,18 +43,28 @@ extension MetodumLibraryViewController: UICollectionViewDelegate{
         
         let sizeSymbol = heightCell / 3.90
         
-        let imageview:UIImageView = UIImageView(frame: CGRect(x:widthCell - 40, y: heightCell - 40,width: sizeSymbol, height: sizeSymbol))
-        
-        imageview.image = UIImage(systemName: "checkmark.circle.fill")
-        imageview.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
-        
-        let cell = collectionView.cellForItem(at: indexPath)
-        
-        cell?.contentView.addSubview(imageview)
-        
-        okButton.isEnabled = true
+        if !selected {
+            selectedSymbolView = UIImageView(frame: CGRect(x:widthCell - 40, y: heightCell - 40,width: sizeSymbol, height: sizeSymbol))
+            
+            selectedSymbolView!.image = UIImage(systemName: "checkmark.circle.fill")
+            selectedSymbolView!.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
+            
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            cell?.contentView.addSubview(selectedSymbolView!)
+            selectedImageName = imageArray[indexPath.item]
+            okButton.isEnabled = true
+            selected = true
+            print(selectedImageName)
+        }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        selectedSymbolView?.removeFromSuperview()
+        selectedImageName = ""
+        selected = false
+        okButton.isEnabled = false
+    }
 }
 
 extension MetodumLibraryViewController: UICollectionViewDataSource{
@@ -70,16 +75,12 @@ extension MetodumLibraryViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "libraryCell", for: indexPath) as! LibraryCellCollectionViewCell
         
-        
-        
         let imageview:UIImageView = UIImageView(frame: CGRect(x:0, y:0,width: cell.frame.width, height: cell.frame.height))
         
         imageview.image = UIImage(named: imageArray[indexPath.row])
         cell.contentView.addSubview(imageview)
         return cell
     }
-    
-    
 }
 
 extension MetodumLibraryViewController: UICollectionViewDelegateFlowLayout{
@@ -90,10 +91,7 @@ extension MetodumLibraryViewController: UICollectionViewDelegateFlowLayout{
         let height =  width/proportion
         
         return CGSize(width: width, height: height)
-        
-        
     }
-    
 }
 
 

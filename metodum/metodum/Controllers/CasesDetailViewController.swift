@@ -27,6 +27,7 @@ class CasesDetailViewController: UIViewController {
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
+                    print(favoriteCases)
                     if let cases = favoriteCases {
                         DispatchQueue.main.async {
                             if cases.contains(self.selectedCase!.caseUid) {
