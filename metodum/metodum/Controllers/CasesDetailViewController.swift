@@ -79,7 +79,7 @@ class CasesDetailViewController: UIViewController {
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertCaseToPdf))
         
-        addFavoriteCase.isEnabled = false
+        //addFavoriteCase.isEnabled = false
         addFavoriteCase.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         

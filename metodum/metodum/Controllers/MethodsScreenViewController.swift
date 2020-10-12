@@ -33,7 +33,7 @@ class MethodsScreenViewController: UIViewController {
         user = parentController.user
         self.showSpinner(onView: self.view)
         
-        MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
+        MethodsCloudRepository.getAllMethods() { (error, methods) in
             self.removeSpinner()
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
@@ -75,7 +75,7 @@ func heigthForHeader(labelA : UILabel, labelB : UILabel, image : UIImageView) ->
 
 extension MethodsScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item], language: "pt")
+        MethodsCloudRepository.incrementClicksCountFor(methodology: &methods[indexPath.item])
         performSegue(withIdentifier: "MethodScreenViewSegue", sender: methods[indexPath.item])
     }
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

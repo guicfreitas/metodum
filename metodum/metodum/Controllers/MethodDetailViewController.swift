@@ -19,6 +19,7 @@ class MethodDetailViewController: UIViewController {
     var persistedImagesNames = [String]()
     var user: User?
     var isFavorite = false
+    var language = Locale.current.languageCode
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +47,27 @@ class MethodDetailViewController: UIViewController {
         }
 
         if let methodObject = selectedMethod {
-            navigationItem.title = methodObject.name
-            
-            self.about.text = methodObject.description
-            self.howToApply.text = methodObject.description
-               
-            self.about.isAccessibilityElement = true
-            self.about.accessibilityLabel = methodObject.description
-            
-            self.howToApply.isAccessibilityElement = true
-            self.howToApply.accessibilityLabel = methodObject.description
+            if language == "pt" {
+                navigationItem.title = methodObject.name_pt
+                self.about.text = methodObject.about_pt
+                self.howToApply.text = methodObject.howToApply_pt
+                   
+                self.about.isAccessibilityElement = true
+                self.about.accessibilityLabel = methodObject.about_pt
+                
+                self.howToApply.isAccessibilityElement = true
+                self.howToApply.accessibilityLabel = methodObject.howToApply_pt
+            } else {
+                navigationItem.title = methodObject.name_en
+                self.about.text = methodObject.about_en
+                self.howToApply.text = methodObject.howToApply_en
+                   
+                self.about.isAccessibilityElement = true
+                self.about.accessibilityLabel = methodObject.about_en
+                
+                self.howToApply.isAccessibilityElement = true
+                self.howToApply.accessibilityLabel = methodObject.howToApply_en
+            }
             
             self.persistedImagesNames = DeviceDataPersistenceService.persistedImagesNames[.methodsImages]!
             
@@ -99,7 +111,7 @@ class MethodDetailViewController: UIViewController {
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertMethodToPdf))
         
-        addFavoriteMethod.isEnabled = false
+        //addFavoriteMethod.isEnabled = false
         addFavoriteMethod.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         

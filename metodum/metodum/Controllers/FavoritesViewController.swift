@@ -71,7 +71,7 @@ class FavoritesViewController: UIViewController{
                             self.favoriteCollection.reloadData()
                         }
                     } else {
-                        MethodsCloudRepository.query(methodsUids: uids, language: self.language) { (error, favoriteMethods) in
+                        MethodsCloudRepository.query(methodsUids: uids) { (error, favoriteMethods) in
                             if let errorMessage = error {
                                 self.alertError(message: errorMessage)
                             } else {

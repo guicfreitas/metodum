@@ -26,8 +26,24 @@ class MethodsCloudRepository {
         }
     }*/
     
-    static func getMethod(uid: String, language: String, completion: @escaping (String?, Methodology?) -> ()) {
+    /*(static func getMethod(uid: String, language: String, completion: @escaping (String?, Methodology?) -> ()) {
         let document = methodsCollection.document(language).collection("methods").document(uid)
+        document.getDocument { (documentSnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
+            } else {
+                let methodology = Methodology.fromJson(json: (documentSnapshot?.data())!)
+                DispatchQueue.main.async {
+                    completion(nil, methodology)
+                }
+            }
+        }
+    }*/
+    
+    static func getMethod(uid: String, completion: @escaping (String?, Methodology?) -> ()) {
+        let document = methodsCollection.document(uid)
         document.getDocument { (documentSnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
@@ -55,8 +71,30 @@ class MethodsCloudRepository {
         }
     }*/
     
-    static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
+    /*static func getAllMethods(language: String, completion: @escaping (String?, [Methodology]?) -> ()) {
         methodsCollection.document(language).collection("methods").getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
+            } else {
+                var methodologies = querySnapshot?.documents.map({ (document) -> Methodology in
+                    return Methodology.fromJson(json: document.data())
+                })
+                
+                methodologies?.sort(by: { (a, b) -> Bool in
+                    return a.clicksCount > b.clicksCount
+                })
+                
+                DispatchQueue.main.async {
+                    completion(nil,methodologies)
+                }
+            }
+        }
+    }*/
+    
+    static func getAllMethods(completion: @escaping (String?, [Methodology]?) -> ()) {
+        methodsCollection.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
                     completion(errorMessage,nil)
@@ -77,8 +115,28 @@ class MethodsCloudRepository {
         }
     }
     
-    static func query(methodsUids: [String], language: String,completion: @escaping (String?, [Methodology]?) -> ()) {
+    /*static func query(methodsUids: [String], language: String,completion: @escaping (String?, [Methodology]?) -> ()) {
         let query = methodsCollection.document(language).collection("methods").whereField("uid", in: methodsUids)
+        query.getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async {
+                    completion(errorMessage,nil)
+                }
+            } else {
+                var methods = [Methodology]()
+                for document in querySnapshot!.documents {
+                    let method = Methodology.fromJson(json: document.data())
+                    methods.append(method)
+                }
+                DispatchQueue.main.async {
+                    completion(nil, methods)
+                }
+            }
+        }
+    }*/
+    
+    static func query(methodsUids: [String], completion: @escaping (String?, [Methodology]?) -> ()) {
+        let query = methodsCollection.whereField("uid", in: methodsUids)
         query.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
@@ -97,8 +155,14 @@ class MethodsCloudRepository {
         }
     }
     
-    static func incrementClicksCountFor(methodology: inout Methodology, language: String) {
+    static func incrementClicksCountFor(methodology: inout Methodology) {
         methodology.clicksCount += 1
-        methodsCollection.document(language).collection("methods").document(methodology.uid).updateData(["clicksCount":methodology.clicksCount])
+        print(methodology.clicksCount)
+        methodsCollection.document(methodology.uid).updateData(["clicksCount":methodology.clicksCount])
     }
+    
+    /* static func incrementClicksCountFor(methodology: inout Methodology, language: String) {
+         methodology.clicksCount += 1
+         methodsCollection.document(language).collection("methods").document(methodology.uid).updateData(["clicksCount":methodology.clicksCount])
+    }*/
 }
