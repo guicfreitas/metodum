@@ -15,10 +15,14 @@ class CasesCollectionViewController: UIViewController {
     
     var cases : [Case] = []
     var persistedImagesNames = [String]()
+    var user : User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        let parentController = self.parent as! ViewController
+        user = parentController.user
+        
         self.showSpinner(onView: self.view)
         CasesCloudRepository.getAllCases { (error, cases) in
             self.removeSpinner()
@@ -44,6 +48,7 @@ class CasesCollectionViewController: UIViewController {
             if let detailsController = segue.destination as? CasesDetailViewController {
                 let selectedCase = sender as! Case
                 detailsController.selectedCase = selectedCase
+                detailsController.user = user
             }
         }
     }

@@ -19,7 +19,8 @@ class FavoritesViewController: UIViewController{
     var language = "pt"
     
     var methods = [Methodology]()
-    var persistedImagesNames = [String]()
+    var persistedMethodsImagesNames = [String]()
+    var persistedCasesImagesNames = [String]()
     var cases = [Case]()
     var user : User?
     var teacher : Teacher?
@@ -50,8 +51,12 @@ class FavoritesViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.showSpinner(onView: self.view)
         guard let curretnUser = user else {return}
         
+        self.persistedMethodsImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
+        self.persistedCasesImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .casesImages)
+
         TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: curretnUser.uid) { (error, documentsUids) in
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
@@ -64,7 +69,6 @@ class FavoritesViewController: UIViewController{
                             if let m = favoriteMethods {
                                 print("pegou os methods preferidos")
                                 self.methods = m
-                                self.persistedImagesNames = DeviceDataPersistenceService.persistedImagesNames[.methodsImages]!
                                 self.favoriteCollection.reloadData()
                             }
                         }
@@ -79,6 +83,7 @@ class FavoritesViewController: UIViewController{
             } else {
                 if let uids = documentsUids, !uids.isEmpty {
                     CasesCloudRepository.query(casesUids: documentsUids!, language: self.language) { (error, favoriteCases) in
+                        self.removeSpinner()
                         if let errorMessage = error {
                             self.alertError(message: errorMessage)
                         } else {
@@ -133,7 +138,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "favCase", for: indexPath) as! FavoriteCasesCell
             let actualCase = cases[indexPath.item]
             
-            if persistedImagesNames.contains(actualCase.caseImage) {
+            if persistedCasesImagesNames.contains(actualCase.caseImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: actualCase.caseImage, on: .casesImages) {
                     print("persisted image nos favoritos ")
                     cell2.setImage(image: image)
@@ -143,7 +148,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        print("ta na celula")
+                        print("pegando network")
                         guard let img = acessibilityImage else {return}
                         cell2.setImage(image: img)
                     }
@@ -158,7 +163,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
             let method = methods[indexPath.item]
             // hj eu mudo essa merda pra cachear as imagens, eu juro
             
-            if persistedImagesNames.contains(method.methodFullImage) {
+            if persistedMethodsImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
                     print("persisted image nos favoritos ")
                     cell.setImage(image: image)
@@ -168,7 +173,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        print("ta na celula")
+                        print("pegando network")
                         guard let img = acessibilityImage else {return}
                         cell.setImage(image: img)
                         

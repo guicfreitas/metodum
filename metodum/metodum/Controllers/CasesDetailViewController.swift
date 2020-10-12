@@ -15,11 +15,33 @@ class CasesDetailViewController: UIViewController {
     @IBOutlet weak var aboutText: UITextView!
     @IBOutlet weak var resultText: UITextView!
     var selectedCase : Case?
+    var user : User?
+    var isFavorite = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        setupNavigationBar()
+        
+        if let currentUser = user {
+            TeachersCloudRepository.getFavoriteCasesUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteCases) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let cases = favoriteCases {
+                        DispatchQueue.main.async {
+                            print("pegou o favorito")
+                            if cases.contains(self.selectedCase!.caseUid) {
+                                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
+                                self.isFavorite = true
+                            } else {
+                                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
         
         if let caseObject = selectedCase {
             self.title = caseObject.caseTitle
@@ -59,6 +81,7 @@ class CasesDetailViewController: UIViewController {
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertCaseToPdf))
         
+        addFavoriteCase.isEnabled = false
         addFavoriteCase.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         
@@ -69,10 +92,28 @@ class CasesDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteCase() {
-            let user = AuthService.getUser()
-            if let teacher = user, let caseObj = selectedCase {
-                TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: caseObj)
+        if let teacher = user, let caseObj = selectedCase {
+            if isFavorite {
+                TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.caseUid) { (error) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        self.alertSuccess(message: "Caso foi desfavoritado com sucesso!")
+                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
+                    }
+                }
+            } else {
+                TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: caseObj) { (error) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        self.alertSuccess(message: "Caso foi favoritado com sucesso!")
+                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
+                    }
+                }
             }
+            isFavorite = !isFavorite
+        }
     }
     
   @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
@@ -88,7 +129,7 @@ class CasesDetailViewController: UIViewController {
         let items = ["hue"]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
     
-    self.present(activityViewController, animated: true, completion: nil)
+        self.present(activityViewController, animated: true, completion: nil)
     
     }
     
@@ -103,6 +144,10 @@ class CasesDetailViewController: UIViewController {
         previoew.dataSource = self
         previoew.delegate = self
         self.present(previoew, animated: true, completion: nil)
+    }
+    
+    private func getFavoriteUIItemButtonWith(icon: String) -> UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(systemName: icon), style: .plain, target: self, action: #selector(self.setFavoriteCase))
     }
 }
 
