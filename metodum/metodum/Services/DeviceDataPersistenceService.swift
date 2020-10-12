@@ -52,6 +52,7 @@ class DeviceDataPersistenceService {
         let documentsDirectory = getURLOf(directory: directory.rawValue)
         let dataPath = documentsDirectory.appendingPathComponent(imageName)
         print(documentsDirectory)
+        print("foi aqui msm")
         do {
             let dataImage = try Data(contentsOf: dataPath)
             let acessibilityAtributes = try UserDefaults.standard.getObject(forKey: imageName, castTo: AcessibilityAtributes.self)

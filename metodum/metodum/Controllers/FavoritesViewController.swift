@@ -61,15 +61,24 @@ class FavoritesViewController: UIViewController{
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                if let uids = documentsUids, !uids.isEmpty {
-                    MethodsCloudRepository.query(methodsUids: documentsUids!, language: self.language) { (error, favoriteMethods) in
-                        if let errorMessage = error {
-                            self.alertError(message: errorMessage)
-                        } else {
-                            if let m = favoriteMethods {
-                                print("pegou os methods preferidos")
-                                self.methods = m
-                                self.favoriteCollection.reloadData()
+                print(documentsUids)
+                if let uids = documentsUids {
+                    if uids.isEmpty {
+                        DispatchQueue.main.async {
+                            print("foi")
+                            self.methods = []
+                            self.favoriteCollection.reloadData()
+                        }
+                    } else {
+                        MethodsCloudRepository.query(methodsUids: uids, language: self.language) { (error, favoriteMethods) in
+                            if let errorMessage = error {
+                                self.alertError(message: errorMessage)
+                            } else {
+                                if let m = favoriteMethods {
+                                    print("pegou os methods preferidos")
+                                    self.methods = m
+                                    self.favoriteCollection.reloadData()
+                                }
                             }
                         }
                     }
@@ -81,16 +90,23 @@ class FavoritesViewController: UIViewController{
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                if let uids = documentsUids, !uids.isEmpty {
-                    CasesCloudRepository.query(casesUids: documentsUids!, language: self.language) { (error, favoriteCases) in
-                        self.removeSpinner()
-                        if let errorMessage = error {
-                            self.alertError(message: errorMessage)
-                        } else {
-                            print("pegou os cases preferidos")
-                            if let c = favoriteCases {
-                                self.cases = c
-                                self.favoriteCasesCollection.reloadData()
+                if let uids = documentsUids {
+                    if uids.isEmpty {
+                        DispatchQueue.main.async {
+                            self.cases = []
+                            self.favoriteCasesCollection.reloadData()
+                        }
+                    } else {
+                        CasesCloudRepository.query(casesUids: uids, language: self.language) { (error, favoriteCases) in
+                            self.removeSpinner()
+                            if let errorMessage = error {
+                                self.alertError(message: errorMessage)
+                            } else {
+                                print("pegou os cases preferidos")
+                                if let c = favoriteCases {
+                                    self.cases = c
+                                    self.favoriteCasesCollection.reloadData()
+                                }
                             }
                         }
                     }
