@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // dizemos que o delegate do messeging é o nosso AppDelegate, então fazemos uma extension, pq existe uma funcao que nos dá um idMesseging, que é um indentificador único desse usuário no servidor do Push Notification, a partir dele , podemos direcionar o push notification para usuários específicos
         return true
     }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
+    }
 
     // MARK: UISceneSession Lifecycle
 
@@ -81,7 +85,5 @@ func application(application: UIApplication,
     Messaging.messaging().apnsToken = deviceToken as Data
 }
 
-func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
-    }
+
 

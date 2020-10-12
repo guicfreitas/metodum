@@ -233,7 +233,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         self.alertError(message: error.localizedDescription)
     }
+    
+
 }
+
 
 /*class BackgroundView : UIView {
     override func draw(_ rect: CGRect) {
