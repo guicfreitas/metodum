@@ -381,7 +381,7 @@
                                 </connections>
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-g5-HMj">
-                                <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                                <rect key="frame" x="10" y="44" width="355" height="96"/>
                                 <items>
                                     <navigationItem title="Cases" id="4I0-og-Li9">
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2ED-r3-Pqd">
@@ -398,9 +398,9 @@
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="x68-uG-ODQ" firstAttribute="top" secondItem="1aJ-g5-HMj" secondAttribute="bottom" id="3wn-ct-u5r"/>
-                            <constraint firstItem="1aJ-g5-HMj" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" id="9w9-WQ-WhQ"/>
+                            <constraint firstItem="1aJ-g5-HMj" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" constant="10" id="9w9-WQ-WhQ"/>
                             <constraint firstItem="x68-uG-ODQ" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" id="Gu6-Xw-gww"/>
-                            <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="1aJ-g5-HMj" secondAttribute="trailing" id="V2x-vH-ngb"/>
+                            <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="1aJ-g5-HMj" secondAttribute="trailing" constant="10" id="V2x-vH-ngb"/>
                             <constraint firstItem="1aJ-g5-HMj" firstAttribute="top" secondItem="2rT-pS-8ka" secondAttribute="top" id="ery-KJ-Eqc"/>
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="x68-uG-ODQ" secondAttribute="trailing" id="umc-MD-gSG"/>
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="bottom" secondItem="x68-uG-ODQ" secondAttribute="bottom" id="wUY-he-eaC"/>
@@ -587,6 +587,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NnS-eq-Yxw" id="Zds-76-Fr3"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Local" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0P-sb-OJ4">
                                 <rect key="frame" x="0.0" y="398" width="375" height="44"/>
@@ -597,6 +600,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NnS-eq-Yxw" id="brm-b6-7DI"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Bl-gsx">
                                 <rect key="frame" x="0.0" y="442" width="375" height="38"/>
@@ -640,6 +646,9 @@
                                 <color key="textColor" red="0.49805355070000001" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NnS-eq-Yxw" id="fSn-rJ-0Kl"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX7-jb-YrO">
                                 <rect key="frame" x="0.0" y="310" width="375" height="44"/>
@@ -1539,8 +1548,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zHE-v5-uMu"/>
-        <segue reference="4dD-YY-L4u"/>
+        <segue reference="nXI-NQ-48p"/>
+        <segue reference="CBP-vb-Wf9"/>
         <segue reference="sWk-e2-O3Z"/>
     </inferredMetricsTieBreakers>
     <resources>

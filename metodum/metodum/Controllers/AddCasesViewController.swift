@@ -24,6 +24,11 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     var placeholder: String = "Escreva aqui..."
     
+    public func textViewShouldReturn(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let paragraphStyle = NSMutableParagraphStyle()
@@ -94,6 +99,26 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+                self.view.frame.origin.y = -keyboardSize.height
+            
+        }
+    }
     
     @IBAction func didPressActionSheet(_ sender: Any) {
         let alerta = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -160,6 +185,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LibraryMetodumViewController" {
             let controller = segue.destination as! MetodumLibraryViewController
@@ -179,3 +205,14 @@ extension UITextField {
         self.leftViewMode = .always
     }
 }
+
+extension UIViewController: UITextFieldDelegate{
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+}
+
+
+    
+
