@@ -543,7 +543,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-2F-cQf">
@@ -572,7 +572,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cases_offwhite" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cases_grey" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
                                 <rect key="frame" x="0.0" y="92" width="375" height="262"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GQL-7Y-x2Y" secondAttribute="height" multiplier="375:262" id="i38-q0-WtQ"/>
@@ -711,21 +711,21 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
                                 <rect key="frame" x="0.0" y="36" width="375" height="56"/>
                                 <color key="barTintColor" name="BlackBody"/>
                                 <items>
-                                    <navigationItem title="Novo Caso" id="S9k-Pe-Ecr">
+                                    <navigationItem title="Biblioteca Metodum" id="S9k-Pe-Ecr">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="NZO-bb-NFv">
                                             <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
                                                 <action selector="dismissLibrary:" destination="NG8-Uy-Zrd" id="eZs-dG-86O"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Concluir" id="NY6-yq-kXD">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="OK" id="NY6-yq-kXD">
                                             <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
                                                 <action selector="addCase:" destination="NnS-eq-Yxw" id="f44-yc-q60"/>
@@ -734,24 +734,56 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbq-gI-9gR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha uma imagem para o seu caso de sucesso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbq-gI-9gR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8sv-qG-tax">
+                                <rect key="frame" x="0.0" y="92" width="375" height="632"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NhG-Fn-pY2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="libraryCell" id="Chv-Kd-7Pk" customClass="LibraryCellCollectionViewCell" customModule="metodum" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NV7-lK-YtP">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="NG8-Uy-Zrd" id="uTR-dX-hqS"/>
+                                    <outlet property="delegate" destination="NG8-Uy-Zrd" id="oIi-WU-EgB"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LVe-ni-nV0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="jK0-MM-cEz" firstAttribute="top" secondItem="Fbq-gI-9gR" secondAttribute="bottom" id="2OC-YW-Xpo"/>
                             <constraint firstItem="jK0-MM-cEz" firstAttribute="trailing" secondItem="LVe-ni-nV0" secondAttribute="trailing" id="5Xc-7K-02V"/>
                             <constraint firstItem="Fbq-gI-9gR" firstAttribute="top" secondItem="LVe-ni-nV0" secondAttribute="top" constant="20" id="8A4-7a-Rtn"/>
+                            <constraint firstItem="8sv-qG-tax" firstAttribute="top" secondItem="jK0-MM-cEz" secondAttribute="bottom" id="Oi6-cu-hDK"/>
                             <constraint firstItem="jK0-MM-cEz" firstAttribute="leading" secondItem="LVe-ni-nV0" secondAttribute="leading" id="ghf-Rh-ND9"/>
+                            <constraint firstItem="8sv-qG-tax" firstAttribute="leading" secondItem="LVe-ni-nV0" secondAttribute="leading" id="h52-ba-Jxy"/>
                             <constraint firstItem="LVe-ni-nV0" firstAttribute="trailing" secondItem="Fbq-gI-9gR" secondAttribute="trailing" id="khy-Br-EmV"/>
+                            <constraint firstItem="LVe-ni-nV0" firstAttribute="bottom" secondItem="8sv-qG-tax" secondAttribute="bottom" id="qCR-Mt-u8F"/>
                             <constraint firstItem="Fbq-gI-9gR" firstAttribute="leading" secondItem="m9V-2Y-dLe" secondAttribute="leading" id="r2H-Vi-Vmq"/>
+                            <constraint firstItem="LVe-ni-nV0" firstAttribute="trailing" secondItem="8sv-qG-tax" secondAttribute="trailing" id="sT6-oP-FWK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="libraryCollection" destination="8sv-qG-tax" id="bhm-FN-R4k"/>
+                        <outlet property="okButton" destination="NY6-yq-kXD" id="2vP-Te-xJ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xT-6T-y95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1500,7 +1532,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cases_offwhite" width="4096" height="2862"/>
+        <image name="cases_grey" width="1242" height="849"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		791F884B252B5BBF0079EAE5 /* HTMLMethodTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */; };
+		793504C92534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793504C82534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift */; };
 		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		795F7C3E252DF6A6004A289B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */; };
 		796EA52C2530FAD800C91F02 /* MetodumLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */; };
@@ -58,6 +59,7 @@
 		38C3AF933584B1142A014861 /* Pods_metodum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_metodum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6861DAEFE4B8B0522286CC07 /* Pods-metodum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-metodum.release.xcconfig"; path = "Target Support Files/Pods-metodum/Pods-metodum.release.xcconfig"; sourceTree = "<group>"; };
 		791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLMethodTemplate.swift; sourceTree = "<group>"; };
+		793504C82534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				79B82C53252F5CC10078DDAB /* FavoriteMethods.swift */,
 				79B82C8A252F8F430078DDAB /* FavoriteMethodCell.swift */,
 				79B82C8D252F8F600078DDAB /* FavoriteCasesCell.swift */,
+				793504C82534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				AEC882B125203BAB00796341 /* NewSchoolClassViewController.swift in Sources */,
 				C33D511E251A3A8F00E9D7EC /* CasesCollectionViewController.swift in Sources */,
 				79CBC95D2518FD2100AFB417 /* ViewController.swift in Sources */,
+				793504C92534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift in Sources */,
 				C33D5122251A3D1C00E9D7EC /* CasesCollectionViewCell.swift in Sources */,
 				AEF5BD9A25190497009652BE /* MethodsScreenViewController.swift in Sources */,
 				AEF5BD8825190129009652BE /* Teacher.swift in Sources */,
@@ -561,14 +565,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MHP7RSV892;
+				DEVELOPMENT_TEAM = R5H255ZF9U;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,14 +586,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MHP7RSV892;
+				DEVELOPMENT_TEAM = R5H255ZF9U;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
