@@ -195,9 +195,9 @@ extension FavoritesViewController: UICollectionViewDataSource{
                         
                     }
                 }
-                cell.layer.cornerRadius = 20
+                
             }
-            
+            cell.layer.cornerRadius = 20
             return cell
         }
         //return cell
