@@ -21,6 +21,7 @@ class MethodsScreenViewController: UIViewController {
     var methods = [Methodology]()
     var trendMethod : Methodology?
     var headerHeight : CGFloat = 300
+    var user : User?
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
@@ -28,6 +29,8 @@ class MethodsScreenViewController: UIViewController {
         super.viewDidLoad()
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
+        let parentController = self.parent as! ViewController
+        user = parentController.user
         self.showSpinner(onView: self.view)
         
         MethodsCloudRepository.getAllMethods(language: "pt") { (error, methods) in
@@ -58,6 +61,7 @@ class MethodsScreenViewController: UIViewController {
             if let details = segue.destination as? MethodDetailViewController {
                 let salectedMethod = sender as! Methodology
                 details.selectedMethod = salectedMethod
+                details.user = user
             }
         }
     }

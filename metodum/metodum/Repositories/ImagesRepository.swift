@@ -93,8 +93,8 @@ class ImagesRepository {
         
         let metaData = StorageMetadata()
         metaData.customMetadata = [
-            "acessibilityLabel_pt" : "Método da sala invertida",
-            "acessibilityHint_pt": "A arte mostra uma sala de aula com parede verde, um quadro negro e carteiras. No entanto, tudo está de cabeça para baixo, representando método sala de aula invertida."
+            "acessibilityLabel_pt" : "Método Quebra-Cabeça",
+            "acessibilityHint_pt": "A arte contém um fundo azul e mostra os braços de cinco estudantes de diferentes etnias montando um quebra-cabeça."
         ]
         
         imageRef.updateMetadata(metaData) { (data, error) in

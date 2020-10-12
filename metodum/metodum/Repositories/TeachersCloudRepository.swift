@@ -42,8 +42,36 @@ class TeachersCloudRepository {
         teachersCollection.document(teacherUid).collection(Collections.classes.rawValue).addDocument(data: schoolClass.toJson())
     }
     
-    static func addMethodForTeacher(teacherUid: String, method : Methodology) {
-        teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).addDocument(data: ["uid" : method.uid])
+    static func addMethodForTeacher(teacherUid: String, method : Methodology, completion: @escaping (String?) -> ()) {
+        teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).addDocument(data: ["uid" : method.uid]) {
+            (error) in
+            DispatchQueue.main.async {
+                if let errorMessage = error?.localizedDescription {
+                    completion(errorMessage)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    static func removeMethodForTeacher(teacherUid: String, favoriteMethodUid : String, completion: @escaping (String?) -> ()) {
+        let query = teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).whereField("uid", in: [favoriteMethodUid])
+        query.getDocuments { (querySnapshot, error) in
+            if let errorMessage = error?.localizedDescription {
+                completion(errorMessage)
+            } else {
+                querySnapshot?.documents.first?.reference.delete(completion: { (error) in
+                    DispatchQueue.main.async {
+                        if let errorMessage = error?.localizedDescription {
+                            completion(errorMessage)
+                        } else {
+                            completion(nil)
+                        }
+                    }
+                })
+            }
+        }
     }
     
     static func addCaseForTeacher(teacherUid: String, favoriteCase : Case, completion: @escaping (String?) -> ()) {

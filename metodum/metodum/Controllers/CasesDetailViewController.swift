@@ -29,7 +29,6 @@ class CasesDetailViewController: UIViewController {
                 } else {
                     if let cases = favoriteCases {
                         DispatchQueue.main.async {
-                            print("pegou o favorito")
                             if cases.contains(self.selectedCase!.caseUid) {
                                 self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                                 self.isFavorite = true
@@ -41,7 +40,6 @@ class CasesDetailViewController: UIViewController {
                 }
             }
         }
-        
         
         if let caseObject = selectedCase {
             self.title = caseObject.caseTitle
@@ -76,7 +74,6 @@ class CasesDetailViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        
         let addFavoriteCase = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(setFavoriteCase))
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertCaseToPdf))

@@ -17,11 +17,34 @@ class MethodDetailViewController: UIViewController {
     
     var selectedMethod: Methodology?
     var persistedImagesNames = [String]()
+    var user: User?
+    var isFavorite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         setupNavigationBar()
+        if let currentUser = user {
+            TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteMethods) in
+                if let errorMessage = error {
+                    self.alertError(message: errorMessage)
+                } else {
+                    if let method = self.selectedMethod, let methods = favoriteMethods {
+                        DispatchQueue.main.async {
+                            print(favoriteMethods)
+                            print(self.selectedMethod?.uid)
+                            if methods.contains(method.uid) {
+                                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
+                                self.isFavorite = true
+                            } else {
+                                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         if let methodObject = selectedMethod {
             navigationItem.title = methodObject.name
             
@@ -76,6 +99,7 @@ class MethodDetailViewController: UIViewController {
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertMethodToPdf))
         
+        addFavoriteMethod.isEnabled = false
         addFavoriteMethod.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         
@@ -86,9 +110,27 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteMethod() {
-        let user = AuthService.getUser()
-        if let teacher = user, let method = selectedMethod {
-            TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: method)
+        if let teacher = user, let methodObj = selectedMethod {
+            if isFavorite {
+                TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        self.alertSuccess(message: "Método foi desfavoritado com sucesso!")
+                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
+                    }
+                }
+            } else {
+                TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: methodObj) { (error) in
+                    if let errorMessage = error {
+                        self.alertError(message: errorMessage)
+                    } else {
+                        self.alertSuccess(message: "Método foi favoritado com sucesso!")
+                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
+                    }
+                }
+            }
+            isFavorite = !isFavorite
         }
     }
     
@@ -117,6 +159,10 @@ class MethodDetailViewController: UIViewController {
         previoew.dataSource = self
         previoew.delegate = self
         self.present(previoew, animated: true, completion: nil)
+    }
+    
+    private func getFavoriteUIItemButtonWith(icon: String) -> UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(systemName: icon), style: .plain, target: self, action: #selector(self.setFavoriteMethod))
     }
 }
 
