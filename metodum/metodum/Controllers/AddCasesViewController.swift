@@ -117,6 +117,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
                             self.removeSpinner()
                             DispatchQueue.main.async {
                                 let alert = UIAlertController(title: recevidedLabel, message: analiseLabel, preferredStyle: .alert)
+                                alert.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
                                 
                                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
                                     self.dismiss(animated: true, completion: nil)
