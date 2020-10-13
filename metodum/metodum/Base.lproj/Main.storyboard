@@ -448,7 +448,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-cI-CNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-8f-p5B">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -471,6 +471,7 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
                                                 <rect key="frame" x="15" y="262" width="345" height="126"/>
@@ -479,6 +480,7 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-a3-nGk">
                                                 <rect key="frame" x="20" y="398" width="335" height="27"/>
@@ -487,37 +489,15 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Links" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-LO-UcJ">
-                                                <rect key="frame" x="20" y="544" width="335" height="27"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre dos links disponíveis " label="Links"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <color key="textColor" name="GrayLabel"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocz-7c-aJ4">
-                                                <rect key="frame" x="20" y="576" width="335" height="104"/>
-                                                <color key="backgroundColor" name="BlackBody"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                                                <color key="textColor" name="GrayLabel"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="8Yl-KZ-Rjh" id="hSq-R0-UVg"/>
-                                                </connections>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" name="BlackBody"/>
                                         <constraints>
                                             <constraint firstItem="jVr-TP-6cp" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="15" id="1gj-xI-rsh"/>
-                                            <constraint firstAttribute="trailing" secondItem="sEX-LO-UcJ" secondAttribute="trailing" constant="20" id="6tj-TY-MGS"/>
                                             <constraint firstItem="fs6-Hd-YYt" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="8Ji-Is-dvI"/>
-                                            <constraint firstItem="Ocz-7c-aJ4" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="8sH-QO-ijb"/>
                                             <constraint firstItem="6Tp-8f-p5B" firstAttribute="top" secondItem="Cr9-cI-CNF" secondAttribute="top" id="9AD-4b-I7Z"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ocz-7c-aJ4" secondAttribute="trailing" constant="20" id="D47-cn-hPn"/>
                                             <constraint firstItem="WfA-GG-4N3" firstAttribute="top" secondItem="fs6-Hd-YYt" secondAttribute="bottom" constant="5" id="GFu-2l-o4E"/>
                                             <constraint firstItem="jVr-TP-6cp" firstAttribute="top" secondItem="kwT-a3-nGk" secondAttribute="bottom" constant="5" id="IZA-rT-NEs"/>
-                                            <constraint firstItem="Ocz-7c-aJ4" firstAttribute="top" secondItem="sEX-LO-UcJ" secondAttribute="bottom" constant="5" id="Qee-hJ-auZ"/>
-                                            <constraint firstItem="sEX-LO-UcJ" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="20" id="aFN-s0-BXA"/>
+                                            <constraint firstAttribute="bottom" secondItem="jVr-TP-6cp" secondAttribute="bottom" id="LUe-I3-r8N"/>
                                             <constraint firstAttribute="trailing" secondItem="fs6-Hd-YYt" secondAttribute="trailing" constant="20" id="cou-yb-Z02"/>
                                             <constraint firstItem="WfA-GG-4N3" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" constant="15" id="dWs-Ge-WSu"/>
                                             <constraint firstItem="kwT-a3-nGk" firstAttribute="top" secondItem="WfA-GG-4N3" secondAttribute="bottom" constant="10" id="dwL-TC-HwV"/>
@@ -526,8 +506,6 @@
                                             <constraint firstAttribute="trailing" secondItem="jVr-TP-6cp" secondAttribute="trailing" constant="15" id="ofy-qI-v4z"/>
                                             <constraint firstItem="6Tp-8f-p5B" firstAttribute="leading" secondItem="Cr9-cI-CNF" secondAttribute="leading" id="unV-y1-OP9"/>
                                             <constraint firstAttribute="trailing" secondItem="6Tp-8f-p5B" secondAttribute="trailing" id="vda-ec-UaC"/>
-                                            <constraint firstItem="sEX-LO-UcJ" firstAttribute="top" secondItem="jVr-TP-6cp" secondAttribute="bottom" constant="10" id="xwu-h2-NDz"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ocz-7c-aJ4" secondAttribute="bottom" id="yQU-lX-HiQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1313,7 +1291,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofa-Qw-b3d">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="806.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-4v-yQH">
                                                 <rect key="frame" x="20" y="292" width="335" height="26.666666666666686"/>
@@ -1329,6 +1307,7 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK3-Qx-k5t">
                                                 <rect key="frame" x="15" y="491" width="345" height="60"/>
@@ -1336,6 +1315,7 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-jv-x0G">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
@@ -1351,44 +1331,23 @@
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Links" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbY-rZ-BwH">
-                                                <rect key="frame" x="20" y="561" width="335" height="26.333333333333371"/>
-                                                <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre como implementar a metodologia" label="Como Aplicar"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <color key="textColor" name="GrayLabel"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz8-yv-qXd">
-                                                <rect key="frame" x="20" y="592.33333333333337" width="335" height="214"/>
-                                                <color key="backgroundColor" name="BlackBody"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
-                                                <color key="textColor" name="GrayLabel"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" name="BlackBody"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="hK3-Qx-k5t" secondAttribute="trailing" constant="15" id="061-Fk-fyD"/>
                                             <constraint firstAttribute="trailing" secondItem="xq4-KV-s5t" secondAttribute="trailing" constant="20" id="3fQ-Z1-B6p"/>
                                             <constraint firstItem="hK3-Qx-k5t" firstAttribute="top" secondItem="xq4-KV-s5t" secondAttribute="bottom" constant="5" id="3yK-0U-R1t"/>
-                                            <constraint firstItem="CbY-rZ-BwH" firstAttribute="top" secondItem="hK3-Qx-k5t" secondAttribute="bottom" constant="10" id="4iu-0a-xdg"/>
+                                            <constraint firstAttribute="bottom" secondItem="hK3-Qx-k5t" secondAttribute="bottom" id="A7K-sR-E3o"/>
                                             <constraint firstItem="sFE-pX-14n" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="15" id="CyI-bD-1Od"/>
-                                            <constraint firstItem="CbY-rZ-BwH" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="DzN-PK-cHd"/>
                                             <constraint firstAttribute="trailing" secondItem="nfP-4v-yQH" secondAttribute="trailing" constant="20" id="EcI-QE-eDm"/>
                                             <constraint firstItem="xq4-KV-s5t" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="MJC-3K-oNc"/>
                                             <constraint firstItem="nfP-4v-yQH" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="V90-A5-1W5"/>
-                                            <constraint firstAttribute="trailing" secondItem="nz8-yv-qXd" secondAttribute="trailing" constant="20" id="cew-Nw-Wej"/>
                                             <constraint firstAttribute="trailing" secondItem="9hD-jv-x0G" secondAttribute="trailing" id="cvA-00-gqp"/>
-                                            <constraint firstAttribute="trailing" secondItem="CbY-rZ-BwH" secondAttribute="trailing" constant="20" id="cx9-Cx-N3j"/>
                                             <constraint firstItem="sFE-pX-14n" firstAttribute="top" secondItem="nfP-4v-yQH" secondAttribute="bottom" constant="5" id="dQF-C5-7YU"/>
                                             <constraint firstItem="hK3-Qx-k5t" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="15" id="eOK-8p-mD2"/>
                                             <constraint firstAttribute="trailing" secondItem="sFE-pX-14n" secondAttribute="trailing" constant="15" id="eQW-eY-A1c"/>
-                                            <constraint firstAttribute="bottom" secondItem="nz8-yv-qXd" secondAttribute="bottom" id="f2z-7a-HUq"/>
                                             <constraint firstItem="nfP-4v-yQH" firstAttribute="top" secondItem="9hD-jv-x0G" secondAttribute="bottom" constant="30" id="iWr-un-lgR"/>
-                                            <constraint firstItem="nz8-yv-qXd" firstAttribute="top" secondItem="CbY-rZ-BwH" secondAttribute="bottom" constant="5" id="osw-fN-833"/>
                                             <constraint firstItem="9hD-jv-x0G" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" id="rig-3q-sC4"/>
-                                            <constraint firstItem="nz8-yv-qXd" firstAttribute="leading" secondItem="ofa-Qw-b3d" secondAttribute="leading" constant="20" id="s50-7K-9Kn"/>
                                             <constraint firstItem="xq4-KV-s5t" firstAttribute="top" secondItem="sFE-pX-14n" secondAttribute="bottom" constant="10" id="v1M-E8-9u2"/>
                                             <constraint firstItem="9hD-jv-x0G" firstAttribute="top" secondItem="ofa-Qw-b3d" secondAttribute="top" id="v9Z-5S-pke"/>
                                         </constraints>
