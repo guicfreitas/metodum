@@ -1,4 +1,3 @@
-
 /* Class = "UITabBarItem"; title = "Explore"; ObjectID = "07K-f6-qXv"; */
 "07K-f6-qXv.title" = "Methodologies";
 
@@ -17,7 +16,7 @@
 /* Class = "UILabel"; text = "Olá"; ObjectID = "46a-xN-0Gq"; */
 "46a-xN-0Gq.text" = "Hello";
 
-/* Class = "UINavigationItem"; title = "Cases"; ObjectID = "4I0-og-Li9"; */
+/* Class = "UINavigationItem"; title = “Cases"; ObjectID = "4I0-og-Li9"; */
 "4I0-og-Li9.title" = "Cases";
 
 /* Class = "UIButton"; normalTitle = "Entrar com a conta Apple"; ObjectID = "6Kp-Ep-1m7"; */
@@ -33,7 +32,7 @@
 "9UE-Jg-Li4.title" = "Classes";
 
 /* Class = "UILabel"; accessibilityHint = "Título indicando a seção para dissertar sobre o seu caso de sucesso"; ObjectID = "C5l-Bl-gsx"; */
-"C5l-Bl-gsx.accessibilityHint" = "Title indicating the section to talk about your success case";
+"C5l-Bl-gsx.accessibilityHint" = "Title indicating the section to talk about your successful case";
 
 /* Class = "UILabel"; accessibilityLabel = "Sobre"; ObjectID = "C5l-Bl-gsx"; */
 "C5l-Bl-gsx.accessibilityLabel" = "About";
@@ -44,14 +43,14 @@
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "ET5-8E-miy"; */
 "ET5-8E-miy.title" = "Title";
 
-/* Class = "UILabel"; text = "Escolha uma imagem para o seu caso de sucesso"; ObjectID = "Fbq-gI-9gR"; */
-"Fbq-gI-9gR.text" = "Choose an image for your success story";
+/* Class = "UILabel"; text = "Selecione uma imagem para o seu caso de sucesso"; ObjectID = "Fbq-gI-9gR"; */
+"Fbq-gI-9gR.text" = "Select a picture for your successful case";
 
-/* Class = "UINavigationItem"; title = "Novo Caso"; ObjectID = "FfY-hy-TbQ"; */
-"FfY-hy-TbQ.title" = "New Case";
+/* Class = "UINavigationItem"; title = "Adicionar Caso"; ObjectID = "FfY-hy-TbQ"; */
+"FfY-hy-TbQ.title" = "Add Case";
 
-/* Class = "UILabel"; accessibilityHint = "Título Indicando a seção das metodologias em alta"; ObjectID = "GBY-5f-qeK"; */
-"GBY-5f-qeK.accessibilityHint" = "Title Indicating the section of methodologies on the rise";
+/* Class = "UILabel"; accessibilityHint = "Título indicando a seção das metodologias em alta"; ObjectID = "GBY-5f-qeK"; */
+"GBY-5f-qeK.accessibilityHint" = "Title indicating the section of methodologies that are trending now";
 
 /* Class = "UILabel"; accessibilityLabel = "Em Alta"; ObjectID = "GBY-5f-qeK"; */
 "GBY-5f-qeK.accessibilityLabel" = "Trending";
@@ -72,13 +71,13 @@
 "H0P-sb-OJ4.placeholder" = "Location";
 
 /* Class = "UITextField"; placeholder = "Digite sua senha aqui"; ObjectID = "IVb-T4-2y1"; */
-"IVb-T4-2y1.placeholder" = "Typer you password here";
+"IVb-T4-2y1.placeholder" = "Type you password here";
 
 /* Class = "UILabel"; text = "Confirme a senha"; ObjectID = "KNu-Pi-rry"; */
 "KNu-Pi-rry.text" = "Confirm the Password";
 
-/* Class = "UILabel"; text = "School Name"; ObjectID = "Kdg-GF-Fzs"; */
-"Kdg-GF-Fzs.text" = "School Name";
+/* Class = "UILabel"; text = “Nome da Instituição"; ObjectID = "Kdg-GF-Fzs"; */
+"Kdg-GF-Fzs.text" = "Institution Name";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "KfJ-2w-jDC"; */
 "KfJ-2w-jDC.text" = "Label";
@@ -93,7 +92,7 @@
 "OAt-8C-MgK.title" = "Cases";
 
 /* Class = "UILabel"; accessibilityHint = "Título indicando a seção para dissertar sobre o resultado do seu caso de sucesso"; ObjectID = "OCV-I7-pDX"; */
-"OCV-I7-pDX.accessibilityHint" = "Title indicating the section to talk about the outcome of your success case";
+"OCV-I7-pDX.accessibilityHint" = "Title indicating the section to talk about the outcome of your successful case";
 
 /* Class = "UILabel"; accessibilityLabel = "Resultado"; ObjectID = "OCV-I7-pDX"; */
 "OCV-I7-pDX.accessibilityLabel" = "Result";
@@ -117,7 +116,7 @@
 "V1D-zb-m9n.text" = "Email";
 
 /* Class = "UITextView"; accessibilityHint = "Caixa de texto para escrever sobre o seu caso de sucesso"; ObjectID = "Vkp-3A-mDF"; */
-"Vkp-3A-mDF.accessibilityHint" = "Text box to write about your success story";
+"Vkp-3A-mDF.accessibilityHint" = "Text box to write about your successful case";
 
 /* Class = "UITextView"; accessibilityLabel = "Caixa de Texto"; ObjectID = "Vkp-3A-mDF"; */
 "Vkp-3A-mDF.accessibilityLabel" = "Text Box";
@@ -131,7 +130,7 @@
 /* Class = "UITextField"; accessibilityHint = "Caixa de texto para instituições de ensino"; ObjectID = "Wfa-9R-zfy"; */
 "Wfa-9R-zfy.accessibilityHint" = "Text box for educational institutions";
 
-/* Class = "UITextField"; accessibilityLabel = "Intituições de Ensino"; ObjectID = "Wfa-9R-zfy"; */
+/* Class = "UITextField"; accessibilityLabel = "Instituição de Ensino"; ObjectID = "Wfa-9R-zfy"; */
 "Wfa-9R-zfy.accessibilityLabel" = "Educational institute";
 
 /* Class = "UITextField"; placeholder = "Instituição de Ensino"; ObjectID = "Wfa-9R-zfy"; */
@@ -141,7 +140,7 @@
 "Yv1-43-wgY.text" = "Subtitle";
 
 /* Class = "UIBarButtonItem"; title = "Concluir"; ObjectID = "ZQK-ck-mjb"; */
-"ZQK-ck-mjb.title" = "Complete";
+"ZQK-ck-mjb.title" = "Done";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "b5C-ca-OIj"; */
 "b5C-ca-OIj.title" = "Item";
@@ -174,7 +173,7 @@
 "fcI-BR-SNB.placeholder" = "Type your email here";
 
 /* Class = "UILabel"; accessibilityHint = "Título indicando a seção sobre o caso de sucesso"; ObjectID = "fs6-Hd-YYt"; */
-"fs6-Hd-YYt.accessibilityHint" = "Title indicating the section on the success story";
+"fs6-Hd-YYt.accessibilityHint" = "Title indicating the section on successful case";
 
 /* Class = "UILabel"; accessibilityLabel = "Sobre"; ObjectID = "fs6-Hd-YYt"; */
 "fs6-Hd-YYt.accessibilityLabel" = "About";
@@ -204,7 +203,7 @@
 "jVr-TP-6cp.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
 
 /* Class = "UILabel"; accessibilityHint = "Título indicando a seção sobre os resultados do caso de sucesso"; ObjectID = "kwT-a3-nGk"; */
-"kwT-a3-nGk.accessibilityHint" = "Title indicating the section on the results of the success case";
+"kwT-a3-nGk.accessibilityHint" = "Title indicating the section on the results of the successful case";
 
 /* Class = "UILabel"; accessibilityLabel = "Resultados"; ObjectID = "kwT-a3-nGk"; */
 "kwT-a3-nGk.accessibilityLabel" = "Results";
@@ -219,7 +218,7 @@
 "mXY-ep-njc.text" = "Label";
 
 /* Class = "UILabel"; accessibilityHint = "Título indicando a seção sobre a metodologia"; ObjectID = "nfP-4v-yQH"; */
-"nfP-4v-yQH.accessibilityHint" = "Title indicating the section on the methodology";
+"nfP-4v-yQH.accessibilityHint" = "Title indicating the section on methodology";
 
 /* Class = "UILabel"; accessibilityLabel = "Sobre"; ObjectID = "nfP-4v-yQH"; */
 "nfP-4v-yQH.accessibilityLabel" = "About";
@@ -258,7 +257,7 @@
 "sFE-pX-14n.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
 /* Class = "UITextView"; accessibilityHint = "Caixa de texto para escrever sobre o resultado do seu caso de sucesso"; ObjectID = "tQS-vU-Jf2"; */
-"tQS-vU-Jf2.accessibilityHint" = "Text box to write about the outcome of your success story";
+"tQS-vU-Jf2.accessibilityHint" = "Text box to write about the outcome of your successful case";
 
 /* Class = "UITextView"; accessibilityLabel = "Caixa de Texto"; ObjectID = "tQS-vU-Jf2"; */
 "tQS-vU-Jf2.accessibilityLabel" = "Text Box";
@@ -269,7 +268,7 @@
 /* Class = "UILabel"; text = "Metodologias Favoritas"; ObjectID = "tTa-Sx-pKP"; */
 "tTa-Sx-pKP.text" = "Favorite Methodologies";
 
-/* Class = "UINavigationItem"; title = "Explore"; ObjectID = "ubd-jG-IOX"; */
+/* Class = "UINavigationItem"; title = "Metodologias"; ObjectID = "ubd-jG-IOX"; */
 "ubd-jG-IOX.title" = "Methodologies";
 
 /* Class = "UITabBarItem"; title = "Favoritos"; ObjectID = "vB0-69-1oh"; */
@@ -297,4 +296,4 @@
 "yvU-xO-wHR.placeholder" = "Type your password here";
 
 /* Class = "UIButton"; normalTitle = "Trocar Imagem"; ObjectID = "zX7-jb-YrO"; */
-"zX7-jb-YrO.normalTitle" = "Change Image";
+"zX7-jb-YrO.normalTitle" = "Change Picture";
