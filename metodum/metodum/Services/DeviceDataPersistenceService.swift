@@ -14,12 +14,16 @@ enum LocalDirectories : String {
 }
 
 private struct AcessibilityAtributes : Codable {
-    var acessibilityLabel: String
-    var acessibilityHint: String
+    var acessibilityLabel_pt: String
+    var acessibilityHint_pt: String
+    var acessibilityLabel_en: String
+    var acessibilityHint_en: String
     
-    init(label: String,hint: String) {
-        self.acessibilityLabel = label
-        self.acessibilityHint = hint
+    init(label_pt: String,hint_pt: String,label_en: String,hint_en: String) {
+        self.acessibilityLabel_pt = label_pt
+        self.acessibilityHint_pt = hint_pt
+        self.acessibilityLabel_en = label_en
+        self.acessibilityHint_en = hint_en
     }
 }
 
@@ -38,8 +42,10 @@ class DeviceDataPersistenceService {
             try acessibilityImage.data.write(to: dataPath, options: [])
             let acessibilityAtributes =
                 AcessibilityAtributes (
-                    label: acessibilityImage.acessibilityLabel,
-                    hint: acessibilityImage.acessibilityHint
+                    label_pt: acessibilityImage.acessibilityLabel_pt,
+                    hint_pt: acessibilityImage.acessibilityHint_pt,
+                    label_en: acessibilityImage.acessibilityLabel_en,
+                    hint_en: acessibilityImage.acessibilityHint_pt
                 )
             try UserDefaults.standard.setObject(acessibilityAtributes,forKey: imageName)
             persistedImagesNames[directory]!.append(imageName)
@@ -57,9 +63,11 @@ class DeviceDataPersistenceService {
             let dataImage = try Data(contentsOf: dataPath)
             let acessibilityAtributes = try UserDefaults.standard.getObject(forKey: imageName, castTo: AcessibilityAtributes.self)
             return AcessibilityImage(
-                data: dataImage, acessibilityLabel:
-                acessibilityAtributes.acessibilityLabel,
-                acessibilityHint: acessibilityAtributes.acessibilityHint
+                data: dataImage,
+                acessibilityLabel_pt: acessibilityAtributes.acessibilityLabel_pt,
+                acessibilityLabel_en: acessibilityAtributes.acessibilityLabel_en,
+                acessibilityHint_pt: acessibilityAtributes.acessibilityHint_pt,
+                acessibilityHint_en: acessibilityAtributes.acessibilityHint_en
             )
         } catch {
             print(error.localizedDescription)

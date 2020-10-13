@@ -10,12 +10,16 @@ import Foundation
 
 struct AcessibilityImage {
     var data : Data
-    var acessibilityLabel : String
-    var acessibilityHint : String
+    var acessibilityLabel_pt : String
+    var acessibilityHint_pt : String
+    var acessibilityLabel_en : String
+    var acessibilityHint_en : String
     
-    init(data : Data, acessibilityLabel : String, acessibilityHint: String) {
+    init(data : Data, acessibilityLabel_pt : String, acessibilityLabel_en : String,acessibilityHint_pt: String, acessibilityHint_en: String) {
         self.data = data
-        self.acessibilityLabel = acessibilityLabel
-        self.acessibilityHint = acessibilityHint
+        self.acessibilityLabel_pt = acessibilityLabel_pt
+        self.acessibilityHint_pt = acessibilityHint_pt
+        self.acessibilityLabel_en = acessibilityLabel_en
+        self.acessibilityHint_en = acessibilityHint_en
     }
 }

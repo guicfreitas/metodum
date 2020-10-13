@@ -43,8 +43,13 @@ class ImagesRepository {
                         }
                     } else {
                         if let customMetaData = metaData?.customMetadata {
-                            let image = AcessibilityImage(data: imageData!, acessibilityLabel: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel_pt.rawValue]!,
-                                acessibilityHint: customMetaData[ImagesAcessibilityAtributes.acessibilityHint_pt.rawValue]!)
+                            let image = AcessibilityImage(
+                                data: imageData!,
+                                acessibilityLabel_pt: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel_pt.rawValue]!,
+                                acessibilityLabel_en: customMetaData[ImagesAcessibilityAtributes.acessibilityLabel_en.rawValue]!,
+                                acessibilityHint_pt: customMetaData[ImagesAcessibilityAtributes.acessibilityHint_pt.rawValue]!,
+                                acessibilityHint_en: customMetaData[ImagesAcessibilityAtributes.acessibilityHint_en.rawValue]!
+                            )
                             DispatchQueue.main.async {
                                 completion(nil,image)
                             }
@@ -66,7 +71,14 @@ class ImagesRepository {
                 }
             } else {
                 DispatchQueue.main.async {
-                    let image = AcessibilityImage(data: imageData!, acessibilityLabel: " ", acessibilityHint: " ")
+                    let image = AcessibilityImage(
+                        data: imageData!,
+                        acessibilityLabel_pt: " ",
+                        acessibilityLabel_en: " ",
+                        acessibilityHint_pt: " ",
+                        acessibilityHint_en: " "
+                        
+                    )
                     completion(nil,image)
                 }
                 /*imageRef.getMetadata { (metaData, error) in
@@ -93,8 +105,11 @@ class ImagesRepository {
         
         let metaData = StorageMetadata()
         metaData.customMetadata = [
-            "acessibilityLabel_pt" : "Método Quebra-Cabeça",
-            "acessibilityHint_pt": "A arte contém um fundo azul e mostra os braços de cinco estudantes de diferentes etnias montando um quebra-cabeça."
+            "acessibilityLabel_pt" : "Aprendizado Baseado em superação de desafios",
+            "acessibilityHint_pt": "A arte contém um fundo amarelo e mostra um estudante ruivo próximo de uma pilha de livros alta. Ele está prestes a subir escadas para concluir seu desafio, onde, no topo da pilha, um troféu o aguarda junto de um robô roxo, que o incentiva a subir.",
+            "acessibilityLabel_en": "Challenge Based Learning",
+            "acessibilityHint_en": "The picture shows an illustration representing the Challenge Based Learning. It contains a yellow background and a redhead student next to a tall stack of books. He is about to climb the stairs to complete his challenge, where, atop of the stack, a trophy awaits him along with a purple robot, that is encouraging him to go up."
+            
         ]
         
         imageRef.updateMetadata(metaData) { (data, error) in

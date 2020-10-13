@@ -39,7 +39,7 @@ class ViewController: UITabBarController {
                 self.teacher = teacher
             }
         }
-        //ImagesRepository.updateImageMetaData(image: "Jigsaw_Classroom_Square.png",on: .methodologiesImages)
+        ImagesRepository.updateImageMetaData(image: "Challenge_Based_Learning_Square.png",on: .methodologiesImages)
     }
 }
 

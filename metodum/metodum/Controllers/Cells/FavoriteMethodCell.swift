@@ -13,9 +13,13 @@ class FavoriteMethodCell: UICollectionViewCell {
     @IBOutlet weak var methodImage: UIImageView!
     
     func setImage(image: AcessibilityImage) {
+        
+        let language = Locale.current.languageCode
+        
         self.methodImage.image = UIImage(data: image.data)
         self.methodImage.isAccessibilityElement = true
-        self.methodImage.accessibilityLabel = image.acessibilityLabel
-        self.methodImage.accessibilityHint = image.acessibilityHint
+        
+        self.methodImage.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+        self.methodImage.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
     }
 }

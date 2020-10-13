@@ -22,6 +22,7 @@ class MethodsScreenViewController: UIViewController {
     var trendMethod : Methodology?
     var headerHeight : CGFloat = 300
     var user : User?
+    var language = ""
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
@@ -32,6 +33,7 @@ class MethodsScreenViewController: UIViewController {
         let parentController = self.parent as! ViewController
         user = parentController.user
         self.showSpinner(onView: self.view)
+        language = Locale.current.languageCode!
         
         MethodsCloudRepository.getAllMethods() { (error, methods) in
             self.removeSpinner()
@@ -118,8 +120,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 //print("is main Thread ? \(Thread.isMainThread)")
                 //VOICE OVER
                 cell.isAccessibilityElement = true
-                cell.accessibilityLabel = image.acessibilityLabel //nome da figura
-                cell.accessibilityHint = image.acessibilityHint
+                cell.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                cell.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
             }
         } else {
             ImagesRepository.getMethod(image: method.methodSquareImage) { (error, acessibilityImage) in
@@ -132,8 +134,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                         //print("is main Thread ? \(Thread.isMainThread)")
                         //VOICE OVER
                         cell.isAccessibilityElement = true
-                        cell.accessibilityLabel = image.acessibilityLabel //nome da figura
-                        cell.accessibilityHint = image.acessibilityHint //dica para a figura
+                        cell.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                        cell.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                     }
                 }
             }
@@ -154,8 +156,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                     headerView.emAltaImage.image = UIImage(data: image.data)
                     //print(image)
                     headerView.emAltaImage.isAccessibilityElement = true
-                    headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
-                    headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+                    headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                    headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                 }
             } else {
                 ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
@@ -168,8 +170,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                             headerView.emAltaImage.image = UIImage(data: image.data)
                             //print(image)
                             headerView.emAltaImage.isAccessibilityElement = true
-                            headerView.emAltaImage.accessibilityLabel = image.acessibilityLabel
-                            headerView.emAltaImage.accessibilityHint = image.acessibilityHint
+                            headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                            headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                         }
                     }
                 }

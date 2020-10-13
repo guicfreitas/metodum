@@ -75,8 +75,8 @@ class MethodDetailViewController: UIViewController {
                 if let image = DeviceDataPersistenceService.getImage(named: methodObject.methodFullImage, on: .methodsImages) {
                     self.image.image = UIImage(data: image.data)
                     self.image.isAccessibilityElement = true
-                    self.image.accessibilityLabel = image.acessibilityLabel
-                    self.image.accessibilityHint = image.acessibilityHint
+                    self.image.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                    self.image.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                 }
             } else {
                 ImagesRepository.getMethod(image: methodObject.methodFullImage) { (error, acessibilityImage) in
@@ -87,8 +87,8 @@ class MethodDetailViewController: UIViewController {
                         if let image = acessibilityImage {
                             self.image.image = UIImage(data: image.data)
                             self.image.isAccessibilityElement = true
-                            self.image.accessibilityLabel = image.acessibilityLabel
-                            self.image.accessibilityHint = image.acessibilityHint
+                            self.image.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                            self.image.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                             DeviceDataPersistenceService.write(acessibilityImage: image, named: methodObject.methodFullImage, on: .methodsImages)
                         }
                     }
