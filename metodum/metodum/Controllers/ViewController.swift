@@ -80,7 +80,7 @@ extension UIViewController {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: false)
+            self.present(alert, animated: true)
         }
     }
     
@@ -88,7 +88,7 @@ extension UIViewController {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Succes!", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: false)
+            self.present(alert, animated: true)
         }
     }
 }

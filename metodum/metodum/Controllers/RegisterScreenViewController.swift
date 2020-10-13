@@ -17,20 +17,30 @@ class RegisterScreenViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     var loadingSpinnerView : UIView!
+    var language = Locale.current.languageCode
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeLoadSpinner()
         clearNavigationBar()
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         signUpButtonBackgroundView.layer.cornerRadius = 10
         if #available(iOS 13.0, *) {
             let app = UIApplication.shared
@@ -93,8 +103,27 @@ class RegisterScreenViewController: UIViewController {
                     }
                 }
             } else {
-                self.alertError(message: "A senha foi confirmada errada")
+                let message = (language == "pt") ? "A senha foi confirmada errada" : "The confirm password must be equal to the password"
+                self.alertError(message: message)
             }
+        } else {
+            let message = (language == "pt") ? "Preencha todos os campos" : "Fill all the text fields"
+            self.alertError(message: message)
+        }
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.view.frame.origin.y = -50
         }
     }
     

@@ -25,6 +25,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     let placeholder = NSLocalizedString("type", comment: "")
     var selectedImageName = "cases_grey.png"
+    let globalImagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,12 +169,12 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             self.performSegue(withIdentifier: "LibraryMetodumViewController", sender: nil)
         }))
         
-        alerta.addAction(UIAlertAction(title: choose, style: .default, handler: { (button) in
+        /*alerta.addAction(UIAlertAction(title: choose, style: .default, handler: { (button) in
             self.globalImagePicker.allowsEditing = false
             self.globalImagePicker.sourceType = .photoLibrary
             
             self.present(self.globalImagePicker, animated: true, completion: nil)
-        }))
+        }))*/
         
 //        alerta.addAction(UIAlertAction(title: "Tirar Foto", style: .default, handler: {(button) in
 //            self.globalImagePicker.sourceType = .camera
@@ -202,10 +203,8 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         dismiss(animated: true, completion: nil)
     }
     
-    let globalImagePicker = UIImagePickerController()
-    
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholder{
+        if textView.text == placeholder {
             textView.text = ""
             textView.textColor = .gray
             //Tema dark
@@ -225,7 +224,6 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         }
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LibraryMetodumViewController" {
             let controller = segue.destination as! MetodumLibraryViewController
@@ -239,22 +237,16 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
 }
 
 extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
+    func setLeftPaddingPoints(_ amount:CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }
 }
 
-extension UIViewController: UITextFieldDelegate{
+extension UIViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
     }
 }
-
-
-
-
-    
-

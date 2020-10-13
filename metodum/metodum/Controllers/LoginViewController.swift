@@ -15,14 +15,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButtonView: UIView!
     @IBOutlet weak var appleSignInButtonView: UIView!
-    
+    @IBOutlet weak var appleLogo: UIImageView!
     var loadingSpinnerView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
+
         if let user = AuthService.getUser() {
             print("tem user logado, performando segue")
             //print(user?.name)
@@ -39,7 +39,11 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if self.traitCollection.userInterfaceStyle == .light {
+            appleLogo.tintColor = .white
+        }
         setupNavigationBar()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -81,11 +85,8 @@ class LoginViewController: UIViewController {
     }
 
     @objc func keyboardWillChange(notification: NSNotification) {
-
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
-                self.view.frame.origin.y = -50
-            
+            self.view.frame.origin.y = -50
         }
     }
     

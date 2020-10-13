@@ -141,7 +141,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h93-bW-7qf" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="409.66666666666669" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atG-0d-vgE" userLabel="Anchor View">
                                 <rect key="frame" x="0.0" y="44" width="375" height="276"/>
@@ -200,12 +200,22 @@
                                             <action selector="appleSignInButton:" destination="s2Y-36-iek" eventType="touchUpInside" id="RXM-Rc-XLV"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applelogo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m4h-sR-bPj">
+                                        <rect key="frame" x="47" y="11.333333333333275" width="18" height="16.33333333333335"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="8cw-wR-B7V"/>
+                                            <constraint firstAttribute="width" constant="18" id="wQ5-oC-8ef"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstItem="6Kp-Ep-1m7" firstAttribute="height" secondItem="eE7-Kb-8P8" secondAttribute="height" id="7Pd-x0-5jO"/>
                                     <constraint firstItem="6Kp-Ep-1m7" firstAttribute="width" secondItem="eE7-Kb-8P8" secondAttribute="width" id="HaE-CG-ZRu"/>
                                     <constraint firstItem="6Kp-Ep-1m7" firstAttribute="centerY" secondItem="eE7-Kb-8P8" secondAttribute="centerY" id="WzF-1r-SUx"/>
+                                    <constraint firstItem="6Kp-Ep-1m7" firstAttribute="leading" secondItem="m4h-sR-bPj" secondAttribute="trailing" constant="-65" id="bil-8A-cIz"/>
+                                    <constraint firstItem="m4h-sR-bPj" firstAttribute="centerY" secondItem="6Kp-Ep-1m7" secondAttribute="centerY" id="qpi-u3-n5J"/>
                                     <constraint firstItem="6Kp-Ep-1m7" firstAttribute="centerX" secondItem="eE7-Kb-8P8" secondAttribute="centerX" id="xf8-Nk-uPT"/>
                                     <constraint firstAttribute="height" constant="40" id="yUC-mo-Hkh"/>
                                 </constraints>
@@ -223,13 +233,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeira vez aqui ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcw-ul-All">
-                                <rect key="frame" x="66" y="558.66666666666663" width="143" height="21"/>
+                                <rect key="frame" x="71" y="558.66666666666663" width="143" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voq-n5-KUu">
-                                <rect key="frame" x="214" y="558.66666666666663" width="78" height="21"/>
+                                <rect key="frame" x="219" y="558.66666666666663" width="78" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BBg-LQ-NcS"/>
                                 </constraints>
@@ -255,7 +265,7 @@
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="atG-0d-vgE" secondAttribute="trailing" id="VHe-v0-ryG"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="eE7-Kb-8P8" secondAttribute="trailing" constant="30" id="YTS-97-eUf"/>
                             <constraint firstItem="fcI-BR-SNB" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="d5R-SS-f2K"/>
-                            <constraint firstItem="Qcw-ul-All" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" constant="-50" id="dfX-DL-JsW"/>
+                            <constraint firstItem="Qcw-ul-All" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" constant="-45" id="dfX-DL-JsW"/>
                             <constraint firstItem="atG-0d-vgE" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" id="ede-ig-iJ6"/>
                             <constraint firstItem="Qcw-ul-All" firstAttribute="top" secondItem="eE7-Kb-8P8" secondAttribute="bottom" constant="15" id="gEd-S6-tVu"/>
                             <constraint firstItem="atG-0d-vgE" firstAttribute="width" secondItem="dmK-y4-UEz" secondAttribute="width" id="gj6-cD-80h"/>
@@ -273,6 +283,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="la8-rj-rtb"/>
                     <connections>
+                        <outlet property="appleLogo" destination="m4h-sR-bPj" id="5cC-zN-Ph6"/>
                         <outlet property="appleSignInButtonView" destination="eE7-Kb-8P8" id="qZr-hh-gj0"/>
                         <outlet property="emailField" destination="fcI-BR-SNB" id="0z5-Pa-6yx"/>
                         <outlet property="passwordField" destination="h93-bW-7qf" id="kDa-xc-cUX"/>
@@ -1029,7 +1040,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IVb-T4-2y1" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="369.33333333333331" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83L-J4-i1e">
                                 <rect key="frame" x="40" y="350" width="35.333333333333343" height="14.333333333333314"/>
@@ -1044,13 +1055,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já possui uma conta ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbA-Wb-6Sv">
-                                <rect key="frame" x="63" y="527.33333333333337" width="169" height="21"/>
+                                <rect key="frame" x="68" y="527.33333333333337" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVo-7K-c5J">
-                                <rect key="frame" x="240" y="523.33333333333337" width="46" height="30"/>
+                                <rect key="frame" x="242" y="523.33333333333337" width="46" height="30"/>
                                 <state key="normal" title="Entrar ">
                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
@@ -1061,7 +1072,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvU-xO-wHR" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="428.33333333333331" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xq1-hw-p3H"/>
@@ -1092,14 +1103,14 @@
                             <constraint firstItem="xq1-hw-p3H" firstAttribute="trailing" secondItem="yvU-xO-wHR" secondAttribute="trailing" constant="20" id="hq9-oG-dpS"/>
                             <constraint firstItem="0GW-Y6-mqC" firstAttribute="leading" secondItem="xq1-hw-p3H" secondAttribute="leading" id="igu-RO-ezr"/>
                             <constraint firstItem="KNu-Pi-rry" firstAttribute="top" secondItem="IVb-T4-2y1" secondAttribute="bottom" constant="5" id="io4-H7-Wce"/>
-                            <constraint firstItem="eVo-7K-c5J" firstAttribute="leading" secondItem="qbA-Wb-6Sv" secondAttribute="trailing" constant="8" symbolic="YES" id="jLV-hV-uTY"/>
+                            <constraint firstItem="eVo-7K-c5J" firstAttribute="leading" secondItem="qbA-Wb-6Sv" secondAttribute="trailing" constant="5" id="jLV-hV-uTY"/>
                             <constraint firstItem="0GW-Y6-mqC" firstAttribute="width" secondItem="fcN-rO-l6t" secondAttribute="width" id="kw3-gl-gsh"/>
                             <constraint firstItem="xq1-hw-p3H" firstAttribute="trailing" secondItem="6P8-pY-Lg0" secondAttribute="trailing" constant="20" id="lb2-xf-BCE"/>
                             <constraint firstItem="m8j-em-py1" firstAttribute="leading" secondItem="xq1-hw-p3H" secondAttribute="leading" constant="40" id="mbC-jK-CKJ"/>
                             <constraint firstItem="6P8-pY-Lg0" firstAttribute="top" secondItem="m8j-em-py1" secondAttribute="bottom" constant="5" id="pc4-Ad-8Xl"/>
                             <constraint firstItem="6P8-pY-Lg0" firstAttribute="leading" secondItem="xq1-hw-p3H" secondAttribute="leading" constant="20" id="tbk-E8-WBL"/>
                             <constraint firstItem="yvU-xO-wHR" firstAttribute="leading" secondItem="xq1-hw-p3H" secondAttribute="leading" constant="20" id="vUD-Kd-PxN"/>
-                            <constraint firstItem="qbA-Wb-6Sv" firstAttribute="centerX" secondItem="xq1-hw-p3H" secondAttribute="centerX" constant="-40" id="xDq-6L-M1F"/>
+                            <constraint firstItem="qbA-Wb-6Sv" firstAttribute="centerX" secondItem="xq1-hw-p3H" secondAttribute="centerX" constant="-35" id="xDq-6L-M1F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1XK-re-dQU"/>
@@ -1538,9 +1549,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="zHE-v5-uMu"/>
         <segue reference="4dD-YY-L4u"/>
-        <segue reference="sWk-e2-O3Z"/>
+        <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="applelogo" catalog="system" width="128" height="121"/>
         <image name="cases_grey" width="1242" height="849"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
