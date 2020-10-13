@@ -23,7 +23,15 @@ class MethodDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clearNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupNavigationBar()
         if let currentUser = user {
             TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteMethods) in
@@ -92,15 +100,6 @@ class MethodDetailViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        clearNavigationBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavigationBar()
     }
     
     private func setupNavigationBar() {

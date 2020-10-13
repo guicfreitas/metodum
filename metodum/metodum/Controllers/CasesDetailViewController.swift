@@ -22,7 +22,18 @@ class CasesDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupNavigationBar()
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        clearNavigationBar()
+        print("view did dissapear")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        setupNavigationBar()
         if let currentUser = user {
             TeachersCloudRepository.getFavoriteCasesUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteCases) in
                 if let errorMessage = error {
@@ -48,6 +59,7 @@ class CasesDetailViewController: UIViewController {
             self.picture.isAccessibilityElement = true
             
             if language == "pt" {
+                navigationItem.title = caseObject.title_pt
                 self.title = caseObject.title_pt
                 self.aboutText.text = caseObject.about_pt
                 self.resultText.text = caseObject.result_pt
@@ -56,6 +68,8 @@ class CasesDetailViewController: UIViewController {
                 self.picture.accessibilityLabel = acessibilities[caseObject.image]?.first
                 self.picture.accessibilityHint = acessibilities[caseObject.image]?.last
             } else {
+                print("stou title")
+                navigationItem.title = caseObject.title_en
                 self.title = caseObject.title_en
                 self.aboutText.text = caseObject.about_en
                 self.resultText.text = caseObject.result_en
@@ -67,15 +81,6 @@ class CasesDetailViewController: UIViewController {
             
             picture.image = UIImage(named: caseObject.image)
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        clearNavigationBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavigationBar()
     }
     
     private func setupNavigationBar() {
