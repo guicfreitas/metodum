@@ -84,6 +84,8 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     
     @IBAction func addCase(_ sender: UIBarButtonItem) {
+        let recevidedLabel = NSLocalizedString("rec", comment: "")
+        let analiseLabel = NSLocalizedString("analise", comment: "")
         if let image = pickerPicture.image, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
             
             var imgName = institute.replacingOccurrences(of: " ", with: "_")
@@ -114,7 +116,8 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
                         } else {
                             self.removeSpinner()
                             DispatchQueue.main.async {
-                                let alert = UIAlertController(title: "Sucesso!", message: "Seu caso foi enviado para análise, a confirmação", preferredStyle: .alert)
+                                let alert = UIAlertController(title: recevidedLabel, message: analiseLabel, preferredStyle: .alert)
+                                alert.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
                                 
                                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
                                     self.dismiss(animated: true, completion: nil)

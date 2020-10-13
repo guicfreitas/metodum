@@ -297,3 +297,11 @@
 
 /* Class = "UIButton"; normalTitle = "Trocar Imagem"; ObjectID = "zX7-jb-YrO"; */
 "zX7-jb-YrO.normalTitle" = "Change Picture";
+
+"tTa-Sx-pKP.accessibilityLabel" = "Favorite Methodologies";
+
+"tTa-Sx-pKP.accessibilityHint" = "Title Indicating the favorite methodologies section";
+
+"jA0-jo-kgX.accessibilityLabel" = "Favorites Cases";
+
+"jA0-jo-kgX.accessibilityHint" = "Title Indicating the favorite cases section";

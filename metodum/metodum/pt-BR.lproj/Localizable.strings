@@ -6,4 +6,7 @@
 "image" = "Escolher Imagem";
 "register" = "Cadastrar";
 "ent" = "Entrar";
+"rec" = "Recebemos o seu caso de sucesso!";
+"analise" = "Nossa curadoria irá analisá-lo e, se aceito, será adicionado em breve.";
+"error" = "Error na leitura do Email!";
 

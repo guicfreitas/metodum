@@ -6,3 +6,6 @@
 "image" = "Choose Image";
 "register" = "Register";
 "ent" = "Login";
+"rec" = "We recived your successful case!";
+"analise" = "Our curation will analyze it and, if accepted, your case will be added soon.";
+"error" = "Error reading Email Field!";

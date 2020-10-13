@@ -180,6 +180,9 @@ extension FavoritesViewController: UICollectionViewDataSource{
             if persistedCasesImagesNames.contains(actualCase.image) {
                 if let image = DeviceDataPersistenceService.getImage(named: actualCase.image, on: .casesImages) {
                     cell2.setImage(image: image)
+                    cell2.isAccessibilityElement = true
+                    cell2.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                    cell2.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                 }
             } else {
                 ImagesRepository.getCase(image: actualCase.image) { (error, acessibilityImage) in
@@ -188,6 +191,9 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     } else {
                         guard let img = acessibilityImage else {return}
                         cell2.setImage(image: img)
+                        cell2.isAccessibilityElement = true
+                        cell2.accessibilityLabel = (self.language == "pt") ? img.acessibilityLabel_pt : img.acessibilityLabel_en
+                        cell2.accessibilityHint = (self.language == "pt") ? img.acessibilityHint_pt : img.acessibilityHint_en
                     }
                 }
             }
@@ -203,6 +209,9 @@ extension FavoritesViewController: UICollectionViewDataSource{
             if persistedMethodsImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
                     cell.setImage(image: image)
+                    cell.isAccessibilityElement = true
+                    cell.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
+                    cell.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
                 }
             } else {
                 ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
@@ -211,6 +220,9 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     } else {
                         guard let img = acessibilityImage else {return}
                         cell.setImage(image: img)
+                        cell.isAccessibilityElement = true
+                        cell.accessibilityLabel = (self.language == "pt") ? img.acessibilityLabel_pt : img.acessibilityLabel_en
+                        cell.accessibilityHint = (self.language == "pt") ? img.acessibilityHint_pt : img.acessibilityHint_en
                     }
                 }
             }

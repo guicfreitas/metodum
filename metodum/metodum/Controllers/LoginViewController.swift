@@ -98,14 +98,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        let errorLabel = NSLocalizedString("error", comment: "")
         showLoadSpinner()
         guard let email = emailField.text else {
-            alertError(message: "Error reading Email Field")
+            alertError(message: errorLabel )
             return
         }
         
         guard let password = passwordField.text else {
-            alertError(message: "Error reading Password Field")
+            alertError(message:  errorLabel )
             return
         }
         
