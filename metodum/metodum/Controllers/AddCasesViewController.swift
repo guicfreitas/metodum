@@ -22,7 +22,9 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var descriptionResultCase: UITextView!
     @IBOutlet weak var buttonPickerPicture: UIButton!
     
-    var placeholder: String = "Escreva aqui..."
+    let placeholder = NSLocalizedString("type", comment: "")
+    
+    
     
     
     override func viewDidLoad() {
@@ -122,14 +124,19 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     }
     
     @IBAction func didPressActionSheet(_ sender: Any) {
+       
+        let lib = NSLocalizedString("lib", comment: "")
+        let cancel = NSLocalizedString("cancel", comment: "")
+        let choose = NSLocalizedString("image", comment: "")
+        
         let alerta = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alerta.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
         
-        alerta.addAction(UIAlertAction(title: "Biblioteca Metodum", style: .default, handler: { (button) in
+        alerta.addAction(UIAlertAction(title: lib, style: .default, handler: { (button) in
             self.performSegue(withIdentifier: "LibraryMetodumViewController", sender: nil)
         }))
         
-        alerta.addAction(UIAlertAction(title: "Escolher Foto", style: .default, handler: { (button) in
+        alerta.addAction(UIAlertAction(title: choose, style: .default, handler: { (button) in
             self.globalImagePicker.allowsEditing = false
             self.globalImagePicker.sourceType = .photoLibrary
             
@@ -141,7 +148,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
 //            self.present(self.globalImagePicker, animated: true, completion: nil)
 //        }))
         
-        alerta.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        alerta.addAction(UIAlertAction(title: cancel, style: .cancel, handler: nil))
         
         present(alerta, animated: true, completion: nil)
     }

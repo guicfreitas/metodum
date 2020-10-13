@@ -133,11 +133,13 @@ class FavoritesViewController: UIViewController{
     }
     
     private func setNavigationBar() {
-        self.navigationIten.title = "Favoritos"
+        let logOutLabel = NSLocalizedString("sign", comment: "")
+        self.navigationIten.title = NSLocalizedString("fav", comment: "")
         self.navigationIten.largeTitleDisplayMode = .always
         
+        
         self.navigationIten.rightBarButtonItems = [
-            UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut)),
+            UIBarButtonItem(title: logOutLabel, style: .plain, target: self, action: #selector(signOut)),
         ]
     }
     
