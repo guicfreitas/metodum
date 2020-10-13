@@ -702,6 +702,7 @@
                     </view>
                     <connections>
                         <outlet property="aboutLabel" destination="C5l-Bl-gsx" id="rwm-XP-8cy"/>
+                        <outlet property="addCaseButton" destination="ZQK-ck-mjb" id="qTQ-me-sfl"/>
                         <outlet property="descriptionAboutCase" destination="Vkp-3A-mDF" id="eVg-Sn-7nX"/>
                         <outlet property="descriptionResultCase" destination="tQS-vU-Jf2" id="3Sh-Uf-csx"/>
                         <outlet property="instituteName" destination="Wfa-9R-zfy" id="25s-Z5-Ohr"/>
@@ -1535,7 +1536,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nXI-NQ-48p"/>
+        <segue reference="zHE-v5-uMu"/>
         <segue reference="4dD-YY-L4u"/>
         <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>

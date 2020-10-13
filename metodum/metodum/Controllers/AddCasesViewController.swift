@@ -15,15 +15,16 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet var aboutLabel: UILabel!
     @IBOutlet weak var pickerPicture: UIImageView!
-    @IBOutlet weak var TtitleCase: UITextField!
+    //@IBOutlet weak var TtitleCase: UITextField!
     @IBOutlet weak var instituteName: UITextField!
     @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var descriptionAboutCase: UITextView!
     @IBOutlet weak var descriptionResultCase: UITextView!
     @IBOutlet weak var buttonPickerPicture: UIButton!
+    @IBOutlet weak var addCaseButton: UIBarButtonItem!
     
     let placeholder = NSLocalizedString("type", comment: "")
-    var selectedImageName = ""
+    var selectedImageName = "cases_grey.png"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         let flexiSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
-        
         
         toolBar.setItems([flexiSpace,doneButton], animated: true)
         
@@ -53,6 +53,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         descriptionResultCase.delegate = self
         
         descriptionResultCase.attributedText = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        
         descriptionAboutCase.attributedText = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         
         descriptionResultCase.textColor = .lightGray
@@ -82,18 +83,18 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     
     @IBAction func addCase(_ sender: UIBarButtonItem) {
-        if let image = pickerPicture.image, let title = TtitleCase.text, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
+        if let image = pickerPicture.image, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
             
-            var imgName = title.replacingOccurrences(of: " ", with: "_")
+            var imgName = institute.replacingOccurrences(of: " ", with: "_")
             imgName.append(".png")
             
             let newCase = Case(
                 uid: "",
                 image: selectedImageName,
-                title_en: title,
-                title_pt: title,
-                subtitle_en: institute,
-                subtitle_pt: institute,
+                title_en: institute,
+                title_pt: institute,
+                subtitle_en: location,
+                subtitle_pt: location,
                 about_en: description,
                 about_pt: description,
                 result_pt: result,
@@ -113,8 +114,12 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
                             self.removeSpinner()
                             DispatchQueue.main.async {
                                 let alert = UIAlertController(title: "Sucesso!", message: "Seu caso foi enviado para análise, a confirmação", preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
+                                
+                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                                    self.dismiss(animated: true, completion: nil)
+                                }))
+                                
+                                self.present(alert, animated: true,completion: nil)
                             }
                         }
                     }
@@ -137,14 +142,16 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
+        if let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text, !institute.isEmpty, !location.isEmpty, !description.isEmpty, !result.isEmpty, description != "Type Here", result != "Type Here" {
+            addCaseButton.isEnabled = true
+        } else {
+            addCaseButton.isEnabled = false
+        }
     }
 
     @objc func keyboardWillChange(notification: NSNotification) {
-
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
-                self.view.frame.origin.y = -keyboardSize.height
-            
+            self.view.frame.origin.y = -keyboardSize.height
         }
     }
     

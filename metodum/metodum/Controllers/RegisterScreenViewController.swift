@@ -16,12 +16,16 @@ class RegisterScreenViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var loadingSpinnerView : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func returnToLoginButtonPressed(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeLoadSpinner()
+        clearNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,15 +56,13 @@ class RegisterScreenViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        clearNavigationBar()
+    @IBAction func returnToLoginButtonPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
-        
         if let name = nameTextField.text, let email = emailTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text, !email.isEmpty, !password.isEmpty, !name.isEmpty, !confirmPassword.isEmpty {
-            
+            showLoadSpinner()
             if password == confirmPassword {
                 AuthService.createUserWithEmailAndPassword(email: email, password: password, name: name) { (error,user) in
                     print("closure createUser with email")
@@ -102,5 +104,25 @@ class RegisterScreenViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor(named:"BlackBody")
         navigationItem.setRightBarButtonItems([], animated: false)
         navigationItem.title = ""
+    }
+    
+    func showLoadSpinner() {
+        loadingSpinnerView = UIView.init(frame: self.view.bounds)
+        loadingSpinnerView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
+        let ai = UIActivityIndicatorView.init(style: .large)
+        ai.startAnimating()
+        ai.center = loadingSpinnerView.center
+        
+        DispatchQueue.main.async {
+            self.loadingSpinnerView.addSubview(ai)
+            self.view.addSubview(self.loadingSpinnerView)
+        }
+    }
+    
+    func removeLoadSpinner() {
+        DispatchQueue.main.async {
+            self.loadingSpinnerView?.removeFromSuperview()
+            self.loadingSpinnerView = nil
+        }
     }
 }

@@ -39,7 +39,7 @@ class ViewController: UITabBarController {
                 self.teacher = teacher
             }
         }
-        ImagesRepository.updateImageMetaData(image: "Challenge_Based_Learning_Square.png",on: .methodologiesImages)
+        //ImagesRepository.updateImageMetaData(image: "Jigsaw_Classroom_Square.png",on: .methodologiesImages)
     }
 }
 
@@ -96,7 +96,7 @@ extension UIViewController {
 extension UIViewController {
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
-        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        spinnerView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
         let ai = UIActivityIndicatorView.init(style: .large)
         ai.startAnimating()
         ai.center = spinnerView.center

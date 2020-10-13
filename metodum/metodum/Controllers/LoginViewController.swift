@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButtonView: UIView!
     @IBOutlet weak var appleSignInButtonView: UIView!
     
+    var loadingSpinnerView : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -67,6 +69,7 @@ class LoginViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        removeLoadSpinner()
         clearNavigationBar()
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
@@ -94,6 +97,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        showLoadSpinner()
         guard let email = emailField.text else {
             alertError(message: "Error reading Email Field")
             return
@@ -120,6 +124,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func appleSignInButton(_ sender: Any) {
+        showLoadSpinner()
         showAuthorizationController()
     }
     
@@ -201,6 +206,26 @@ class LoginViewController: UIViewController {
       }
         return result
     }
+    
+    func showLoadSpinner() {
+        loadingSpinnerView = UIView.init(frame: self.view.bounds)
+        loadingSpinnerView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
+        let ai = UIActivityIndicatorView.init(style: .large)
+        ai.startAnimating()
+        ai.center = loadingSpinnerView.center
+        
+        DispatchQueue.main.async {
+            self.loadingSpinnerView.addSubview(ai)
+            self.view.addSubview(self.loadingSpinnerView)
+        }
+    }
+    
+    func removeLoadSpinner() {
+        DispatchQueue.main.async {
+            self.loadingSpinnerView?.removeFromSuperview()
+            self.loadingSpinnerView = nil
+        }
+    }
 }
 
 extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
@@ -249,10 +274,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        removeLoadSpinner()
         self.alertError(message: error.localizedDescription)
     }
-    
-
 }
 
 

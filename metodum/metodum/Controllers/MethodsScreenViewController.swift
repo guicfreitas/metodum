@@ -32,6 +32,8 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.dataSource = self
         let parentController = self.parent as! ViewController
         user = parentController.user
+        print("spinner no method")
+        print(vSpinner)
         self.showSpinner(onView: self.view)
         language = Locale.current.languageCode!
         
