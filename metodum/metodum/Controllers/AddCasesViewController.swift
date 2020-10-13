@@ -27,6 +27,24 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexiSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        
+        toolBar.setItems([flexiSpace,doneButton], animated: true)
+        
+        descriptionAboutCase.delegate = self
+        descriptionResultCase.delegate = self
+        
+        descriptionAboutCase.inputAccessoryView = toolBar
+        descriptionResultCase.inputAccessoryView = toolBar
+        instituteName.inputAccessoryView = toolBar
+        locationName.inputAccessoryView = toolBar
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent = 15
         
@@ -57,6 +75,11 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBAction func cancelCase(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
     }
+    
+    @objc func doneClicked(){
+        view.endEditing(true)
+    }
+    
     
     @IBAction func addCase(_ sender: UIBarButtonItem) {
         if let image = pickerPicture.image, let title = TtitleCase.text, let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text {
@@ -222,6 +245,8 @@ extension UIViewController: UITextFieldDelegate{
         return true;
     }
 }
+
+
 
 
     
