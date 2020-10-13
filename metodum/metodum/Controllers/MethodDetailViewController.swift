@@ -55,8 +55,8 @@ class MethodDetailViewController: UIViewController {
         if let methodObject = selectedMethod {
             if language == "pt" {
                 navigationItem.title = methodObject.name_pt
-                self.about.text = methodObject.about_pt
-                self.howToApply.text = methodObject.howToApply_pt
+                self.about.text = methodObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
+                self.howToApply.text = methodObject.howToApply_pt.replacingOccurrences(of: "\\n", with: "\n")
                    
                 self.about.isAccessibilityElement = true
                 self.about.accessibilityLabel = methodObject.about_pt
@@ -65,8 +65,8 @@ class MethodDetailViewController: UIViewController {
                 self.howToApply.accessibilityLabel = methodObject.howToApply_pt
             } else {
                 navigationItem.title = methodObject.name_en
-                self.about.text = methodObject.about_en.replacingOccurrences(of: "\n", with: "\n")
-                self.howToApply.text = methodObject.howToApply_en
+                self.about.text = methodObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
+                self.howToApply.text = methodObject.howToApply_en.replacingOccurrences(of: "\\n", with: "\n")
                    
                 self.about.isAccessibilityElement = true
                 self.about.accessibilityLabel = methodObject.about_en

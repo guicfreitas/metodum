@@ -61,8 +61,8 @@ class CasesDetailViewController: UIViewController {
             if language == "pt" {
                 navigationItem.title = caseObject.title_pt
                 self.title = caseObject.title_pt
-                self.aboutText.text = caseObject.about_pt
-                self.resultText.text = caseObject.result_pt
+                self.aboutText.text = caseObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
+                self.resultText.text = caseObject.result_pt.replacingOccurrences(of: "\\n", with: "\n")
                 self.aboutText.accessibilityLabel = caseObject.about_pt
                 self.resultText.accessibilityLabel = caseObject.result_pt
                 self.picture.accessibilityLabel = acessibilities[caseObject.image]?.first
@@ -71,8 +71,8 @@ class CasesDetailViewController: UIViewController {
                 print("stou title")
                 navigationItem.title = caseObject.title_en
                 self.title = caseObject.title_en
-                self.aboutText.text = caseObject.about_en
-                self.resultText.text = caseObject.result_en
+                self.aboutText.text = caseObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
+                self.resultText.text = caseObject.result_en.replacingOccurrences(of: "\\n", with: "\n")
                 self.aboutText.accessibilityLabel = caseObject.about_en
                 self.resultText.accessibilityLabel = caseObject.result_en
                 self.picture.accessibilityLabel = acessibilities[caseObject.image]?.first
