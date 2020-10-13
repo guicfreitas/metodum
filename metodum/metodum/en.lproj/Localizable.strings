@@ -4,3 +4,5 @@
 "lib" = "Metodum Library";
 "cancel" = "Cancelar";
 "image" = "Choose Image";
+"register" = "Register";
+"ent" = "Login";

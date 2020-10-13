@@ -135,7 +135,8 @@ class LoginViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Entrar"
+        let log = NSLocalizedString("ent", comment: "")
+        navigationItem.title = log
         navigationController?.navigationBar.backgroundColor = UIColor(named:"Blue")
         navigationController?.isNavigationBarHidden = false
     }

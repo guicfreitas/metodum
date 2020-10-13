@@ -128,7 +128,8 @@ class RegisterScreenViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Cadastrar"
+        let reg = NSLocalizedString("register", comment: "")
+        navigationItem.title = reg
         navigationItem.hidesBackButton = true
         //navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Blue")
         navigationController?.navigationBar.backgroundColor = UIColor(named:"Blue")
