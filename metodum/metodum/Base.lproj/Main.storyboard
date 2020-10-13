@@ -586,7 +586,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cases_grey" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="cases_grey" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
                                 <rect key="frame" x="0.0" y="90.333333333333314" width="375" height="262"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GQL-7Y-x2Y" secondAttribute="height" multiplier="375:262" id="i38-q0-WtQ"/>
@@ -629,13 +629,10 @@
                                 <color key="textColor" red="0.5177668929" green="0.51733869310000002" blue="0.54118454459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-3A-mDF">
-                                <rect key="frame" x="0.0" y="478.33333333333326" width="375" height="125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-3A-mDF">
+                                <rect key="frame" x="0.0" y="478.33333333333331" width="375" height="125.66666666666669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o seu caso de sucesso" label="Caixa de Texto"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Vkp-3A-mDF" secondAttribute="height" multiplier="3:1" id="NHW-Ef-bO2"/>
-                                </constraints>
                                 <color key="textColor" red="0.50195443630000003" green="0.50195747609999997" blue="0.50196552279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -644,7 +641,7 @@
                                 </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTADOS" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-I7-pDX">
-                                <rect key="frame" x="0.0" y="603.33333333333337" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="604" width="375" height="38"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção para dissertar sobre o resultado do seu caso de sucesso" label="Resultado"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OCV-I7-pDX" secondAttribute="height" multiplier="375:38" id="Va4-Ag-LwS"/>
@@ -654,9 +651,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Escreva aqui..." textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-vU-Jf2">
-                                <rect key="frame" x="0.0" y="641.33333333333337" width="375" height="82.666666666666629"/>
+                                <rect key="frame" x="0.0" y="642" width="375" height="82"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o resultado do seu caso de sucesso" label="Caixa de Texto"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tQS-vU-Jf2" secondAttribute="height" multiplier="375:82" id="3n0-Dy-J43"/>
+                                </constraints>
                                 <color key="textColor" red="0.49805355070000001" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -823,21 +823,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
-                                <rect key="frame" x="10" y="44" width="355" height="96"/>
+                                <rect key="frame" x="10" y="44.000000000000007" width="355" height="107.66666666666669"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="Favoritos" id="dnr-Sq-y11"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metodologias Favoritas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-Sx-pKP">
-                                <rect key="frame" x="20" y="175" width="335" height="26.333333333333343"/>
+                                <rect key="frame" x="20" y="186.66666666666666" width="335" height="26.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de metodologias favoritas" label="Metodologias Favoritas"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-kH-V99">
-                                <rect key="frame" x="20" y="231.33333333333337" width="355" height="180"/>
+                                <rect key="frame" x="20" y="238" width="355" height="180"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="VHG-tv-V1a"/>
@@ -881,14 +881,14 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casos Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-jo-kgX">
-                                <rect key="frame" x="20" y="456.33333333333331" width="335" height="26"/>
+                                <rect key="frame" x="20" y="463" width="335" height="26"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de casos favoritos" label="Casos Favoritos"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Ga-asw">
-                                <rect key="frame" x="20" y="512.33333333333337" width="355" height="180"/>
+                                <rect key="frame" x="20" y="514" width="355" height="180"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="61V-eF-KHL"/>
@@ -936,14 +936,15 @@
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="EW8-er-in4" firstAttribute="top" secondItem="dMa-VD-NaJ" secondAttribute="top" id="1rX-V2-gED"/>
+                            <constraint firstItem="dMa-VD-NaJ" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="gIo-Ga-asw" secondAttribute="bottom" constant="35" id="4FH-eu-vgI"/>
                             <constraint firstItem="gIo-Ga-asw" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="89j-CE-XyM"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="tTa-Sx-pKP" secondAttribute="trailing" constant="20" id="AZ6-jT-VrO"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="10" id="DnS-NM-jZL"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="fKB-kH-V99" secondAttribute="trailing" id="L1b-cN-hV5"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="jA0-jo-kgX" secondAttribute="trailing" constant="20" id="NOl-Yk-Vr2"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="gIo-Ga-asw" secondAttribute="trailing" id="NXk-RH-Auv"/>
-                            <constraint firstItem="fKB-kH-V99" firstAttribute="top" secondItem="tTa-Sx-pKP" secondAttribute="bottom" constant="30" id="Olo-FK-HK9"/>
-                            <constraint firstItem="gIo-Ga-asw" firstAttribute="top" secondItem="jA0-jo-kgX" secondAttribute="bottom" constant="30" id="XnB-UY-H8k"/>
+                            <constraint firstItem="fKB-kH-V99" firstAttribute="top" secondItem="tTa-Sx-pKP" secondAttribute="bottom" constant="25" id="Olo-FK-HK9"/>
+                            <constraint firstItem="gIo-Ga-asw" firstAttribute="top" secondItem="jA0-jo-kgX" secondAttribute="bottom" constant="25" id="XnB-UY-H8k"/>
                             <constraint firstItem="jA0-jo-kgX" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="YWe-Lo-kJF"/>
                             <constraint firstItem="jA0-jo-kgX" firstAttribute="top" secondItem="fKB-kH-V99" secondAttribute="bottom" constant="45" id="ZdK-Xp-RiK"/>
                             <constraint firstItem="tTa-Sx-pKP" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="jxo-FX-FXY"/>

@@ -90,6 +90,7 @@ extension MetodumLibraryViewController: UICollectionViewDelegateFlowLayout{
         let width = ((collectionView.frame.width)/2) - 5
         let height =  width/proportion
         
+        
         return CGSize(width: width, height: height)
     }
 }
