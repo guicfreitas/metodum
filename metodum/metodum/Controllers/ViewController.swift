@@ -30,7 +30,7 @@ class ViewController: UITabBarController {
         } else {
             DeviceDataPersistenceService.createDirectory(named: .casesImages)
         }
-        
+
         TeachersCloudRepository.get(teacherId: currentUser.uid) { (error, teacher) in
             print("get Teacher Id is main thread ? \(Thread.current.isMainThread)")
             if let errorMessage = error {

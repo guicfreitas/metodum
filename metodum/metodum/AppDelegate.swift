@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+var pushToken = ""
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -65,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("token")
-        print(fcmToken)
+        pushToken = fcmToken
     }
 }
 

@@ -32,8 +32,6 @@ class MethodsScreenViewController: UIViewController {
         maisSugesCollection.dataSource = self
         let parentController = self.parent as! ViewController
         user = parentController.user
-        print("spinner no method")
-        print(vSpinner)
         self.showSpinner(onView: self.view)
         language = Locale.current.languageCode!
         
@@ -116,8 +114,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         if persistedImagesNames.contains(method.methodSquareImage) {
             if let image = DeviceDataPersistenceService.getImage(named: method.methodSquareImage, on: .methodsImages) {
-                print("persisted image")
-                print(image)
                 imageview.image = UIImage(data: image.data)
                 //print("is main Thread ? \(Thread.isMainThread)")
                 //VOICE OVER
@@ -133,8 +129,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                     if let image = acessibilityImage {
                         DeviceDataPersistenceService.write(acessibilityImage: image, named: method.methodSquareImage, on: .methodsImages)
                         imageview.image = UIImage(data: image.data)
-                        //print("is main Thread ? \(Thread.isMainThread)")
-                        //VOICE OVER
+
                         cell.isAccessibilityElement = true
                         cell.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                         cell.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en

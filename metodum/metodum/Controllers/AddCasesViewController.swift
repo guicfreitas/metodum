@@ -160,7 +160,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
        
         let lib = NSLocalizedString("lib", comment: "")
         let cancel = NSLocalizedString("cancel", comment: "")
-        let choose = NSLocalizedString("image", comment: "")
+        //let choose = NSLocalizedString("image", comment: "")
         
         let alerta = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alerta.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)

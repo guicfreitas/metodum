@@ -62,11 +62,9 @@ class FavoritesViewController: UIViewController{
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {
-                print(documentsUids)
                 if let uids = documentsUids {
                     if uids.isEmpty {
                         DispatchQueue.main.async {
-                            print("foi")
                             self.methods = []
                             self.favoriteCollection.reloadData()
                         }
@@ -76,7 +74,6 @@ class FavoritesViewController: UIViewController{
                                 self.alertError(message: errorMessage)
                             } else {
                                 if let m = favoriteMethods {
-                                    print("pegou os methods preferidos")
                                     self.methods = m
                                     self.favoriteCollection.reloadData()
                                 }
@@ -103,7 +100,6 @@ class FavoritesViewController: UIViewController{
                             if let errorMessage = error {
                                 self.alertError(message: errorMessage)
                             } else {
-                                print("pegou os cases preferidos")
                                 if let c = favoriteCases {
                                     self.cases = c
                                     self.favoriteCasesCollection.reloadData()
@@ -183,7 +179,6 @@ extension FavoritesViewController: UICollectionViewDataSource{
             
             if persistedCasesImagesNames.contains(actualCase.image) {
                 if let image = DeviceDataPersistenceService.getImage(named: actualCase.image, on: .casesImages) {
-                    print("persisted image nos favoritos ")
                     cell2.setImage(image: image)
                 }
             } else {
@@ -191,7 +186,6 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        print("pegando network")
                         guard let img = acessibilityImage else {return}
                         cell2.setImage(image: img)
                     }
@@ -208,7 +202,6 @@ extension FavoritesViewController: UICollectionViewDataSource{
             
             if persistedMethodsImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
-                    print("persisted image nos favoritos ")
                     cell.setImage(image: image)
                 }
             } else {
@@ -216,13 +209,10 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        print("pegando network")
                         guard let img = acessibilityImage else {return}
                         cell.setImage(image: img)
-                        
                     }
                 }
-                
             }
             cell.layer.cornerRadius = 20
             return cell

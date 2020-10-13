@@ -258,7 +258,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
                             email: currentUser.email,
                             imageName: ""
                         )
-                        print("antes de inicializar")
                         // bota um loading aqui
                         TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
                             if let errorMessage = error {
@@ -280,8 +279,6 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         self.alertError(message: error.localizedDescription)
     }
 }
-
-
 
 
 /*class BackgroundView : UIView {

@@ -32,8 +32,6 @@ class MethodDetailViewController: UIViewController {
                 } else {
                     if let method = self.selectedMethod, let methods = favoriteMethods {
                         DispatchQueue.main.async {
-                            print(favoriteMethods)
-                            print(self.selectedMethod?.uid)
                             if methods.contains(method.uid) {
                                 self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                                 self.isFavorite = true
@@ -59,7 +57,7 @@ class MethodDetailViewController: UIViewController {
                 self.howToApply.accessibilityLabel = methodObject.howToApply_pt
             } else {
                 navigationItem.title = methodObject.name_en
-                self.about.text = methodObject.about_en
+                self.about.text = methodObject.about_en.replacingOccurrences(of: "\n", with: "\n")
                 self.howToApply.text = methodObject.howToApply_en
                    
                 self.about.isAccessibilityElement = true
@@ -80,7 +78,6 @@ class MethodDetailViewController: UIViewController {
                 }
             } else {
                 ImagesRepository.getMethod(image: methodObject.methodFullImage) { (error, acessibilityImage) in
-                    print("is main Thread ? \(Thread.isMainThread)")
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
@@ -122,24 +119,24 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteMethod() {
-        print(user)
         if let teacher = user, let methodObj = selectedMethod {
             if isFavorite {
                 TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        self.alertSuccess(message: "Método foi desfavoritado com sucesso!")
+                        let message = (self.language == "pt") ? "Método foi desfavoritado com sucesso!" : "Method was unselected from favorites!"
+                        self.alertSuccess(message: message)
                         self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
                     }
                 }
             } else {
-                print("antes de add for teacher")
                 TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: methodObj) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        self.alertSuccess(message: "Método foi favoritado com sucesso!")
+                        let message = (self.language == "pt") ? "Método foi favoritado com sucesso!" : "Method was selected to favorites!"
+                        self.alertSuccess(message: message)
                         self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                     }
                 }

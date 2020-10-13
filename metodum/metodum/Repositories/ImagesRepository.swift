@@ -77,7 +77,6 @@ class ImagesRepository {
                         acessibilityLabel_en: " ",
                         acessibilityHint_pt: " ",
                         acessibilityHint_en: " "
-                        
                     )
                     completion(nil,image)
                 }

@@ -64,22 +64,18 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CasesCollectionViewCell
         
         let caseObjeto = cases[indexPath.item]
-        print("ta na celula")
         cell.caseTitle.text = (language == "pt") ? caseObjeto.title_pt : caseObjeto.title_en
         cell.caseSubtitle.text = (language == "pt") ? caseObjeto.subtitle_pt : caseObjeto.subtitle_en
         cell.layer.cornerRadius = 12
         
         if persistedImagesNames.contains(caseObjeto.image) {
-            print("tá salvo no cache")
             let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages)
             cell.caseImage.image = UIImage(data: acessibilityImage!.data)
         } else {
-            print("indo pegar do server")
             ImagesRepository.getCase(image: caseObjeto.image) { (error, acessibilityImage) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
-                    print("pegando do servidor")
                     DeviceDataPersistenceService.write(acessibilityImage: acessibilityImage!, named: caseObjeto.image, on: .casesImages)
                     cell.caseImage.image = UIImage(data: acessibilityImage!.data)
                 }

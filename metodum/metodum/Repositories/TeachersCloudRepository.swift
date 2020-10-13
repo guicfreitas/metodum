@@ -43,10 +43,8 @@ class TeachersCloudRepository {
     }
     
     static func addMethodForTeacher(teacherUid: String, method : Methodology, completion: @escaping (String?) -> ()) {
-        print("dentro do add method for teacher")
         teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).addDocument(data: ["uid" : method.uid]) {
             (error) in
-            print("nna funcao do firebase")
             DispatchQueue.main.async {
                 if let errorMessage = error?.localizedDescription {
                     completion(errorMessage)
@@ -109,7 +107,6 @@ class TeachersCloudRepository {
     
     static func getFavoriteMethodsUidsForTeacher(teacherUid: String, completion: @escaping (String?, [String]?) -> ()) {
         teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).getDocuments { (querySnapshot, error) in
-            print("entrou no completion pelo menos")
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
                     completion(errorMessage,nil)
@@ -129,7 +126,6 @@ class TeachersCloudRepository {
     
     static func getFavoriteCasesUidsForTeacher(teacherUid: String, completion: @escaping (String?, [String]?) -> ()) {
         teachersCollection.document(teacherUid).collection(Collections.cases.rawValue).getDocuments { (querySnapshot, error) in
-            print("entrou no completion pelo menos")
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {
                     completion(errorMessage,nil)
