@@ -393,6 +393,7 @@
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-g5-HMj">
                                 <rect key="frame" x="10" y="44" width="355" height="96"/>
+                                <color key="backgroundColor" name="BlackBody"/>
                                 <items>
                                     <navigationItem title="Cases" id="4I0-og-Li9">
                                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2ED-r3-Pqd">
@@ -554,7 +555,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-2F-cQf">
@@ -733,7 +734,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1547,8 +1548,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zHE-v5-uMu"/>
-        <segue reference="4dD-YY-L4u"/>
+        <segue reference="nXI-NQ-48p"/>
+        <segue reference="CBP-vb-Wf9"/>
         <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>
     <resources>
