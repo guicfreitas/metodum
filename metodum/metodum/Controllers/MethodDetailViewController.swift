@@ -122,6 +122,7 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteMethod() {
+        print(user)
         if let teacher = user, let methodObj = selectedMethod {
             if isFavorite {
                 TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
@@ -133,6 +134,7 @@ class MethodDetailViewController: UIViewController {
                     }
                 }
             } else {
+                print("antes de add for teacher")
                 TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: methodObj) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)

@@ -56,6 +56,13 @@ class RegisterScreenViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Register to Main Screen" {
+            let viewController = segue.destination as! ViewController
+            viewController.user = sender as? User
+        }
+    }
+    
     @IBAction func returnToLoginButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

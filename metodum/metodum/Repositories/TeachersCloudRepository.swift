@@ -43,8 +43,10 @@ class TeachersCloudRepository {
     }
     
     static func addMethodForTeacher(teacherUid: String, method : Methodology, completion: @escaping (String?) -> ()) {
+        print("dentro do add method for teacher")
         teachersCollection.document(teacherUid).collection(Collections.methods.rawValue).addDocument(data: ["uid" : method.uid]) {
             (error) in
+            print("nna funcao do firebase")
             DispatchQueue.main.async {
                 if let errorMessage = error?.localizedDescription {
                     completion(errorMessage)
