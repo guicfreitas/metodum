@@ -50,8 +50,8 @@ class CasesCloudRepository {
         docRef.updateData(["caseUid" : docRef.documentID])
     }
     
-    static func query(casesUids: [String], language: String,completion: @escaping (String?, [Case]?) -> ()) {
-        let query = casesCollection.whereField("caseUid", in: casesUids)
+    static func query(casesUids: [String], completion: @escaping (String?, [Case]?) -> ()) {
+        let query = casesCollection.whereField("uid", in: casesUids)
         query.getDocuments { (querySnapshot, error) in
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async {

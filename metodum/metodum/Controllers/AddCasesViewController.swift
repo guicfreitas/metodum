@@ -23,9 +23,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @IBOutlet weak var buttonPickerPicture: UIButton!
     
     let placeholder = NSLocalizedString("type", comment: "")
-    
-    
-    
+    var selectedImageName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,16 +66,20 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             
             let newCase = Case(
                 uid: "",
-                caseTitle: title,
-                caseSubtitle: institute,
-                caseImage: imgName,
-                aboutCase: description,
-                caseResult: result
+                image: selectedImageName,
+                title_en: title,
+                title_pt: title,
+                subtitle_en: institute,
+                subtitle_pt: institute,
+                about_en: description,
+                about_pt: description,
+                result_pt: result,
+                result_en: result
             )
             
             self.showSpinner(onView: self.view)
             
-            ImagesRepository.uploadCaseImage(data: image.pngData()!,imageName: newCase.caseImage) { (error) in
+            ImagesRepository.uploadCaseImage(data: image.pngData()!,imageName: newCase.image) { (error) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {

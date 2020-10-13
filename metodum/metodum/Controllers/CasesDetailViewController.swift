@@ -17,6 +17,7 @@ class CasesDetailViewController: UIViewController {
     var selectedCase : Case?
     var user : User?
     var isFavorite = false
+    var language = Locale.current.languageCode
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,9 @@ class CasesDetailViewController: UIViewController {
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
-                    print(favoriteCases)
                     if let cases = favoriteCases {
                         DispatchQueue.main.async {
-                            if cases.contains(self.selectedCase!.caseUid) {
+                            if cases.contains(self.selectedCase!.uid) {
                                 self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                                 self.isFavorite = true
                             } else {
@@ -43,25 +43,29 @@ class CasesDetailViewController: UIViewController {
         }
         
         if let caseObject = selectedCase {
-            self.title = caseObject.caseTitle
-            self.aboutText.text = caseObject.aboutCase
-            self.resultText.text = caseObject.caseResult
-            
-            picture.image = UIImage(named: caseObject.caseImage)
-            
-            //VOICE OVER
-            
             self.aboutText.isAccessibilityElement = true
-            self.aboutText.accessibilityLabel = caseObject.aboutCase
-            
             self.resultText.isAccessibilityElement = true
-            self.resultText.accessibilityLabel = caseObject.aboutCase
-            
-            //necesarrio descrever imagem para o voice over
             self.picture.isAccessibilityElement = true
-            self.picture.accessibilityLabel = caseObject.caseImage
-            self.picture.accessibilityHint = caseObject.caseImage
             
+            if language == "pt" {
+                self.title = caseObject.title_pt
+                self.aboutText.text = caseObject.about_pt
+                self.resultText.text = caseObject.result_pt
+                self.aboutText.accessibilityLabel = caseObject.about_pt
+                self.resultText.accessibilityLabel = caseObject.result_pt
+                self.picture.accessibilityLabel = acessibilities[caseObject.image]?.first
+                self.picture.accessibilityHint = acessibilities[caseObject.image]?.last
+            } else {
+                self.title = caseObject.title_en
+                self.aboutText.text = caseObject.about_en
+                self.resultText.text = caseObject.result_en
+                self.aboutText.accessibilityLabel = caseObject.about_en
+                self.resultText.accessibilityLabel = caseObject.result_en
+                self.picture.accessibilityLabel = acessibilities[caseObject.image]?.first
+                self.picture.accessibilityHint = acessibilities[caseObject.image]?.last
+            }
+            
+            picture.image = UIImage(named: caseObject.image)
         }
     }
     
@@ -92,7 +96,7 @@ class CasesDetailViewController: UIViewController {
     @objc private func setFavoriteCase() {
         if let teacher = user, let caseObj = selectedCase {
             if isFavorite {
-                TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.caseUid) { (error) in
+                TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.uid) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
@@ -124,7 +128,7 @@ class CasesDetailViewController: UIViewController {
             self.openQlPreview()
         }
         
-        let items = ["hue"]
+        let items = ["Itens"]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
     
         self.present(activityViewController, animated: true, completion: nil)

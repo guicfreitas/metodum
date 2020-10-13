@@ -75,7 +75,7 @@ class TeachersCloudRepository {
     }
     
     static func addCaseForTeacher(teacherUid: String, favoriteCase : Case, completion: @escaping (String?) -> ()) {
-        teachersCollection.document(teacherUid).collection(Collections.cases.rawValue).addDocument(data: ["uid" : favoriteCase.caseUid]) { (error) in
+        teachersCollection.document(teacherUid).collection(Collections.cases.rawValue).addDocument(data: ["uid" : favoriteCase.uid]) { (error) in
             DispatchQueue.main.async {
                 if let errorMessage = error?.localizedDescription {
                     completion(errorMessage)

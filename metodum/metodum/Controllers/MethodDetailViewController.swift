@@ -154,7 +154,7 @@ class MethodDetailViewController: UIViewController {
             self.openQlPreview()
         }
         
-        let items = ["hue"]
+        let items = ["Itens"]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
 
         self.present(activityViewController, animated: true, completion: nil)

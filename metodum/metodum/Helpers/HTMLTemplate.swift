@@ -12,7 +12,13 @@ import Foundation
 func HtmlTemplate(selectedCase: Case) -> String {
     
     let caseObject = selectedCase
+    let language = Locale.current.languageCode
+    let title = (language == "pt") ? caseObject.title_pt : caseObject.title_en
+    let about = (language == "pt") ? caseObject.about_pt : caseObject.about_en
+    let result = (language == "pt") ? caseObject.result_pt : caseObject.result_en
     
+    let labelAbout = (language == "pt") ? "Sobre" : "About"
+    let labelResults = (language == "pt") ? "Resultados" : "Results"
     return """
 <!DOCTYPE html><html lang=\"pt-br\">
     <head>
@@ -22,11 +28,11 @@ func HtmlTemplate(selectedCase: Case) -> String {
         <title>Metodum</title>
     </head>
     <body>
-        <p><h1>\(caseObject.caseTitle)</h1></p>
-        <p><h2>Sobre</h2></p>
-        \(caseObject.aboutCase)
-        <p><h2>Resultados</h2></p>
-        \(caseObject.caseResult)
+        <p><h1>\(title)</h1></p>
+        <p><h2>\(labelAbout)</h2></p>
+        \(about)
+        <p><h2>\(labelResults)</h2></p>
+        \(result)
     </body>
 </html>
 """

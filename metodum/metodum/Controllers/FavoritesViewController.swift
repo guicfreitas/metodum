@@ -16,7 +16,7 @@ class FavoritesViewController: UIViewController{
     @IBOutlet weak var favoriteCollection: UICollectionView!
     @IBOutlet weak var favoriteCasesCollection: UICollectionView!
     
-    var language = "pt"
+    var language = Locale.current.languageCode!
     
     var methods = [Methodology]()
     var persistedMethodsImagesNames = [String]()
@@ -99,7 +99,7 @@ class FavoritesViewController: UIViewController{
                             self.favoriteCasesCollection.reloadData()
                         }
                     } else {
-                        CasesCloudRepository.query(casesUids: uids, language: self.language) { (error, favoriteCases) in
+                        CasesCloudRepository.query(casesUids: uids) { (error, favoriteCases) in
                             if let errorMessage = error {
                                 self.alertError(message: errorMessage)
                             } else {
@@ -181,13 +181,13 @@ extension FavoritesViewController: UICollectionViewDataSource{
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "favCase", for: indexPath) as! FavoriteCasesCell
             let actualCase = cases[indexPath.item]
             
-            if persistedCasesImagesNames.contains(actualCase.caseImage) {
-                if let image = DeviceDataPersistenceService.getImage(named: actualCase.caseImage, on: .casesImages) {
+            if persistedCasesImagesNames.contains(actualCase.image) {
+                if let image = DeviceDataPersistenceService.getImage(named: actualCase.image, on: .casesImages) {
                     print("persisted image nos favoritos ")
                     cell2.setImage(image: image)
                 }
             } else {
-                ImagesRepository.getCase(image: actualCase.caseImage) { (error, acessibilityImage) in
+                ImagesRepository.getCase(image: actualCase.image) { (error, acessibilityImage) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {

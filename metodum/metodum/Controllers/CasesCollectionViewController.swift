@@ -16,6 +16,7 @@ class CasesCollectionViewController: UIViewController {
     var cases : [Case] = []
     var persistedImagesNames = [String]()
     var user : User?
+    var language = Locale.current.languageCode
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,22 +65,22 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         
         let caseObjeto = cases[indexPath.item]
         print("ta na celula")
-        cell.caseTitle.text = caseObjeto.caseTitle
-        cell.caseSubtitle.text = caseObjeto.caseSubtitle
+        cell.caseTitle.text = (language == "pt") ? caseObjeto.title_pt : caseObjeto.title_en
+        cell.caseSubtitle.text = (language == "pt") ? caseObjeto.subtitle_pt : caseObjeto.subtitle_en
         cell.layer.cornerRadius = 12
         
-        if persistedImagesNames.contains(caseObjeto.caseImage) {
+        if persistedImagesNames.contains(caseObjeto.image) {
             print("tá salvo no cache")
-            let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.caseImage, on: .casesImages)
+            let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages)
             cell.caseImage.image = UIImage(data: acessibilityImage!.data)
         } else {
             print("indo pegar do server")
-            ImagesRepository.getCase(image: caseObjeto.caseImage) { (error, acessibilityImage) in
+            ImagesRepository.getCase(image: caseObjeto.image) { (error, acessibilityImage) in
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
                 } else {
                     print("pegando do servidor")
-                    DeviceDataPersistenceService.write(acessibilityImage: acessibilityImage!, named: caseObjeto.caseImage, on: .casesImages)
+                    DeviceDataPersistenceService.write(acessibilityImage: acessibilityImage!, named: caseObjeto.image, on: .casesImages)
                     cell.caseImage.image = UIImage(data: acessibilityImage!.data)
                 }
             }
@@ -87,11 +88,11 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         
         //VOICE OVER
         cell.caseTitle.isAccessibilityElement = true
-        cell.caseTitle.accessibilityLabel = caseObjeto.caseTitle
+        cell.caseTitle.accessibilityLabel = (language == "pt") ? caseObjeto.title_pt : caseObjeto.title_en
         cell.caseTitle.accessibilityHint = "Título indicando o nome do caso de sucesso"
         
         cell.caseSubtitle.isAccessibilityElement = true
-        cell.caseSubtitle.accessibilityLabel = caseObjeto.caseSubtitle
+        cell.caseSubtitle.accessibilityLabel = (language == "pt") ? caseObjeto.subtitle_pt : caseObjeto.subtitle_en
         cell.caseSubtitle.accessibilityHint = "Título indicando o local do caso de sucesso"
         
         return cell
