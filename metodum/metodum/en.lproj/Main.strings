@@ -1,6 +1,6 @@
 
 /* Class = "UITabBarItem"; title = "Explore"; ObjectID = "07K-f6-qXv"; */
-"07K-f6-qXv.title" = "Explore";
+"07K-f6-qXv.title" = "Methodologies";
 
 /* Class = "UITextField"; placeholder = "Digite seu nome aqui"; ObjectID = "0S6-gd-Zn8"; */
 "0S6-gd-Zn8.placeholder" = "Type your name here";
@@ -270,7 +270,7 @@
 "tTa-Sx-pKP.text" = "Favorite Methodologies";
 
 /* Class = "UINavigationItem"; title = "Explore"; ObjectID = "ubd-jG-IOX"; */
-"ubd-jG-IOX.title" = "Explore";
+"ubd-jG-IOX.title" = "Methodologies";
 
 /* Class = "UITabBarItem"; title = "Favoritos"; ObjectID = "vB0-69-1oh"; */
 "vB0-69-1oh.title" = "Favorites";
