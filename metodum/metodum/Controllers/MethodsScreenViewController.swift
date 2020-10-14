@@ -67,7 +67,6 @@ class MethodsScreenViewController: UIViewController {
             }
         }
     }
-    
 }
 
 func heigthForHeader(labelA : UILabel, labelB : UILabel, image : UIImageView) -> CGFloat{
@@ -148,8 +147,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         if let method = self.trendMethod {
             if persistedImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
-                    print("persisted trending image")
-                    print(image)
                     headerView.emAltaImage.image = UIImage(data: image.data)
                     //print(image)
                     headerView.emAltaImage.isAccessibilityElement = true
@@ -158,7 +155,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 }
             } else {
                 ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
-                    print("entrou no repo de imagens")
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {

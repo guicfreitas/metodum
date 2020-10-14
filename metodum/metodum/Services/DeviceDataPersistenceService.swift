@@ -45,7 +45,7 @@ class DeviceDataPersistenceService {
                     label_pt: acessibilityImage.acessibilityLabel_pt,
                     hint_pt: acessibilityImage.acessibilityHint_pt,
                     label_en: acessibilityImage.acessibilityLabel_en,
-                    hint_en: acessibilityImage.acessibilityHint_pt
+                    hint_en: acessibilityImage.acessibilityHint_en // aqui tava pt
                 )
             try UserDefaults.standard.setObject(acessibilityAtributes,forKey: imageName)
             persistedImagesNames[directory]!.append(imageName)
