@@ -281,6 +281,7 @@
 				79CBC9522518FD2100AFB417 /* Frameworks */,
 				79CBC9532518FD2100AFB417 /* Resources */,
 				77F870E1E32DDBFC5B47B6AB /* [CP] Embed Pods Frameworks */,
+				C4FC9AFDDD4ED1C54CCA5B3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,6 +358,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-metodum/Pods-metodum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4FC9AFDDD4ED1C54CCA5B3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-metodum/Pods-metodum-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-metodum/Pods-metodum-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-metodum/Pods-metodum-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D65104C539DF50691665BC71 /* [CP] Check Pods Manifest.lock */ = {

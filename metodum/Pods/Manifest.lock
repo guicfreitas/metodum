@@ -301,6 +301,9 @@ PODS:
   - GoogleDataTransportCCTSupport (3.2.0):
     - GoogleDataTransport (~> 6.1)
     - nanopb (~> 1.30905.0)
+  - GoogleMaps/Base (4.0.0)
+  - GooglePlaces (4.0.0):
+    - GoogleMaps/Base (= 4.0.0)
   - GoogleUtilities/AppDelegateSwizzler (6.6.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -360,6 +363,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Messaging
   - Firebase/Storage
+  - GooglePlaces (= 4.0.0)
 
 SPEC REPOS:
   trunk:
@@ -378,6 +382,8 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
+    - GoogleMaps
+    - GooglePlaces
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -403,6 +409,8 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
   GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
+  GoogleMaps: b7f7fc569a9b354a3af0d9729dbec40957b7d41e
+  GooglePlaces: ca8d4aba09ba79e0a829cf1dca03a41de6a09016
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
@@ -412,6 +420,6 @@ SPEC CHECKSUMS:
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
 
-PODFILE CHECKSUM: e038b4e7a2fc2d6aebdfe299db0b39ea6eaae459
+PODFILE CHECKSUM: 74a60fe4701bc0465333600bba51a5580cf6c344
 
 COCOAPODS: 1.9.3
