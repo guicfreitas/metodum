@@ -11,6 +11,6 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage' 
 pod 'Firebase/Messaging'
-pod 'GooglePlaces', '4.0.0'
+pod 'GooglePlaces'
 
 end
