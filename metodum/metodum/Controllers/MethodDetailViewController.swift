@@ -148,7 +148,31 @@ class MethodDetailViewController: UIViewController {
             self.openQlPreview()
         }
         
-        let items = ["Itens"]
+        var titleAC : String = ""
+        var aboutTextAC : String = ""
+        var howToAC : String = ""
+        var aboutTitleAC : String = ""
+        var howToApplyTitleAC : String = ""
+        
+        if let methodObject = selectedMethod {
+            if language == "pt" {
+                titleAC = methodObject.name_pt
+                aboutTextAC = methodObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
+                howToAC = methodObject.howToApply_pt.replacingOccurrences(of: "\\n", with: "\n")
+                aboutTitleAC = "Sobre"
+                howToApplyTitleAC = "Como Aplicar"
+               
+            } else {
+                titleAC = methodObject.name_en
+                aboutTextAC = methodObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
+                howToAC = methodObject.howToApply_en.replacingOccurrences(of: "\\n", with: "\n")
+                aboutTitleAC = "About"
+                howToApplyTitleAC = "How to Apply"
+               
+            }
+        }
+        
+        let items = [titleAC," ",aboutTitleAC," ",aboutTextAC," ",howToApplyTitleAC," ",howToAC]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
 
         self.present(activityViewController, animated: true, completion: nil)

@@ -14,6 +14,7 @@ class CasesDetailViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var aboutText: UITextView!
     @IBOutlet weak var resultText: UITextView!
+    
     var selectedCase : Case?
     var user : User?
     var isFavorite = false
@@ -124,6 +125,8 @@ class CasesDetailViewController: UIViewController {
   @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
         // createPrintFormatter(index: self.id)
         // openQlPreview()
+   
+    
         let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
             if let caseObject = self.selectedCase {
                 createPrintFormatter(selectedCase: caseObject)
@@ -131,7 +134,37 @@ class CasesDetailViewController: UIViewController {
             self.openQlPreview()
         }
         
-        let items = ["Itens"]
+    var titleAC : String = ""
+    var aboutTextAC : String = ""
+    var resultAC : String = ""
+    var aboutTitleAC : String = ""
+    var resultsTitleAC : String = ""
+    
+    if let caseObject = selectedCase {
+        
+        
+        if language == "pt" {
+            
+            titleAC = caseObject.title_pt
+            aboutTextAC = caseObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
+            resultAC = caseObject.result_pt.replacingOccurrences(of: "\\n", with: "\n")
+            aboutTitleAC = "Sobre"
+            resultsTitleAC = "Resultados"
+            
+        } else {
+            
+            titleAC = caseObject.title_en
+            aboutTextAC = caseObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
+            resultAC = caseObject.result_en.replacingOccurrences(of: "\\n", with: "\n")
+            aboutTitleAC = "About"
+            resultsTitleAC = "Results"
+            
+        }
+        
+    }
+    
+        let items = [titleAC," ",aboutTitleAC," ",aboutTextAC," ",resultsTitleAC," ",resultAC]
+    
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
     
         self.present(activityViewController, animated: true, completion: nil)

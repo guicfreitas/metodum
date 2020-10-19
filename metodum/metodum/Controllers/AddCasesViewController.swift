@@ -157,6 +157,11 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
     }
     
+    
+    @IBAction func didBeginLocal(_ sender: Any) {
+        performSegue(withIdentifier: "locationSegue", sender: nil)
+    }
+    
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
         if let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text, !institute.isEmpty, !location.isEmpty, !description.isEmpty, !result.isEmpty, description != "Type here", result != "Type here" {
