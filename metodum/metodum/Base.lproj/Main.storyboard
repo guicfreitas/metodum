@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tla-WG-349">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -330,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x68-uG-ODQ">
-                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="559"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pqZ-1I-8VE">
                                     <size key="itemSize" width="414" height="294"/>
@@ -411,7 +411,7 @@
                         <viewLayoutGuide key="safeArea" id="2rT-pS-8ka"/>
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
-                            <constraint firstItem="x68-uG-ODQ" firstAttribute="top" secondItem="1aJ-g5-HMj" secondAttribute="bottom" id="3wn-ct-u5r"/>
+                            <constraint firstItem="x68-uG-ODQ" firstAttribute="top" secondItem="1aJ-g5-HMj" secondAttribute="bottom" constant="30" id="3wn-ct-u5r"/>
                             <constraint firstItem="1aJ-g5-HMj" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" constant="10" id="9w9-WQ-WhQ"/>
                             <constraint firstItem="x68-uG-ODQ" firstAttribute="leading" secondItem="2rT-pS-8ka" secondAttribute="leading" id="Gu6-Xw-gww"/>
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="trailing" secondItem="1aJ-g5-HMj" secondAttribute="trailing" constant="10" id="V2x-vH-ngb"/>
@@ -450,24 +450,24 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-cI-CNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-8f-p5B">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="eea-Jl-AMh"/>
+                                                    <constraint firstAttribute="width" secondItem="6Tp-8f-p5B" secondAttribute="height" multiplier="375:218" id="fHc-K1-P9k"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-Hd-YYt">
-                                                <rect key="frame" x="20" y="230" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="248" width="335" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre o caso de sucesso" label="Sobre"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-TP-6cp">
-                                                <rect key="frame" x="15" y="430" width="345" height="104"/>
+                                                <rect key="frame" x="15" y="448" width="345" height="104"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -476,7 +476,7 @@
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
-                                                <rect key="frame" x="15" y="262" width="345" height="126"/>
+                                                <rect key="frame" x="15" y="280" width="345" height="126"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis .</string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -485,7 +485,7 @@
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-a3-nGk">
-                                                <rect key="frame" x="20" y="398" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="416" width="335" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre os resultados do caso de sucesso" label="Resultados"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -862,24 +862,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
-                                <rect key="frame" x="10" y="44.000000000000007" width="375" height="107.66666666666669"/>
+                                <rect key="frame" x="10" y="44" width="375" height="96"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="Favoritos" id="dnr-Sq-y11"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metodologias Favoritas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTa-Sx-pKP">
-                                <rect key="frame" x="20" y="186.66666666666666" width="335" height="26.333333333333343"/>
+                                <rect key="frame" x="20" y="175" width="335" height="26.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de metodologias favoritas" label="Metodologias Favoritas"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-kH-V99">
-                                <rect key="frame" x="20" y="238" width="355" height="180"/>
+                                <rect key="frame" x="20" y="226.33333333333337" width="355" height="180"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="VHG-tv-V1a"/>
+                                    <constraint firstAttribute="height" constant="180" id="cV4-te-k8V"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="6sA-as-FJv">
                                     <size key="itemSize" width="128" height="128"/>
@@ -920,17 +920,17 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casos Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jA0-jo-kgX">
-                                <rect key="frame" x="20" y="463" width="335" height="26"/>
+                                <rect key="frame" x="20" y="451.33333333333331" width="335" height="26"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de casos favoritos" label="Casos Favoritos"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gIo-Ga-asw">
-                                <rect key="frame" x="20" y="514" width="355" height="180"/>
+                                <rect key="frame" x="20" y="502.33333333333326" width="355" height="180"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="61V-eF-KHL"/>
+                                    <constraint firstAttribute="height" constant="180" id="26f-d5-FyT"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dph-pY-vFZ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -975,7 +975,6 @@
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="EW8-er-in4" firstAttribute="top" secondItem="dMa-VD-NaJ" secondAttribute="top" id="1rX-V2-gED"/>
-                            <constraint firstItem="dMa-VD-NaJ" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="gIo-Ga-asw" secondAttribute="bottom" constant="35" id="4FH-eu-vgI"/>
                             <constraint firstItem="gIo-Ga-asw" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="89j-CE-XyM"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="tTa-Sx-pKP" secondAttribute="trailing" constant="20" id="AZ6-jT-VrO"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="10" id="DnS-NM-jZL"/>
@@ -996,8 +995,8 @@
                     <connections>
                         <outlet property="favoriteCasesCollection" destination="gIo-Ga-asw" id="fKk-MH-k1U"/>
                         <outlet property="favoriteCollection" destination="fKB-kH-V99" id="Rc2-JX-9nj"/>
-                        <outlet property="heightCaseCollection" destination="61V-eF-KHL" id="Qe5-qe-cle"/>
-                        <outlet property="heightFavoriteCollection" destination="VHG-tv-V1a" id="vpG-la-cAM"/>
+                        <outlet property="heightCaseCollection" destination="26f-d5-FyT" id="EfV-X4-OhW"/>
+                        <outlet property="heightFavoriteCollection" destination="cV4-te-k8V" id="bSp-cB-fYT"/>
                         <outlet property="navigationIten" destination="dnr-Sq-y11" id="cUr-qr-R8y"/>
                         <segue destination="8Yl-KZ-Rjh" kind="show" identifier="CaseDetailsSegue" id="4dD-YY-L4u"/>
                         <segue destination="yHc-VH-Zqu" kind="show" identifier="MethodScreenViewSegue" id="zHE-v5-uMu"/>
@@ -1597,8 +1596,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zHE-v5-uMu"/>
-        <segue reference="4dD-YY-L4u"/>
+        <segue reference="nXI-NQ-48p"/>
+        <segue reference="CBP-vb-Wf9"/>
         <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -10,8 +10,9 @@ import UIKit
 
 class FavoritesViewController: UIViewController{
     
-    @IBOutlet weak var heightFavoriteCollection: NSLayoutConstraint!
+
     @IBOutlet weak var heightCaseCollection: NSLayoutConstraint!
+    @IBOutlet weak var heightFavoriteCollection: NSLayoutConstraint!
     @IBOutlet weak var navigationIten: UINavigationItem!
     @IBOutlet weak var favoriteCollection: UICollectionView!
     @IBOutlet weak var favoriteCasesCollection: UICollectionView!
