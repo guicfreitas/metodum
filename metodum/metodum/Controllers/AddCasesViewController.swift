@@ -27,6 +27,9 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     var selectedImageName = "cases_grey.png"
     let globalImagePicker = UIImagePickerController()
     
+    let placeholderDarkColor = UIColor(red: 0.35, green: 0.35, blue: 0.36, alpha: 1.00)
+    let placeholderLightColor = UIColor(red: 0.77, green: 0.77, blue: 0.78, alpha: 1.00)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,17 +60,27 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         
         descriptionAboutCase.attributedText = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         
-        descriptionResultCase.textColor = .lightGray
-        descriptionAboutCase.textColor = .lightGray
+        if traitCollection.userInterfaceStyle == .dark {
+            descriptionResultCase.textColor = placeholderDarkColor
+            descriptionAboutCase.textColor = placeholderDarkColor
+        }
+        else
+        {
+            descriptionResultCase.textColor = placeholderLightColor
+            descriptionAboutCase.textColor = placeholderLightColor
+            
+        }
+        
+    
         
         instituteName.setLeftPaddingPoints(15.0)
         locationName.setLeftPaddingPoints(15.0)
         
-        aboutLabel.attributedText = NSAttributedString(string: "SOBRE", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        aboutLabel.attributedText = NSAttributedString(string: aboutLabel.attributedText!.string, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         aboutLabel.font = .preferredFont(forTextStyle: .body)
         aboutLabel.adjustsFontForContentSizeCategory = true
         
-        resultsLabel.attributedText = NSAttributedString(string: "RESULTADOS", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        resultsLabel.attributedText = NSAttributedString(string: resultsLabel.attributedText!.string, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         resultsLabel.font = .preferredFont(forTextStyle: .body)
         resultsLabel.adjustsFontForContentSizeCategory = true
         
@@ -146,7 +159,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     @objc func keyboardWillHide() {
         self.view.frame.origin.y = 0
-        if let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text, !institute.isEmpty, !location.isEmpty, !description.isEmpty, !result.isEmpty, description != "Type Here", result != "Type Here" {
+        if let institute = instituteName.text, let location = locationName.text, let description = descriptionAboutCase.text, let result = descriptionResultCase.text, !institute.isEmpty, !location.isEmpty, !description.isEmpty, !result.isEmpty, description != "Type here", result != "Type here" {
             addCaseButton.isEnabled = true
         } else {
             addCaseButton.isEnabled = false
@@ -209,21 +222,27 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder {
             textView.text = ""
-            textView.textColor = .gray
             //Tema dark
-    //            if traitCollection.userInterfaceStyle == .dark{
-    //                textView.textColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
-    //            } else {
-    //                textView.textColor = .gray
-    //
-    //            }
+                if traitCollection.userInterfaceStyle == .dark{
+                    textView.textColor = .white
+                } else {
+                    textView.textColor = .black
+    
+                }
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = placeholder
-            textView.textColor = .lightGray
+            if traitCollection.userInterfaceStyle == .dark {
+                textView.textColor = placeholderDarkColor
+            }
+            else
+            {
+                textView.textColor = placeholderLightColor
+                
+            }
         }
     }
     

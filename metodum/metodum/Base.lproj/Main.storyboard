@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tla-WG-349">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -559,23 +559,23 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-AJ-bmA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="766.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="767"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre sua turma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="14.333333333333336"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preencha informações sobre o seu caso de sucesso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg1-wy-Tit">
+                                                <rect key="frame" x="0.0" y="20" width="375" height="15"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJs-2F-cQf">
-                                                <rect key="frame" x="0.0" y="34.333333333333336" width="375" height="56.000000000000007"/>
+                                                <rect key="frame" x="0.0" y="35" width="375" height="56"/>
                                                 <color key="barTintColor" name="BlackBody"/>
                                                 <items>
                                                     <navigationItem title="Novo Caso" id="FfY-hy-TbQ">
@@ -595,13 +595,13 @@
                                                 </items>
                                             </navigationBar>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="cases_grey" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-7Y-x2Y">
-                                                <rect key="frame" x="0.0" y="90.333333333333314" width="375" height="262"/>
+                                                <rect key="frame" x="0.0" y="91" width="375" height="262"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GQL-7Y-x2Y" secondAttribute="height" multiplier="375:262" id="tyM-4F-mjs"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX7-jb-YrO">
-                                                <rect key="frame" x="0.0" y="308.33333333333331" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="309" width="375" height="44"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zX7-jb-YrO" secondAttribute="height" multiplier="375:44" id="tXB-aT-Usc"/>
@@ -614,7 +614,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Instituição de Ensino" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-9R-zfy">
-                                                <rect key="frame" x="0.0" y="352.33333333333331" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="353" width="375" height="44"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para instituições de ensino" label="Intituições de Ensino"/>
                                                 <constraints>
@@ -627,7 +627,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Local" textAlignment="justified" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H0P-sb-OJ4">
-                                                <rect key="frame" x="0.0" y="396.33333333333331" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="397" width="375" height="44"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para o local " label="Local"/>
                                                 <constraints>
@@ -640,7 +640,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Bl-gsx">
-                                                <rect key="frame" x="0.0" y="440.33333333333331" width="375" height="38"/>
+                                                <rect key="frame" x="0.0" y="441" width="375" height="38"/>
                                                 <color key="backgroundColor" name="BlackTabBar"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção para dissertar sobre o seu caso de sucesso" label="Sobre"/>
                                                 <constraints>
@@ -651,7 +651,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-3A-mDF">
-                                                <rect key="frame" x="0.0" y="478.33333333333326" width="375" height="125"/>
+                                                <rect key="frame" x="0.0" y="479" width="375" height="125"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o seu caso de sucesso" label="Caixa de Texto"/>
                                                 <constraints>
@@ -665,7 +665,7 @@
                                                 </connections>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTADOS" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-I7-pDX">
-                                                <rect key="frame" x="0.0" y="603.33333333333337" width="375" height="38"/>
+                                                <rect key="frame" x="0.0" y="604" width="375" height="38"/>
                                                 <color key="backgroundColor" name="BlackTabBar"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção para dissertar sobre o resultado do seu caso de sucesso" label="Resultado"/>
                                                 <constraints>
@@ -676,14 +676,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Escreva aqui..." textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQS-vU-Jf2">
-                                                <rect key="frame" x="0.0" y="641.33333333333337" width="375" height="125"/>
+                                                <rect key="frame" x="0.0" y="642" width="375" height="125"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Caixa de texto para escrever sobre o resultado do seu caso de sucesso" label="Caixa de Texto"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tQS-vU-Jf2" secondAttribute="height" multiplier="3:1" id="tHu-JX-7ii"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.49805355070000001" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="fSn-rJ-0Kl"/>
@@ -773,7 +773,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">

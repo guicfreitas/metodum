@@ -98,7 +98,7 @@
 "OCV-I7-pDX.accessibilityLabel" = "Result";
 
 /* Class = "UILabel"; text = "RESULTADOS"; ObjectID = "OCV-I7-pDX"; */
-"OCV-I7-pDX.text" = "Results";
+"OCV-I7-pDX.text" = "RESULTS";
 
 /* Class = "UILabel"; text = "Error Title"; ObjectID = "PFq-iy-q9n"; */
 "PFq-iy-q9n.text" = "Error Title";
@@ -167,7 +167,7 @@
 "eVo-7K-c5J.normalTitle" = "Enter ";
 
 /* Class = "UILabel"; text = "Preencha informações sobre sua turma"; ObjectID = "eg1-wy-Tit"; */
-"eg1-wy-Tit.text" = "Fill in information about your class";
+"eg1-wy-Tit.text" = "Fill in information about your case of success";
 
 /* Class = "UITextField"; placeholder = "Digite seu email aqui"; ObjectID = "fcI-BR-SNB"; */
 "fcI-BR-SNB.placeholder" = "Type your email here";

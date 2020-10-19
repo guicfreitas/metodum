@@ -168,7 +168,7 @@
 "eVo-7K-c5J.normalTitle" = "Entrar ";
 
 /* Class = "UILabel"; text = "Preencha informações sobre sua turma"; ObjectID = "eg1-wy-Tit"; */
-"eg1-wy-Tit.text" = "Preencha informações sobre sua turma";
+"eg1-wy-Tit.text" = "Preencha informações sobre o seu caso de sucesso";
 
 /* Class = "UITextField"; placeholder = "Digite seu email aqui"; ObjectID = "fcI-BR-SNB"; */
 "fcI-BR-SNB.placeholder" = "Digite seu email aqui";
