@@ -136,7 +136,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-BR-SNB" userLabel="Email Text Field">
                                 <rect key="frame" x="20" y="351.33333333333331" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h93-bW-7qf" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="409.66666666666669" width="335" height="34"/>
@@ -429,6 +429,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="casesCollection" destination="x68-uG-ODQ" id="nfQ-tz-yei"/>
+                        <outlet property="navBar" destination="1aJ-g5-HMj" id="BZl-NH-cKr"/>
+                        <outlet property="navItem" destination="4I0-og-Li9" id="zMy-3z-iir"/>
                         <segue destination="8Yl-KZ-Rjh" kind="show" identifier="CaseDetailsSegue" id="CBP-vb-Wf9"/>
                     </connections>
                 </viewController>
@@ -559,7 +561,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -773,7 +775,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -860,7 +862,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-er-in4">
-                                <rect key="frame" x="10" y="44.000000000000007" width="355" height="107.66666666666669"/>
+                                <rect key="frame" x="10" y="44.000000000000007" width="375" height="107.66666666666669"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
                                     <navigationItem title="Favoritos" id="dnr-Sq-y11"/>
@@ -986,7 +988,7 @@
                             <constraint firstItem="jA0-jo-kgX" firstAttribute="top" secondItem="fKB-kH-V99" secondAttribute="bottom" constant="45" id="ZdK-Xp-RiK"/>
                             <constraint firstItem="tTa-Sx-pKP" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="jxo-FX-FXY"/>
                             <constraint firstItem="fKB-kH-V99" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="lw1-wx-eQx"/>
-                            <constraint firstItem="EW8-er-in4" firstAttribute="trailing" secondItem="dMa-VD-NaJ" secondAttribute="trailing" constant="-10" id="o4J-Pr-N1A"/>
+                            <constraint firstItem="EW8-er-in4" firstAttribute="trailing" secondItem="dMa-VD-NaJ" secondAttribute="trailing" constant="10" id="o4J-Pr-N1A"/>
                             <constraint firstItem="tTa-Sx-pKP" firstAttribute="top" secondItem="EW8-er-in4" secondAttribute="bottom" constant="35" id="sg9-2p-ncn"/>
                         </constraints>
                     </view>
@@ -1039,12 +1041,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu nome aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0S6-gd-Zn8" userLabel="Email Text Field">
                                 <rect key="frame" x="20" y="252.66666666666663" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-pY-Lg0" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="311" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-Yy-hNI">
                                 <rect key="frame" x="30" y="477.33333333333331" width="315" height="39.999999999999943"/>

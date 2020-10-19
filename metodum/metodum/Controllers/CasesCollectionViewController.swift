@@ -12,6 +12,8 @@ import Foundation
 class CasesCollectionViewController: UIViewController {
     
     @IBOutlet weak var casesCollection: UICollectionView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     var cases : [Case] = []
     var persistedImagesNames = [String]()
@@ -23,6 +25,8 @@ class CasesCollectionViewController: UIViewController {
         
         let parentController = self.parent as! ViewController
         user = parentController.user
+        
+        navItem.title = NSLocalizedString("cases", comment: "")
         
         self.showSpinner(onView: self.view)
         CasesCloudRepository.getAllCases { (error, cases) in

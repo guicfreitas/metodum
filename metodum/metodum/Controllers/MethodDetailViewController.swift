@@ -124,8 +124,6 @@ class MethodDetailViewController: UIViewController {
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        let message = (self.language == "pt") ? "Método foi desfavoritado com sucesso!" : "Method was unselected from favorites!"
-                        self.alertSuccess(message: message)
                         self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
                     }
                 }
@@ -134,8 +132,6 @@ class MethodDetailViewController: UIViewController {
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
                     } else {
-                        let message = (self.language == "pt") ? "Método foi favoritado com sucesso!" : "Method was selected to favorites!"
-                        self.alertSuccess(message: message)
                         self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                     }
                 }

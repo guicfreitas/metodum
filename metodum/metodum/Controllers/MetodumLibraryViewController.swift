@@ -77,8 +77,12 @@ extension MetodumLibraryViewController: UICollectionViewDataSource{
         
         let imageview:UIImageView = UIImageView(frame: CGRect(x:0, y:0,width: cell.frame.width, height: cell.frame.height))
         
+        let item = imageArray[indexPath.item]
         imageview.image = UIImage(named: imageArray[indexPath.row])
         cell.contentView.addSubview(imageview)
+        cell.isAccessibilityElement = true
+        cell.accessibilityLabel = acessibilities[item]?.first
+        cell.accessibilityHint = acessibilities[item]?.last
         return cell
     }
 }

@@ -52,7 +52,7 @@ class FavoritesViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showSpinner(onView: self.view)
-        self.removeSpinner()
+
         guard let curretnUser = user else {return}
         
         self.persistedMethodsImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
@@ -132,7 +132,6 @@ class FavoritesViewController: UIViewController{
         let logOutLabel = NSLocalizedString("sign", comment: "")
         self.navigationIten.title = NSLocalizedString("fav", comment: "")
         self.navigationIten.largeTitleDisplayMode = .always
-        
         
         self.navigationIten.rightBarButtonItems = [
             UIBarButtonItem(title: logOutLabel, style: .plain, target: self, action: #selector(signOut)),
