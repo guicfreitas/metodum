@@ -73,8 +73,9 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.layer.cornerRadius = 12
         
         if persistedImagesNames.contains(caseObjeto.image) {
-            let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages)
-            cell.caseImage.image = UIImage(data: acessibilityImage!.data)
+            if let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages) {
+                cell.caseImage.image = UIImage(data: acessibilityImage.data)
+            }
         } else {
             ImagesRepository.getCase(image: caseObjeto.image) { (error, acessibilityImage) in
                 if let errorMessage = error {

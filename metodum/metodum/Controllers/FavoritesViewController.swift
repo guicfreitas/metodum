@@ -17,6 +17,13 @@ class FavoritesViewController: UIViewController{
     @IBOutlet weak var favoriteCollection: UICollectionView!
     @IBOutlet weak var favoriteCasesCollection: UICollectionView!
     
+    @IBOutlet weak var favMethodologiesLabel: UILabel!
+    @IBOutlet weak var favCasesLabel: UILabel!
+    
+    @IBOutlet weak var emptyView: UIView!
+    
+    
+    
     var language = Locale.current.languageCode!
     
     var methods = [Methodology]()
@@ -28,6 +35,8 @@ class FavoritesViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.emptyView.isHidden = true
         
         let parent = self.parent as! ViewController
         user = parent.user
@@ -50,6 +59,26 @@ class FavoritesViewController: UIViewController{
         }
     }
     
+    func showEmpty(){
+        if self.cases.isEmpty && self.methods.isEmpty {
+            self.favMethodologiesLabel.isHidden = true
+            self.favCasesLabel.isHidden = true
+            self.favoriteCollection.isHidden = true
+            self.favoriteCasesCollection.isHidden = true
+            self.emptyView.isHidden = false
+        }
+    }
+    
+    func hideEmpty(){
+        if !self.cases.isEmpty || !self.methods.isEmpty {
+            self.favMethodologiesLabel.isHidden = false
+            self.favCasesLabel.isHidden = false
+            self.favoriteCollection.isHidden = false
+            self.favoriteCasesCollection.isHidden = false
+            self.emptyView.isHidden = true
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showSpinner(onView: self.view)
@@ -68,6 +97,7 @@ class FavoritesViewController: UIViewController{
                         DispatchQueue.main.async {
                             self.methods = []
                             self.favoriteCollection.reloadData()
+                            self.showEmpty()
                         }
                     } else {
                         MethodsCloudRepository.query(methodsUids: uids) { (error, favoriteMethods) in
@@ -77,6 +107,7 @@ class FavoritesViewController: UIViewController{
                                 if let m = favoriteMethods {
                                     self.methods = m
                                     self.favoriteCollection.reloadData()
+                                    self.hideEmpty()
                                 }
                             }
                         }
@@ -95,6 +126,7 @@ class FavoritesViewController: UIViewController{
                         DispatchQueue.main.async {
                             self.cases = []
                             self.favoriteCasesCollection.reloadData()
+                            self.showEmpty()
                         }
                     } else {
                         CasesCloudRepository.query(casesUids: uids) { (error, favoriteCases) in
@@ -104,6 +136,7 @@ class FavoritesViewController: UIViewController{
                                 if let c = favoriteCases {
                                     self.cases = c
                                     self.favoriteCasesCollection.reloadData()
+                                    self.hideEmpty()
                                 }
                             }
                         }

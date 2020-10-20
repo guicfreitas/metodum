@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tla-WG-349">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -970,14 +970,49 @@
                                     <outlet property="delegate" destination="UHC-TI-MjJ" id="Npb-kl-GVD"/>
                                 </connections>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-Mv-76j">
+                                <rect key="frame" x="0.0" y="140" width="375" height="589"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="emptyFavorite" translatesAutoresizingMaskIntoConstraints="NO" id="TOy-Fv-zQw">
+                                        <rect key="frame" x="27" y="0.0" width="320" height="320"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sem favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMq-jf-d9p">
+                                        <rect key="frame" x="20" y="320" width="335" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Parece que você ainda não adicionou nenhum favorito. Visualize metodologias e casos de sucesso e adicione seus favoritos aqui." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Co-Vh-1Ak">
+                                        <rect key="frame" x="52" y="363" width="270" height="226"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TOy-Fv-zQw" secondAttribute="trailing" constant="28" id="0ji-uE-bVM"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Co-Vh-1Ak" secondAttribute="trailing" constant="53" id="2QJ-Pr-tfu"/>
+                                    <constraint firstItem="TOy-Fv-zQw" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="27" id="AHY-3q-NJy"/>
+                                    <constraint firstItem="cMq-jf-d9p" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="20" id="N9T-ZV-S4a"/>
+                                    <constraint firstItem="TOy-Fv-zQw" firstAttribute="top" secondItem="GV7-Mv-76j" secondAttribute="top" id="fXU-Jf-UoH"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Co-Vh-1Ak" secondAttribute="bottom" id="fsj-22-oia"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMq-jf-d9p" secondAttribute="trailing" constant="20" id="hvP-J1-xfN"/>
+                                    <constraint firstItem="4Co-Vh-1Ak" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="52" id="jZf-2b-moR"/>
+                                    <constraint firstItem="cMq-jf-d9p" firstAttribute="top" secondItem="TOy-Fv-zQw" secondAttribute="bottom" id="nhZ-AQ-ZlS"/>
+                                    <constraint firstItem="4Co-Vh-1Ak" firstAttribute="top" secondItem="cMq-jf-d9p" secondAttribute="bottom" id="pZM-RU-8Z1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dMa-VD-NaJ"/>
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="EW8-er-in4" firstAttribute="top" secondItem="dMa-VD-NaJ" secondAttribute="top" id="1rX-V2-gED"/>
                             <constraint firstItem="gIo-Ga-asw" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="89j-CE-XyM"/>
+                            <constraint firstItem="GV7-Mv-76j" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" id="9FX-WC-64y"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="tTa-Sx-pKP" secondAttribute="trailing" constant="20" id="AZ6-jT-VrO"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="10" id="DnS-NM-jZL"/>
+                            <constraint firstItem="GV7-Mv-76j" firstAttribute="top" secondItem="dMa-VD-NaJ" secondAttribute="top" constant="96" id="Ew0-s7-FvR"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="fKB-kH-V99" secondAttribute="trailing" id="L1b-cN-hV5"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="jA0-jo-kgX" secondAttribute="trailing" constant="20" id="NOl-Yk-Vr2"/>
                             <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="gIo-Ga-asw" secondAttribute="trailing" id="NXk-RH-Auv"/>
@@ -985,6 +1020,8 @@
                             <constraint firstItem="gIo-Ga-asw" firstAttribute="top" secondItem="jA0-jo-kgX" secondAttribute="bottom" constant="25" id="XnB-UY-H8k"/>
                             <constraint firstItem="jA0-jo-kgX" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="YWe-Lo-kJF"/>
                             <constraint firstItem="jA0-jo-kgX" firstAttribute="top" secondItem="fKB-kH-V99" secondAttribute="bottom" constant="45" id="ZdK-Xp-RiK"/>
+                            <constraint firstItem="dMa-VD-NaJ" firstAttribute="trailing" secondItem="GV7-Mv-76j" secondAttribute="trailing" id="fc9-2N-gHE"/>
+                            <constraint firstItem="dMa-VD-NaJ" firstAttribute="bottom" secondItem="GV7-Mv-76j" secondAttribute="bottom" id="hwo-qB-NwA"/>
                             <constraint firstItem="tTa-Sx-pKP" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="jxo-FX-FXY"/>
                             <constraint firstItem="fKB-kH-V99" firstAttribute="leading" secondItem="dMa-VD-NaJ" secondAttribute="leading" constant="20" id="lw1-wx-eQx"/>
                             <constraint firstItem="EW8-er-in4" firstAttribute="trailing" secondItem="dMa-VD-NaJ" secondAttribute="trailing" constant="10" id="o4J-Pr-N1A"/>
@@ -993,6 +1030,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star" catalog="system" id="vB0-69-1oh"/>
                     <connections>
+                        <outlet property="emptyView" destination="GV7-Mv-76j" id="S5X-4d-U48"/>
+                        <outlet property="favCasesLabel" destination="jA0-jo-kgX" id="aw9-HS-Lgx"/>
+                        <outlet property="favMethodologiesLabel" destination="tTa-Sx-pKP" id="yEE-Fw-joG"/>
                         <outlet property="favoriteCasesCollection" destination="gIo-Ga-asw" id="fKk-MH-k1U"/>
                         <outlet property="favoriteCollection" destination="fKB-kH-V99" id="Rc2-JX-9nj"/>
                         <outlet property="heightCaseCollection" destination="26f-d5-FyT" id="EfV-X4-OhW"/>
@@ -1596,14 +1636,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nXI-NQ-48p"/>
-        <segue reference="CBP-vb-Wf9"/>
+        <segue reference="zHE-v5-uMu"/>
+        <segue reference="4dD-YY-L4u"/>
         <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="applelogo" catalog="system" width="128" height="121"/>
         <image name="cases_grey" width="1242" height="849"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
+        <image name="emptyFavorite" width="320" height="320"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sad_cloud" width="556" height="410"/>
