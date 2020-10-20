@@ -10,3 +10,4 @@
 "analise" = "Nossa curadoria irá analisá-lo e, se aceito, será adicionado em breve.";
 "error" = "Error na leitura do Email!";
 "cases" = "Casos de Sucesso";
+"empty cell message" = "Parece que você ainda não adicionou nenhum favorito nessa seção";

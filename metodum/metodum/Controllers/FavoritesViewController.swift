@@ -21,9 +21,7 @@ class FavoritesViewController: UIViewController{
     @IBOutlet weak var favCasesLabel: UILabel!
     
     @IBOutlet weak var emptyView: UIView!
-    
-    
-    
+
     var language = Locale.current.languageCode!
     
     var methods = [Methodology]()
@@ -37,6 +35,8 @@ class FavoritesViewController: UIViewController{
         super.viewDidLoad()
         
 //        self.emptyView.isHidden = true
+        favoriteCollection.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
+        favoriteCasesCollection.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
         
         let parent = self.parent as! ViewController
         user = parent.user
@@ -190,13 +190,21 @@ extension FavoritesViewController: UICollectionViewDelegate{
 
 extension FavoritesViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (collectionView.tag == 1) ? cases.count : methods.count
+        var count = 1
+        
+        if collectionView.tag == 1 && cases.count > 0 {
+            count = cases.count
+        } else if collectionView.tag == 0 && methods.count > 0 {
+            count = methods.count
+        }
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.tag == 1 {
+        if collectionView.tag == 1 && cases.count > 0 {
             performSegue(withIdentifier: "CaseDetailsSegue", sender: cases[indexPath.item])
-        } else {
+        } else if collectionView.tag == 0 && methods.count > 0 {
             performSegue(withIdentifier: "MethodScreenViewSegue", sender: methods[indexPath.item])
         }
     }
@@ -208,7 +216,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
 //        cell.backgroundColor = UIColor.red
         
         
-        if (collectionView.tag == 1) {
+        if (collectionView.tag == 1 && cases.count > 0)  {
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "favCase", for: indexPath) as! FavoriteCasesCell
             let actualCase = cases[indexPath.item]
             
@@ -236,7 +244,7 @@ extension FavoritesViewController: UICollectionViewDataSource{
             cell2.layer.cornerRadius = 20
 
             return cell2
-        } else {
+        } else if collectionView.tag == 0 && methods.count >  0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favMethod", for: indexPath) as! FavoriteMethodCell
             let method = methods[indexPath.item]
             // hj eu mudo essa merda pra cachear as imagens, eu juro
@@ -264,7 +272,11 @@ extension FavoritesViewController: UICollectionViewDataSource{
             cell.layer.cornerRadius = 20
             return cell
         }
-        //return cell
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as! EmptyCollectionViewCell
+        cell.layer.cornerRadius = 20
+        
+        return cell
     }
 }
 
