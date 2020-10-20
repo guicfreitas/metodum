@@ -1187,7 +1187,7 @@
             </objects>
             <point key="canvasLocation" x="-3169" y="517"/>
         </scene>
-        <!--Explore-->
+        <!--Metodologias-->
         <scene sceneID="9aI-e3-5fK">
             <objects>
                 <viewController id="BDN-N0-yua" customClass="MethodsScreenViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
@@ -1199,7 +1199,7 @@
                                 <rect key="frame" x="10" y="44" width="355" height="96"/>
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <items>
-                                    <navigationItem title="Explore" id="ubd-jG-IOX"/>
+                                    <navigationItem title="Metodologias" id="ubd-jG-IOX"/>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BZQ-M1-TMn">
@@ -1311,7 +1311,7 @@
                             <constraint firstItem="o4b-ZG-0Op" firstAttribute="leading" secondItem="Vwt-QW-mF9" secondAttribute="leading" constant="10" id="iSz-am-HoH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="07K-f6-qXv"/>
+                    <tabBarItem key="tabBarItem" title="Metodologias" image="lightbulb" catalog="system" id="07K-f6-qXv"/>
                     <navigationItem key="navigationItem" id="NZw-Jb-XTz"/>
                     <connections>
                         <outlet property="maisSugesCollection" destination="BZQ-M1-TMn" id="CAA-Vc-nbO"/>
@@ -1616,7 +1616,7 @@
         <image name="cases_grey" width="1242" height="849"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="emptyFavorite" width="320" height="320"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sad_cloud" width="556" height="410"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

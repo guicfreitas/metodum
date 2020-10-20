@@ -1,5 +1,5 @@
 
-/* Class = "UITabBarItem"; title = "Explore"; ObjectID = "07K-f6-qXv"; */
+/* Class = "UITabBarItem"; title = "Metodologias"; ObjectID = "07K-f6-qXv"; */
 "07K-f6-qXv.title" = "Metodologias";
 
 /* Class = "UITextField"; placeholder = "Digite seu nome aqui"; ObjectID = "0S6-gd-Zn8"; */
@@ -17,11 +17,11 @@
 /* Class = "UILabel"; text = "Olá"; ObjectID = "46a-xN-0Gq"; */
 "46a-xN-0Gq.text" = "Olá";
 
-/* Class = "UINavigationItem"; title = "Cases"; ObjectID = "4I0-og-Li9"; */
-"4I0-og-Li9.title" = "Casos";
+/* Class = "UILabel"; text = "Parece que você ainda não adicionou nenhum favorito. Visualize metodologias e casos de sucesso e adicione seus favoritos aqui."; ObjectID = "4Co-Vh-1Ak"; */
+"4Co-Vh-1Ak.text" = "Parece que você ainda não adicionou nenhum favorito. Visualize metodologias e casos de sucesso e adicione seus favoritos aqui.";
 
-/* Class = "UIButton"; normalTitle = "Entrar com a conta Apple"; ObjectID = "6Kp-Ep-1m7"; */
-"6Kp-Ep-1m7.normalTitle" = "Entrar com a conta Apple";
+/* Class = "UINavigationItem"; title = "Cases"; ObjectID = "4I0-og-Li9"; */
+"4I0-og-Li9.title" = "Casos de Sucesso";
 
 /* Class = "UITextField"; placeholder = "Digite seu email aqui"; ObjectID = "6P8-pY-Lg0"; */
 "6P8-pY-Lg0.placeholder" = "Digite seu email aqui";
@@ -147,7 +147,10 @@
 "b5C-ca-OIj.title" = "Item";
 
 /* Class = "UITextView"; text = "Description:"; ObjectID = "bCu-U5-CzH"; */
-"bCu-U5-CzH.text" = "Description:";
+"bCu-U5-CzH.text" = "Descrição";
+
+/* Class = "UILabel"; text = "Sem favoritos"; ObjectID = "cMq-jf-d9p"; */
+"cMq-jf-d9p.text" = "Sem favoritos";
 
 /* Class = "UIBarButtonItem"; title = "Cancelar"; ObjectID = "dH4-ll-qZ4"; */
 "dH4-ll-qZ4.title" = "Cancelar";
@@ -167,7 +170,7 @@
 /* Class = "UIButton"; normalTitle = "Entrar "; ObjectID = "eVo-7K-c5J"; */
 "eVo-7K-c5J.normalTitle" = "Entrar ";
 
-/* Class = "UILabel"; text = "Preencha informações sobre sua turma"; ObjectID = "eg1-wy-Tit"; */
+/* Class = "UILabel"; text = "Preencha informações sobre o seu caso de sucesso"; ObjectID = "eg1-wy-Tit"; */
 "eg1-wy-Tit.text" = "Preencha informações sobre o seu caso de sucesso";
 
 /* Class = "UITextField"; placeholder = "Digite seu email aqui"; ObjectID = "fcI-BR-SNB"; */
@@ -185,8 +188,8 @@
 /* Class = "UITextField"; placeholder = "Digite sua senha aqui"; ObjectID = "h93-bW-7qf"; */
 "h93-bW-7qf.placeholder" = "Digite sua senha aqui";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "; ObjectID = "hK3-Qx-k5t"; */
-"hK3-Qx-k5t.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ";
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium "; ObjectID = "hK3-Qx-k5t"; */
+"hK3-Qx-k5t.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium ";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "hUr-aC-z30"; */
 "hUr-aC-z30.text" = "Title";
@@ -195,7 +198,13 @@
 "iZg-Ef-rVm.title" = "Casos";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "icm-H9-De0"; */
-"icm-H9-De0.title" = "Item";
+"icm-H9-De0.title" = "Itens";
+
+/* Class = "UILabel"; accessibilityHint = "Título Indicando a seção de casos favoritos"; ObjectID = "jA0-jo-kgX"; */
+"jA0-jo-kgX.accessibilityHint" = "Título Indicando a seção de casos favoritos";
+
+/* Class = "UILabel"; accessibilityLabel = "Casos Favoritos"; ObjectID = "jA0-jo-kgX"; */
+"jA0-jo-kgX.accessibilityLabel" = "Casos Favoritos";
 
 /* Class = "UILabel"; text = "Casos Favoritos"; ObjectID = "jA0-jo-kgX"; */
 "jA0-jo-kgX.text" = "Casos Favoritos";
@@ -230,15 +239,6 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "pMn-5v-Uav"; */
 "pMn-5v-Uav.text" = "Nome";
 
-/* Class = "UISearchBar"; placeholder = "Pesquisar"; ObjectID = "pyU-Qt-M9o"; */
-"pyU-Qt-M9o.placeholder" = "Pesquisar";
-
-/* Class = "UISearchBar"; pyU-Qt-M9o.scopeButtonTitles[0] = "Title"; ObjectID = "pyU-Qt-M9o"; */
-"pyU-Qt-M9o.scopeButtonTitles[0]" = "Title";
-
-/* Class = "UISearchBar"; pyU-Qt-M9o.scopeButtonTitles[1] = "Title"; ObjectID = "pyU-Qt-M9o"; */
-"pyU-Qt-M9o.scopeButtonTitles[1]" = "Title";
-
 /* Class = "UILabel"; text = "Já possui uma conta ?"; ObjectID = "qbA-Wb-6Sv"; */
 "qbA-Wb-6Sv.text" = "Já possui uma conta ?";
 
@@ -254,8 +254,8 @@
 /* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "qwy-Ry-Ruh"; */
 "qwy-Ry-Ruh.title" = "Back";
 
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "sFE-pX-14n"; */
-"sFE-pX-14n.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis "; ObjectID = "sFE-pX-14n"; */
+"sFE-pX-14n.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ";
 
 /* Class = "UITextView"; accessibilityHint = "Caixa de texto para escrever sobre o resultado do seu caso de sucesso"; ObjectID = "tQS-vU-Jf2"; */
 "tQS-vU-Jf2.accessibilityHint" = "Caixa de texto para escrever sobre o resultado do seu caso de sucesso";
@@ -266,10 +266,16 @@
 /* Class = "UITextView"; text = "Escreva aqui..."; ObjectID = "tQS-vU-Jf2"; */
 "tQS-vU-Jf2.text" = "Escreva aqui...";
 
+/* Class = "UILabel"; accessibilityHint = "Título Indicando a seção de metodologias favoritas"; ObjectID = "tTa-Sx-pKP"; */
+"tTa-Sx-pKP.accessibilityHint" = "Título Indicando a seção de metodologias favoritas";
+
+/* Class = "UILabel"; accessibilityLabel = "Metodologias Favoritas"; ObjectID = "tTa-Sx-pKP"; */
+"tTa-Sx-pKP.accessibilityLabel" = "Metodologias Favoritas";
+
 /* Class = "UILabel"; text = "Metodologias Favoritas"; ObjectID = "tTa-Sx-pKP"; */
 "tTa-Sx-pKP.text" = "Metodologias Favoritas";
 
-/* Class = "UINavigationItem"; title = "Explore"; ObjectID = "ubd-jG-IOX"; */
+/* Class = "UINavigationItem"; title = "Metodologias"; ObjectID = "ubd-jG-IOX"; */
 "ubd-jG-IOX.title" = "Metodologias";
 
 /* Class = "UITabBarItem"; title = "Favoritos"; ObjectID = "vB0-69-1oh"; */
@@ -298,5 +304,3 @@
 
 /* Class = "UIButton"; normalTitle = "Trocar Imagem"; ObjectID = "zX7-jb-YrO"; */
 "zX7-jb-YrO.normalTitle" = "Trocar Imagem";
-
-

@@ -305,3 +305,15 @@
 "jA0-jo-kgX.accessibilityLabel" = "Favorites Cases";
 
 "jA0-jo-kgX.accessibilityHint" = "Title Indicating the favorite cases section";
+
+/* Class = "UILabel"; text = "Parece que você ainda não adicionou nenhum favorito. Visualize metodologias e casos de sucesso e adicione seus favoritos aqui."; ObjectID = "4Co-Vh-1Ak"; */
+"4Co-Vh-1Ak.text" = "It looks like you didn’t add any favorites. Read methodologies and successful cases to add your favorites here.";
+
+/* Class = "UINavigationItem"; title = "Cases"; ObjectID = "4I0-og-Li9"; */
+"4I0-og-Li9.title" = "Successful Case";
+
+/* Class = "UITextView"; text = "Description:"; ObjectID = "bCu-U5-CzH"; */
+"bCu-U5-CzH.text" = "Description:";
+
+/* Class = "UILabel"; text = "Sem favoritos"; ObjectID = "cMq-jf-d9p"; */
+"cMq-jf-d9p.text" = "No Favorites";

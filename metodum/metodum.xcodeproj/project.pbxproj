@@ -63,13 +63,13 @@
 		791F884A252B5BBF0079EAE5 /* HTMLMethodTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLMethodTemplate.swift; sourceTree = "<group>"; };
 		793504C82534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		793504D5253535E6000B2DA8 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		793504D825353754000B2DA8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		793504D925353754000B2DA8 /* pt-BR */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		793504DC2535379C000B2DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
 		796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodumLibraryViewController.swift; sourceTree = "<group>"; };
+		798ED941253F1E650044B062 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		798ED945253F1EDF0044B062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		79B82C4E252F585E0078DDAB /* FavoriteCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCases.swift; sourceTree = "<group>"; };
 		79B82C53252F5CC10078DDAB /* FavoriteMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMethods.swift; sourceTree = "<group>"; };
 		79B82C8A252F8F430078DDAB /* FavoriteMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMethodCell.swift; sourceTree = "<group>"; };
@@ -469,8 +469,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				79CBC95F2518FD2100AFB417 /* Base */,
-				793504D825353754000B2DA8 /* pt-BR */,
-				793504DC2535379C000B2DA8 /* en */,
+				798ED941253F1E650044B062 /* pt-BR */,
+				798ED945253F1EDF0044B062 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
