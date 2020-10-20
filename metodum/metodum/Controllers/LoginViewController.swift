@@ -14,9 +14,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButtonView: UIView!
-    @IBOutlet weak var appleSignInButtonView: UIView!
-    @IBOutlet weak var appleLogo: UIImageView!
+    @IBOutlet weak var appleButtonStackView: UIStackView!
     var loadingSpinnerView : UIView!
+    let appleSignInButton : ASAuthorizationAppleIDButton = {
+        let button = ASAuthorizationAppleIDButton()
+        button.addTarget(self, action: #selector(showAuthorizationController), for: .touchDown)
+        button.cornerRadius = 10
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +39,11 @@ class LoginViewController: UIViewController {
             }
         }
         signInButtonView.layer.cornerRadius = 10
-        appleSignInButtonView.layer.cornerRadius = 10
+        appleButtonStackView.addArrangedSubview(appleSignInButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.traitCollection.userInterfaceStyle == .light {
-            appleLogo.tintColor = .white
-        }
         setupNavigationBar()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -71,6 +73,7 @@ class LoginViewController: UIViewController {
             statusBar?.backgroundColor = UIColor(named: "Blue")
         }
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeLoadSpinner()
@@ -78,16 +81,6 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: self.view.window)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: self.view.window)
         //UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-    }
-    
-    @objc func keyboardWillHide() {
-        self.view.frame.origin.y = 0
-    }
-
-    @objc func keyboardWillChange(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            self.view.frame.origin.y = -50
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,22 +95,28 @@ class LoginViewController: UIViewController {
         showLoadSpinner()
         guard let email = emailField.text else {
             alertError(message: errorLabel )
+            removeSpinner()
             return
         }
         
         guard let password = passwordField.text else {
             alertError(message:  errorLabel )
+            removeSpinner()
             return
         }
         
         if !email.isEmpty && !password.isEmpty {
             AuthService.signInWithEmailAndPassword(email: email, password: password) { (error,user) in
                 if let errorMessage = error {
+                    self.removeSpinner()
                     self.alertError(message: errorMessage)
                 } else {
                     self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
                 }
             }
+        } else {
+            self.alertError(message: NSLocalizedString("login input error", comment: ""))
+            removeSpinner()
         }
     }
 
@@ -125,14 +124,28 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "Login to Register Screen", sender: nil)
     }
     
-    @IBAction func appleSignInButton(_ sender: Any) {
-        showLoadSpinner()
-        showAuthorizationController()
-    }
-    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    @objc func keyboardWillHide() {
+        self.view.frame.origin.y = 0
+    }
+
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.view.frame.origin.y = -50
+        }
+    }
+    
+    @objc private func showAuthorizationController() {
+        showLoadSpinner()
+        guard let request = getAppleSignInRequest() else {return}
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
     
     private func setupNavigationBar() {
@@ -147,14 +160,6 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = UIColor(named:"BlackBody")
         navigationItem.setRightBarButtonItems([], animated: false)
         navigationItem.title = ""
-    }
-    
-    private func showAuthorizationController() {
-        guard let request = getAppleSignInRequest() else {return}
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
     }
     
     private func getAppleSignInRequest() -> ASAuthorizationRequest? {
