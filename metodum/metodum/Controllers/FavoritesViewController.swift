@@ -170,9 +170,23 @@ class FavoritesViewController: UIViewController{
         self.navigationIten.largeTitleDisplayMode = .always
         
         self.navigationIten.rightBarButtonItems = [
-            UIBarButtonItem(image: logOutimg.image, style: .plain, target: self, action: #selector(signOut)),
+            UIBarButtonItem(image: logOutimg.image, style: .plain, target: self, action: #selector(showAlert)),
         ]
     }
+    
+    @objc func showAlert(_ sender: Any) {
+        
+        let alerta = UIAlertController(title: (self.language == "pt") ? "Deseja mesmo sair?" : "Do you really want to log out?", message: "", preferredStyle: .alert)
+        
+        alerta.addAction(UIAlertAction(title: (self.language == "pt") ? "Não" : "No", style: .default, handler: nil))
+        
+        alerta.addAction(UIAlertAction(title: (self.language == "pt") ? "Sim" : "Yes", style: .destructive, handler: { action in
+            self.signOut()
+        }))
+        
+        self.present(alerta, animated: true)
+    }
+
     
     @objc private func signOut() {
         AuthService.signOut { (error) in
