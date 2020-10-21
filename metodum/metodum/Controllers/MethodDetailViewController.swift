@@ -141,7 +141,7 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func convertMethodToPdf() {
-        let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
+        let customItem = SharePDFActivity(title: (self.language == "pt") ? "Exportar PDF" : "Export PDF", image: UIImage(systemName: "arrow.down.doc")) { sharedItems in
             if let methodObject = self.selectedMethod {
                 createPrintMethodFormatter(selectedMethod: methodObject)
             }

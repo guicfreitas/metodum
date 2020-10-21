@@ -127,7 +127,7 @@ class CasesDetailViewController: UIViewController {
         // openQlPreview()
    
     
-        let customItem = SharePDFActivity(title: "Export PDF", image: UIImage(named: "doc.text")) { sharedItems in
+    let customItem = SharePDFActivity(title: (self.language == "pt") ? "Exportar PDF" : "Export PDF", image: UIImage(systemName: "arrow.down.doc")) { sharedItems in
             if let caseObject = self.selectedCase {
                 createPrintFormatter(selectedCase: caseObject)
             }
