@@ -57,9 +57,12 @@ class CasesCollectionViewController: UIViewController {
             }
         }
     }
+    
 }
 
 extension CasesCollectionViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cases.count
     }
@@ -70,7 +73,11 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         let caseObjeto = cases[indexPath.item]
         cell.caseTitle.text = (language == "pt") ? caseObjeto.title_pt : caseObjeto.title_en
         cell.caseSubtitle.text = (language == "pt") ? caseObjeto.subtitle_pt : caseObjeto.subtitle_en
+        
+        
         cell.layer.cornerRadius = 12
+        
+        
         
         if persistedImagesNames.contains(caseObjeto.image) {
             if let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages) {

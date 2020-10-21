@@ -20,4 +20,6 @@ class FavoriteCasesCell: UICollectionViewCell {
         self.caseImage.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
         self.caseImage.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
     }
+    
+    
 }

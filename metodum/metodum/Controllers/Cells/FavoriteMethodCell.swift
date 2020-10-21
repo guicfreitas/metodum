@@ -22,4 +22,6 @@ class FavoriteMethodCell: UICollectionViewCell {
         self.methodImage.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
         self.methodImage.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
     }
+    
+    
 }
