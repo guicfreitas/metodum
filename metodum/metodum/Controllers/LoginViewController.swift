@@ -49,29 +49,6 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        if #available(iOS 13.0, *) {
-            let app = UIApplication.shared
-            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-            
-            let statusbarView = UIView()
-            statusbarView.backgroundColor = UIColor(named: "Blue")
-            view.addSubview(statusbarView)
-          
-            statusbarView.translatesAutoresizingMaskIntoConstraints = false
-            statusbarView.heightAnchor
-                .constraint(equalToConstant: statusBarHeight).isActive = true
-            statusbarView.widthAnchor
-                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-            statusbarView.topAnchor
-                .constraint(equalTo: view.topAnchor).isActive = true
-            statusbarView.centerXAnchor
-                .constraint(equalTo: view.centerXAnchor).isActive = true
-          
-        } else {
-            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = UIColor(named: "Blue")
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,20 +72,20 @@ class LoginViewController: UIViewController {
         showLoadSpinner()
         guard let email = emailField.text else {
             alertError(message: errorLabel )
-            removeSpinner()
+            removeLoadSpinner()
             return
         }
         
         guard let password = passwordField.text else {
             alertError(message:  errorLabel )
-            removeSpinner()
+            removeLoadSpinner()
             return
         }
         
         if !email.isEmpty && !password.isEmpty {
             AuthService.signInWithEmailAndPassword(email: email, password: password) { (error,user) in
                 if let errorMessage = error {
-                    self.removeSpinner()
+                    self.removeLoadSpinner()
                     self.alertError(message: errorMessage)
                 } else {
                     self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
@@ -116,7 +93,7 @@ class LoginViewController: UIViewController {
             }
         } else {
             self.alertError(message: NSLocalizedString("login input error", comment: ""))
-            removeSpinner()
+            removeLoadSpinner()
         }
     }
 
@@ -149,9 +126,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let log = NSLocalizedString("ent", comment: "")
-        navigationItem.title = log
-        navigationController?.navigationBar.backgroundColor = UIColor(named:"Blue")
+        navigationItem.title = NSLocalizedString("ent", comment: "")
         navigationController?.isNavigationBarHidden = false
     }
     

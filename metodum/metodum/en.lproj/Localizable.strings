@@ -11,3 +11,8 @@
 "error" = "Error reading Email Field!";
 "cases" = "Succesfull Cases";
 "empty cell message" = "It looks like you didn’t add any favorites in this section.";
+"forgot password" = "Forgot Password";
+"forgot password message" = "Dont worry, we will send you an email to change your password!";
+"send email" = "Send Email";
+"back" = "Back";
+"login input error" = "Fill all the input texts!";

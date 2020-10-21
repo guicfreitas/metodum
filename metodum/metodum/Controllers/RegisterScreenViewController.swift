@@ -42,28 +42,6 @@ class RegisterScreenViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         signUpButtonBackgroundView.layer.cornerRadius = 10
-        if #available(iOS 13.0, *) {
-            let app = UIApplication.shared
-            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-            
-            let statusbarView = UIView()
-            statusbarView.backgroundColor = UIColor(named: "Blue")
-            view.addSubview(statusbarView)
-          
-            statusbarView.translatesAutoresizingMaskIntoConstraints = false
-            statusbarView.heightAnchor
-                .constraint(equalToConstant: statusBarHeight).isActive = true
-            statusbarView.widthAnchor
-                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-            statusbarView.topAnchor
-                .constraint(equalTo: view.topAnchor).isActive = true
-            statusbarView.centerXAnchor
-                .constraint(equalTo: view.centerXAnchor).isActive = true
-          
-        } else {
-            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = UIColor(named: "Blue")
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -128,18 +106,13 @@ class RegisterScreenViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let reg = NSLocalizedString("register", comment: "")
-        navigationItem.title = reg
+        navigationItem.title = NSLocalizedString("register", comment: "")
         navigationItem.hidesBackButton = true
-        //navigationItem.backBarButtonItem?.tintColor = UIColor(named: "Blue")
-        navigationController?.navigationBar.backgroundColor = UIColor(named:"Blue")
         navigationController?.isNavigationBarHidden = false
     }
     
     private func clearNavigationBar() {
         navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.backgroundColor = UIColor(named:"BlackBody")
-        navigationItem.setRightBarButtonItems([], animated: false)
         navigationItem.title = ""
     }
     

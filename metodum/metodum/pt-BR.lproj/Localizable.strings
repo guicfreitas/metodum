@@ -11,3 +11,8 @@
 "error" = "Error na leitura do Email!";
 "cases" = "Casos de Sucesso";
 "empty cell message" = "Parece que você ainda não adicionou nenhum favorito nessa seção";
+"forgot password" = "Esqueci a Senha";
+"forgot password message" = "Não se preocupe, iremos lhe mandar um email para mudar sua senha!";
+"send email" = "Enviar Email";
+"back" = "Voltar";
+"input error" = "Preencha todos os campos de texto!";

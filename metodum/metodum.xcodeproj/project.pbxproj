@@ -28,6 +28,7 @@
 		AE0DB20B253245EE00F31F75 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DB20A253245EE00F31F75 /* RegisterScreenViewController.swift */; };
 		AE29F30A2526211000853D9B /* AcessibilityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29F3092526211000853D9B /* AcessibilityImage.swift */; };
 		AE4904BE25326A4800783D42 /* DeviceDataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4904BD25326A4800783D42 /* DeviceDataPersistenceService.swift */; };
+		AE587FF22540956A00B47EF4 /* RedefinePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */; };
 		AE5EA3DE252B605400F73D48 /* ShowErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */; };
 		AE6F94F5253F21F2009AF309 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F94F4253F21F2009AF309 /* EmptyCollectionViewCell.swift */; };
 		AE78046025240B9500B108B3 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78045F25240B9500B108B3 /* ImagesRepository.swift */; };
@@ -87,6 +88,7 @@
 		AE0DB20A253245EE00F31F75 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
 		AE29F3092526211000853D9B /* AcessibilityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcessibilityImage.swift; sourceTree = "<group>"; };
 		AE4904BD25326A4800783D42 /* DeviceDataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataPersistenceService.swift; sourceTree = "<group>"; };
+		AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedefinePasswordViewController.swift; sourceTree = "<group>"; };
 		AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorViewController.swift; sourceTree = "<group>"; };
 		AE6F94F4253F21F2009AF309 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE78045F25240B9500B108B3 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				AE26A2F0252C2F780035F4C4 /* Cells */,
 				AEF5BD95251903FD009652BE /* LoginViewController.swift */,
 				AE0DB20A253245EE00F31F75 /* RegisterScreenViewController.swift */,
+				AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */,
 				79CBC95C2518FD2100AFB417 /* ViewController.swift */,
 				AEF5BD9725190470009652BE /* ClassesScreenViewController.swift */,
 				AEC882B025203BAB00796341 /* NewSchoolClassViewController.swift */,
@@ -431,6 +434,7 @@
 				C3EF7EC025200A950086EF9C /* AddCasesViewController.swift in Sources */,
 				79CBC95B2518FD2100AFB417 /* SceneDelegate.swift in Sources */,
 				C3EF7EC8252101400086EF9C /* HTMLTemplate.swift in Sources */,
+				AE587FF22540956A00B47EF4 /* RedefinePasswordViewController.swift in Sources */,
 				AE0DB20B253245EE00F31F75 /* RegisterScreenViewController.swift in Sources */,
 				79B82C8E252F8F600078DDAB /* FavoriteCasesCell.swift in Sources */,
 				C3EF7ED0252121680086EF9C /* SharePDFActivity.swift in Sources */,
@@ -613,14 +617,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -634,14 +638,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = metodum/metodum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5H255ZF9U;
+				DEVELOPMENT_TEAM = MHP7RSV892;
 				INFOPLIST_FILE = metodum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = emao.metodum;
+				PRODUCT_BUNDLE_IDENTIFIER = emao.metodumm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

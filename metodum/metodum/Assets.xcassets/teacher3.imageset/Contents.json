@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "teacher2circlex1.png",
+      "filename" : "teacher3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "teacher2circlex2.png",
+      "filename" : "teacher3circlex2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "teacher2circlex3.png",
+      "filename" : "teacher3circlex3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

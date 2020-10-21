@@ -87,6 +87,18 @@ class AuthService {
         }
     }
     
+    static func redefinePassword(for email: String,completion: @escaping (String?) -> ()) {
+        auth.sendPasswordReset(withEmail: email) { (error) in
+            DispatchQueue.main.async {
+                if let errorMessage = error?.localizedDescription {
+                    completion(errorMessage)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
     static func signOut(completion: @escaping (String?) -> ()) {
         do {
             try Auth.auth().signOut()
