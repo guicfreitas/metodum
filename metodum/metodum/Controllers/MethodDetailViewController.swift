@@ -126,18 +126,16 @@ class MethodDetailViewController: UIViewController {
                 TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
-                    } else {
-                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
                     }
                 }
+                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
             } else {
                 TeachersCloudRepository.addMethodForTeacher(teacherUid: teacher.uid, method: methodObj) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
-                    } else {
-                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                     }
                 }
+                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
             }
             isFavorite = !isFavorite
         }

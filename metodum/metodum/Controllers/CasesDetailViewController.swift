@@ -105,18 +105,16 @@ class CasesDetailViewController: UIViewController {
                 TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.uid) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
-                    } else {
-                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
                     }
                 }
+                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
             } else {
                 TeachersCloudRepository.addCaseForTeacher(teacherUid: teacher.uid, favoriteCase: caseObj) { (error) in
                     if let errorMessage = error {
                         self.alertError(message: errorMessage)
-                    } else {
-                        self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                     }
                 }
+                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
             }
             isFavorite = !isFavorite
         }
