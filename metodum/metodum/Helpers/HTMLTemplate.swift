@@ -27,7 +27,7 @@ func HtmlTemplate(selectedCase: Case) -> String {
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
         <title>Metodum</title>
     </head>
-    <body>
+    <body topmargin=95 leftmargin=54 rightmargin=54 bottommargin=95>
         <p><h1>\(title)</h1></p>
         <p><h2>\(labelAbout)</h2></p>
         \(about)

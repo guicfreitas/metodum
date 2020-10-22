@@ -12,6 +12,8 @@ class CollectionHeader: UICollectionReusableView {
     @IBOutlet weak var emAltaImage: UIImageView!
     @IBOutlet weak var emAltaLabel: UILabel!
     @IBOutlet weak var maisSugesLabel: UILabel!
+    
+    
 }
 
 class MethodsScreenViewController: UIViewController {
@@ -23,10 +25,12 @@ class MethodsScreenViewController: UIViewController {
     var headerHeight : CGFloat = 300
     var user : User?
     var language = ""
+    var firstTime = true
     
     @IBOutlet weak var maisSugesCollection: UICollectionView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
@@ -48,6 +52,8 @@ class MethodsScreenViewController: UIViewController {
                     print("persisted images names")
                     print(self.persistedImagesNames)
                     self.maisSugesCollection.reloadData()
+                    self.firstTime = false
+                    
                 }
             }
         }
@@ -170,8 +176,23 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 }
             }
         }
+        
+        
+        let heightMask = headerView.emAltaImage.frame.height * 0.25821596
+        let mask = UIView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width-40, height: heightMask))
+        mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
+        
+        if(firstTime == false){
+            headerView.emAltaImage.addSubview(mask)
+        }
+        
         headerView.emAltaImage.layer.cornerRadius = 20
         headerHeight = heigthForHeader(labelA: headerView.emAltaLabel, labelB: headerView.maisSugesLabel, image: headerView.emAltaImage)
+        
+        
+            
+            
+        
         
         return headerView
     }
