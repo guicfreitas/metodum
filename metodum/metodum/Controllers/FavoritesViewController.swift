@@ -175,6 +175,8 @@ class FavoritesViewController: UIViewController{
     }
     
     @objc func showAlert(_ sender: Any) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         
         let alerta = UIAlertController(title: (self.language == "pt") ? "Deseja mesmo sair?" : "Do you really want to log out?", message: "", preferredStyle: .alert)
         

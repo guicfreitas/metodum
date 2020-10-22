@@ -118,6 +118,9 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteMethod() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         if let teacher = user, let methodObj = selectedMethod {
             if isFavorite {
                 TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
@@ -141,6 +144,8 @@ class MethodDetailViewController: UIViewController {
     }
     
     @objc private func convertMethodToPdf() {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
         let customItem = SharePDFActivity(title: (self.language == "pt") ? "Exportar PDF" : "Export PDF", image: UIImage(systemName: "arrow.down.doc")) { sharedItems in
             if let methodObject = self.selectedMethod {
                 createPrintMethodFormatter(selectedMethod: methodObject)
