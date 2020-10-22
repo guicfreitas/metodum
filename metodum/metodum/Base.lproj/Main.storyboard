@@ -160,7 +160,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ec-13-S16">
                                 <rect key="frame" x="20" y="377.66666666666669" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znN-eZ-s5Q">
                                 <rect key="frame" x="20" y="456.66666666666669" width="335" height="34"/>
@@ -235,7 +235,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-BR-SNB" userLabel="Email Text Field">
                                 <rect key="frame" x="20" y="351.33333333333331" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h93-bW-7qf" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="409.66666666666669" width="335" height="34"/>
@@ -648,7 +648,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -695,6 +695,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zX7-jb-YrO" secondAttribute="height" multiplier="375:44" id="tXB-aT-Usc"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <state key="normal" title="Trocar Imagem">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                                 </state>
@@ -710,7 +711,7 @@
                                                     <constraint firstAttribute="width" secondItem="Wfa-9R-zfy" secondAttribute="height" multiplier="375:44" id="leL-G8-vzl"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="Zds-76-Fr3"/>
                                                 </connections>
@@ -723,7 +724,7 @@
                                                     <constraint firstAttribute="width" secondItem="H0P-sb-OJ4" secondAttribute="height" multiplier="375:44" id="i7h-p6-3T0"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="brm-b6-7DI"/>
                                                 </connections>
@@ -748,7 +749,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.50195443630000003" green="0.50195747609999997" blue="0.50196552279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="c0Y-5t-KdY"/>
                                                 </connections>
@@ -773,7 +774,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.49805355070000001" green="0.50195539" blue="0.5019655824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="NnS-eq-Yxw" id="fSn-rJ-0Kl"/>
                                                 </connections>
@@ -862,7 +863,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1167,12 +1168,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu nome aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0S6-gd-Zn8" userLabel="Email Text Field">
                                 <rect key="frame" x="20" y="252.66666666666663" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu email aqui" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6P8-pY-Lg0" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="311" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-Yy-hNI">
                                 <rect key="frame" x="30" y="477.33333333333331" width="315" height="39.999999999999943"/>
@@ -1725,7 +1726,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="zHE-v5-uMu"/>
         <segue reference="CBP-vb-Wf9"/>
-        <segue reference="12N-cH-vHD"/>
+        <segue reference="sWk-e2-O3Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cases_grey" width="1242" height="849"/>
