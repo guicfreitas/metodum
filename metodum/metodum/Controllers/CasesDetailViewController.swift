@@ -100,6 +100,8 @@ class CasesDetailViewController: UIViewController {
     }
     
     @objc private func setFavoriteCase() {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         if let teacher = user, let caseObj = selectedCase {
             if isFavorite {
                 TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.uid) { (error) in
@@ -121,6 +123,10 @@ class CasesDetailViewController: UIViewController {
     }
     
   @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
+    
+    let generator = UIImpactFeedbackGenerator(style: .medium)
+    generator.impactOccurred()
+    
         // createPrintFormatter(index: self.id)
         // openQlPreview()
    
