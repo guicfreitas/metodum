@@ -114,7 +114,7 @@
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -648,7 +648,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -863,7 +863,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
