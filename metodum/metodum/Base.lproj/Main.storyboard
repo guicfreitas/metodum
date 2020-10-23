@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -649,7 +649,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -864,7 +864,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1327,7 +1327,7 @@
                                     <size key="estimatedItemSize" width="178" height="178"/>
                                     <size key="headerReferenceSize" width="414" height="395"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="methodCell" id="jfN-fN-o2A" customClass="MethodCell" customModule="metodum" customModuleProvider="target">
@@ -1375,7 +1375,7 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Mais Sugestões" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrV-Mu-FdU">
-                                                    <rect key="frame" x="20" y="315" width="335" height="80"/>
+                                                    <rect key="frame" x="20" y="310" width="335" height="85"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Título Indicando a seção de outras metodologias" label="Mais Sugestões"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" name="GrayLabel"/>
@@ -1389,7 +1389,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="qrV-Mu-FdU" secondAttribute="trailing" constant="20" id="5pZ-FZ-3to"/>
                                                 <constraint firstItem="GBY-5f-qeK" firstAttribute="top" secondItem="fU1-Kh-Aad" secondAttribute="top" constant="30" id="6Is-f9-sFp"/>
                                                 <constraint firstItem="Lpb-nZ-Xzf" firstAttribute="top" secondItem="GBY-5f-qeK" secondAttribute="bottom" constant="15" id="M7z-1l-VNQ"/>
-                                                <constraint firstItem="qrV-Mu-FdU" firstAttribute="top" secondItem="Lpb-nZ-Xzf" secondAttribute="bottom" constant="50" id="RR2-Zg-60y"/>
+                                                <constraint firstItem="qrV-Mu-FdU" firstAttribute="top" secondItem="Lpb-nZ-Xzf" secondAttribute="bottom" constant="45" id="RR2-Zg-60y"/>
                                                 <constraint firstItem="Lpb-nZ-Xzf" firstAttribute="leading" secondItem="fU1-Kh-Aad" secondAttribute="leading" constant="20" id="mfL-Sw-Rd1"/>
                                                 <constraint firstAttribute="trailing" secondItem="GBY-5f-qeK" secondAttribute="trailing" constant="20" id="q41-NZ-yD6"/>
                                                 <constraint firstItem="GBY-5f-qeK" firstAttribute="leading" secondItem="fU1-Kh-Aad" secondAttribute="leading" constant="20" id="qQI-QP-lDM"/>

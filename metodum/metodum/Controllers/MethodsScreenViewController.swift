@@ -106,6 +106,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var labelText = ""
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "methodCell", for: indexPath) as! MethodCell
        
@@ -125,6 +126,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 cell.isAccessibilityElement = true
                 cell.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                 cell.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                labelText = (self.language == "pt") ? method.name_pt : method.name_en
             }
         } else {
             ImagesRepository.getMethod(image: method.methodSquareImage) { (error, acessibilityImage) in
@@ -138,9 +140,38 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                         cell.isAccessibilityElement = true
                         cell.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                         cell.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                        labelText = (self.language == "pt") ? method.name_pt : method.name_en
                     }
                 }
             }
+        }
+        let heightMask = imageview.frame.height * 0.25821596
+        let mask = UIView(frame: CGRect(x: 0, y: (cell.frame.height)-heightMask, width: cell.frame.width, height: heightMask+2))
+        mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
+        
+        if(firstTime == false){
+            
+            var textsSplit = labelText.components(separatedBy: " ")
+            
+            let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
+            labelMenor.text = textsSplit[0].uppercased()
+            labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+            
+            
+            
+            let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
+            textsSplit.remove(at: 0)
+            
+            labelMaior.text = textsSplit.joined(separator: " ")
+            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
+            
+            mask.addSubview(labelMenor)
+            mask.addSubview(labelMaior)
+            
+            
+                        
+            imageview.addSubview(mask)
+            
         }
         
         return cell
@@ -150,6 +181,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollection", for: indexPath) as!CollectionHeader
         
+        var labelText = ""
+        
         if let method = self.trendMethod {
             if persistedImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
@@ -158,6 +191,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                     headerView.emAltaImage.isAccessibilityElement = true
                     headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                     headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                    labelText = (self.language == "pt") ? method.name_pt : method.name_en
                 }
             } else {
                 ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
@@ -171,6 +205,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                             headerView.emAltaImage.isAccessibilityElement = true
                             headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                             headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                            labelText = (self.language == "pt") ? method.name_pt : method.name_en
                         }
                     }
                 }
@@ -179,11 +214,32 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         
         let heightMask = headerView.emAltaImage.frame.height * 0.25821596
-        let mask = UIView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width-40, height: heightMask))
+        let mask = UIView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width-40, height: heightMask+2))
         mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
         
         if(firstTime == false){
+            
+            var textsSplit = labelText.components(separatedBy: " ")
+            
+            let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: collectionView.frame.width-70, height: 12))
+            labelMenor.text = textsSplit[0].uppercased()
+            labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
+            
+            
+            
+            let labelMaior = UILabel(frame: CGRect(x: 15, y: 23, width: collectionView.frame.width-70, height: 21))
+            textsSplit.remove(at: 0)
+            
+            labelMaior.text = textsSplit.joined(separator: " ")
+            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title1)
+            
+            mask.addSubview(labelMenor)
+            mask.addSubview(labelMaior)
+            
+            
+                        
             headerView.emAltaImage.addSubview(mask)
+            
         }
         
         headerView.emAltaImage.layer.cornerRadius = 20
