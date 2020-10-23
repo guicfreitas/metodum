@@ -32,7 +32,6 @@ class EmptyCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 20
         self.contentView.layer.cornerRadius = 20
         self.contentView.clipsToBounds = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

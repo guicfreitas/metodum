@@ -16,3 +16,6 @@
 "send email" = "Enviar Email";
 "back" = "Voltar";
 "input error" = "Preencha todos os campos de texto!";
+"forgot password" = "Esqueceu a Senha?";
+"success" = "Sucesso!";
+"email sended" = "Nós mandamos um email para você alterar a sua senha";

@@ -70,9 +70,7 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             descriptionAboutCase.textColor = placeholderLightColor
             
         }
-        
     
-        
         instituteName.setLeftPaddingPoints(15.0)
         locationName.setLeftPaddingPoints(15.0)
         
@@ -94,7 +92,6 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
     @objc func doneClicked(){
         view.endEditing(true)
     }
-    
     
     @IBAction func addCase(_ sender: UIBarButtonItem) {
         let recevidedLabel = NSLocalizedString("rec", comment: "")
@@ -228,12 +225,12 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if textView.text == placeholder {
             textView.text = ""
             //Tema dark
-                if traitCollection.userInterfaceStyle == .dark{
-                    textView.textColor = .white
-                } else {
-                    textView.textColor = .black
-    
-                }
+            if traitCollection.userInterfaceStyle == .dark{
+                textView.textColor = .white
+            } else {
+                textView.textColor = .black
+
+            }
         }
     }
     
@@ -243,10 +240,8 @@ class AddCasesViewController: UIViewController, UITextViewDelegate, UIImagePicke
             if traitCollection.userInterfaceStyle == .dark {
                 textView.textColor = placeholderDarkColor
             }
-            else
-            {
+            else {
                 textView.textColor = placeholderLightColor
-                
             }
         }
     }

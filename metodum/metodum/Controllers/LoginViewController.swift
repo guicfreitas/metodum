@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButtonView: UIView!
     @IBOutlet weak var appleButtonStackView: UIStackView!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     var loadingSpinnerView : UIView!
     let appleSignInButton : ASAuthorizationAppleIDButton = {
         let button = ASAuthorizationAppleIDButton()
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
         }
         signInButtonView.layer.cornerRadius = 10
         appleButtonStackView.addArrangedSubview(appleSignInButton)
+        forgotPasswordButton.setTitle(NSLocalizedString("forgot password", comment: ""),for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +49,6 @@ class LoginViewController: UIViewController {
         setupNavigationBar()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     

@@ -44,12 +44,20 @@ class RedefinePasswordViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
+        dismissKeyboard()
         if let email = emailTextField.text, !email.isEmpty {
             AuthService.redefinePassword(for: email) { (error) in
-                print("foi")
-                print(email)
                 if let errorMessage = error {
                     self.alertError(message: errorMessage)
+                } else {
+                    let alert = UIAlertController(title: NSLocalizedString("success", comment: ""), message: NSLocalizedString("email sended", comment: ""), preferredStyle: .alert)
+                    alert.view.tintColor = UIColor(red: 0.94, green: 0.58, blue: 0.21, alpha: 1.00)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                        self.navigationController?.popViewController(animated: true)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         } else {
@@ -60,6 +68,7 @@ class RedefinePasswordViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     private func setupNavigationBar() {
         navigationItem.title = NSLocalizedString("forgot password", comment: "")
         navigationItem.hidesBackButton = true
