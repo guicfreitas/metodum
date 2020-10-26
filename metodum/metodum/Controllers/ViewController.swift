@@ -19,20 +19,22 @@ class ViewController: UITabBarController {
         super.viewDidLoad()
         guard let currentUser = user else { return }
         
-        if DeviceDataPersistenceService.directoryExists(named: .methodsImages) {
-            print("methods images existe")
+        if let firstTime = try? UserDefaults.standard.getObject(forKey: "firstTime", castTo: Bool.self) {
+            print("first time? \(firstTime)")
         } else {
+            print("first time baby")
+            try? UserDefaults.standard.setObject(false, forKey: "firstTime")
+        }
+        
+        if !DeviceDataPersistenceService.directoryExists(named: .methodsImages) {
             DeviceDataPersistenceService.createDirectory(named: .methodsImages)
         }
         
         if DeviceDataPersistenceService.directoryExists(named: .casesImages) {
-            print("cases images existe")
-        } else {
             DeviceDataPersistenceService.createDirectory(named: .casesImages)
-        }
+        } 
 
         TeachersCloudRepository.get(teacherId: currentUser.uid) { (error, teacher) in
-            print("get Teacher Id is main thread ? \(Thread.current.isMainThread)")
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
             } else {

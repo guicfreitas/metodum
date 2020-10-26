@@ -11,9 +11,7 @@ class CollectionHeader: UICollectionReusableView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var emAltaImage: UIImageView!
     @IBOutlet weak var emAltaLabel: UILabel!
-    @IBOutlet weak var maisSugesLabel: UILabel!
-    
-    
+    @IBOutlet weak var maisSugesLabel: UILabel!   
 }
 
 class MethodsScreenViewController: UIViewController {
@@ -49,8 +47,6 @@ class MethodsScreenViewController: UIViewController {
                     self.trendMethod = self.methods.remove(at: 0)
                     //print("is main Thread ? \(Thread.isMainThread)")
                     self.persistedImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
-                    print("persisted images names")
-                    print(self.persistedImagesNames)
                     self.maisSugesCollection.reloadData()
                     self.firstTime = false
                     
@@ -60,7 +56,6 @@ class MethodsScreenViewController: UIViewController {
     }
     
     @IBAction func trendingMethodTapped(_ sender: Any) {
-        print("em alta clicado")
         performSegue(withIdentifier: "MethodScreenViewSegue", sender: trendMethod)
     }
     
@@ -167,8 +162,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             
             mask.addSubview(labelMenor)
             mask.addSubview(labelMaior)
-            
-            
                         
             imageview.addSubview(mask)
             
@@ -226,7 +219,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
             
             
-            
             let labelMaior = UILabel(frame: CGRect(x: 15, y: 23, width: collectionView.frame.width-70, height: 21))
             textsSplit.remove(at: 0)
             
@@ -235,8 +227,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             
             mask.addSubview(labelMenor)
             mask.addSubview(labelMaior)
-            
-            
                         
             headerView.emAltaImage.addSubview(mask)
             
@@ -244,11 +234,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         headerView.emAltaImage.layer.cornerRadius = 20
         headerHeight = heigthForHeader(labelA: headerView.emAltaLabel, labelB: headerView.maisSugesLabel, image: headerView.emAltaImage)
-        
-        
-            
-            
-        
         
         return headerView
     }

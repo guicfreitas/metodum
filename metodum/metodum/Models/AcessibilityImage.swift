@@ -23,3 +23,5 @@ struct AcessibilityImage {
         self.acessibilityHint_en = acessibilityHint_en
     }
 }
+
+
