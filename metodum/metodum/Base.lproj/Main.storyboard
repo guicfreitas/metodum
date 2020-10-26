@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -226,7 +226,7 @@
         <!--View Controller-->
         <scene sceneID="3Es-Bx-yTA">
             <objects>
-                <viewController id="0k5-lj-9Xm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view1" id="0k5-lj-9Xm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N3t-4z-ipn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,7 +269,7 @@
         <!--View Controller-->
         <scene sceneID="UrJ-Rx-YLW">
             <objects>
-                <viewController id="Tnt-Hg-oWA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view2" id="Tnt-Hg-oWA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="alz-Zd-oEf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,7 +312,7 @@
         <!--View Controller-->
         <scene sceneID="2YD-ls-9t2">
             <objects>
-                <viewController id="elG-Qq-rCR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view3" id="elG-Qq-rCR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sFU-jW-8HX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,7 +356,7 @@
         <!--View Controller-->
         <scene sceneID="DUx-eS-RS8">
             <objects>
-                <viewController id="S7O-BC-2s8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view4" id="S7O-BC-2s8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ay2-Gf-rT6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Politics View Controller-->
         <scene sceneID="ODK-SD-UDb">
             <objects>
-                <viewController id="6Rz-35-EN6" customClass="PoliticsViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view5" id="6Rz-35-EN6" customClass="PoliticsViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="meR-RY-aTd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -459,6 +459,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOl-3H-L8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1575.2" y="1863.5467980295568"/>
+        </scene>
+        <!--Onboard Screen View Controller-->
+        <scene sceneID="t2v-TA-Ybc">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5q7-ba-0eH" customClass="OnboardScreenViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VwS-Bg-HJw"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkI-MV-xfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3182" y="-985"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="joi-6t-0O4">
@@ -570,6 +580,13 @@
                                     <segue destination="xgj-1O-hFa" kind="show" id="A4F-yZ-G1y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOk-kA-Kwl">
+                                <rect key="frame" x="164.66666666666666" y="639" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="5q7-ba-0eH" kind="show" id="ehr-YD-l8g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vXd-8z-Af7"/>
                         <color key="backgroundColor" name="BlackBody"/>
@@ -589,6 +606,7 @@
                             <constraint firstItem="h93-bW-7qf" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="HGw-Ym-eaD"/>
                             <constraint firstItem="35u-g5-Fug" firstAttribute="top" secondItem="fcI-BR-SNB" secondAttribute="bottom" constant="5" id="JWa-91-1Ec"/>
                             <constraint firstItem="ixV-j2-Ga2" firstAttribute="top" secondItem="h93-bW-7qf" secondAttribute="bottom" constant="5" id="MLF-3u-7Kb"/>
+                            <constraint firstItem="eOk-kA-Kwl" firstAttribute="top" secondItem="Qcw-ul-All" secondAttribute="bottom" constant="34.333333333333371" id="TEg-Hm-6TE"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="atG-0d-vgE" secondAttribute="trailing" id="VHe-v0-ryG"/>
                             <constraint firstItem="p6p-Tb-2Qy" firstAttribute="width" secondItem="GgS-Lh-y9T" secondAttribute="width" id="X09-zP-ntK"/>
                             <constraint firstItem="fcI-BR-SNB" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="d5R-SS-f2K"/>
@@ -596,6 +614,7 @@
                             <constraint firstItem="atG-0d-vgE" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" id="ede-ig-iJ6"/>
                             <constraint firstItem="voq-n5-KUu" firstAttribute="top" secondItem="p6p-Tb-2Qy" secondAttribute="bottom" constant="14.999999999999886" id="fjp-9Q-HGg"/>
                             <constraint firstItem="atG-0d-vgE" firstAttribute="width" secondItem="dmK-y4-UEz" secondAttribute="width" id="gj6-cD-80h"/>
+                            <constraint firstItem="eOk-kA-Kwl" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" id="jsv-Ri-N5g"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="V1D-zb-m9n" secondAttribute="trailing" constant="20" id="khc-yK-aIY"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="kbW-m7-FMM" secondAttribute="trailing" constant="30" id="kzT-9k-SX4"/>
                             <constraint firstItem="V1D-zb-m9n" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="40" id="m66-85-1hB"/>
@@ -885,7 +904,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1100,7 +1119,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1967,7 +1986,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="zHE-v5-uMu"/>
         <segue reference="4dD-YY-L4u"/>
-        <segue reference="sWk-e2-O3Z"/>
+        <segue reference="12N-cH-vHD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="casesImg" width="240.33332824707031" height="223.66667175292969"/>
