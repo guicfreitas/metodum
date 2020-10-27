@@ -33,6 +33,8 @@ class MethodDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
+        user = AuthService.getUser()
+        
         if let currentUser = user {
             TeachersCloudRepository.getFavoriteMethodsUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteMethods) in
                 if let errorMessage = error {
@@ -43,8 +45,6 @@ class MethodDetailViewController: UIViewController {
                             if methods.contains(method.uid) {
                                 self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star.fill")
                                 self.isFavorite = true
-                            } else {
-                                self.navigationItem.rightBarButtonItems![1] = self.getFavoriteUIItemButtonWith(icon: "star")
                             }
                         }
                     }
@@ -104,10 +104,8 @@ class MethodDetailViewController: UIViewController {
     
     private func setupNavigationBar() {
         let addFavoriteMethod = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(setFavoriteMethod))
-        
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertMethodToPdf))
         
-        //addFavoriteMethod.isEnabled = false
         addFavoriteMethod.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         
@@ -121,7 +119,16 @@ class MethodDetailViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         
-        if let teacher = user, let methodObj = selectedMethod {
+        guard let teacher = user else {
+            let requestLoginModal = storyboard?.instantiateViewController(identifier: "Request Login") as! RequestLoginViewController
+            requestLoginModal.callback = {
+                self.navigationController?.popToRootViewController(animated: false)
+            }
+            present(requestLoginModal, animated: true, completion: nil)
+            return
+        }
+        
+        if let methodObj = selectedMethod {
             if isFavorite {
                 TeachersCloudRepository.removeMethodForTeacher(teacherUid: teacher.uid, favoriteMethodUid: methodObj.uid) { (error) in
                     if let errorMessage = error {

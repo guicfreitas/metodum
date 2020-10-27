@@ -21,7 +21,6 @@ class MethodsScreenViewController: UIViewController {
     var methods = [Methodology]()
     var trendMethod : Methodology?
     var headerHeight : CGFloat = 300
-    var user : User?
     var language = ""
     var firstTime = true
     
@@ -32,8 +31,7 @@ class MethodsScreenViewController: UIViewController {
         super.viewDidLoad()
         maisSugesCollection.delegate = self
         maisSugesCollection.dataSource = self
-        let parentController = self.parent as! ViewController
-        user = parentController.user
+       
         self.showSpinner(onView: self.view)
         language = Locale.current.languageCode!
         
@@ -45,11 +43,9 @@ class MethodsScreenViewController: UIViewController {
                 if let m = methods, !m.isEmpty {
                     self.methods = m
                     self.trendMethod = self.methods.remove(at: 0)
-                    //print("is main Thread ? \(Thread.isMainThread)")
                     self.persistedImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
                     self.maisSugesCollection.reloadData()
                     self.firstTime = false
-                    
                 }
             }
         }
@@ -64,7 +60,6 @@ class MethodsScreenViewController: UIViewController {
             if let details = segue.destination as? MethodDetailViewController {
                 let salectedMethod = sender as! Methodology
                 details.selectedMethod = salectedMethod
-                details.user = user
             }
         }
     }
@@ -116,8 +111,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         if persistedImagesNames.contains(method.methodSquareImage) {
             if let image = DeviceDataPersistenceService.getImage(named: method.methodSquareImage, on: .methodsImages) {
                 imageview.image = UIImage(data: image.data)
-                //print("is main Thread ? \(Thread.isMainThread)")
-                //VOICE OVER
                 cell.isAccessibilityElement = true
                 cell.accessibilityLabel = (language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                 cell.accessibilityHint = (language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
@@ -148,14 +141,10 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         if(firstTime == false){
             
-            
-            
             let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
             labelMenor.textColor = UIColor.white
             labelMenor.text = textsSplit[0].uppercased()
             labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
-            
-            
             
             let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
             labelMaior.textColor = UIColor.white
@@ -184,7 +173,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             if persistedImagesNames.contains(method.methodFullImage) {
                 if let image = DeviceDataPersistenceService.getImage(named: method.methodFullImage, on: .methodsImages) {
                     headerView.emAltaImage.image = UIImage(data: image.data)
-                    //print(image)
                     headerView.emAltaImage.isAccessibilityElement = true
                     headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                     headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
@@ -198,7 +186,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                         if let image = acessibilityImage {
                             DeviceDataPersistenceService.write(acessibilityImage: image, named: method.methodFullImage, on: .methodsImages)
                             headerView.emAltaImage.image = UIImage(data: image.data)
-                            //print(image)
                             headerView.emAltaImage.isAccessibilityElement = true
                             headerView.emAltaImage.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                             headerView.emAltaImage.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
@@ -209,7 +196,6 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             }
         }
         
-        
         let heightMask = headerView.emAltaImage.frame.height * 0.25821596
         let mask = UIView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width-40, height: heightMask+2))
         mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
@@ -217,13 +203,10 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         
         if(firstTime == false){
             
-            
-            
             let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: collectionView.frame.width-70, height: 12))
             labelMenor.textColor = UIColor.white
             labelMenor.text = textsSplit[0].uppercased()
             labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
-            
             
             let labelMaior = UILabel(frame: CGRect(x: 15, y: 23, width: collectionView.frame.width-70, height: 27))
             labelMaior.textColor = UIColor.white
@@ -253,8 +236,7 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
         
         let itemWidth = (fullWidth / 2) - (edgeInsets.left + 10)
         let itemHeight = itemWidth
-        //print(itemHeight)
-        
+
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
@@ -263,18 +245,15 @@ extension MethodsScreenViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        //print(headerHeight)
         return CGSize(width: maisSugesCollection.frame.width, height: headerHeight)
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
-                print("Landscape")
-                headerHeight += 250
-                
-            } else {
-                print("Portrait")
-                headerHeight -= 140
-            }
-       // headerHeight += 100
+            print("Landscape")
+            headerHeight += 250
+        } else {
+            print("Portrait")
+            headerHeight -= 140
+        }
     }
 }

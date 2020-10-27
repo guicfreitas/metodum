@@ -37,8 +37,6 @@ class FavoritesViewController: UIViewController{
         favoriteCollection.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
         favoriteCasesCollection.register(EmptyCollectionViewCell.self, forCellWithReuseIdentifier: "emptyCell")
         
-        let parent = self.parent as! ViewController
-        user = parent.user
         setNavigationBar()
         
         favoriteCollection.delegate = self
@@ -57,32 +55,18 @@ class FavoritesViewController: UIViewController{
             heightFavoriteCollection.constant = 200
         }
     }
-    
-    func showEmpty(){
-        if self.cases.isEmpty && self.methods.isEmpty {
-            self.favMethodologiesLabel.isHidden = true
-            self.favCasesLabel.isHidden = true
-            self.favoriteCollection.isHidden = true
-            self.favoriteCasesCollection.isHidden = true
-            self.emptyView.isHidden = false
-        }
-    }
-    
-    func hideEmpty(){
-        if !self.cases.isEmpty || !self.methods.isEmpty {
-            self.favMethodologiesLabel.isHidden = false
-            self.favCasesLabel.isHidden = false
-            self.favoriteCollection.isHidden = false
-            self.favoriteCasesCollection.isHidden = false
-            self.emptyView.isHidden = true
-        }
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.showSpinner(onView: self.view)
 
-        guard let curretnUser = user else {return}
+        guard let curretnUser = AuthService.getUser() else {
+            self.showEmpty()
+            self.removeSpinner()
+            return
+        }
+        
+        setSignOutButton()
         
         self.persistedMethodsImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .methodsImages)
         self.persistedCasesImagesNames = DeviceDataPersistenceService.getAllPersistedImagesNames(from: .casesImages)
@@ -161,15 +145,35 @@ class FavoritesViewController: UIViewController{
         }
     }
     
+    private func showEmpty(){
+        if self.cases.isEmpty && self.methods.isEmpty {
+            self.favMethodologiesLabel.isHidden = true
+            self.favCasesLabel.isHidden = true
+            self.favoriteCollection.isHidden = true
+            self.favoriteCasesCollection.isHidden = true
+            self.emptyView.isHidden = false
+        }
+    }
+    
+    private func hideEmpty(){
+        if !self.cases.isEmpty || !self.methods.isEmpty {
+            self.favMethodologiesLabel.isHidden = false
+            self.favCasesLabel.isHidden = false
+            self.favoriteCollection.isHidden = false
+            self.favoriteCasesCollection.isHidden = false
+            self.emptyView.isHidden = true
+        }
+    }
+    
     private func setNavigationBar() {
-        let logOutimg = UIImageView()
-        logOutimg.image = UIImage(named: "logoutbuttonx")
-        
         self.navigationIten.title = NSLocalizedString("fav", comment: "")
         self.navigationIten.largeTitleDisplayMode = .always
-        
+        setSignOutButton()
+    }
+    
+    private func setSignOutButton() {
         self.navigationIten.rightBarButtonItems = [
-            UIBarButtonItem(image: logOutimg.image, style: .plain, target: self, action: #selector(showAlert)),
+            UIBarButtonItem(image: UIImage(named: "logoutbuttonx"), style: .plain, target: self, action: #selector(showAlert)),
         ]
     }
     

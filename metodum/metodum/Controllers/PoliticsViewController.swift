@@ -10,23 +10,16 @@ import UIKit
 
 class PoliticsViewController: UIViewController {
     @IBOutlet weak var acceptButton: UIButton!
+    var callback : (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         acceptButton.layer.cornerRadius = 10
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func acceptedButtonPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: false)
+        callback?()
     }
-    */
-
 }
+

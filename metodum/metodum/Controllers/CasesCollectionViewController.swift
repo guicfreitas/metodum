@@ -17,14 +17,10 @@ class CasesCollectionViewController: UIViewController {
     
     var cases : [Case] = []
     var persistedImagesNames = [String]()
-    var user : User?
     var language = Locale.current.languageCode
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let parentController = self.parent as! ViewController
-        user = parentController.user
         
         navItem.title = NSLocalizedString("cases", comment: "")
         
@@ -53,11 +49,9 @@ class CasesCollectionViewController: UIViewController {
             if let detailsController = segue.destination as? CasesDetailViewController {
                 let selectedCase = sender as! Case
                 detailsController.selectedCase = selectedCase
-                detailsController.user = user
             }
         }
     }
-    
 }
 
 extension CasesCollectionViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -74,10 +68,7 @@ extension CasesCollectionViewController : UICollectionViewDelegate, UICollection
         cell.caseTitle.text = (language == "pt") ? caseObjeto.title_pt : caseObjeto.title_en
         cell.caseSubtitle.text = (language == "pt") ? caseObjeto.subtitle_pt : caseObjeto.subtitle_en
         
-        
         cell.layer.cornerRadius = 12
-        
-        
         
         if persistedImagesNames.contains(caseObjeto.image) {
             if let acessibilityImage = DeviceDataPersistenceService.getImage(named: caseObjeto.image, on: .casesImages) {

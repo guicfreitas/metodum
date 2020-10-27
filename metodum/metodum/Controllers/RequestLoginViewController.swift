@@ -9,10 +9,12 @@
 import UIKit
 import AuthenticationServices
 
-class EnterAccountCasesViewController: UIViewController {
+class RequestLoginViewController: UIViewController {
 
     @IBOutlet weak var appleButtonStackView: UIStackView!
     @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var textLabel: UILabel!
+    var callback : (() -> ())?
     
     let appleSignInButton : ASAuthorizationAppleIDButton = {
         let button = ASAuthorizationAppleIDButton()
@@ -25,19 +27,10 @@ class EnterAccountCasesViewController: UIViewController {
         super.viewDidLoad()
         enterButton.layer.cornerRadius = 10
         appleButtonStackView.addArrangedSubview(appleSignInButton)
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func enterButtonPressed(_ sender: Any) {
+        callback?()
+        dismiss(animated: true, completion: nil)
     }
-    */
-
 }

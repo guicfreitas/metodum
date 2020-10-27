@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardScreenViewController: UIPageViewController, UIPageViewControllerDelegate {
+class OnboardPageViewController: UIPageViewController, UIPageViewControllerDelegate {
 
     lazy var pagesViewControllers = [
         instanciateViewController(named: "view1"),
@@ -19,12 +19,14 @@ class OnboardScreenViewController: UIPageViewController, UIPageViewControllerDel
     ]
     
     var actualIndex = 0
+    var callback : (() -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.dataSource = self
         self.delegate = self
+        self.view.backgroundColor = UIColor(named:"Blue")
         
         if let viewController = pagesViewControllers.first {
             setViewControllers([viewController], direction: .forward, animated: false,completion: nil)
@@ -32,12 +34,19 @@ class OnboardScreenViewController: UIPageViewController, UIPageViewControllerDel
     }
     
     private func instanciateViewController(named name : String) -> UIViewController {
+        if name == "view5" {
+            let childRef = storyboard!.instantiateViewController(withIdentifier: name) as! PoliticsViewController
+            childRef.callback = callback
+            return childRef
+        }
+        
         let childRef = storyboard!.instantiateViewController(withIdentifier: name)
         return childRef
     }
 }
 
-extension OnboardScreenViewController: UIPageViewControllerDataSource {
+extension OnboardPageViewController: UIPageViewControllerDataSource {
+    
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return pagesViewControllers.count
     }

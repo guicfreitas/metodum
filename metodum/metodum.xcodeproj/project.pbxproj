@@ -12,7 +12,7 @@
 		793504D4253535E6000B2DA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 793504D6253535E6000B2DA8 /* Localizable.strings */; };
 		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		795F7C3E252DF6A6004A289B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */; };
-		796C8949254850D40075E051 /* EnterAccountCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */; };
+		796C8949254850D40075E051 /* RequestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C8948254850D40075E051 /* RequestLoginViewController.swift */; };
 		796EA52C2530FAD800C91F02 /* MetodumLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */; };
 		79A21A71254723A40051489E /* PoliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A21A70254723A40051489E /* PoliticsViewController.swift */; };
 		79B82C4F252F585E0078DDAB /* FavoriteCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B82C4E252F585E0078DDAB /* FavoriteCases.swift */; };
@@ -32,7 +32,7 @@
 		AE4904BE25326A4800783D42 /* DeviceDataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4904BD25326A4800783D42 /* DeviceDataPersistenceService.swift */; };
 		AE587FF22540956A00B47EF4 /* RedefinePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */; };
 		AE5EA3DE252B605400F73D48 /* ShowErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */; };
-		AE6C0F2125472802005331E3 /* OnboardScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C0F2025472802005331E3 /* OnboardScreenViewController.swift */; };
+		AE6C0F2125472802005331E3 /* OnboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C0F2025472802005331E3 /* OnboardPageViewController.swift */; };
 		AE6F94F5253F21F2009AF309 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F94F4253F21F2009AF309 /* EmptyCollectionViewCell.swift */; };
 		AE78046025240B9500B108B3 /* ImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE78045F25240B9500B108B3 /* ImagesRepository.swift */; };
 		AEC882A725201E3E00796341 /* MethodsCloudRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */; };
@@ -72,7 +72,7 @@
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
-		796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAccountCasesViewController.swift; sourceTree = "<group>"; };
+		796C8948254850D40075E051 /* RequestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoginViewController.swift; sourceTree = "<group>"; };
 		796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodumLibraryViewController.swift; sourceTree = "<group>"; };
 		798ED941253F1E650044B062 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		798ED945253F1EDF0044B062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		AE4904BD25326A4800783D42 /* DeviceDataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataPersistenceService.swift; sourceTree = "<group>"; };
 		AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedefinePasswordViewController.swift; sourceTree = "<group>"; };
 		AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorViewController.swift; sourceTree = "<group>"; };
-		AE6C0F2025472802005331E3 /* OnboardScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardScreenViewController.swift; sourceTree = "<group>"; };
+		AE6C0F2025472802005331E3 /* OnboardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPageViewController.swift; sourceTree = "<group>"; };
 		AE6F94F4253F21F2009AF309 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE78045F25240B9500B108B3 /* ImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRepository.swift; sourceTree = "<group>"; };
 		AEC882A625201E3E00796341 /* MethodsCloudRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsCloudRepository.swift; sourceTree = "<group>"; };
@@ -246,7 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				AE26A2F0252C2F780035F4C4 /* Cells */,
-				AE6C0F2025472802005331E3 /* OnboardScreenViewController.swift */,
+				AE6C0F2025472802005331E3 /* OnboardPageViewController.swift */,
+				79A21A70254723A40051489E /* PoliticsViewController.swift */,
 				AEF5BD95251903FD009652BE /* LoginViewController.swift */,
 				AE0DB20A253245EE00F31F75 /* RegisterScreenViewController.swift */,
 				AE587FF12540956A00B47EF4 /* RedefinePasswordViewController.swift */,
@@ -262,8 +263,7 @@
 				AE5EA3DD252B605400F73D48 /* ShowErrorViewController.swift */,
 				795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */,
 				79BE160A253BC87B00DB0ECA /* PlaceAutocompleteViewController.swift */,
-				79A21A70254723A40051489E /* PoliticsViewController.swift */,
-				796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */,
+				796C8948254850D40075E051 /* RequestLoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				C33D511E251A3A8F00E9D7EC /* CasesCollectionViewController.swift in Sources */,
 				79CBC95D2518FD2100AFB417 /* ViewController.swift in Sources */,
 				793504C92534BA49000B2DA8 /* LibraryCellCollectionViewCell.swift in Sources */,
-				AE6C0F2125472802005331E3 /* OnboardScreenViewController.swift in Sources */,
+				AE6C0F2125472802005331E3 /* OnboardPageViewController.swift in Sources */,
 				C33D5122251A3D1C00E9D7EC /* CasesCollectionViewCell.swift in Sources */,
 				AEF5BD9A25190497009652BE /* MethodsScreenViewController.swift in Sources */,
 				AEF5BD8825190129009652BE /* Teacher.swift in Sources */,
@@ -465,7 +465,7 @@
 				AEF5BD9C251904C0009652BE /* ClassesCollectionViewCell.swift in Sources */,
 				793AF634251B963B001F3A26 /* MethodCell.swift in Sources */,
 				C3EF7EC52520FF660086EF9C /* ExportPdf.swift in Sources */,
-				796C8949254850D40075E051 /* EnterAccountCasesViewController.swift in Sources */,
+				796C8949254850D40075E051 /* RequestLoginViewController.swift in Sources */,
 				AEF5BD91251902BB009652BE /* TeachersCloudRepository.swift in Sources */,
 				79B82C8B252F8F430078DDAB /* FavoriteMethodCell.swift in Sources */,
 				AE4904BE25326A4800783D42 /* DeviceDataPersistenceService.swift in Sources */,

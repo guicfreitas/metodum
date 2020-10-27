@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,12 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRq-6q-dwe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="96"/>
-                                <items>
-                                    <navigationItem title="Title" id="ET5-8E-miy"/>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hcy-m5-ehg">
                                 <rect key="frame" x="0.0" y="140" width="375" height="638"/>
                                 <color key="backgroundColor" name="BlackBody"/>
@@ -76,6 +70,12 @@
                                     <outlet property="delegate" destination="OTY-Tf-yK9" id="tRK-hJ-3em"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRq-6q-dwe">
+                                <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                                <items>
+                                    <navigationItem title="Title" id="ET5-8E-miy"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eEM-Bg-3kb"/>
                         <color key="backgroundColor" name="BlackBody"/>
@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjI-xt-i3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074" y="-1487"/>
+            <point key="canvasLocation" x="2012" y="-1835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ajf-qt-fqR">
@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6q-zm-M6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4082" y="505"/>
+            <point key="canvasLocation" x="-2849" y="559"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3Es-Bx-yTA">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aE-J8-MFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4213.6000000000004" y="1863.5467980295568"/>
+            <point key="canvasLocation" x="-4666" y="-2588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UrJ-Rx-YLW">
@@ -307,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoJ-JJ-NMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3550" y="1864"/>
+            <point key="canvasLocation" x="-4004" y="-2588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2YD-ls-9t2">
@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7R1-6Z-t3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2894" y="1864"/>
+            <point key="canvasLocation" x="-3348" y="-2588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DUx-eS-RS8">
@@ -396,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byh-Ul-I2p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2239.1999999999998" y="1863.5467980295568"/>
+            <point key="canvasLocation" x="-2692" y="-2588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iA2-cE-RWb">
@@ -425,7 +425,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-aQ-sgM">
                                 <rect key="frame" x="10" y="149.33333333333331" width="355" height="564.66666666666674"/>
                                 <color key="backgroundColor" name="BlackBody"/>
-                                <mutableString key="text">Os serviços do Metodum são fornecidos pelas pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães, inscritos no CPF sob o nº 032.015.532-39, 048.357.562-31, 024.462.172-14, 950.578.462-72, titulares da propriedade intelectual sobre software, website, aplicativos, conteúdos e demais ativos relacionados à plataforma Metodum.
+                                <string key="text">Os serviços do Metodum são fornecidos pelas pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães, inscritos no CPF sob o nº 032.015.532-39, 048.357.562-31, 024.462.172-14, 950.578.462-72, titulares da propriedade intelectual sobre software, website, aplicativos, conteúdos e demais ativos relacionados à plataforma Metodum.
 
 1. Do objeto
 A plataforma visa licenciar o uso de seu software, website, aplicativos e demais ativos de propriedade intelectual, fornecendo ferramentas para auxiliar e dinamizar o dia a dia dos seus usuários.
@@ -494,7 +494,7 @@ Além do presente Termo, o usuário deverá consentir com as disposições conti
 12. Do foro
 
 Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.
-Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</mutableString>
+Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
@@ -519,7 +519,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fab-E6-Zlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1999.2" y="2615.7635467980299"/>
+            <point key="canvasLocation" x="-2452" y="-1835"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DYz-2Q-g6H">
@@ -548,7 +548,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="511-Hc-eDT">
                                 <rect key="frame" x="10" y="149.33333333333331" width="355" height="564.66666666666674"/>
                                 <color key="backgroundColor" name="BlackBody"/>
-                                <mutableString key="text">SEÇÃO 1 - INFORMAÇÕES GERAIS
+                                <string key="text">SEÇÃO 1 - INFORMAÇÕES GERAIS
 
 A presente Política de Privacidade contém informações sobre coleta, uso, armazenamento, tratamento e proteção dos dados pessoais dos usuários e visitantes do aplicativo Metodum, com a finalidade de demonstrar absoluta transparência quanto ao assunto e esclarecer a todos interessados sobre os tipos de dados que são coletados, os motivos da coleta e a forma como os usuários podem gerenciar ou excluir as suas informações pessoais.
 Esta Política de Privacidade aplica-se a todos os usuários e visitantes do aplicativo Metodum e integra os Termos e Condições Gerais de Uso do aplicativo Metodum.
@@ -621,7 +621,7 @@ Diante da fusão ou venda da plataforma à outra empresa os dados dos usuários 
 SEÇÃO 10 – JURISDIÇÃO PARA RESOLUÇÃO DE CONFLITOS
 
 Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.
-Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</mutableString>
+Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
@@ -646,7 +646,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26y-3R-1b7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247" y="2616"/>
+            <point key="canvasLocation" x="-1700" y="-1835"/>
         </scene>
         <!--Politics View Controller-->
         <scene sceneID="ODK-SD-UDb">
@@ -657,25 +657,25 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="politics" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-YB-nXv">
-                                <rect key="frame" x="80.666666666666671" y="246" width="213.66666666666663" height="220.66666666666663"/>
+                                <rect key="frame" x="80.666666666666686" y="246" width="214" height="221"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZJF-YB-nXv" secondAttribute="height" multiplier="213:220" id="aDZ-UO-3Nk"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falta Pouco!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBd-vp-Yes">
-                                <rect key="frame" x="120.66666666666667" y="506.66666666666669" width="133.66666666666663" height="28.666666666666686"/>
+                                <rect key="frame" x="120.66666666666667" y="507.00000000000006" width="133.66666666666663" height="28.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" name="LabelClasses"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confira nossos termos de uso e política de privacidade e aceite para continuar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-ae-Jid">
-                                <rect key="frame" x="40" y="555.33333333333337" width="295" height="64.666666666666629"/>
+                                <rect key="frame" x="40" y="555.66666666666663" width="295" height="64.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" name="LabelClasses"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-Jf-XHh">
-                                <rect key="frame" x="20" y="670" width="335" height="50"/>
+                                <rect key="frame" x="20" y="670.33333333333337" width="335" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="niT-u8-gqJ"/>
@@ -684,6 +684,9 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <state key="normal" title="Aceito e desejo continuar">
                                     <color key="titleColor" name="LabelClasses"/>
                                 </state>
+                                <connections>
+                                    <action selector="acceptedButtonPressed:" destination="6Rz-35-EN6" eventType="touchUpInside" id="ESv-9J-tGc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DJM-Bx-IXb"/>
@@ -710,12 +713,12 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOl-3H-L8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1575.2" y="1863.5467980295568"/>
+            <point key="canvasLocation" x="-2028" y="-2588"/>
         </scene>
-        <!--Enter Account Cases View Controller-->
+        <!--Request Login View Controller-->
         <scene sceneID="SiP-EQ-KMp">
             <objects>
-                <viewController id="vqa-0h-3bw" customClass="EnterAccountCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Request Login" id="vqa-0h-3bw" customClass="RequestLoginViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kra-Is-2Bd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,6 +751,9 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <state key="normal" title="Continue para entrar">
                                     <color key="titleColor" name="LabelClasses"/>
                                 </state>
+                                <connections>
+                                    <action selector="enterButtonPressed:" destination="vqa-0h-3bw" eventType="touchUpInside" id="lDB-Tm-sQq"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EQe-9D-r2D">
                                 <rect key="frame" x="30" y="642.66666666666663" width="315" height="50"/>
@@ -821,21 +827,22 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                     <connections>
                         <outlet property="appleButtonStackView" destination="EQe-9D-r2D" id="VG0-x7-Bpg"/>
                         <outlet property="enterButton" destination="HFg-4E-7Gs" id="Z1r-op-KsF"/>
+                        <outlet property="textLabel" destination="PaH-UT-Yey" id="Tt1-km-xIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8a-Px-IA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208.80000000000001" y="1884.9753694581282"/>
+            <point key="canvasLocation" x="1910" y="831"/>
         </scene>
-        <!--Onboard Screen View Controller-->
+        <!--Onboard Page View Controller-->
         <scene sceneID="t2v-TA-Ybc">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5q7-ba-0eH" customClass="OnboardScreenViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5q7-ba-0eH" customClass="OnboardPageViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VwS-Bg-HJw"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkI-MV-xfE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3182" y="-985"/>
+            <point key="canvasLocation" x="-3628" y="559"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="joi-6t-0O4">
@@ -947,13 +954,6 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                     <segue destination="xgj-1O-hFa" kind="show" id="A4F-yZ-G1y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOk-kA-Kwl">
-                                <rect key="frame" x="164.66666666666666" y="639" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="5q7-ba-0eH" kind="show" id="ehr-YD-l8g"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vXd-8z-Af7"/>
                         <color key="backgroundColor" name="BlackBody"/>
@@ -973,7 +973,6 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <constraint firstItem="h93-bW-7qf" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="HGw-Ym-eaD"/>
                             <constraint firstItem="35u-g5-Fug" firstAttribute="top" secondItem="fcI-BR-SNB" secondAttribute="bottom" constant="5" id="JWa-91-1Ec"/>
                             <constraint firstItem="ixV-j2-Ga2" firstAttribute="top" secondItem="h93-bW-7qf" secondAttribute="bottom" constant="5" id="MLF-3u-7Kb"/>
-                            <constraint firstItem="eOk-kA-Kwl" firstAttribute="top" secondItem="Qcw-ul-All" secondAttribute="bottom" constant="34.333333333333371" id="TEg-Hm-6TE"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="atG-0d-vgE" secondAttribute="trailing" id="VHe-v0-ryG"/>
                             <constraint firstItem="p6p-Tb-2Qy" firstAttribute="width" secondItem="GgS-Lh-y9T" secondAttribute="width" id="X09-zP-ntK"/>
                             <constraint firstItem="fcI-BR-SNB" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="20" id="d5R-SS-f2K"/>
@@ -981,7 +980,6 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <constraint firstItem="atG-0d-vgE" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" id="ede-ig-iJ6"/>
                             <constraint firstItem="voq-n5-KUu" firstAttribute="top" secondItem="p6p-Tb-2Qy" secondAttribute="bottom" constant="14.999999999999886" id="fjp-9Q-HGg"/>
                             <constraint firstItem="atG-0d-vgE" firstAttribute="width" secondItem="dmK-y4-UEz" secondAttribute="width" id="gj6-cD-80h"/>
-                            <constraint firstItem="eOk-kA-Kwl" firstAttribute="centerX" secondItem="vXd-8z-Af7" secondAttribute="centerX" id="jsv-Ri-N5g"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="V1D-zb-m9n" secondAttribute="trailing" constant="20" id="khc-yK-aIY"/>
                             <constraint firstItem="vXd-8z-Af7" firstAttribute="trailing" secondItem="kbW-m7-FMM" secondAttribute="trailing" constant="30" id="kzT-9k-SX4"/>
                             <constraint firstItem="V1D-zb-m9n" firstAttribute="leading" secondItem="vXd-8z-Af7" secondAttribute="leading" constant="40" id="m66-85-1hB"/>
@@ -1001,6 +999,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                         <outlet property="signInButtonView" destination="kbW-m7-FMM" id="xxn-Mq-Mo7"/>
                         <segue destination="Gs0-Ip-eZ6" kind="show" identifier="Login to Main Screen" id="12N-cH-vHD"/>
                         <segue destination="84Z-MK-aq8" kind="show" identifier="Login to Register Screen" id="SGN-cy-rlM"/>
+                        <segue destination="5q7-ba-0eH" kind="show" identifier="Login to Onboard Screen" id="NfS-Pn-X3r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5K-4w-Y4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1028,7 +1027,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoU-KO-2WW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2057" y="-244"/>
+            <point key="canvasLocation" x="-2058" y="-245"/>
         </scene>
         <!--Cases-->
         <scene sceneID="xML-YU-z2F">
@@ -1146,7 +1145,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrx-55-I9s" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79.710144927536234" y="58.928571428571423"/>
+            <point key="canvasLocation" x="41" y="-718"/>
         </scene>
         <!--Cases Detail View Controller-->
         <scene sceneID="FVh-q5-4dY">
@@ -1264,14 +1263,14 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKw-eZ-gJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="-417.48768472906403"/>
+            <point key="canvasLocation" x="1910" y="-333"/>
         </scene>
         <!--Add Cases View Controller-->
         <scene sceneID="0i7-E6-zR5">
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1479,14 +1478,14 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fcm-Dn-ku6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="504.67980295566502"/>
+            <point key="canvasLocation" x="1911" y="-1032"/>
         </scene>
         <!--Metodum Library View Controller-->
         <scene sceneID="kVM-yZ-Neu">
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1562,7 +1561,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xT-6T-y95" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="505"/>
+            <point key="canvasLocation" x="3164" y="-1032"/>
         </scene>
         <!--Favoritos-->
         <scene sceneID="ley-mY-reK">
@@ -1755,7 +1754,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sw1-Ua-FaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79.200000000000003" y="-676.10837438423653"/>
+            <point key="canvasLocation" x="41" y="98"/>
         </scene>
         <!--Register Screen View Controller-->
         <scene sceneID="Xij-yz-xU6">
@@ -1928,7 +1927,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7m8-XI-h1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3169" y="517"/>
+            <point key="canvasLocation" x="-2058" y="-1069"/>
         </scene>
         <!--Metodologias-->
         <scene sceneID="9aI-e3-5fK">
@@ -2068,7 +2067,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2058" y="788"/>
+            <point key="canvasLocation" x="-2058" y="831"/>
         </scene>
         <!--Method Detail View Controller-->
         <scene sceneID="JwB-Gs-zL4">
@@ -2173,7 +2172,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eig-gh-hzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1207.2" y="786.94581280788179"/>
+            <point key="canvasLocation" x="-1207" y="831"/>
         </scene>
         <!--New School Class View Controller-->
         <scene sceneID="SWv-9d-9OU">
@@ -2262,7 +2261,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDt-We-Apc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="-1487"/>
+            <point key="canvasLocation" x="3164" y="-1835"/>
         </scene>
         <!--Show Error View Controller-->
         <scene sceneID="hUo-fB-e0x">
@@ -2347,13 +2346,13 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAa-xq-4qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="984"/>
+            <point key="canvasLocation" x="3164" y="831"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zHE-v5-uMu"/>
+        <segue reference="nXI-NQ-48p"/>
         <segue reference="4dD-YY-L4u"/>
-        <segue reference="12N-cH-vHD"/>
+        <segue reference="sWk-e2-O3Z"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="casesImg" width="240.33332824707031" height="223.66667175292969"/>

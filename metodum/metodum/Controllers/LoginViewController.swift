@@ -28,20 +28,23 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
-        if let user = AuthService.getUser() {
-            print("tem user logado, performando segue")
-            //print(user?.name)
-            /*AuthService.signOut { (_) in
-                print("foi")
-            }*/
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
-            }
-        }
+        
         signInButtonView.layer.cornerRadius = 10
         appleButtonStackView.addArrangedSubview(appleSignInButton)
         forgotPasswordButton.setTitle(NSLocalizedString("forgot password", comment: ""),for: .normal)
+                
+        guard let _ = try? UserDefaults.standard.getObject(forKey: "firstTime", castTo: Bool.self) else {
+            print("first time baby")
+            try? UserDefaults.standard.setObject(false, forKey: "firstTime")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "Login to Onboard Screen", sender: nil)
+            }
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "Login to Main Screen", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,9 +65,11 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Login to Main Screen" {
-            let viewController = segue.destination as! ViewController
-            viewController.user = sender as? User
+        if segue.identifier == "Login to Onboard Screen" {
+            let viewController = segue.destination as! OnboardPageViewController
+            viewController.callback = {
+                self.performSegue(withIdentifier: "Login to Main Screen", sender: nil)
+            }
         }
     }
     
@@ -231,7 +236,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
                     
                     if currentUser.name.isEmpty {
                         print("user display name vazio") // se o display name vem vazio, esse usuário já foi logado pelo menos uma vez no app
-                        self.performSegue(withIdentifier: "Login to Main Screen", sender: user)
+                        self.performSegue(withIdentifier: "Login to Main Screen", sender: nil)
                     } else {
                         print("user com display name") // no login apple, o displayName so vem uma vez, que e na primeira vez que o usuario loga com a conta no app
                         let teacher = Teacher(

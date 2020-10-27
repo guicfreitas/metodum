@@ -22,19 +22,17 @@ class CasesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupNavigationBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         clearNavigationBar()
-        print("view did dissapear")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear")
         setupNavigationBar()
+        user = AuthService.getUser()
         if let currentUser = user {
             TeachersCloudRepository.getFavoriteCasesUidsForTeacher(teacherUid: currentUser.uid) { (error, favoriteCases) in
                 if let errorMessage = error {
@@ -89,20 +87,28 @@ class CasesDetailViewController: UIViewController {
         
         let pdfConversionButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(convertCaseToPdf))
         
-        //addFavoriteCase.isEnabled = false
         addFavoriteCase.tintColor = .systemOrange
         pdfConversionButton.tintColor = .systemOrange
         
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.setRightBarButtonItems([pdfConversionButton,addFavoriteCase], animated: false)
         navigationController?.isNavigationBarHidden = false
-        
     }
     
     @objc private func setFavoriteCase() {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
-        if let teacher = user, let caseObj = selectedCase {
+        
+        guard let teacher = user else {
+            let requestLoginModal = storyboard?.instantiateViewController(identifier: "Request Login") as! RequestLoginViewController
+            requestLoginModal.callback = {
+                self.navigationController?.popToRootViewController(animated: false)
+            }
+            present(requestLoginModal, animated: true, completion: nil)
+            return
+        }
+        
+        if let caseObj = selectedCase {
             if isFavorite {
                 TeachersCloudRepository.removeCaseForTeacher(teacherUid: teacher.uid, favoriteCaseUid: caseObj.uid) { (error) in
                     if let errorMessage = error {
@@ -122,55 +128,46 @@ class CasesDetailViewController: UIViewController {
         }
     }
     
-  @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
+    @objc private func convertCaseToPdf(_ sender: UIBarButtonItem) {
     
-    let generator = UIImpactFeedbackGenerator(style: .medium)
-    generator.impactOccurred()
-    
-        // createPrintFormatter(index: self.id)
-        // openQlPreview()
-   
-    
-    let customItem = SharePDFActivity(title: (self.language == "pt") ? "Exportar PDF" : "Export PDF", image: UIImage(systemName: "arrow.down.doc")) { sharedItems in
-            if let caseObject = self.selectedCase {
-                createPrintFormatter(selectedCase: caseObject)
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
+            // createPrintFormatter(index: self.id)
+            // openQlPreview()
+       
+        let customItem = SharePDFActivity(title: (self.language == "pt") ? "Exportar PDF" : "Export PDF", image: UIImage(systemName: "arrow.down.doc")) { sharedItems in
+                if let caseObject = self.selectedCase {
+                    createPrintFormatter(selectedCase: caseObject)
+                }
+                self.openQlPreview()
             }
-            self.openQlPreview()
+            
+        var titleAC : String = ""
+        var aboutTextAC : String = ""
+        var resultAC : String = ""
+        var aboutTitleAC : String = ""
+        var resultsTitleAC : String = ""
+        
+        if let caseObject = selectedCase {
+            if language == "pt" {
+                titleAC = caseObject.title_pt
+                aboutTextAC = caseObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
+                resultAC = caseObject.result_pt.replacingOccurrences(of: "\\n", with: "\n")
+                aboutTitleAC = "Sobre"
+                resultsTitleAC = "Resultados"
+            } else {
+                titleAC = caseObject.title_en
+                aboutTextAC = caseObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
+                resultAC = caseObject.result_en.replacingOccurrences(of: "\\n", with: "\n")
+                aboutTitleAC = "About"
+                resultsTitleAC = "Results"
+            }
         }
-        
-    var titleAC : String = ""
-    var aboutTextAC : String = ""
-    var resultAC : String = ""
-    var aboutTitleAC : String = ""
-    var resultsTitleAC : String = ""
-    
-    if let caseObject = selectedCase {
-        
-        
-        if language == "pt" {
-            
-            titleAC = caseObject.title_pt
-            aboutTextAC = caseObject.about_pt.replacingOccurrences(of: "\\n", with: "\n")
-            resultAC = caseObject.result_pt.replacingOccurrences(of: "\\n", with: "\n")
-            aboutTitleAC = "Sobre"
-            resultsTitleAC = "Resultados"
-            
-        } else {
-            
-            titleAC = caseObject.title_en
-            aboutTextAC = caseObject.about_en.replacingOccurrences(of: "\\n", with: "\n")
-            resultAC = caseObject.result_en.replacingOccurrences(of: "\\n", with: "\n")
-            aboutTitleAC = "About"
-            resultsTitleAC = "Results"
-            
-        }
-        
-    }
-    
         let items = [titleAC," ",aboutTitleAC," ",aboutTextAC," ",resultsTitleAC," ",resultAC]
-    
+
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: [customItem])
-    
+
         self.present(activityViewController, animated: true, completion: nil)
     
     }

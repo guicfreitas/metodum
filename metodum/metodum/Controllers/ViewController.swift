@@ -17,23 +17,16 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let currentUser = user else { return }
-        
-        if let firstTime = try? UserDefaults.standard.getObject(forKey: "firstTime", castTo: Bool.self) {
-            print("first time? \(firstTime)")
-        } else {
-            print("first time baby")
-            try? UserDefaults.standard.setObject(false, forKey: "firstTime")
-        }
         
         if !DeviceDataPersistenceService.directoryExists(named: .methodsImages) {
             DeviceDataPersistenceService.createDirectory(named: .methodsImages)
         }
         
-        if DeviceDataPersistenceService.directoryExists(named: .casesImages) {
+        if !DeviceDataPersistenceService.directoryExists(named: .casesImages) {
             DeviceDataPersistenceService.createDirectory(named: .casesImages)
         } 
 
+        guard let currentUser = AuthService.getUser() else { return }
         TeachersCloudRepository.get(teacherId: currentUser.uid) { (error, teacher) in
             if let errorMessage = error {
                 self.alertError(message: errorMessage)
