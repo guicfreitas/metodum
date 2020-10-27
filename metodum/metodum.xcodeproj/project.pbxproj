@@ -12,6 +12,7 @@
 		793504D4253535E6000B2DA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 793504D6253535E6000B2DA8 /* Localizable.strings */; };
 		793AF634251B963B001F3A26 /* MethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AF633251B963B001F3A26 /* MethodCell.swift */; };
 		795F7C3E252DF6A6004A289B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */; };
+		796C8949254850D40075E051 /* EnterAccountCasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */; };
 		796EA52C2530FAD800C91F02 /* MetodumLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */; };
 		79A21A71254723A40051489E /* PoliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A21A70254723A40051489E /* PoliticsViewController.swift */; };
 		79B82C4F252F585E0078DDAB /* FavoriteCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B82C4E252F585E0078DDAB /* FavoriteCases.swift */; };
@@ -71,6 +72,7 @@
 		793AF633251B963B001F3A26 /* MethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodCell.swift; sourceTree = "<group>"; };
 		795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
+		796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAccountCasesViewController.swift; sourceTree = "<group>"; };
 		796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodumLibraryViewController.swift; sourceTree = "<group>"; };
 		798ED941253F1E650044B062 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		798ED945253F1EDF0044B062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				795F7C3D252DF6A6004A289B /* FavoritesViewController.swift */,
 				79BE160A253BC87B00DB0ECA /* PlaceAutocompleteViewController.swift */,
 				79A21A70254723A40051489E /* PoliticsViewController.swift */,
+				796C8948254850D40075E051 /* EnterAccountCasesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				AEF5BD9C251904C0009652BE /* ClassesCollectionViewCell.swift in Sources */,
 				793AF634251B963B001F3A26 /* MethodCell.swift in Sources */,
 				C3EF7EC52520FF660086EF9C /* ExportPdf.swift in Sources */,
+				796C8949254850D40075E051 /* EnterAccountCasesViewController.swift in Sources */,
 				AEF5BD91251902BB009652BE /* TeachersCloudRepository.swift in Sources */,
 				79B82C8B252F8F430078DDAB /* FavoriteMethodCell.swift in Sources */,
 				AE4904BE25326A4800783D42 /* DeviceDataPersistenceService.swift in Sources */,

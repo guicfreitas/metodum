@@ -13,7 +13,7 @@ class PoliticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        acceptButton.layer.cornerRadius = 20
+        acceptButton.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }

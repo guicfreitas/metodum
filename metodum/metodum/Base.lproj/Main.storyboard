@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tla-WG-349">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -398,6 +398,256 @@
             </objects>
             <point key="canvasLocation" x="-2239.1999999999998" y="1863.5467980295568"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="iA2-cE-RWb">
+            <objects>
+                <viewController id="q3O-Dl-sJ8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TiQ-kY-ttY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-cv-nSW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <items>
+                                    <navigationItem title="Termos de Uso" id="q8B-9u-xoB">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" image="chevron.left" catalog="system" id="cFl-9i-goO">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termos e condições gerais de uso do aplicativo Metodum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-o0-612">
+                                <rect key="frame" x="20" y="81" width="335" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-aQ-sgM">
+                                <rect key="frame" x="10" y="149.33333333333331" width="355" height="564.66666666666674"/>
+                                <color key="backgroundColor" name="BlackBody"/>
+                                <mutableString key="text">Os serviços do Metodum são fornecidos pelas pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães, inscritos no CPF sob o nº 032.015.532-39, 048.357.562-31, 024.462.172-14, 950.578.462-72, titulares da propriedade intelectual sobre software, website, aplicativos, conteúdos e demais ativos relacionados à plataforma Metodum.
+
+1. Do objeto
+A plataforma visa licenciar o uso de seu software, website, aplicativos e demais ativos de propriedade intelectual, fornecendo ferramentas para auxiliar e dinamizar o dia a dia dos seus usuários.
+A plataforma caracteriza-se pela prestação do seguinte serviço: prestação de serviços de recomendação e incentivo para a aplicação de métodos de ensino/aprendizagem.
+
+2. Da aceitação
+O presente Termo estabelece obrigações contratadas de livre e espontânea vontade, por tempo indeterminado, entre a plataforma e as pessoas físicas ou jurídicas, usuárias do aplicativo.
+Ao utilizar a plataforma o usuário aceita integralmente as presentes normas e compromete-se a observá-las, sob o risco de aplicação das penalidade cabíveis.
+A aceitação do presente instrumento é imprescindível para o acesso e para a utilização de quaisquer serviços fornecidos pela empresa. Caso não concorde com as disposições deste instrumento, o usuário não deve utilizá-los.
+
+3. Do acesso dos usuários
+Serão utilizadas todas as soluções técnicas à disposição do responsável pela plataforma para permitir o acesso ao serviço 24 (vinte e quatro) horas por dia, 7 (sete) dias por semana. No entanto, a navegação na plataforma ou em alguma de suas páginas poderá ser interrompida, limitada ou suspensa para atualizações, modificações ou qualquer ação necessária ao seu bom funcionamento.
+
+4. Do cadastro
+O acesso às funcionalidades da plataforma exigirá a realização de um cadastro prévio.
+Ao se cadastrar o usuário deverá informar dados completos, recentes e válidos, sendo de sua exclusiva responsabilidade manter referidos dados atualizados, bem como o usuário se compromete com a veracidade dos dados fornecidos.
+O usuário se compromete a não informar seus dados cadastrais e/ou de acesso à plataforma a terceiros, responsabilizando-se integralmente pelo uso que deles seja feito.
+Mediante a realização do cadastro o usuário declara e garante expressamente ser plenamente capaz, podendo exercer e usufruir livremente dos serviços e produtos.
+O usuário deverá fornecer um endereço de e-mail válido, através do qual o site realizará todas comunicações necessárias.
+Após a confirmação do cadastro, o usuário possuirá um login e uma senha pessoal, a qual assegura ao usuário o acesso individual à mesma. Desta forma, compete ao usuário exclusivamente a manutenção de referida senha de maneira confidencial e segura, evitando o acesso indevido às informações pessoais.
+Toda e qualquer atividade realizada com o uso da senha será de responsabilidade do usuário, que deverá informar prontamente a plataforma em caso de uso indevido da respectiva senha.
+Não será permitido ceder, vender, alugar ou transferir, de qualquer forma, a conta, que é pessoal e intransferível.
+Caberá ao usuário assegurar que o seu equipamento seja compatível com as características técnicas que viabilize a utilização da plataforma e dos serviços ou produtos.
+O usuário poderá, a qualquer tempo, requerer o cancelamento de seu cadastro junto ao aplicativo Metodum. O seu descadastramento será realizado o mais rapidamente possível.
+O usuário, ao aceitar os Termos e Política de Privacidade, autoriza expressamente a plataforma a coletar, usar, armazenar, tratar, ceder ou utilizar as informações derivadas do uso dos serviços, do site e quaisquer plataformas, incluindo todas as informações preenchidas pelo usuário no momento em que realizar ou atualizar seu cadastro, além de outras expressamente descritas na Política de Privacidade que deverá ser autorizada pelo usuário.
+5. Do suporte
+Em caso de qualquer dúvida, sugestão ou problema com a utilização da plataforma, o usuário poderá entrar em contato com o suporte, através do email metodumapp@gmail.com.
+Estes serviços de atendimento ao usuário estarão disponíveis nos seguintes dias e horários: Segunda a Sexta das 08:00h até 12:00h.
+
+6. Das responsabilidades
+É de responsabilidade do usuário:
+a) defeitos ou vícios técnicos originados no próprio sistema do usuário;
+b) a correta utilização da plataforma, dos serviços ou produtos oferecidos, prezando pela boa convivência, pelo respeito e cordialidade entre os usuários;
+c) pelo cumprimento e respeito ao conjunto de regras disposto nesse Termo de Condições Geral de Uso, na respectiva Política de Privacidade e na legislação nacional e internacional;
+d) pela proteção aos dados de acesso à sua conta/perfil (login e senha).
+
+É de responsabilidade da plataforma Metodum:
+a) indicar as características do serviço ou produto;
+b) os defeitos e vícios encontrados no serviço ou produto oferecido desde que lhe tenha dado causa;
+c) as informações que foram por ele divulgadas, sendo que os comentários ou informações divulgadas por usuários são de inteira responsabilidade dos próprios usuários;
+d) os conteúdos ou atividades ilícitas praticadas através da sua plataforma.
+
+A plataforma não se responsabiliza por links externos contidos em seu sistema que possam redirecionar o usuário à ambiente externo a sua rede.
+Não poderão ser incluídos links externos ou páginas que sirvam para fins comerciais ou publicitários ou quaisquer informações ilícitas, violentas, polêmicas, pornográficas, xenofóbicas, discriminatórias ou ofensivas.
+
+7. Dos direitos autorais
+O presente Termo de Uso concede aos usuários uma licença não exclusiva, não transferível e não sublicenciável, para acessar e fazer uso da plataforma e dos serviços e produtos por ela disponibilizados.
+A estrutura do aplicativo, as marcas, logotipos, nomes comerciais, layouts, gráficos e design de interface, imagens, ilustrações, fotografias, apresentações, vídeos, conteúdos escritos e de som e áudio, programas de computador, banco de dados, arquivos de transmissão e quaisquer outras informações e direitos de propriedade intelectual pelas pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães, observados os termos da Lei da Propriedade Industrial (Lei nº 9.279/96), Lei de Direitos Autorais (Lei nº 9.610/98) e Lei do Software (Lei nº 9.609/98), estão devidamente reservados.
+Este Termos de Uso não cede ou transfere ao usuário qualquer direito, de modo que o acesso não gera qualquer direito de propriedade intelectual ao usuário, exceto pela licença limitada ora concedida. No entanto, caso o usuário opte por incluir conteúdo no aplicativo, através da funcionalidade Casos de Sucesso, reservamos o direito de propriedade intelectual restritamente para o usuário, e não para os organizadores.
+O uso da plataforma pelo usuário é pessoal, individual e intransferível, sendo vedado qualquer uso não autorizado, comercial ou não-comercial. Tais usos consistirão em violação dos direitos de propriedade intelectual das pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães, puníveis nos termos da legislação aplicável.
+
+8. Das sanções
+Sem prejuízo das demais medidas legais cabíveis, as pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães poderão, a qualquer momento, advertir, suspender ou cancelar a conta do usuário:
+a) que violar qualquer dispositivo do presente Termo;
+b) que descumprir os seus deveres de usuário;
+c) que tiver qualquer comportamento fraudulento, doloso ou que ofenda a terceiros.
+
+9. Da rescisão
+A não observância das obrigações pactuadas neste Termo de Uso ou da legislação aplicável poderá, sem prévio aviso, ensejar a imediata rescisão unilateral por parte das pessoas físicas com os seguintes nomes: Gonzalo Ivan dos Santos Portales, João Guilherme Chagas de Freitas, Juliana Rodrigues do Nascimento e Radija Maria Praia Guimarães e o bloqueio de todos os serviços prestados ao usuário.
+
+10. Das alterações
+Os itens descritos no presente instrumento poderão sofrer alterações, unilateralmente e a qualquer tempo, por parte do aplicativo Metodum, para adequar ou modificar os serviços, bem como para atender novas exigências legais. As alterações serão veiculadas pelo aplicativo Metodum e o usuário poderá optar por aceitar o novo conteúdo ou por cancelar o uso dos serviços, caso seja assinante de algum serviço.
+11. Da política de privacidade
+
+Além do presente Termo, o usuário deverá consentir com as disposições contidas na respectiva Política de Privacidade a ser apresentada a todos os interessados dentro da interface da plataforma. 
+12. Do foro
+
+Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.
+Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FMq-f2-VZI"/>
+                        <color key="backgroundColor" name="BlackBody"/>
+                        <constraints>
+                            <constraint firstItem="FMq-f2-VZI" firstAttribute="trailing" secondItem="t2U-aQ-sgM" secondAttribute="trailing" constant="10" id="03B-cc-loC"/>
+                            <constraint firstItem="FMq-f2-VZI" firstAttribute="trailing" secondItem="kWe-o0-612" secondAttribute="trailing" constant="20" id="CoF-7b-CLi"/>
+                            <constraint firstItem="kWe-o0-612" firstAttribute="leading" secondItem="FMq-f2-VZI" secondAttribute="leading" constant="20" id="Ri4-5m-kY5"/>
+                            <constraint firstItem="t2U-aQ-sgM" firstAttribute="leading" secondItem="FMq-f2-VZI" secondAttribute="leading" constant="10" id="WMI-Ha-5Rv"/>
+                            <constraint firstItem="FMq-f2-VZI" firstAttribute="bottom" secondItem="t2U-aQ-sgM" secondAttribute="bottom" constant="10" id="avh-kW-QJs"/>
+                            <constraint firstItem="kWe-o0-612" firstAttribute="top" secondItem="oCu-cv-nSW" secondAttribute="bottom" constant="25" id="d9i-Fy-DD9"/>
+                            <constraint firstItem="oCu-cv-nSW" firstAttribute="top" secondItem="FMq-f2-VZI" secondAttribute="top" id="fH5-ME-wnS"/>
+                            <constraint firstItem="t2U-aQ-sgM" firstAttribute="top" secondItem="kWe-o0-612" secondAttribute="bottom" constant="30" id="m3P-XM-dVb"/>
+                            <constraint firstItem="oCu-cv-nSW" firstAttribute="leading" secondItem="FMq-f2-VZI" secondAttribute="leading" id="m9Q-ep-gHu"/>
+                            <constraint firstItem="oCu-cv-nSW" firstAttribute="trailing" secondItem="FMq-f2-VZI" secondAttribute="trailing" id="ozb-Xt-db3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fab-E6-Zlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1999.2" y="2615.7635467980299"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DYz-2Q-g6H">
+            <objects>
+                <viewController id="0ke-tP-cMt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wB4-7x-6QJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-q7-90K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <items>
+                                    <navigationItem title="Política de Privacidade" leftItemsSupplementBackButton="YES" id="iRr-U4-ogi">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="tbj-kr-gW0">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termos e condições gerais de uso do aplicativo Metodum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRW-ZK-s8R">
+                                <rect key="frame" x="20" y="81" width="335" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="511-Hc-eDT">
+                                <rect key="frame" x="10" y="149.33333333333331" width="355" height="564.66666666666674"/>
+                                <color key="backgroundColor" name="BlackBody"/>
+                                <mutableString key="text">SEÇÃO 1 - INFORMAÇÕES GERAIS
+
+A presente Política de Privacidade contém informações sobre coleta, uso, armazenamento, tratamento e proteção dos dados pessoais dos usuários e visitantes do aplicativo Metodum, com a finalidade de demonstrar absoluta transparência quanto ao assunto e esclarecer a todos interessados sobre os tipos de dados que são coletados, os motivos da coleta e a forma como os usuários podem gerenciar ou excluir as suas informações pessoais.
+Esta Política de Privacidade aplica-se a todos os usuários e visitantes do aplicativo Metodum e integra os Termos e Condições Gerais de Uso do aplicativo Metodum.
+O presente documento foi elaborado em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei 13.709/18), o Marco Civil da Internet (Lei 12.965/14) (e o Regulamento da UE n. 2016/6790). Ainda, o documento poderá ser atualizado em decorrência de eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção.
+
+SEÇÃO 2 - COMO RECOLHEMOS OS DADOS PESSOAIS DO USUÁRIO E DO VISITANTE?
+
+Os dados pessoais do usuário e visitante são recolhidos pela plataforma da seguinte forma:
+
+Quando o usuário cria uma conta/perfil na plataforma Metodum: esses dados são os dados de identificação básicos, como nome e E-mail. A partir deles, podemos identificar o usuário e o visitante, além de garantir uma maior segurança e bem-estar às suas necessidade.
+Por intermédio de terceiro: a plataforma Metodum recebe dados de terceiros, como Apple, quando um usuário faz login com o seu perfil de um desses sites. A utilização desses dados é autorizada previamente pelos usuários junto ao terceiro em questão.
+
+SEÇÃO 3 - QUAIS DADOS PESSOAIS RECOLHEMOS SOBRE O USUÁRIO E VISITANTE?
+
+Os dados pessoais do usuário e visitante recolhidos são os seguintes:
+
+Dados para a criação da conta/perfil na plataforma Metodum: Nome. E-mail
+
+SEÇÃO 3 - PARA QUE FINALIDADES UTILIZAMOS OS DADOS PESSOAIS DO USUÁRIO E VISITANTE?
+
+Os dados pessoais do usuário e do visitante coletados e armazenados pela plataforma Metodum tem por finalidade:
+
+Dados de cadastro: para permitir o acesso do usuário a determinados conteúdos da plataforma, exclusivo para usuários cadastrados
+
+O tratamento de dados pessoais para finalidades não previstas nesta Política de Privacidade somente ocorrerá mediante comunicação prévia ao usuário, de modo que os direitos e obrigações aqui previstos permanecem aplicáveis.
+
+SEÇÃO 4 - POR QUANTO TEMPO OS DADOS PESSOAIS FICAM ARMAZENADOS?
+
+Os dados pessoais do usuário e visitante são armazenados pela plataforma durante o período necessário para a prestação do serviço ou o cumprimento das finalidades previstas no presente documento, conforme o disposto no inciso I do artigo 15 da Lei 13.709/18.
+Os dados podem ser removidos ou anonimizados a pedido do usuário, excetuando os casos em que a lei oferecer outro tratamento.
+Ainda, os dados pessoais dos usuários apenas podem ser conservados após o término de seu tratamento nas seguintes hipóteses previstas no artigo 16 da referida lei:
+I - cumprimento de obrigação legal ou regulatória pelo controlador;
+II - estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;
+III - transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos nesta Lei;
+IV - uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados.
+
+SEÇÃO 5 - SEGURANÇA DOS DADOS PESSOAIS ARMAZENADOS
+
+A plataforma se compromete a aplicar as medidas técnicas e organizativas aptas a proteger os dados pessoais de acessos não autorizados e de situações de destruição, perda, alteração, comunicação ou difusão de tais dados.
+Os dados relativas a cartões de crédito são criptografados usando a tecnologia "secure socket layer" (SSL) que garante a transmissão de dados de forma segura e confidencial, de modo que a transmissão dos dados entre o servidor e o usuário ocorre de maneira cifrada e encriptada.
+A plataforma não se exime de responsabilidade por culpa exclusiva de terceiro, como em caso de ataque de hackers ou crackers, ou culpa exclusiva do usuário, como no caso em que ele mesmo transfere seus dados a terceiros. O site se compromete a comunicar o usuário em caso de alguma violação de segurança dos seus dados pessoais.
+Os dados pessoais armazenados são tratados com confidencialidade, dentro dos limites legais. No entanto, podemos divulgar suas informações pessoais caso sejamos obrigados pela lei para fazê-lo ou se você violar nossos Termos de Serviço.
+
+SEÇÃO 6 - COMPARTILHAMENTO DOS DADOS
+
+O compartilhamento de dados do usuário ocorre apenas com os dados referentes a publicações realizadas pelo próprio usuário, tais ações são compartilhadas publicamente com os outros usuários.
+
+SEÇÃO 6 - OS DADOS PESSOAIS ARMAZENADOS SERÃO TRANSFERIDOS A TERCEIROS?
+
+Os dados pessoais não podem ser compartilhados com terceiros 
+
+SEÇÃO 7 – COOKIES OU DADOS DE NAVEGAÇÃO
+
+Os cookies referem-se a arquivos de texto enviados pela plataforma ao computador do usuário e visitante e que nele ficam armazenados, com informações relacionadas à navegação no site. Tais informações são relacionadas aos dados de acesso como local e horário de acesso e são armazenadas pelo navegador do usuário e visitante para que o servidor da plataforma possa lê-las posteriormente a fim de personalizar os serviços da plataforma.
+O usuário e o visitante da plataforma Metodum manifesta conhecer e aceitar que pode ser utilizado um sistema de coleta de dados de navegação mediante à utilização de cookies.
+O cookie persistente permanece no disco rígido do usuário e visitante depois que o navegador é fechado e será usado pelo navegador em visitas subsequentes ao site. Os cookies persistentes podem ser removidos seguindo as instruções do seu navegador. Já o cookie de sessão é temporário e desaparece depois que o navegador é fechado. É possível redefinir seu navegador da web para recusar todos os cookies, porém alguns recursos da plataforma podem não funcionar corretamente se a capacidade de aceitar cookies estiver desabilitada.
+
+SEÇÃO 8 - CONSENTIMENTO
+
+Ao utilizar os serviços e fornecer as informações pessoais na plataforma, o usuário está consentindo com a presente Política de Privacidade.
+O usuário, ao cadastrar-se, manifesta conhecer e pode exercitar seus direitos de cancelar seu cadastro, acessar e atualizar seus dados pessoais e garante a veracidade das informações por ele disponibilizadas.
+O usuário tem direito de retirar o seu consentimento a qualquer tempo, para tanto deve entrar em contato através do e-mail metodumapp@gmail.com
+
+SEÇÃO 9 - ALTERAÇÕES PARA ESSA POLÍTICA DE PRIVACIDADE
+
+Reservamos o direito de modificar essa Política de Privacidade a qualquer momento, então, é recomendável que o usuário e visitante revise-a com frequência.
+As alterações e esclarecimentos vão surtir efeito imediatamente após sua publicação na plataforma. Quando realizadas alterações os usuários serão notificados. Ao utilizar o serviço ou fornecer informações pessoais após eventuais modificações, o usuário e visitante demonstra sua concordância com as novas normas.
+Diante da fusão ou venda da plataforma à outra empresa os dados dos usuários podem ser transferidas para os novos proprietários para que a permanência dos serviços oferecidos.
+
+SEÇÃO 10 – JURISDIÇÃO PARA RESOLUÇÃO DE CONFLITOS
+
+Para a solução de controvérsias decorrentes do presente instrumento será aplicado integralmente o Direito brasileiro.
+Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede da empresa.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nke-Uk-2io"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="511-Hc-eDT" firstAttribute="top" secondItem="tRW-ZK-s8R" secondAttribute="bottom" constant="30" id="1yC-IE-ZAB"/>
+                            <constraint firstItem="511-Hc-eDT" firstAttribute="leading" secondItem="nke-Uk-2io" secondAttribute="leading" constant="10" id="Aee-ZC-Kx4"/>
+                            <constraint firstItem="eJI-q7-90K" firstAttribute="trailing" secondItem="nke-Uk-2io" secondAttribute="trailing" id="BdM-2k-u0Q"/>
+                            <constraint firstItem="tRW-ZK-s8R" firstAttribute="top" secondItem="eJI-q7-90K" secondAttribute="bottom" constant="25" id="Evt-v6-GtA"/>
+                            <constraint firstItem="nke-Uk-2io" firstAttribute="bottom" secondItem="511-Hc-eDT" secondAttribute="bottom" constant="10" id="JFq-Qh-gqP"/>
+                            <constraint firstItem="eJI-q7-90K" firstAttribute="top" secondItem="nke-Uk-2io" secondAttribute="top" id="cEv-qF-VKC"/>
+                            <constraint firstItem="eJI-q7-90K" firstAttribute="leading" secondItem="nke-Uk-2io" secondAttribute="leading" id="ffw-dP-f5b"/>
+                            <constraint firstItem="nke-Uk-2io" firstAttribute="trailing" secondItem="tRW-ZK-s8R" secondAttribute="trailing" constant="20" id="hsE-fT-x3i"/>
+                            <constraint firstItem="tRW-ZK-s8R" firstAttribute="leading" secondItem="nke-Uk-2io" secondAttribute="leading" constant="20" id="uz2-gF-adk"/>
+                            <constraint firstItem="nke-Uk-2io" firstAttribute="trailing" secondItem="511-Hc-eDT" secondAttribute="trailing" constant="10" id="x2t-aA-46M"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26y-3R-1b7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1247" y="2616"/>
+        </scene>
         <!--Politics View Controller-->
         <scene sceneID="ODK-SD-UDb">
             <objects>
@@ -454,11 +704,128 @@
                     </view>
                     <connections>
                         <outlet property="acceptButton" destination="ozy-Jf-XHh" id="RDl-c2-U71"/>
+                        <segue destination="q3O-Dl-sJ8" kind="presentation" id="71j-pH-kgO"/>
+                        <segue destination="0ke-tP-cMt" kind="presentation" id="TVl-4f-FBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOl-3H-L8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1575.2" y="1863.5467980295568"/>
+        </scene>
+        <!--Enter Account Cases View Controller-->
+        <scene sceneID="SiP-EQ-KMp">
+            <objects>
+                <viewController id="vqa-0h-3bw" customClass="EnterAccountCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kra-Is-2Bd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oopsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qqP-Q3-sAL">
+                                <rect key="frame" x="75.666666666666686" y="178" width="224" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qqP-Q3-sAL" secondAttribute="height" multiplier="221:228" id="ZIn-qZ-B2K"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85L-UR-6Wl">
+                                <rect key="frame" x="154.66666666666666" y="439" width="66" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para adicionar um caso, é necessário que você esteja conectado à uma conta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-UT-Yey">
+                                <rect key="frame" x="40" y="488.00000000000006" width="295" height="64.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFg-4E-7Gs">
+                                <rect key="frame" x="30" y="582.66666666666663" width="315" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lcd-UD-9eI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Continue para entrar">
+                                    <color key="titleColor" name="LabelClasses"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EQe-9D-r2D">
+                                <rect key="frame" x="30" y="642.66666666666663" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ki0-tz-TTr"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tw-T4-MDL">
+                                <rect key="frame" x="73.666666666666686" y="722.66666666666663" width="228" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeira vez aqui?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-nR-ZpK">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="GrayLabel"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fa0-yV-WfK">
+                                        <rect key="frame" x="144" y="0.0" width="84" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Criar conta">
+                                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="BlackBody"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fa0-yV-WfK" secondAttribute="trailing" id="Hbf-o7-rx2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fa0-yV-WfK" secondAttribute="bottom" id="SCh-Fz-HtU"/>
+                                    <constraint firstItem="DkI-nR-ZpK" firstAttribute="leading" secondItem="7tw-T4-MDL" secondAttribute="leading" id="gkg-Yg-dBx"/>
+                                    <constraint firstItem="Fa0-yV-WfK" firstAttribute="leading" secondItem="DkI-nR-ZpK" secondAttribute="trailing" constant="5" id="ht4-pP-DS5"/>
+                                    <constraint firstAttribute="bottom" secondItem="DkI-nR-ZpK" secondAttribute="bottom" id="iBi-gT-cbc"/>
+                                    <constraint firstItem="DkI-nR-ZpK" firstAttribute="top" secondItem="7tw-T4-MDL" secondAttribute="top" id="sqF-RO-yZB"/>
+                                    <constraint firstItem="Fa0-yV-WfK" firstAttribute="top" secondItem="7tw-T4-MDL" secondAttribute="top" id="wM2-3h-d3H"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cU-o1-RMY">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" name="BlackTabBar"/>
+                                <items>
+                                    <navigationItem title="Entre na sua conta" id="h6L-d3-gg9">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="k0d-CP-1mo">
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pcf-Hx-K1Z"/>
+                        <color key="backgroundColor" name="BlackBody"/>
+                        <constraints>
+                            <constraint firstItem="HFg-4E-7Gs" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" constant="30" id="33S-Lc-6zd"/>
+                            <constraint firstItem="qqP-Q3-sAL" firstAttribute="top" secondItem="8cU-o1-RMY" secondAttribute="bottom" constant="90" id="7vJ-TT-IUj"/>
+                            <constraint firstItem="8cU-o1-RMY" firstAttribute="top" secondItem="pcf-Hx-K1Z" secondAttribute="top" id="Jkk-97-BDt"/>
+                            <constraint firstItem="8cU-o1-RMY" firstAttribute="trailing" secondItem="pcf-Hx-K1Z" secondAttribute="trailing" id="Kog-ds-6P6"/>
+                            <constraint firstItem="EQe-9D-r2D" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" constant="30" id="MvS-C0-5Ja"/>
+                            <constraint firstItem="PaH-UT-Yey" firstAttribute="top" secondItem="85L-UR-6Wl" secondAttribute="bottom" constant="20" id="OGa-gd-HSg"/>
+                            <constraint firstItem="pcf-Hx-K1Z" firstAttribute="trailing" secondItem="EQe-9D-r2D" secondAttribute="trailing" constant="30" id="X1S-ae-SKY"/>
+                            <constraint firstItem="EQe-9D-r2D" firstAttribute="top" secondItem="HFg-4E-7Gs" secondAttribute="bottom" constant="10" id="Y8p-LV-qta"/>
+                            <constraint firstItem="8cU-o1-RMY" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" id="YJ4-X8-ELa"/>
+                            <constraint firstItem="85L-UR-6Wl" firstAttribute="top" secondItem="qqP-Q3-sAL" secondAttribute="bottom" constant="30" id="Ylm-h7-PKa"/>
+                            <constraint firstItem="7tw-T4-MDL" firstAttribute="top" secondItem="EQe-9D-r2D" secondAttribute="bottom" constant="30" id="flS-NP-l4y"/>
+                            <constraint firstItem="pcf-Hx-K1Z" firstAttribute="trailing" secondItem="HFg-4E-7Gs" secondAttribute="trailing" constant="30" id="lKd-Kr-PNU"/>
+                            <constraint firstItem="85L-UR-6Wl" firstAttribute="centerX" secondItem="kra-Is-2Bd" secondAttribute="centerX" id="mLw-cU-ebc"/>
+                            <constraint firstItem="HFg-4E-7Gs" firstAttribute="top" secondItem="PaH-UT-Yey" secondAttribute="bottom" constant="30" id="o0m-JP-Pno"/>
+                            <constraint firstAttribute="trailing" secondItem="PaH-UT-Yey" secondAttribute="trailing" constant="40" id="oFt-4K-wgl"/>
+                            <constraint firstItem="PaH-UT-Yey" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" constant="40" id="qk2-ZZ-qtV"/>
+                            <constraint firstItem="qqP-Q3-sAL" firstAttribute="centerX" secondItem="kra-Is-2Bd" secondAttribute="centerX" id="xeR-l7-W6Z"/>
+                            <constraint firstItem="7tw-T4-MDL" firstAttribute="centerX" secondItem="kra-Is-2Bd" secondAttribute="centerX" id="y7l-Ls-GAd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appleButtonStackView" destination="EQe-9D-r2D" id="VG0-x7-Bpg"/>
+                        <outlet property="enterButton" destination="HFg-4E-7Gs" id="Z1r-op-KsF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8a-Px-IA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.80000000000001" y="1884.9753694581282"/>
         </scene>
         <!--Onboard Screen View Controller-->
         <scene sceneID="t2v-TA-Ybc">
@@ -904,7 +1271,7 @@
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1119,7 +1486,7 @@
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1991,11 +2358,14 @@
     <resources>
         <image name="casesImg" width="240.33332824707031" height="223.66667175292969"/>
         <image name="cases_grey" width="1242" height="849"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="emptyFavorite" width="320" height="320"/>
         <image name="findMethod" width="226" height="255"/>
         <image name="lightbulb" catalog="system" width="113" height="128"/>
         <image name="markAsFavorite" width="292" height="237"/>
+        <image name="oopsLogo" width="224" height="231"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="politics" width="213.66667175292969" height="220"/>
         <image name="reciveNotifications" width="262.66665649414062" height="205"/>
