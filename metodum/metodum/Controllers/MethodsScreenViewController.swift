@@ -135,7 +135,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         }
         let heightMask = imageview.frame.height * 0.25821596
         let mask = UIView(frame: CGRect(x: 0, y: (cell.frame.height)-heightMask, width: cell.frame.width, height: heightMask+2))
-        mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
+        mask.backgroundColor = UIColor(named: "MethodLabel")
         var textsSplit = labelText.components(separatedBy: " ")
         print("ISSO TA NO VETOR: ",labelText)
         
@@ -144,14 +144,17 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
             labelMenor.textColor = UIColor.white
             labelMenor.text = textsSplit[0].uppercased()
-            labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+            labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
             
             let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
             labelMaior.textColor = UIColor.white
             textsSplit.remove(at: 0)
             
             labelMaior.text = textsSplit.joined(separator: " ")
-            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
+            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+            
+            labelMaior.textColor = UIColor(named: "TextLabel")
+            labelMenor.textColor = UIColor(named: "TextLabel")
             
             mask.addSubview(labelMenor)
             mask.addSubview(labelMaior)
@@ -197,8 +200,8 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         }
         
         let heightMask = headerView.emAltaImage.frame.height * 0.25821596
-        let mask = UIView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width-40, height: heightMask+2))
-        mask.backgroundColor = UIColor(red: 0.12, green: 0.12, blue: 0.12, alpha: 0.70)
+        let mask = UIView(frame: CGRect(x: 0, y: ((headerView.emAltaImage.frame.height) - (heightMask))+4 , width: collectionView.frame.width-40, height: heightMask+2))
+        mask.backgroundColor = UIColor(named: "MethodLabel")
         var textsSplit = labelText.components(separatedBy: " ")
         
         if(firstTime == false){
@@ -213,7 +216,10 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
             textsSplit.remove(at: 0)
             
             labelMaior.text = textsSplit.joined(separator: " ")
-            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title1)
+            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+            
+            labelMaior.textColor = UIColor(named: "TextLabel")
+            labelMenor.textColor = UIColor(named: "TextLabel")
             
             mask.addSubview(labelMenor)
             mask.addSubview(labelMaior)
