@@ -749,7 +749,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oopsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qqP-Q3-sAL">
-                                <rect key="frame" x="75.666666666666686" y="178" width="224" height="231"/>
+                                <rect key="frame" x="75.666666666666686" y="200.33333333333331" width="224" height="231.33333333333331"/>
                                 <accessibility key="accessibilityConfiguration" label="Imagem de erro">
                                     <string key="hint">Imagem contendo um celular preto com uma cara triste em branco com dois círculos no fundo o mais a frente, contém um tracejado laranja e o círculo de trás preenchido com uma cor roxa</string>
                                     <bool key="isElement" value="YES"/>
@@ -759,21 +759,21 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85L-UR-6Wl">
-                                <rect key="frame" x="154.66666666666666" y="439" width="66" height="29"/>
+                                <rect key="frame" x="154.66666666666666" y="461.66666666666669" width="66" height="29"/>
                                 <accessibility key="accessibilityConfiguration" hint="Título maior destacando o erro" label="Oops!"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para adicionar um caso, é necessário que você esteja conectado à uma conta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-UT-Yey">
-                                <rect key="frame" x="40" y="488.00000000000006" width="295" height="64.666666666666686"/>
+                                <rect key="frame" x="40" y="510.66666666666669" width="295" height="64.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" hint="Texto descrevendo o motivo do erro" label="Para adicionar um caso, é necessário que você esteja conectado à uma conta."/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFg-4E-7Gs">
-                                <rect key="frame" x="30" y="582.66666666666663" width="315" height="50"/>
+                                <rect key="frame" x="30" y="605.33333333333337" width="315" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Botão em laranja para logar" label="Continue para entrar"/>
                                 <constraints>
@@ -788,13 +788,13 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EQe-9D-r2D">
-                                <rect key="frame" x="30" y="642.66666666666663" width="315" height="50"/>
+                                <rect key="frame" x="30" y="665.33333333333337" width="315" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ki0-tz-TTr"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tw-T4-MDL">
-                                <rect key="frame" x="73.666666666666686" y="722.66666666666663" width="228" height="33"/>
+                                <rect key="frame" x="73.666666666666686" y="745.33333333333337" width="228" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeira vez aqui?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-nR-ZpK">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="33"/>
@@ -839,7 +839,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                         <color key="backgroundColor" name="BlackBody"/>
                         <constraints>
                             <constraint firstItem="HFg-4E-7Gs" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" constant="30" id="33S-Lc-6zd"/>
-                            <constraint firstItem="qqP-Q3-sAL" firstAttribute="top" secondItem="8cU-o1-RMY" secondAttribute="bottom" constant="90" id="7vJ-TT-IUj"/>
+                            <constraint firstItem="qqP-Q3-sAL" firstAttribute="centerY" secondItem="kra-Is-2Bd" secondAttribute="centerY" constant="-90" id="ER8-ao-BxO"/>
                             <constraint firstItem="8cU-o1-RMY" firstAttribute="top" secondItem="pcf-Hx-K1Z" secondAttribute="top" id="Jkk-97-BDt"/>
                             <constraint firstItem="8cU-o1-RMY" firstAttribute="trailing" secondItem="pcf-Hx-K1Z" secondAttribute="trailing" id="Kog-ds-6P6"/>
                             <constraint firstItem="EQe-9D-r2D" firstAttribute="leading" secondItem="pcf-Hx-K1Z" secondAttribute="leading" constant="30" id="MvS-C0-5Ja"/>
@@ -1304,7 +1304,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1519,7 +1519,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
