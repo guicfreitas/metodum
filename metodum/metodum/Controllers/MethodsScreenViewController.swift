@@ -130,14 +130,14 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
                 labelMenor.textColor = UIColor.white
                 labelMenor.text = textsSplit[0].uppercased()
-                labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
+                labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption1)
                 
                 let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
                 labelMaior.textColor = UIColor.white
                 textsSplit.remove(at: 0)
                 
                 labelMaior.text = textsSplit.joined(separator: " ")
-                labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+                labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
                 
                 labelMaior.textColor = UIColor(named: "TextLabel")
                 labelMenor.textColor = UIColor(named: "TextLabel")
@@ -174,14 +174,14 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                         let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
                         labelMenor.textColor = UIColor.white
                         labelMenor.text = textsSplit[0].uppercased()
-                        labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
+                        labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption1)
                         
                         let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
                         labelMaior.textColor = UIColor.white
                         textsSplit.remove(at: 0)
                         
                         labelMaior.text = textsSplit.joined(separator: " ")
-                        labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
+                        labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
                         
                         labelMaior.textColor = UIColor(named: "TextLabel")
                         labelMenor.textColor = UIColor(named: "TextLabel")
@@ -202,25 +202,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
         print("Vetor de texto:",textsSplit)
         
             
-            let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
-            labelMenor.textColor = UIColor.white
-            labelMenor.text = textsSplit[0].uppercased()
-            labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
             
-            let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
-            labelMaior.textColor = UIColor.white
-            textsSplit.remove(at: 0)
-            
-            labelMaior.text = textsSplit.joined(separator: " ")
-            labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-            
-            labelMaior.textColor = UIColor(named: "TextLabel")
-            labelMenor.textColor = UIColor(named: "TextLabel")
-            
-            mask.addSubview(labelMenor)
-            mask.addSubview(labelMaior)
-                        
-            imageview.addSubview(mask)
             
         
         
