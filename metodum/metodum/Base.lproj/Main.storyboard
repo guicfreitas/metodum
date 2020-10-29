@@ -1113,7 +1113,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <constraint firstItem="2rT-pS-8ka" firstAttribute="bottom" secondItem="x68-uG-ODQ" secondAttribute="bottom" id="wUY-he-eaC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cases" image="doc.text" catalog="system" id="iZg-Ef-rVm"/>
+                    <tabBarItem key="tabBarItem" title="Casos de Sucesso" image="doc.text" catalog="system" id="iZg-Ef-rVm"/>
                     <navigationItem key="navigationItem" title="Cases" largeTitleDisplayMode="always" id="OAt-8C-MgK">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qwy-Ry-Ruh"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="1gq-fh-hcN">
