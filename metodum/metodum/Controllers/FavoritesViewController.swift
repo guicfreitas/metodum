@@ -15,10 +15,8 @@ class FavoritesViewController: UIViewController{
     @IBOutlet weak var navigationIten: UINavigationItem!
     @IBOutlet weak var favoriteCollection: UICollectionView!
     @IBOutlet weak var favoriteCasesCollection: UICollectionView!
-    
     @IBOutlet weak var favMethodologiesLabel: UILabel!
     @IBOutlet weak var favCasesLabel: UILabel!
-    
     @IBOutlet weak var emptyView: UIView!
 
     var language = Locale.current.languageCode!
@@ -168,7 +166,6 @@ class FavoritesViewController: UIViewController{
     private func setNavigationBar() {
         self.navigationIten.title = NSLocalizedString("fav", comment: "")
         self.navigationIten.largeTitleDisplayMode = .always
-        setSignOutButton()
     }
     
     private func setSignOutButton() {
