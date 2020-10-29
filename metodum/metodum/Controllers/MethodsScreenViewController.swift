@@ -130,14 +130,14 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
                 labelMenor.textColor = UIColor.white
                 labelMenor.text = textsSplit[0].uppercased()
-                labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption1)
+                labelMenor.font = UIFont.systemFont(ofSize: 12)
                 
                 let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
                 labelMaior.textColor = UIColor.white
                 textsSplit.remove(at: 0)
                 
                 labelMaior.text = textsSplit.joined(separator: " ")
-                labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+                labelMaior.font = UIFont.boldSystemFont(ofSize: 14)
                 
                 labelMaior.textColor = UIColor(named: "TextLabel")
                 labelMenor.textColor = UIColor(named: "TextLabel")
@@ -174,14 +174,14 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                         let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
                         labelMenor.textColor = UIColor.white
                         labelMenor.text = textsSplit[0].uppercased()
-                        labelMenor.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption1)
+                        labelMenor.font = UIFont.systemFont(ofSize: 12)
                         
                         let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
                         labelMaior.textColor = UIColor.white
                         textsSplit.remove(at: 0)
                         
                         labelMaior.text = textsSplit.joined(separator: " ")
-                        labelMaior.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption2)
+                        labelMaior.font = UIFont.boldSystemFont(ofSize:14)
                         
                         labelMaior.textColor = UIColor(named: "TextLabel")
                         labelMenor.textColor = UIColor(named: "TextLabel")
@@ -194,9 +194,7 @@ extension MethodsScreenViewController: UICollectionViewDataSource {
                 }
             }
         }
-        let heightMask = imageview.frame.height * 0.25821596
-        let mask = UIView(frame: CGRect(x: 0, y: (cell.frame.height)-heightMask, width: cell.frame.width, height: heightMask+2))
-        mask.backgroundColor = UIColor(named: "MethodLabel")
+        
         
         
         print("Vetor de texto:",textsSplit)
