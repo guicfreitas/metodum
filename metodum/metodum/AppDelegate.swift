@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Push Notification Configuration
-        UNUserNotificationCenter.current().delegate = self
-
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization( options: authOptions, completionHandler: {_, _ in })
-        
-        Messaging.messaging().delegate = self
-
-        application.registerForRemoteNotifications()
+//        UNUserNotificationCenter.current().delegate = self
+//
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//        UNUserNotificationCenter.current().requestAuthorization( options: authOptions, completionHandler: {_, _ in })
+//
+//        Messaging.messaging().delegate = self
+//
+//        application.registerForRemoteNotifications()
         
         // podemos também fazer um subscribe desse usuário a um grupo, para, se quisermos, mandarmos um push notification só esse determinado grupo, exemplo
         

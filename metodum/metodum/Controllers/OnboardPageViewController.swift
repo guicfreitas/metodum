@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class OnboardPageViewController: UIPageViewController, UIPageViewControllerDelegate {
+class OnboardPageViewController: UIPageViewController, UIPageViewControllerDelegate, MessagingDelegate {
 
     lazy var pagesViewControllers = [
         instanciateViewController(named: "view1"),
@@ -32,7 +33,29 @@ class OnboardPageViewController: UIPageViewController, UIPageViewControllerDeleg
             setViewControllers([viewController], direction: .forward, animated: false,completion: nil)
         }
     }
-    
+    func registerForRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center  = UNUserNotificationCenter.current()
+
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+                if error == nil{
+                    DispatchQueue.main.async{
+                        UIApplication.shared.registerForRemoteNotifications()
+                        Messaging.messaging().delegate = self
+                    }
+                    
+                }
+            }
+
+        }
+        else {
+            DispatchQueue.main.async{
+                UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+                UIApplication.shared.registerForRemoteNotifications()
+                Messaging.messaging().delegate = self
+            }
+        }
+    }
     private func instanciateViewController(named name : String) -> UIViewController {
         if name == "view5" {
             let childRef = storyboard!.instantiateViewController(withIdentifier: name) as! PoliticsViewController
@@ -76,6 +99,10 @@ extension OnboardPageViewController: UIPageViewControllerDataSource {
         
         if index == pagesCount - 1 {
             return nil
+        }
+        
+        if index == 3{
+            registerForRemoteNotification() 
         }
         
         actualIndex = (index + 1).mod(pagesCount)
