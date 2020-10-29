@@ -74,8 +74,8 @@
 		795F7C40252DF9FB004A289B /* metodum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = metodum.entitlements; sourceTree = "<group>"; };
 		796C8948254850D40075E051 /* RequestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoginViewController.swift; sourceTree = "<group>"; };
 		796EA52B2530FAD800C91F02 /* MetodumLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodumLibraryViewController.swift; sourceTree = "<group>"; };
-		798ED941253F1E650044B062 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		798ED945253F1EDF0044B062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		799B25C2254AF3BB00011519 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		79A21A70254723A40051489E /* PoliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsViewController.swift; sourceTree = "<group>"; };
 		79B82C4E252F585E0078DDAB /* FavoriteCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCases.swift; sourceTree = "<group>"; };
 		79B82C53252F5CC10078DDAB /* FavoriteMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMethods.swift; sourceTree = "<group>"; };
@@ -489,8 +489,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				79CBC95F2518FD2100AFB417 /* Base */,
-				798ED941253F1E650044B062 /* pt-BR */,
 				798ED945253F1EDF0044B062 /* en */,
+				799B25C2254AF3BB00011519 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

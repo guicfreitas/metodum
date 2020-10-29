@@ -701,7 +701,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-Jf-XHh">
                                 <rect key="frame" x="20" y="670.33333333333337" width="335" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <accessibility key="accessibilityConfiguration" label="Aceito e desejo Continuar"/>
+                                <accessibility key="accessibilityConfiguration" hint="Botão para concordar com nossa política de privacidades" label="Aceito e desejo Continuar"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="niT-u8-gqJ"/>
                                 </constraints>
@@ -1304,7 +1304,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1519,7 +1519,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
