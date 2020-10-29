@@ -428,11 +428,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-cv-nSW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
-                                    <navigationItem title="Termos de Uso" id="q8B-9u-xoB">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" image="chevron.left" catalog="system" id="cFl-9i-goO">
-                                            <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Termos de Uso" id="q8B-9u-xoB"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termos e condições gerais de uso do aplicativo Metodum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-o0-612">
@@ -551,11 +547,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-q7-90K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
-                                    <navigationItem title="Política de Privacidade" leftItemsSupplementBackButton="YES" id="iRr-U4-ogi">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="tbj-kr-gW0">
-                                            <color key="tintColor" systemColor="systemOrangeColor"/>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Política de Privacidade" leftItemsSupplementBackButton="YES" id="iRr-U4-ogi"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termos e condições gerais de uso do aplicativo Metodum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRW-ZK-s8R">
@@ -691,15 +683,8 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <color key="textColor" name="LabelClasses"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confira nossos termos de uso e política de privacidade e aceite para continuar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWt-ae-Jid">
-                                <rect key="frame" x="40" y="540.33333333333337" width="295" height="64.666666666666629"/>
-                                <accessibility key="accessibilityConfiguration" hint="Texto de descrição" label="Confira nossos termos de uso e política de privacidade e aceite para continuar."/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <color key="textColor" name="LabelClasses"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozy-Jf-XHh">
-                                <rect key="frame" x="20" y="655" width="335" height="50"/>
+                                <rect key="frame" x="20" y="651.33333333333337" width="335" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <accessibility key="accessibilityConfiguration" hint="Botão para concordar com nossa política de privacidades" label="Aceito e desejo Continuar"/>
                                 <constraints>
@@ -713,32 +698,110 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                     <action selector="acceptedButtonPressed:" destination="6Rz-35-EN6" eventType="touchUpInside" id="ESv-9J-tGc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="para continuar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htb-la-OBT">
+                                <rect key="frame" x="126.66666666666669" y="579.33333333333337" width="122" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvl-Gt-Ppn">
+                                <rect key="frame" x="54.666666666666657" y="535.33333333333337" width="266" height="22"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confira nossos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-Go-HVp">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXA-vG-19D">
+                                        <rect key="frame" x="128" y="-6" width="125" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="termos de uso ">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termsPressed:" destination="6Rz-35-EN6" eventType="touchUpInside" id="Z8I-i8-Yia"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCn-xP-HAo">
+                                        <rect key="frame" x="255" y="0.0" width="11" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1vJ-Go-HVp" firstAttribute="top" secondItem="bvl-Gt-Ppn" secondAttribute="top" id="0X1-FI-RwW"/>
+                                    <constraint firstItem="1vJ-Go-HVp" firstAttribute="leading" secondItem="bvl-Gt-Ppn" secondAttribute="leading" id="14g-oW-nmA"/>
+                                    <constraint firstItem="bCn-xP-HAo" firstAttribute="leading" secondItem="NXA-vG-19D" secondAttribute="trailing" constant="2" id="Cr7-Uz-8P4"/>
+                                    <constraint firstItem="NXA-vG-19D" firstAttribute="leading" secondItem="1vJ-Go-HVp" secondAttribute="trailing" constant="2" id="IA3-Wz-TkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="bCn-xP-HAo" secondAttribute="trailing" id="PUo-xY-nrv"/>
+                                    <constraint firstItem="bCn-xP-HAo" firstAttribute="top" secondItem="bvl-Gt-Ppn" secondAttribute="top" id="SZi-s1-aMu"/>
+                                    <constraint firstItem="NXA-vG-19D" firstAttribute="centerY" secondItem="1vJ-Go-HVp" secondAttribute="centerY" id="aH6-lZ-Chc"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vJ-Go-HVp" secondAttribute="bottom" id="iSu-jZ-BkJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="bCn-xP-HAo" secondAttribute="bottom" id="tKf-xE-xdC"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vJ-Go-HVp" secondAttribute="bottom" id="zdn-5h-QRH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIe-gL-ChG">
+                                <rect key="frame" x="59" y="557.33333333333337" width="257" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A70-Pp-iaP">
+                                        <rect key="frame" x="0.0" y="-6" width="189" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="política de privacidade">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privPressed:" destination="6Rz-35-EN6" eventType="touchUpInside" id="91B-vB-0m4"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e aceite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-bO-24H">
+                                        <rect key="frame" x="191" y="0.0" width="66" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Gqx-bO-24H" secondAttribute="bottom" id="O78-kV-B2L"/>
+                                    <constraint firstItem="A70-Pp-iaP" firstAttribute="centerY" secondItem="Gqx-bO-24H" secondAttribute="centerY" id="VGK-J1-TJT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gqx-bO-24H" secondAttribute="trailing" id="b2G-Pj-jTe"/>
+                                    <constraint firstItem="A70-Pp-iaP" firstAttribute="leading" secondItem="TIe-gL-ChG" secondAttribute="leading" id="bHJ-ld-Ap9"/>
+                                    <constraint firstItem="Gqx-bO-24H" firstAttribute="leading" secondItem="A70-Pp-iaP" secondAttribute="trailing" constant="2" id="lva-0b-Wg2"/>
+                                    <constraint firstItem="Gqx-bO-24H" firstAttribute="top" secondItem="TIe-gL-ChG" secondAttribute="top" id="uUe-VW-ySI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DJM-Bx-IXb"/>
                         <color key="backgroundColor" red="0.27843137254901962" green="0.32941176470588235" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hBd-vp-Yes" firstAttribute="top" secondItem="ZJF-YB-nXv" secondAttribute="bottom" constant="40" id="5Kj-2P-ynp"/>
+                            <constraint firstItem="bvl-Gt-Ppn" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="9FG-0E-XUL"/>
+                            <constraint firstItem="htb-la-OBT" firstAttribute="top" secondItem="TIe-gL-ChG" secondAttribute="bottom" id="CBq-xz-mvQ"/>
                             <constraint firstItem="ozy-Jf-XHh" firstAttribute="leading" secondItem="DJM-Bx-IXb" secondAttribute="leading" constant="20" id="CEA-Ng-clY"/>
                             <constraint firstItem="DJM-Bx-IXb" firstAttribute="trailing" secondItem="ozy-Jf-XHh" secondAttribute="trailing" constant="20" id="DgE-Oi-C7B"/>
-                            <constraint firstItem="pWt-ae-Jid" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="K4e-Jf-dlo"/>
                             <constraint firstItem="hBd-vp-Yes" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="KyD-nH-6pc"/>
-                            <constraint firstItem="ozy-Jf-XHh" firstAttribute="top" secondItem="pWt-ae-Jid" secondAttribute="bottom" constant="50" id="TDA-6p-OAy"/>
-                            <constraint firstItem="DJM-Bx-IXb" firstAttribute="trailing" secondItem="pWt-ae-Jid" secondAttribute="trailing" constant="40" id="YH0-Jb-DS2"/>
+                            <constraint firstItem="ozy-Jf-XHh" firstAttribute="top" secondItem="htb-la-OBT" secondAttribute="bottom" constant="50" id="NQ3-ou-SiT"/>
+                            <constraint firstItem="TIe-gL-ChG" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="NfN-z6-rxk"/>
+                            <constraint firstItem="bvl-Gt-Ppn" firstAttribute="top" secondItem="hBd-vp-Yes" secondAttribute="bottom" constant="15" id="Xq3-kR-U8Q"/>
                             <constraint firstItem="ZJF-YB-nXv" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="bRl-Hw-Fkg"/>
-                            <constraint firstItem="pWt-ae-Jid" firstAttribute="top" secondItem="hBd-vp-Yes" secondAttribute="bottom" constant="20" id="d1l-w4-Lvq"/>
+                            <constraint firstItem="TIe-gL-ChG" firstAttribute="top" secondItem="bvl-Gt-Ppn" secondAttribute="bottom" id="ck9-eb-5t1"/>
                             <constraint firstItem="ZJF-YB-nXv" firstAttribute="centerY" secondItem="meR-RY-aTd" secondAttribute="centerY" constant="-65" id="oAS-Dx-wC8"/>
-                            <constraint firstItem="pWt-ae-Jid" firstAttribute="leading" secondItem="DJM-Bx-IXb" secondAttribute="leading" constant="40" id="uLU-pY-bfZ"/>
+                            <constraint firstItem="htb-la-OBT" firstAttribute="centerX" secondItem="meR-RY-aTd" secondAttribute="centerX" id="vOX-hM-szq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="acceptButton" destination="ozy-Jf-XHh" id="RDl-c2-U71"/>
-                        <segue destination="q3O-Dl-sJ8" kind="presentation" id="71j-pH-kgO"/>
-                        <segue destination="0ke-tP-cMt" kind="presentation" id="TVl-4f-FBM"/>
+                        <outlet property="privButton" destination="A70-Pp-iaP" id="aCy-Gc-O9x"/>
+                        <outlet property="termsButton" destination="NXA-vG-19D" id="Dx6-VD-pew"/>
+                        <segue destination="q3O-Dl-sJ8" kind="presentation" identifier="terms" id="71j-pH-kgO"/>
+                        <segue destination="0ke-tP-cMt" kind="presentation" identifier="priv" id="TVl-4f-FBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOl-3H-L8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2028" y="-2588"/>
+            <point key="canvasLocation" x="-2028" y="-2588.423645320197"/>
         </scene>
         <!--Request Login View Controller-->
         <scene sceneID="SiP-EQ-KMp">
@@ -2342,7 +2405,6 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
         <image name="casesImg" width="240.33332824707031" height="223.66667175292969"/>
         <image name="cases_grey" width="1242" height="849"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="emptyFavorite" width="320" height="320"/>
         <image name="findMethod" width="226" height="255"/>

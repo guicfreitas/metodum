@@ -357,6 +357,11 @@
 /* Class = "UILabel"; accessibilityLabel = "Confira nossos termos de uso e política de privacidade e aceite para continuar."; ObjectID = "pWt-ae-Jid"; */
 "pWt-ae-Jid.accessibilityLabel" = "Check our terms of use and privacy policy and accept to continue.";
 
+"1vJ-Go-HVp.text" = "Check our";
+"bCn-xP-HAo.text" = "and";
+"Gqx-bO-24H.text" = "and accept";
+"htb-la-OBT.text" = "to continue";
+
 /* Class = "UILabel"; text = "Confira nossos termos de uso e política de privacidade e aceite para continuar."; ObjectID = "pWt-ae-Jid"; */
 "pWt-ae-Jid.text" = "Check our terms of use and privacy policy and accept to continue.";
 
