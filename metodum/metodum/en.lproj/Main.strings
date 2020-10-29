@@ -473,7 +473,7 @@
 "PaH-UT-Yey.accessibilityHint" = "Text describing the reason for the error";
 
 /* Class = "UILabel"; accessibilityLabel = "Para adicionar um caso, é necessário que você esteja conectado à uma conta."; ObjectID = "PaH-UT-Yey"; */
-"PaH-UT-Yey.accessibilityLabel" = "To add a case, you must be signed in.";
+"PaH-UT-Yey.accessibilityLabel" = "To favorite a item, you must be signed in.";
 
 /* Class = "UILabel"; text = "Para adicionar um caso, é necessário que você esteja conectado à uma conta."; ObjectID = "PaH-UT-Yey"; */
 "PaH-UT-Yey.text" = "To add a case, you must be signed in.";
