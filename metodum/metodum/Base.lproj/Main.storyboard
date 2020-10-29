@@ -1193,24 +1193,24 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr9-cI-CNF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="596"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Tp-8f-p5B">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="6Tp-8f-p5B" secondAttribute="height" multiplier="375:218" id="fHc-K1-P9k"/>
+                                                    <constraint firstAttribute="width" secondItem="6Tp-8f-p5B" secondAttribute="height" multiplier="375:262" id="IRp-xZ-rWB"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs6-Hd-YYt">
-                                                <rect key="frame" x="20" y="248" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="292" width="335" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre o caso de sucesso" label="Sobre"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVr-TP-6cp">
-                                                <rect key="frame" x="15" y="448" width="345" height="104"/>
+                                                <rect key="frame" x="15" y="492" width="345" height="104"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -1219,7 +1219,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfA-GG-4N3">
-                                                <rect key="frame" x="15" y="280" width="345" height="126"/>
+                                                <rect key="frame" x="15" y="324" width="345" height="126"/>
                                                 <color key="backgroundColor" name="BlackBody"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis .</string>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -1228,7 +1228,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwT-a3-nGk">
-                                                <rect key="frame" x="20" y="416" width="335" height="27"/>
+                                                <rect key="frame" x="20" y="460" width="335" height="27"/>
                                                 <accessibility key="accessibilityConfiguration" hint="Título indicando a seção sobre os resultados do caso de sucesso" label="Resultados"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <color key="textColor" name="GrayLabel"/>
@@ -1304,7 +1304,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1519,7 +1519,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
