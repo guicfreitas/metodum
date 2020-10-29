@@ -1304,7 +1304,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController storyboardIdentifier="AddCasesViewController" id="NnS-eq-Yxw" customClass="AddCasesViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgw-Kg-YHG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-m9-RHy">
@@ -1519,7 +1519,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
             <objects>
                 <viewController id="NG8-Uy-Zrd" customClass="MetodumLibraryViewController" customModule="metodum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9V-2Y-dLe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK0-MM-cEz">
@@ -1727,7 +1727,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Parece que você ainda não adicionou nenhum favorito. Visualize metodologias e casos de sucesso e adicione seus favoritos aqui." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Co-Vh-1Ak">
-                                        <rect key="frame" x="52" y="363" width="270" height="226"/>
+                                        <rect key="frame" x="52" y="383" width="270" height="107.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1740,11 +1740,10 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                     <constraint firstItem="TOy-Fv-zQw" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="27" id="AHY-3q-NJy"/>
                                     <constraint firstItem="cMq-jf-d9p" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="20" id="N9T-ZV-S4a"/>
                                     <constraint firstItem="TOy-Fv-zQw" firstAttribute="top" secondItem="GV7-Mv-76j" secondAttribute="top" id="fXU-Jf-UoH"/>
-                                    <constraint firstAttribute="bottom" secondItem="4Co-Vh-1Ak" secondAttribute="bottom" id="fsj-22-oia"/>
                                     <constraint firstAttribute="trailing" secondItem="cMq-jf-d9p" secondAttribute="trailing" constant="20" id="hvP-J1-xfN"/>
                                     <constraint firstItem="4Co-Vh-1Ak" firstAttribute="leading" secondItem="GV7-Mv-76j" secondAttribute="leading" constant="52" id="jZf-2b-moR"/>
                                     <constraint firstItem="cMq-jf-d9p" firstAttribute="top" secondItem="TOy-Fv-zQw" secondAttribute="bottom" id="nhZ-AQ-ZlS"/>
-                                    <constraint firstItem="4Co-Vh-1Ak" firstAttribute="top" secondItem="cMq-jf-d9p" secondAttribute="bottom" id="pZM-RU-8Z1"/>
+                                    <constraint firstItem="4Co-Vh-1Ak" firstAttribute="top" secondItem="cMq-jf-d9p" secondAttribute="bottom" constant="20" id="pZM-RU-8Z1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2384,7 +2383,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nXI-NQ-48p"/>
+        <segue reference="zHE-v5-uMu"/>
         <segue reference="4dD-YY-L4u"/>
         <segue reference="sWk-e2-O3Z"/>
     </inferredMetricsTieBreakers>
