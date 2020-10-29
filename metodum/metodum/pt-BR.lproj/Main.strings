@@ -168,10 +168,10 @@
 "PaH-UT-Yey.accessibilityHint" = "Texto descrevendo o motivo do erro";
 
 /* Class = "UILabel"; accessibilityLabel = "Para adicionar um caso, é necessário que você esteja conectado à uma conta."; ObjectID = "PaH-UT-Yey"; */
-"PaH-UT-Yey.accessibilityLabel" = "Para adicionar um caso, é necessário que você esteja conectado à uma conta.";
+"PaH-UT-Yey.accessibilityLabel" = "Para favoritar um item, é necessário que você esteja conectado à uma conta.";
 
 /* Class = "UILabel"; text = "Para adicionar um caso, é necessário que você esteja conectado à uma conta."; ObjectID = "PaH-UT-Yey"; */
-"PaH-UT-Yey.text" = "Para adicionar um caso, é necessário que você esteja conectado à uma conta.";
+"PaH-UT-Yey.text" = "Para favoritar um item, é necessário que você esteja conectado à uma conta.";
 
 /* Class = "UILabel"; text = "Primeira vez aqui ?"; ObjectID = "Qcw-ul-All"; */
 "Qcw-ul-All.text" = "Primeira vez aqui ?";

@@ -18,6 +18,7 @@ class RegisterScreenViewController: UIViewController {
     
     var loadingSpinnerView : UIView!
     var language = Locale.current.languageCode
+    var callback : (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,8 @@ class RegisterScreenViewController: UIViewController {
                             print("antes de inicializar")
                             TeachersCloudRepository.initialize(teacher: teacher) { (error, currentTeacher) in
                                 DispatchQueue.main.async {
-                                    self.performSegue(withIdentifier: "Register to Main Screen", sender: currentUser)
+                                    self.navigationController?.popToRootViewController(animated: false)
+                                    self.callback?()
                                 }
                             }
                         }

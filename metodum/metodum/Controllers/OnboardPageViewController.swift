@@ -33,6 +33,7 @@ class OnboardPageViewController: UIPageViewController, UIPageViewControllerDeleg
             setViewControllers([viewController], direction: .forward, animated: false,completion: nil)
         }
     }
+    
     func registerForRemoteNotification() {
         if #available(iOS 10.0, *) {
             let center  = UNUserNotificationCenter.current()
@@ -43,7 +44,6 @@ class OnboardPageViewController: UIPageViewController, UIPageViewControllerDeleg
                         UIApplication.shared.registerForRemoteNotifications()
                         Messaging.messaging().delegate = self
                     }
-                    
                 }
             }
 

@@ -40,6 +40,16 @@ class CasesCollectionViewController: UIViewController {
         //self.navigationItem.largeTitleDisplayMode = .always
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let _ = AuthService.getUser() {
+            print("ta adicionando")
+            navItem.rightBarButtonItems = [
+                UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addCaseScreen))
+            ]
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -52,11 +62,14 @@ class CasesCollectionViewController: UIViewController {
             }
         }
     }
+    
+    @objc func addCaseScreen() {
+        performSegue(withIdentifier: "Add Case Screen", sender: nil)
+    }
 }
 
 extension CasesCollectionViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cases.count
     }

@@ -70,6 +70,11 @@ class LoginViewController: UIViewController {
             viewController.callback = {
                 self.performSegue(withIdentifier: "Login to Main Screen", sender: nil)
             }
+        } else if segue.identifier == "Login to Register Screen" {
+            let viewController = segue.destination as! RegisterScreenViewController
+            viewController.callback = {
+                self.performSegue(withIdentifier: "Login to Main Screen", sender: nil)
+            }
         }
     }
     
@@ -301,3 +306,4 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         bezierPath.fill()
     }
 }*/
+

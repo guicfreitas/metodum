@@ -99,21 +99,22 @@ class ImagesRepository {
         }
     }
     
-    static func updateImageMetaData(image url : String, on folder: ImagesFolders) {
-        let imageRef = storageRoot.child(folder.rawValue+url)
-        
-        let metaData = StorageMetadata()
-        metaData.customMetadata = [
-            "acessibilityLabel_pt" : "Aprendizado Baseado em superação de desafios",
-            "acessibilityHint_pt": "A arte contém um fundo amarelo e mostra um estudante ruivo próximo de uma pilha de livros alta. Ele está prestes a subir escadas para concluir seu desafio, onde, no topo da pilha, um troféu o aguarda junto de um robô roxo, que o incentiva a subir.",
-            "acessibilityLabel_en": "Challenge Based Learning",
-            "acessibilityHint_en": "The picture shows an illustration representing the Challenge Based Learning. It contains a yellow background and a redhead student next to a tall stack of books. He is about to climb the stairs to complete his challenge, where, atop of the stack, a trophy awaits him along with a purple robot, that is encouraging him to go up."
+    static func update(images urls : [String], metadata: [String:String],on folder: ImagesFolders) {
+        for url in urls {
+            let imageRef = storageRoot.child(folder.rawValue+url)
             
-        ]
-        
-        imageRef.updateMetadata(metaData) { (data, error) in
-            if let errorMessage = error?.localizedDescription {
-                print(errorMessage)
+            let metaData = StorageMetadata()
+            metaData.customMetadata = [
+                "acessibilityLabel_pt" : metadata["acessibilityLabel_pt"]!,
+                "acessibilityHint_pt": metadata["acessibilityHint_pt"]!,
+                "acessibilityLabel_en": metadata["acessibilityLabel_en"]!,
+                "acessibilityHint_en": metadata["acessibilityHint_en"]!
+            ]
+            
+            imageRef.updateMetadata(metaData) { (data, error) in
+                if let errorMessage = error?.localizedDescription {
+                    print(errorMessage)
+                }
             }
         }
     }

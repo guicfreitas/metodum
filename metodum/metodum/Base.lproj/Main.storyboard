@@ -765,7 +765,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para adicionar um caso, é necessário que você esteja conectado à uma conta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-UT-Yey">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para favoritar um item, é necessário que você esteja conectado à uma conta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-UT-Yey">
                                 <rect key="frame" x="40" y="510.66666666666669" width="295" height="64.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" hint="Texto descrevendo o motivo do erro" label="Para adicionar um caso, é necessário que você esteja conectado à uma conta."/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -858,10 +858,10 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <rect key="frame" x="0.0" y="44" width="375" height="276"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="teacher1" translatesAutoresizingMaskIntoConstraints="NO" id="Wlu-OR-JCz">
-                                        <rect key="frame" x="17" y="0.0" width="281" height="276"/>
+                                        <rect key="frame" x="47" y="0.0" width="281" height="276"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46a-xN-0Gq">
-                                        <rect key="frame" x="247" y="57" width="43" height="32"/>
+                                        <rect key="frame" x="277" y="57" width="43" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -869,7 +869,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                 <color key="backgroundColor" name="BlackBody"/>
                                 <constraints>
                                     <constraint firstItem="Wlu-OR-JCz" firstAttribute="height" secondItem="atG-0d-vgE" secondAttribute="height" id="7Dp-Bd-mZd"/>
-                                    <constraint firstItem="Wlu-OR-JCz" firstAttribute="centerX" secondItem="atG-0d-vgE" secondAttribute="centerX" constant="-30" id="Ghj-wB-33x"/>
+                                    <constraint firstItem="Wlu-OR-JCz" firstAttribute="centerX" secondItem="atG-0d-vgE" secondAttribute="centerX" id="Ghj-wB-33x"/>
                                     <constraint firstItem="46a-xN-0Gq" firstAttribute="trailing" secondItem="Wlu-OR-JCz" secondAttribute="trailing" constant="-8" id="boU-z5-q6Q"/>
                                     <constraint firstItem="46a-xN-0Gq" firstAttribute="centerY" secondItem="Wlu-OR-JCz" secondAttribute="centerY" constant="-65" id="ePv-99-fyi"/>
                                     <constraint firstAttribute="bottom" secondItem="Wlu-OR-JCz" secondAttribute="bottom" id="h5r-sp-vTL"/>
@@ -1093,19 +1093,11 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                                     <outlet property="delegate" destination="jK5-cq-1pa" id="E5H-MX-WJM"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-g5-HMj">
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1aJ-g5-HMj">
                                 <rect key="frame" x="10" y="44" width="355" height="96"/>
-                                <color key="backgroundColor" name="BlackBody"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <items>
-                                    <navigationItem title="Cases" id="4I0-og-Li9">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2ED-r3-Pqd">
-                                            <color key="tintColor" systemColor="systemOrangeColor"/>
-                                            <connections>
-                                                <action selector="addCases:" destination="jK5-cq-1pa" id="Xfg-xx-oK9"/>
-                                                <segue destination="NnS-eq-Yxw" kind="showDetail" id="f1G-Pc-Jlq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Cases" id="4I0-og-Li9"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -1133,6 +1125,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
                         <outlet property="navBar" destination="1aJ-g5-HMj" id="BZl-NH-cKr"/>
                         <outlet property="navItem" destination="4I0-og-Li9" id="zMy-3z-iir"/>
                         <segue destination="8Yl-KZ-Rjh" kind="show" identifier="CaseDetailsSegue" id="CBP-vb-Wf9"/>
+                        <segue destination="NnS-eq-Yxw" kind="presentation" identifier="Add Case Screen" id="UXr-67-IXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrx-55-I9s" sceneMemberID="firstResponder"/>
@@ -2342,7 +2335,7 @@ Os eventuais litígios deverão ser apresentados no foro da comarca em que se en
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zHE-v5-uMu"/>
-        <segue reference="4dD-YY-L4u"/>
+        <segue reference="CBP-vb-Wf9"/>
         <segue reference="sWk-e2-O3Z"/>
     </inferredMetricsTieBreakers>
     <resources>
