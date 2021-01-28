@@ -472,7 +472,7 @@
 "a7d-JT-asD.accessibilityLabel" = "Discover active methodologies";
 
 /* Class = "UILabel"; text = "Descubra metodologias"; ObjectID = "a7d-JT-asD"; */
-"a7d-JT-asD.text" = "Discover methodologies";
+"a7d-JT-asD.text" = "Discover actives";
 
 /* Class = "UILabel"; accessibilityHint = "Texto descrevendo o motivo do erro"; ObjectID = "PaH-UT-Yey"; */
 "PaH-UT-Yey.accessibilityHint" = "Text describing the reason for the error";
