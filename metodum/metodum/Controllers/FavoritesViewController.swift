@@ -233,8 +233,14 @@ extension FavoritesViewController: UICollectionViewDataSource{
         
         
         if (collectionView.tag == 1 && cases.count > 0)  {
+            
+            var labelMaiorText = ""
+            var labelMenorText = ""
+            
+            
             let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "favCase", for: indexPath) as! FavoriteCasesCell
             let actualCase = cases[indexPath.item]
+            
             
             if persistedCasesImagesNames.contains(actualCase.image) {
                 if let image = DeviceDataPersistenceService.getImage(named: actualCase.image, on: .casesImages) {
@@ -242,7 +248,37 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     cell2.isAccessibilityElement = true
                     cell2.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                     cell2.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                    
+                    labelMaiorText = (self.language == "pt") ? actualCase.title_pt : actualCase.title_en
+                    labelMenorText = (self.language == "pt") ? actualCase.subtitle_pt : actualCase.subtitle_en
+                   
                 }
+                let heightMask = cell2.caseImage.frame.height * 0.25821596
+                let mask = UIView(frame: CGRect(x: 0, y: (cell2.frame.height)-heightMask, width: cell2.frame.width, height: heightMask+2))
+                mask.backgroundColor = UIColor(named: "MethodLabel")
+                
+                let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell2.frame.width - 30, height: 12))
+                labelMenor.textColor = UIColor.white
+                labelMenor.text = labelMenorText
+               
+                labelMenor.font = UIFont.systemFont(ofSize: 12)
+                
+                let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell2.frame.width - 30, height: 21))
+                labelMaior.textColor = UIColor.white
+                labelMaior.text = labelMaiorText
+                
+                
+                
+                labelMaior.font = UIFont.boldSystemFont(ofSize: 14)
+                
+                labelMaior.textColor = UIColor(named: "TextLabel")
+                labelMenor.textColor = UIColor(named: "TextLabel")
+                
+                mask.addSubview(labelMenor)
+                mask.addSubview(labelMaior)
+                
+                cell2.caseImage.addSubview(mask)
+                
             } else {
                 ImagesRepository.getCase(image: actualCase.image) { (error, acessibilityImage) in
                     if let errorMessage = error {
@@ -253,15 +289,47 @@ extension FavoritesViewController: UICollectionViewDataSource{
                         cell2.isAccessibilityElement = true
                         cell2.accessibilityLabel = (self.language == "pt") ? img.acessibilityLabel_pt : img.acessibilityLabel_en
                         cell2.accessibilityHint = (self.language == "pt") ? img.acessibilityHint_pt : img.acessibilityHint_en
+                        
+                        labelMaiorText = (self.language == "pt") ? actualCase.title_pt : actualCase.title_en
+                        labelMenorText = (self.language == "pt") ? actualCase.subtitle_pt : actualCase.subtitle_en
                     }
+                    let heightMask = cell2.caseImage.frame.height * 0.25821596
+                    let mask = UIView(frame: CGRect(x: 0, y: (cell2.frame.height)-heightMask, width: cell2.frame.width, height: heightMask+2))
+                    mask.backgroundColor = UIColor(named: "MethodLabel")
+                    
+                    let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell2.frame.width - 30, height: 12))
+                    labelMenor.textColor = UIColor.white
+                    labelMenor.text = labelMenorText
+                   
+                    labelMenor.font = UIFont.systemFont(ofSize: 12)
+                    
+                    let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell2.frame.width - 30, height: 21))
+                    labelMaior.textColor = UIColor.white
+                    labelMaior.text = labelMaiorText
+                    
+                    
+                    
+                    labelMaior.font = UIFont.boldSystemFont(ofSize: 14)
+                    
+                    labelMaior.textColor = UIColor(named: "TextLabel")
+                    labelMenor.textColor = UIColor(named: "TextLabel")
+                    
+                    mask.addSubview(labelMenor)
+                    mask.addSubview(labelMaior)
+                    
+                    cell2.caseImage.addSubview(mask)
                 }
             }
 
             cell2.layer.cornerRadius = 20
+            
 
             return cell2
         } else if collectionView.tag == 0 && methods.count >  0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favMethod", for: indexPath) as! FavoriteMethodCell
+            var labelText = ""
+            var textsSplit = [""]
+            
             let method = methods[indexPath.item]
             // hj eu mudo essa merda pra cachear as imagens, eu juro
             
@@ -271,7 +339,32 @@ extension FavoritesViewController: UICollectionViewDataSource{
                     cell.isAccessibilityElement = true
                     cell.accessibilityLabel = (self.language == "pt") ? image.acessibilityLabel_pt : image.acessibilityLabel_en
                     cell.accessibilityHint = (self.language == "pt") ? image.acessibilityHint_pt : image.acessibilityHint_en
+                    labelText = (self.language == "pt") ? method.name_pt : method.name_en
+                    textsSplit = labelText.components(separatedBy: " ")
                 }
+                let heightMask = cell.methodImage.frame.height * 0.25821596
+                let mask = UIView(frame: CGRect(x: 0, y: (cell.frame.height)-heightMask, width: cell.frame.width, height: heightMask+2))
+                mask.backgroundColor = UIColor(named: "MethodLabel")
+
+                let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
+                labelMenor.textColor = UIColor.white
+                labelMenor.text = textsSplit[0].uppercased()
+                labelMenor.font = UIFont.systemFont(ofSize: 12)
+                
+                let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
+                labelMaior.textColor = UIColor.white
+                textsSplit.remove(at: 0)
+                
+                labelMaior.text = textsSplit.joined(separator: " ")
+                labelMaior.font = UIFont.boldSystemFont(ofSize: 14)
+                
+                labelMaior.textColor = UIColor(named: "TextLabel")
+                labelMenor.textColor = UIColor(named: "TextLabel")
+                
+                mask.addSubview(labelMenor)
+                mask.addSubview(labelMaior)
+                            
+                cell.methodImage.addSubview(mask)
             } else {
                 ImagesRepository.getMethod(image: method.methodFullImage) { (error, acessibilityImage) in
                     if let errorMessage = error {
@@ -282,8 +375,33 @@ extension FavoritesViewController: UICollectionViewDataSource{
                         cell.isAccessibilityElement = true
                         cell.accessibilityLabel = (self.language == "pt") ? img.acessibilityLabel_pt : img.acessibilityLabel_en
                         cell.accessibilityHint = (self.language == "pt") ? img.acessibilityHint_pt : img.acessibilityHint_en
+                        labelText = (self.language == "pt") ? method.name_pt : method.name_en
+                        textsSplit = labelText.components(separatedBy: " ")
                     }
                 }
+                let heightMask = cell.methodImage.frame.height * 0.25821596
+                let mask = UIView(frame: CGRect(x: 0, y: (cell.frame.height)-heightMask, width: cell.frame.width, height: heightMask+2))
+                mask.backgroundColor = UIColor(named: "MethodLabel")
+
+                let labelMenor = UILabel(frame: CGRect(x: 15, y: 10, width: cell.frame.width - 30, height: 12))
+                labelMenor.textColor = UIColor.white
+                labelMenor.text = textsSplit[0].uppercased()
+                labelMenor.font = UIFont.systemFont(ofSize: 12)
+                
+                let labelMaior = UILabel(frame: CGRect(x: 15, y: 20, width: cell.frame.width - 30, height: 21))
+                labelMaior.textColor = UIColor.white
+                textsSplit.remove(at: 0)
+                
+                labelMaior.text = textsSplit.joined(separator: " ")
+                labelMaior.font = UIFont.boldSystemFont(ofSize: 14)
+                
+                labelMaior.textColor = UIColor(named: "TextLabel")
+                labelMenor.textColor = UIColor(named: "TextLabel")
+                
+                mask.addSubview(labelMenor)
+                mask.addSubview(labelMaior)
+                            
+                cell.methodImage.addSubview(mask)
             }
             cell.layer.cornerRadius = 20
             return cell
